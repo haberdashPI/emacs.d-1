@@ -104,10 +104,10 @@ nmap <leader>p :YRShow <cr>
 
 " NERDTree
 function! OpenNERDTree()
-    :TMiniBufExplorer 
-    :NERDTreeToggle 
+    :TMiniBufExplorer
+    :NERDTreeToggle
 endfunction
 nmap <leader>n :NERDTreeToggle <cr>
 
 " Tag list
-nmap <leader>t :TlistToggle <cr>
+nmap <leader>T :TlistToggle <cr>
