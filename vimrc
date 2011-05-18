@@ -1,6 +1,7 @@
 " References:
 " * My old vim configuration
 " * http://nvie.com/posts/how-i-boosted-my-vim/
+" * http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
 " General configuration
 set nocompatible
@@ -41,6 +42,9 @@ set mat=5 " how many tenths of a second to blink matching brackets for
 set so=10 " Keep 10 lines (top/bottom) for scope
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 set wrap
+set gdefault " global substitution by default
+set textwidth=79
+set formatoptions=qrn1
 
 function! CurDir()
     let curdir = substitute(getcwd(), '/home/antonio/', "~/", "g")
@@ -57,6 +61,17 @@ nmap <leader>w :w!<CR>
 cmap w!! w !sudo tee % >/dev/null
 nnoremap j gj
 nnoremap k gk
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
 
 if has('autocmd')
 	autocmd! bufwritepost vimrc source ~/.vimrc " autoreaload .vimrc
