@@ -61,14 +61,6 @@ nmap <leader>w :w!<CR>
 cmap w!! w !sudo tee % >/dev/null
 nnoremap j gj
 nnoremap k gk
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
@@ -92,3 +84,17 @@ set pastetoggle=<F2>
 " Pathogen allows to deploy plugins in ~/.vim/bundle
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+
+" Yankring
+let g:yankring_history_file='.yankring'
+nmap <leader>p :YRShow <cr>
+
+" NERDTree
+function! OpenNERDTree()
+    :TMiniBufExplorer 
+    :NERDTreeToggle 
+endfunction
+nmap <leader>n :NERDTreeToggle <cr>
+
+" Tag list
+nmap <leader>t :TlistToggle <cr>
