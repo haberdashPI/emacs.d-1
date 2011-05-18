@@ -33,19 +33,25 @@ set nobackup
 set noswapfile
 set wildmenu " turn on wild menu
 set wildmode=longest,list " filename completion
-set ruler " Always show current positions along the bottom 
+set ruler " Always show current positions along the bottom
 set cmdheight=2 " the command bar is 2 high
 set t_Co=256
 set showmatch " show matching brackets
 set mat=5 " how many tenths of a second to blink matching brackets for
 set so=10 " Keep 10 lines (top/bottom) for scope
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 set wrap
 
 function! CurDir()
     let curdir = substitute(getcwd(), '/home/antonio/', "~/", "g")
     return curdir
 endfunction
+
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+
+function! TrimWhiteSpace()
+  %s/\s*$//
+  ''
+:endfunction
 
 filetype plugin indent on
 
@@ -63,6 +69,10 @@ if has('autocmd')
 	autocmd bufwritepost vimrc source ~/.vimrc " autoreaload .vimrc
 	autocmd filetype textile let g:TextileOS="Linux"
 	autocmd filetype textile let g:TextileBrowser="/usr/bin/chromium"
+	autocmd FileWritePre * :call TrimWhiteSpace()
+	autocmd FileAppendPre * :call TrimWhiteSpace()
+	autocmd FilterWritePre * :call TrimWhiteSpace()
+	autocmd BufWritePre * :call TrimWhiteSpace()
 endif
 
 " Color
