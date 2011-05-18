@@ -59,7 +59,10 @@ nnoremap j gj
 nnoremap k gk
 
 if has('autocmd')
-	autocmd! bufwritepost vimrc source ~/.vimrc " autoreaload .vimrc
+	autocmd!
+	autocmd bufwritepost vimrc source ~/.vimrc " autoreaload .vimrc
+	autocmd filetype textile let g:TextileOS="Linux"
+	autocmd filetype textile let g:TextileBrowser="/usr/bin/chromium"
 endif
 
 " Color
