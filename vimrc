@@ -44,6 +44,7 @@ set wrap
 set gdefault " global substitution by default
 set textwidth=79
 set formatoptions=qrn1
+set mouse=a
 
 function! CurDir()
     let curdir = substitute(getcwd(), '/home/antonio/', "~/", "g")
