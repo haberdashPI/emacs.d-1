@@ -10,7 +10,7 @@ echo "HELLO AT $(pwd)"
 
 cd vim/bundle && for d in $(ls); do cd $d; git pull origin master; cd ..; done
 
-cd $PWD
+cd $WORKING_DIR
 
 git add pathogen vim/bundle
 git commit -am "Plugins updated"
