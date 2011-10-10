@@ -12,17 +12,22 @@ set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
-set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
-set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
                   "    case-sensitive otherwise
-set smarttab      " insert tabs on the start of a line according to
-                  "    shiftwidth, not tabstop
+set autoindent             " automatic indent new lines
+set smartindent            " be smart about it
+set softtabstop=2          " yep, two
+set shiftwidth=2           " ..
+set expandtab              " expand tabs to spaces
+set nosmarttab             " fuck tabs
+set formatoptions+=n       " support for numbered/bullet lists
+set textwidth=80           " wrap at 80 chars by default
+set virtualedit=block      " allow virtual edit in visual block ..
+
 set hlsearch      " highlight search terms
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
@@ -42,7 +47,6 @@ set mat=5 " how many tenths of a second to blink matching brackets for
 set so=10 " Keep 10 lines (top/bottom) for scope
 set wrap
 set gdefault " global substitution by default
-set textwidth=79
 set formatoptions=qrn1
 set mouse=a
 set clipboard=unnamedplus
