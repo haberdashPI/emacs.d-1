@@ -82,10 +82,10 @@ if has('autocmd')
 	autocmd bufwritepost vimrc source ~/.vimrc " autoreaload .vimrc
 	autocmd filetype textile let g:TextileOS="Linux"
 	autocmd filetype textile let g:TextileBrowser="/usr/bin/chromium"
-	autocmd FileWritePre * :call TrimWhiteSpace()
-	autocmd FileAppendPre * :call TrimWhiteSpace()
-	autocmd FilterWritePre * :call TrimWhiteSpace()
-    autocmd BufWritePre * :call TrimWhiteSpace()
+	"autocmd FileWritePre * :call TrimWhiteSpace()
+	"autocmd FileAppendPre * :call TrimWhiteSpace()
+	"autocmd FilterWritePre * :call TrimWhiteSpace()
+    "autocmd BufWritePre * :call TrimWhiteSpace()
 	autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
     autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
     autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
