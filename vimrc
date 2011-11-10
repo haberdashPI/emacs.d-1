@@ -9,10 +9,11 @@ let mapleader=","
 let g:mapleader = ","
 set hidden
 set nowrap        " don't wrap lines
-set tabstop=4     " a tab is four spaces
+set tabstop=2     " a tab is four spaces
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set number        " always show line numbers
+set shiftwidth=2  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
