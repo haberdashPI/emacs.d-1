@@ -11,14 +11,14 @@ set hidden
 set nowrap        " don't wrap lines
 set tabstop=2     " a tab is four spaces
 set backspace=indent,eol,start
-                  " allow backspacing over everything in insert mode
+" allow backspacing over everything in insert mode
 set number        " always show line numbers
 set shiftwidth=2  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
-                  "    case-sensitive otherwise
+" case-sensitive otherwise
 set autoindent             " automatic indent new lines
 set smartindent            " be smart about it
 set softtabstop=2          " yep, two
@@ -53,8 +53,8 @@ set mouse=a
 set clipboard=unnamedplus
 
 function! CurDir()
-    let curdir = substitute(getcwd(), '/home/antonio/', "~/", "g")
-    return curdir
+  let curdir = substitute(getcwd(), '/home/antonio/', "~/", "g")
+  return curdir
 endfunction
 
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
@@ -62,7 +62,7 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 function! TrimWhiteSpace()
   %s/\s*$//
   ''
-:endfunction
+endfunction
 
 filetype plugin indent on
 
@@ -79,28 +79,28 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 if has('autocmd')
-	autocmd!
-	autocmd bufwritepost vimrc source ~/.vimrc " autoreaload .vimrc
-	autocmd filetype textile let g:TextileOS="Linux"
-	autocmd filetype textile let g:TextileBrowser="/usr/bin/chromium"
-	autocmd FileWritePre * :call TrimWhiteSpace()
-	autocmd FileAppendPre * :call TrimWhiteSpace()
-	autocmd FilterWritePre * :call TrimWhiteSpace()
-  autocmd BufWritePre * :call TrimWhiteSpace()
-	autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+  autocmd!
+  autocmd bufwritepost vimrc source ~/.vimrc " autoreaload .vimrc
+  autocmd filetype textile let g:TextileOS="Linux"
+  autocmd filetype textile let g:TextileBrowser="/usr/bin/chromium"
+  "autocmd FileWritePre * :call TrimWhiteSpace()
+  "autocmd FileAppendPre * :call TrimWhiteSpace()
+  "autocmd FilterWritePre * :call TrimWhiteSpace()
+  "autocmd BufWritePre * :call TrimWhiteSpace()
+  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
   "autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-	autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 endif
 
 " Color
 if &t_Co >= 256 || has("gui_running")
-	colorscheme mustang
+  colorscheme mustang
 endif
 
 if &t_Co > 2 || has("gui_running")
-	" switch syntax highlighting on, when the terminal has colors
-	syntax on
+  " switch syntax highlighting on, when the terminal has colors
+  syntax on
 endif
 
 set pastetoggle=<F2>
@@ -115,8 +115,8 @@ nmap <leader>p :YRShow <cr>
 
 " NERDTree
 function! OpenNERDTree()
-    :TMiniBufExplorer
-    :NERDTreeToggle
+  :TMiniBufExplorer
+  :NERDTreeToggle
 endfunction
 nmap <leader>n :NERDTreeToggle <cr>
 
