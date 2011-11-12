@@ -110,3 +110,12 @@
 	path = vim/bundle/textile
 	url = https://github.com/timcharper/textile.vim.git
 	ignore = untracked
+[submodule "vim/bundle/vimorganizer"]
+	path = vim/bundle/vimorganizer
+	url = https://github.com/hsitz/VimOrganizer.git
+[submodule "vim/bundle/utl"]
+	path = vim/bundle/utl
+	url = https://github.com/vim-scripts/utl.vim.git
+[submodule "vim/bundle/nrrwrgn"]
+	path = vim/bundle/nrrwrgn
+	url = https://github.com/chrisbra/NrrwRgn.git

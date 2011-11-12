@@ -86,10 +86,10 @@ if has('autocmd')
 	autocmd FileWritePre * :call TrimWhiteSpace()
 	autocmd FileAppendPre * :call TrimWhiteSpace()
 	autocmd FilterWritePre * :call TrimWhiteSpace()
-    autocmd BufWritePre * :call TrimWhiteSpace()
+  autocmd BufWritePre * :call TrimWhiteSpace()
 	autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
-    autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+  "autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 	autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 endif
 
@@ -122,3 +122,7 @@ nmap <leader>n :NERDTreeToggle <cr>
 
 " Tag list
 nmap <leader>T :TlistToggle <cr>
+
+" VimOrganizer
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+au BufEnter *.org            call org#SetOrgFileType()
