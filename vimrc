@@ -111,6 +111,7 @@ call pathogen#runtime_append_all_bundles()
 
 " Yankring
 let g:yankring_history_file='.yankring'
+let g:yankring_manual_clipboard_check=0
 nmap <leader>p :YRShow <cr>
 
 " NERDTree
