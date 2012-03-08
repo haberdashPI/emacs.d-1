@@ -126,6 +126,7 @@ nmap <leader>T :TlistToggle <cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>.'
+nmap <leader>b :CtrlPBuffer <cr>
 
 " VimOrganizer
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
