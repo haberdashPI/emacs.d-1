@@ -130,6 +130,9 @@ let g:ctrlp_map = '<leader>.'
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org            call org#SetOrgFileType()
 
+"Gemfile syntax
+au Bufenter Gemfile set syntax=ruby
+
 " CoffeeTags
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
