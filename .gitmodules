@@ -32,7 +32,7 @@
 	ignore = untracked
 [submodule "sparkup"]
 	path = sparkup
-	url = git@github.com:antonio/sparkup.git
+	url = https://github.com/antonio/sparkup.git
 	ignore = untracked
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
