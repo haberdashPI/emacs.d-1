@@ -16,7 +16,7 @@
 	ignore = untracked
 [submodule "vim/snippets"]
 	path = vim/snippets
-	url = git@github.com:antonio/snipmate-snippets.git
+	url = http://github.com/antonio/snipmate-snippets.git
 	ignore = untracked
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring
