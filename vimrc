@@ -149,9 +149,10 @@ if executable('coffeetags')
         \ }
 endif
 
-" Tagbar
+" Tagbar and tags
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 autocmd FileType * nested :call tagbar#autoopen(0)
 autocmd BufEnter * nested :call tagbar#autoopen(0)
+set tags=tags;/
 
 set shell=bash
