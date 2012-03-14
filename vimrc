@@ -121,9 +121,6 @@ function! OpenNERDTree()
 endfunction
 nmap <leader>n :NERDTreeToggle <cr>
 
-" Tag list
-nmap <leader>T :TlistToggle <cr>
-
 " CtrlP
 let g:ctrlp_map = '<leader>.'
 nmap <leader>b :CtrlPBuffer <cr>
