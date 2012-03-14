@@ -194,3 +194,9 @@
 [submodule "vim/bundle/vim-bclose"]
 	path = vim/bundle/vim-bclose
 	url = https://github.com/rwfitzge/vim-bclose.git
+[submodule "vim/bundle/camelcasemotion"]
+	path = vim/bundle/camelcasemotion
+	url = https://github.com/vim-scripts/camelcasemotion.git
+[submodule "vim/bundle/CamelCaseComplete"]
+	path = vim/bundle/CamelCaseComplete
+	url = https://github.com/vim-scripts/CamelCaseComplete.git
