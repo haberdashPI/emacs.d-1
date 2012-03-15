@@ -194,3 +194,6 @@
 [submodule "vim/bundle/vim-bclose"]
 	path = vim/bundle/vim-bclose
 	url = https://github.com/rwfitzge/vim-bclose.git
+[submodule "vim/bundle/vim-fakeclip"]
+	path = vim/bundle/vim-fakeclip
+	url = https://github.com/kana/vim-fakeclip.git
