@@ -158,9 +158,6 @@
 [submodule "vim/bundle/vim-matchit"]
 	path = vim/bundle/vim-matchit
 	url = https://github.com/edsono/vim-matchit.git
-[submodule "vim/bundle/vim-pep8"]
-	path = vim/bundle/vim-pep8
-	url = https://github.com/jbking/vim-pep8.git
 [submodule "vim/bundle/Kwbd"]
 	path = vim/bundle/Kwbd
 	url = https://github.com/rgarver/Kwbd.vim.git
