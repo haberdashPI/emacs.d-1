@@ -68,6 +68,8 @@ filetype plugin indent on
 
 map <space> /
 map <c-space> ?
+nmap <C-j> :bn <CR>
+nmap <C-k> :bp <CR>
 nmap <silent> ,<space> :nohlsearch<CR>
 nmap <leader>w :w!<CR>
 " Automatic sudo
