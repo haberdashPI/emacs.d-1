@@ -51,6 +51,7 @@ set gdefault " global substitution by default
 set formatoptions=qrn1
 set mouse=a
 set clipboard=unnamedplus
+set iskeyword-=_
 
 function! CurDir()
   let curdir = substitute(getcwd(), '/home/antonio/', "~/", "g")
