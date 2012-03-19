@@ -51,6 +51,7 @@ set gdefault " global substitution by default
 set formatoptions=qrn1
 set mouse=a
 set clipboard=unnamedplus
+set iskeyword-=_
 
 function! CurDir()
   let curdir = substitute(getcwd(), '/home/antonio/', "~/", "g")
@@ -68,6 +69,8 @@ filetype plugin indent on
 
 map <space> /
 map <c-space> ?
+nmap <C-j> :bn <CR>
+nmap <C-k> :bp <CR>
 nmap <silent> ,<space> :nohlsearch<CR>
 nmap <leader>w :w!<CR>
 " Automatic sudo
