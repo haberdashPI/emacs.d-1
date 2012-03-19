@@ -154,7 +154,7 @@ autocmd VimEnter * nested :call tagbar#autoopen(1)
 autocmd FileType * nested :call tagbar#autoopen(0)
 autocmd BufEnter * nested :call tagbar#autoopen(0)
 set tags=tags;/
-
+set tags+=gems.tags
 set shell=bash
 
 " Highlight trailing whitespaces
