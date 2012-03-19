@@ -155,7 +155,7 @@ autocmd FileType * nested :call tagbar#autoopen(0)
 autocmd BufEnter * nested :call tagbar#autoopen(0)
 let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
 set tags=tags;/
-
+set tags+=gems.tags
 set shell=bash
 
 " Highlight trailing whitespaces
