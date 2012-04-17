@@ -168,4 +168,4 @@ autocmd BufWinLeave * call clearmatches()
 
 " Ruby wizardry
 " bind control-l to hashrocket
-imap <C-l> <Space>=><Space>
+imap <C-l> =><Space>
