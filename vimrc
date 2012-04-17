@@ -169,6 +169,3 @@ autocmd BufWinLeave * call clearmatches()
 " Ruby wizardry
 " bind control-l to hashrocket
 imap <C-l> <Space>=><Space>
-" convert word into ruby symbol
-imap <C-k> <C-o>b:<Esc>Ea
-nmap <C-k> lbi:<Esc>E
