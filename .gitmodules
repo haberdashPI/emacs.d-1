@@ -193,6 +193,3 @@
 [submodule "vim/bundle/vim-jst"]
 	path = vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
-[submodule "vim/bundle/AutoClose"]
-	path = vim/bundle/AutoClose
-	url = https://github.com/vim-scripts/AutoClose.git
