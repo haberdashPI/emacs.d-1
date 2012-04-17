@@ -50,7 +50,7 @@ set wrap
 set gdefault " global substitution by default
 set formatoptions=qrn1
 set mouse=a
-set clipboard=unnamedplus
+set clipboard=unnamed
 set iskeyword-=_
 
 function! CurDir()
@@ -153,6 +153,7 @@ endif
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 autocmd FileType * nested :call tagbar#autoopen(0)
 autocmd BufEnter * nested :call tagbar#autoopen(0)
+let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
 set tags=tags;/
 set tags+=gems.tags
 set shell=bash
@@ -164,3 +165,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Ruby wizardry
+" bind control-l to hashrocket
+imap <C-l> <Space>=><Space>
+" convert word into ruby symbol
+imap <C-k> <C-o>b:<Esc>Ea
+nmap <C-k> lbi:<Esc>E
