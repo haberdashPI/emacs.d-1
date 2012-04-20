@@ -168,3 +168,7 @@ autocmd BufWinLeave * call clearmatches()
 " Ruby wizardry
 " bind control-l to hashrocket
 imap <C-l> =><Space>
+
+" Toggle Words
+nmap <C-t> :ToggleWord<CR>
+imap <C-t> <ESC>:ToggleWord<CR>
