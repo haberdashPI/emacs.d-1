@@ -196,3 +196,9 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim/bundle/vim-autoclose"]
+	path = vim/bundle/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
+[submodule "vim/bundle/toggle_words"]
+	path = vim/bundle/toggle_words
+	url = https://github.com/vim-scripts/toggle_words.vim.git

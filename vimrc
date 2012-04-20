@@ -153,7 +153,6 @@ endif
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 autocmd FileType * nested :call tagbar#autoopen(0)
 autocmd BufEnter * nested :call tagbar#autoopen(0)
-let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
 set tags=tags;/
 set tags+=gems.tags
 set shell=bash
@@ -169,3 +168,7 @@ autocmd BufWinLeave * call clearmatches()
 " Ruby wizardry
 " bind control-l to hashrocket
 imap <C-l> =><Space>
+
+" Toggle Words
+nmap <C-t> :ToggleWord<CR>
+imap <C-t> <ESC>:ToggleWord<CR>
