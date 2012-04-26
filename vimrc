@@ -156,7 +156,9 @@ autocmd BufEnter * nested :call tagbar#autoopen(0)
 set tags=tags;/
 set tags+=gems.tags
 set shell=bash
-let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+if has("mac")
+  let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+endif
 
 " Highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
