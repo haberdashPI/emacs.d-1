@@ -205,3 +205,6 @@
 [submodule "vim/bundle/tcomment_vim"]
 	path = vim/bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
