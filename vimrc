@@ -50,7 +50,9 @@ set wrap
 set gdefault " global substitution by default
 set formatoptions=qrn1
 set mouse=a
-set clipboard=unnamed
+if !has("mac")
+  set clipboard=unnamed
+endif
 set iskeyword-=_
 
 function! CurDir()
