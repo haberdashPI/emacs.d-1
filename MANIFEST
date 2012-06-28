@@ -3,7 +3,7 @@
 module Dotfiles
 
   FILES = {
-    './Xdefaults' => '~/.Xdefaults',
+    './Xresources' => '~/.Xresources',
     './xinitrc' => '~/.xinitrc',
   }
 
