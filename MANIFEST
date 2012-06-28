@@ -1,5 +1,10 @@
-# vim: syntax=ruby
+# vim: ft=ruby
 
-FILES = {
-  './Xdefaults' => '~/.Xdefaults',
-}
+module Dotfiles
+
+  FILES = {
+    './Xdefaults' => '~/.Xdefaults',
+    './xinitrc' => '~/.xinitrc',
+  }
+
+end
