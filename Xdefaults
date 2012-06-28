@@ -1,11 +1,11 @@
 ! urxvt
 urxvt*scrollBar: false
 urxvt*background: #242424
+urxvt*foreground: white
 urxvt*urlLauncher: chromium
 !urxvt*cursorBlink:      true
 !urxvt*font:             xft:terminus:pixelsize=13.5
 !urxvt*boldFont:         xft:terminus:pixelsize=13.5
-!urxvt*foreground:       white
 !urxvt*geometry:         100x35
 !urxvt*internalBorder:   0
 !urxvt*loginShell:       true
