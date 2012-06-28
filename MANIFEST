@@ -1,0 +1,5 @@
+# vim: syntax=ruby
+
+FILES = {
+  './Xdefaults' => '~/.Xdefaults',
+}
