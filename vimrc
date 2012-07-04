@@ -184,3 +184,22 @@ let g:AutoCloseExpandEnterOn = ""
 set hlsearch    " highlight all matched terms
 " Pressing return clears highlighted search
 nnoremap <CR> :nohlsearch<CR>/<BS>
+
+" Rspec
+function! RSpecAll()
+  execute("!clear && rspec spec")
+endfunction
+map <leader><C-r> :call RSpecAll() <CR>
+command! RSpecAll call RSpecAll()
+
+function! RSpecIntegration()
+  execute("!clear && rspec spec/integration")
+endfunction
+map <leader>R :call RSpecIntegration() <CR>
+command! RSpecIntegration call RSpecIntegration()
+
+function! RSpecCurrent()
+  execute("!clear && rspec " . expand("%p") . ":" . line("."))
+endfunction
+map <leader>r :call RSpecCurrent() <CR>
+command! RSpecCurrent call RSpecCurrent()
