@@ -205,3 +205,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "vim/bundle/vim-bclose"]
+	path = vim/bundle/vim-bclose
+	url = https://github.com/cespare/vim-bclose.git

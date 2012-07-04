@@ -53,7 +53,7 @@ set mouse=a
 if !has("mac")
   set clipboard=unnamed
 endif
-set iskeyword-=_
+set iskeyword+=_
 
 function! CurDir()
   let curdir = substitute(getcwd(), '/home/antonio/', "~/", "g")
@@ -180,3 +180,7 @@ imap <C-t> <ESC>:ToggleWord<CR>
 
 " Make vim-autoclose work with vim-endwise
 let g:AutoCloseExpandEnterOn = ""
+
+set hlsearch    " highlight all matched terms
+" Pressing return clears highlighted search
+nnoremap <CR> :nohlsearch<CR>/<BS>
