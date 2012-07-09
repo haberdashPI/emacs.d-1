@@ -3,8 +3,10 @@ urxvt*scrollBar: false
 urxvt*background: #242424
 urxvt*foreground: white
 urxvt*urlLauncher: chromium
-urxvt*font: xft:dejavusansmono:size=10
-urxvt*boldFont: xft:dejavusansmono:size=10
+urxvt*font: xft:anonymous pro:size=11
+urxvt*boldFont: xft:anonymous pro:size=11
+!urxvt*font: xft:dejavusansmono:size=10
+!urxvt*boldFont: xft:dejavusansmono:size=10
 urxvt*termName: screen-256color
 !urxvt*cursorBlink:      true
 !urxvt*geometry:         100x35
