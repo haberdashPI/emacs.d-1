@@ -17,7 +17,6 @@ urxvt.perl-ext-common: matcher
 urxvt.saveLines: 4000
 urxvt.buffered: 1
 urxvt.urgentOnBell: 1
-urxvt.visualBell: 1
 urxvt.cursorBlink: 1
 
 ! colors
@@ -52,3 +51,4 @@ Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
+
