@@ -9,20 +9,16 @@ urxvt.termName: screen-256color
 urxvt.colorIT: #87af5f
 urxvt.colorBD: #d7d7d7
 urxvt.colorUL: #87afd7
-urxvt.perl-ext: default,url-select
-urxvt.keysym.M-u: perl:url-select:select_next
+urxvt.keysym.M-u: perl:matcher:list
 urxvt.underlineURLs: true
-!URxvt.urlLauncher:   firefox
-!urxvt*cursorBlink:      true
-!urxvt*geometry:         100x35
-!urxvt*internalBorder:   0
-!urxvt*loginShell:       true
-!urxvt*saveLines:        4000
-!urxvt*underlineColor:   #86a2be
-!urxvt.perl-ext-common:      default,matcher
-!urxvt.matcher.button:       1
-!urxvt.matcher.pattern.1:    \bwww\.[\w-]\.[\w./?&@#-]*[\w/-]
-!urxvt.perl-ext-common:      matcher
+urxvt.matcher.button: 1
+urxvt.matcher.pattern.1: \bwww\.[\w-]\.[\w./?&@#-]*[\w/-]
+urxvt.perl-ext-common: matcher
+urxvt.saveLines: 4000
+urxvt.buffered: 1
+urxvt.urgentOnBell: 1
+urxvt.visualBell: 1
+urxvt.cursorBlink: 1
 
 ! colors
 *color0: #242424
@@ -50,9 +46,9 @@ urxvt.underlineURLs: true
 *color15: #dedede
 
 !Xft
-!Xft.autohint: 0
-!Xft.lcdfilter:  lcddefault
-!Xft.hintstyle:  hintfull
-!Xft.hinting: 1
-!Xft.antialias: 1
-!Xft.rgba: rgb
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
