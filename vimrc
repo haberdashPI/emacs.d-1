@@ -210,3 +210,7 @@ function! RSpecCurrent()
 endfunction
 map <leader>r :call RSpecCurrent() <CR>
 command! RSpecCurrent call RSpecCurrent()
+
+" Gist
+let g:gist_detect_filetype = 1
+let g:gist_clip_command = 'xclip -selection clipboard'

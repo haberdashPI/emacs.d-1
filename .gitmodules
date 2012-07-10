@@ -208,3 +208,6 @@
 [submodule "vim/bundle/vim-bclose"]
 	path = vim/bundle/vim-bclose
 	url = https://github.com/cespare/vim-bclose.git
+[submodule "vim/bundle/wepapi-vim"]
+	path = vim/bundle/wepapi-vim
+	url = https://github.com/mattn/webapi-vim.git
