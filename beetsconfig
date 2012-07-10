@@ -1,0 +1,12 @@
+[beets]
+directory: ~/Music
+import_move: yes
+plugins: chroma lyrics rewrite inline embedart lastgenre
+
+[pathfields]
+subdirectory: u'yes' if
+              disctotal > 1 else u''
+
+[paths]
+default: $albumartist/$year - $album%aunique{}/%if{$subdirectory,$disc}/$track - $title
+

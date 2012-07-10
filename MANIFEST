@@ -2,9 +2,11 @@
 
 module Dotfiles
 
-  FILES = {
+  MANIFEST = {
     './Xresources' => '~/.Xresources',
     './xinitrc' => '~/.xinitrc',
+    './beetsconfig' => '~/.beetsconfig',
+    './beets' => '~/.beets',
   }
 
 end
