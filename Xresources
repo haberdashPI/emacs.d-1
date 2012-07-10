@@ -1,13 +1,18 @@
 ! urxvt
-urxvt*scrollBar: false
-urxvt*background: #242424
-urxvt*foreground: white
-urxvt*urlLauncher: chromium
-urxvt*font: xft:anonymous pro:size=11
-urxvt*boldFont: xft:anonymous pro:size=11
-!urxvt*font: xft:dejavusansmono:size=10
-!urxvt*boldFont: xft:dejavusansmono:size=10
-urxvt*termName: screen-256color
+urxvt.scrollBar: false
+urxvt.background: #242424
+urxvt.foreground: white
+urxvt.urlLauncher: chromium
+urxvt.font: xft:dejavusansmono:size=10
+urxvt.boldFont: xft:dejavusansmono:size=10
+urxvt.termName: screen-256color
+urxvt.colorIT: #87af5f
+urxvt.colorBD: #d7d7d7
+urxvt.colorUL: #87afd7
+urxvt.perl-ext: default,url-select
+urxvt.keysym.M-u: perl:url-select:select_next
+urxvt.underlineURLs: true
+!URxvt.urlLauncher:   firefox
 !urxvt*cursorBlink:      true
 !urxvt*geometry:         100x35
 !urxvt*internalBorder:   0
@@ -45,9 +50,9 @@ urxvt*termName: screen-256color
 *color15: #dedede
 
 !Xft
-Xft.dpi: 96
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
+!Xft.autohint: 0
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintfull
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.rgba: rgb
