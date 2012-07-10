@@ -128,7 +128,20 @@ nmap <leader>n :NERDTreeToggle <cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>.'
-nmap <leader>b :CtrlPBuffer <cr>
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_cmd = 'CtrlPMixed'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip  " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_user_command = {
+  \ 'types': {
+  \ 1: ['.git', 'cd %s && git ls-files'],
+  \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+  \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
 
 " VimOrganizer
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
