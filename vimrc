@@ -186,17 +186,11 @@ set hlsearch    " highlight all matched terms
 nnoremap <CR> :nohlsearch<CR>/<BS>
 
 " Rspec
-function! RSpecAll()
-  execute("!clear && rspec spec")
+function! RSpecFile()
+  execute("!clear && rspec " . expand("%p"))
 endfunction
-map <leader><C-r> :call RSpecAll() <CR>
-command! RSpecAll call RSpecAll()
-
-function! RSpecIntegration()
-  execute("!clear && rspec spec/integration")
-endfunction
-map <leader>R :call RSpecIntegration() <CR>
-command! RSpecIntegration call RSpecIntegration()
+map <leader>R :call RSpecFile() <CR>
+command! RSpecFile call RSpecFile()
 
 function! RSpecCurrent()
   execute("!clear && rspec " . expand("%p") . ":" . line("."))
