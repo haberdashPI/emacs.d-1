@@ -22,6 +22,8 @@ fi
 
 xset +fp /usr/share/fonts/local
 xset fp rehash
+# Disable pc speaker
+xset -b
 
 # Start a D-Bus session
 source /etc/X11/xinit/xinitrc.d/30-dbus
