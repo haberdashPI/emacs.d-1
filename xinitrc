@@ -33,6 +33,8 @@ export GPG_AGENT_INFO
 export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID
 
+syndaemon -t -k -i 2 -d &
+
 dropboxd &
 nm-applet --sm-disable &
 keepassx &
