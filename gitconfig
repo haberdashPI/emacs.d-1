@@ -1,0 +1,21 @@
+[user]
+  name = Antonio Santos
+  email = antonio@santosvelasco.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  blame = auto
+[merge]
+  tool = vimdiff
+[alias]
+  aa = add .
+  ci = commit
+  co = checkout
+  slog = log --pretty=format:'%C(white)[%C(yellow)%h%C(white)] %C(blue)(%ad) %C(white)%s %C(green)%cn' --date=local
+  st = status -s
+[core]
+  excludesfile = ~/.gitignore
+[github]
+  user = antonio
+  token = a9ad78d4b5dbb7386ae03db8e74f95ea
