@@ -8,6 +8,7 @@ module Dotfiles
     './beetsconfig' => '~/.beetsconfig',
     './beets' => '~/.beets',
     './gitconfig' => '~/.gitconfig',
+    './tmux.conf' => '~/.tmux.conf',
   }
 
 end
