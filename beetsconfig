@@ -1,12 +1,13 @@
 [beets]
 directory: ~/Music
-import_move: yes
-plugins: chroma lyrics rewrite inline embedart lastgenre
+plugins: chroma lyrics rewrite inline embedart lastgenre web bpd
 
 [pathfields]
 subdirectory: u'yes' if
               disctotal > 1 else u''
 
 [paths]
-default: $albumartist/$year - $album%aunique{}/%if{$subdirectory,$disc}/$track - $title
+default: $albumartist/$year - $album%aunique{}/%if{$subdirectory,disc $disc}/$track - $title
 
+[acoustid]
+apikey=Sbl0mDnP
