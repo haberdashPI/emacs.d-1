@@ -211,3 +211,6 @@
 [submodule "vim/bundle/wepapi-vim"]
 	path = vim/bundle/wepapi-vim
 	url = https://github.com/mattn/webapi-vim.git
+[submodule "vim/bundle/color_highlight"]
+	path = vim/bundle/color_highlight
+	url = https://github.com/chrisbra/color_highlight.git
