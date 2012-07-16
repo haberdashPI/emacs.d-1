@@ -142,6 +142,7 @@ let g:ctrlp_user_command = {
   \ },
   \ 'fallback': 'find %s -type f'
   \ }
+let g:ctrlp_open_multiple_files='1h'
 
 " VimOrganizer
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
