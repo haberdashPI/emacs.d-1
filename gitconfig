@@ -16,6 +16,9 @@
   st = status -s
 [core]
   excludesfile = ~/.gitignore
+  preloadindex = true
+  editor = vim
 [github]
   user = antonio
-  token = a9ad78d4b5dbb7386ae03db8e74f95ea
+[push]
+  default = upstream
