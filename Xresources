@@ -5,7 +5,7 @@ urxvt.foreground: white
 urxvt.urlLauncher: chromium
 urxvt*font: xft:terminus:pixelsize=13.5
 urxvt*boldFont: xft:terminus:pixelsize=13.5
-urxvt.termName: screen-256color
+urxvt.termName: rxvt
 urxvt.colorIT: #c7f464
 urxvt.colorBD: #87afd7
 urxvt.colorUL: #00b4ff
@@ -29,8 +29,8 @@ urxvt.cursorBlink: 1
 *color10: #c7f464
 *color2: #c5f779
 !! yellow
-*color3:#ffffaf
-*color11: #ffffdd
+*color3: #cdcda1
+*color11: #ffffaf
 !! blue
 *color4: #86a2be
 *color12:#a1bee6
