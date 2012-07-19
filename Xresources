@@ -3,8 +3,10 @@ urxvt*scrollBar: false
 urxvt*background: #242424
 urxvt*foreground: white
 urxvt*urlLauncher: chromium
-urxvt*font: xft:terminus:pixelsize=13.5
-urxvt*boldFont: xft:terminus:pixelsize=13.5
+urxvt*font: xft:inconsolata:pixelsize=14.25
+urxvt*boldFont: xft:inconsolata:pixelsize=14.25
+!urxvt*font: xft:terminus:pixelsize=13.5
+!urxvt*boldFont: xft:terminus:pixelsize=13.5
 urxvt*termName: rxvt-256color
 urxvt*colorIT: #c7f464
 urxvt*colorBD: #87afd7
@@ -20,12 +22,12 @@ urxvt*urgentOnBell: 1
 urxvt*cursorBlink: 1
 
 !Xft
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
+!Xft.autohint: 0
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintslight
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.rgba: rgb
 
 ! black
 *color0: #242424
