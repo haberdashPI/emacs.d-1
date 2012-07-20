@@ -3,8 +3,9 @@ urxvt*scrollBar: false
 urxvt*background: #242424
 urxvt*foreground: white
 urxvt*urlLauncher: chromium
-urxvt*font: xft:terminus:pixelsize=13.5
-urxvt*boldFont: xft:terminus:pixelsize=13.5
+urxvt*font: xft:inconsolata:size=15
+urxvt*boldFont:
+urxvt*letterSpace: -1
 urxvt*termName: rxvt-256color
 urxvt*colorIT: #c7f464
 urxvt*colorBD: #87afd7
@@ -17,7 +18,7 @@ urxvt*perl-ext-common: matcher
 urxvt*saveLines: 4000
 urxvt*buffered: 1
 urxvt*urgentOnBell: 1
-urxvt*cursorBlink: 1
+urxvt*cursorBlink: 0
 
 !Xft
 Xft.autohint: 0
@@ -31,7 +32,7 @@ Xft.rgba: rgb
 *color0: #242424
 *color8: #ababab
 ! red
-*color1: #db051c
+*color1: #f20024
 *color9: #f20024
 ! green
 *color2: #a4c433
