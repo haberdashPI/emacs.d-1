@@ -3,7 +3,7 @@ urxvt*scrollBar: false
 urxvt*background: #242424
 urxvt*foreground: white
 urxvt*urlLauncher: chromium
-urxvt*font: xft:inconsolata:size=15
+urxvt*font: xft:Inconsolata:size=11
 urxvt*boldFont:
 urxvt*letterSpace: -1
 urxvt*termName: rxvt-256color
@@ -20,20 +20,12 @@ urxvt*buffered: 1
 urxvt*urgentOnBell: 1
 urxvt*cursorBlink: 0
 
-!Xft
-Xft.autohint: 0
-Xft.lcdfilter:  lcdfull
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
-
 ! black
 *color0: #242424
 *color8: #ababab
 ! red
 *color1: #f20024
-*color9: #f20024
+*color9: #ff4444
 ! green
 *color2: #a4c433
 *color10: #c5f779
@@ -44,8 +36,8 @@ Xft.rgba: rgb
 *color4: #86a2be
 *color12:#a1bee6
 ! magenta
-*color5: #75507b
-*color13: #ad7fa8
+*color5: #cdb5cd
+*color13: #ad7fff
 ! cyan
 *color6: #c9caec
 *color14: #b6defb
