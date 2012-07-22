@@ -6,4 +6,3 @@ beets: ~/.beets
 gitconfig: ~/.gitconfig
 tmux.conf: ~/.tmux.conf
 ncmpcpp: ~/.ncmpcpp/config
-fonts.conf: ~/.fonts.conf
