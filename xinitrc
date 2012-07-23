@@ -13,7 +13,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
     done
 fi
 
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+[[ -f ~/.xinitrc.local ]] && . ~/.xinitrc.local
+
+[[ -f ~/.Xresources ]] && xrdb ~/.Xresources
+[[ -f ~/.Xresources.local ]] && xrdb -merge ~/.Xresources.local
 
 setxkbmap -layout "us,us(intl)" -option "grp:shifts_toggle"
 if [[ $(uname) == "Linux" ]]; then
