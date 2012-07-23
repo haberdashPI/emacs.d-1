@@ -29,7 +29,7 @@ set formatoptions+=n       " support for numbered/bullet lists
 set textwidth=80           " wrap at 80 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
 
-set hlsearch      " highlight search terms
+set nohlsearch      " highlight search terms
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -192,9 +192,9 @@ imap <C-t> <ESC>:ToggleWord<CR>
 " Make vim-autoclose work with vim-endwise
 let g:AutoCloseExpandEnterOn = ""
 
-set hlsearch    " highlight all matched terms
-" Pressing return clears highlighted search
-nnoremap <CR> :nohlsearch<CR>/<BS>
+"set hlsearch    " highlight all matched terms
+"" Pressing return clears highlighted search
+"nnoremap <CR> :nohlsearch<CR>/<BS>
 
 " Rspec
 function! RSpecFile()
@@ -212,3 +212,43 @@ command! RSpecCurrent call RSpecCurrent()
 " Gist
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'xclip -selection clipboard'
+
+" Jump highlight
+function s:Cursor_Moved()
+  let cur_pos = winline()
+  let col_cur_pos = wincol()
+  if g:last_pos == 0
+    "set cul
+    highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=4F2F4F
+    let g:last_pos = cur_pos
+    let g:last_col_pos = col_cur_pos
+    return
+  endif
+  let diff = g:last_pos - cur_pos
+  let col_diff = g:last_col_pos - col_cur_pos
+  if diff > 1 || diff < -1
+    "set cul
+    highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=4F2F4F
+  else
+    highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+    "set nocul
+  endif
+  if col_diff > 1 || col_diff < -1
+    "set cul
+    highlight CursorColumn guifg=NONE guibg=NONE ctermfg=NONE ctermbg=3F2F4F
+  else
+    highlight CursorColumn guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+    "set nocul
+  endif
+  let g:last_pos = cur_pos
+  let g:last_col_pos = col_cur_pos
+endfunction
+autocmd CursorMoved * call s:Cursor_Moved()
+",CursorMovedI
+let g:last_pos = 0
+
+set cursorline
+set cursorcolumn
+autocmd InsertEnter * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=236
+autocmd InsertEnter * highlight CursorColumn guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+autocmd InsertLeave * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
