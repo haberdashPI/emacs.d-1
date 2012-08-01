@@ -214,7 +214,7 @@ let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'xclip -selection clipboard'
 
 " Jump highlight
-function s:Cursor_Moved()
+function! s:Cursor_Moved()
   let cur_pos = winline()
   let col_cur_pos = wincol()
   if g:last_pos == 0
@@ -247,8 +247,12 @@ autocmd CursorMoved * call s:Cursor_Moved()
 ",CursorMovedI
 let g:last_pos = 0
 
-set cursorline
-set cursorcolumn
-autocmd InsertEnter * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=236
-autocmd InsertEnter * highlight CursorColumn guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
-autocmd InsertLeave * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+"set cursorline
+"set cursorcolumn
+"autocmd InsertEnter * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=236
+"autocmd InsertEnter * highlight CursorColumn guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+"autocmd InsertLeave * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+
+" Sessions
+let g:session_autoload = 'yes'
+let g:session_autosave = 'yes'
