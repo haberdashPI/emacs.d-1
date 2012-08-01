@@ -254,5 +254,5 @@ let g:last_pos = 0
 "autocmd InsertLeave * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
 
 " Sessions
-let g:session_autoload = 'yes'
-let g:session_autosave = 'yes'
+let g:session_autoload = 'no'
+let g:session_autosave = 'no'
