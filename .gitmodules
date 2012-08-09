@@ -214,3 +214,6 @@
 [submodule "vim/bundle/vim-session"]
 	path = vim/bundle/vim-session
 	url = https://github.com/xolox/vim-session.git
+[submodule "vim/bundle/vim-hybrid"]
+	path = vim/bundle/vim-hybrid
+	url = https://github.com/w0ng/vim-hybrid.git
