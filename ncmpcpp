@@ -15,7 +15,7 @@
 ## (eg. ncmpc) also use that location.
 ##
 #
-#lyrics_directory = "~/.lyrics"
+lyrics_directory = "~/.lyrics"
 #
 ##### connection settings #####
 #
@@ -249,7 +249,7 @@ mpd_music_dir = "~/Music"
 ##   not available.
 ##
 #
-song_columns_list_format = " (5f)[]{y} (15)[]{A|a} (20)[]{b} (40)[]{t} (5)[]{b}"
+song_columns_list_format = "(10)[blue]{y} (20)[white]{A|a} (20)[blue]{b} (50)[white]{t}"
 #
 ##### various settings #####
 #
@@ -462,13 +462,13 @@ playlist_display_mode = "columns" #(classic/columns)
 #
 #state_flags_color = "default"
 #
-#main_window_color = "yellow"
+main_window_color = "cyan"
 #
 #color1 = "white"
 #
 #color2 = "green"
 #
-#main_window_highlight_color = "yellow"
+main_window_highlight_color = "blue"
 #
 #progressbar_color = "default"
 #
