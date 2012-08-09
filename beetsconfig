@@ -1,6 +1,6 @@
 [beets]
 directory: ~/Music
-plugins: chroma lyrics rewrite inline embedart lastgenre web bpd
+plugins: chroma lyrics rewrite inline embedart lastgenre bpd
 
 [pathfields]
 subdirectory: u'yes' if
