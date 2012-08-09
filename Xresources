@@ -24,8 +24,8 @@ urxvt*cursorBlink: 0
 *color0: #242424
 *color8: #ababab
 ! red
-*color1: #f20024
-*color9: #ff4444
+*color1: #ff4444
+*color9: #f20024
 ! green
 *color2: #a4c433
 *color10: #c5f779
@@ -44,3 +44,4 @@ urxvt*cursorBlink: 0
 ! white
 *color7: #ffffff
 *color15: #dedede
+
