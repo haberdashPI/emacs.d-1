@@ -153,9 +153,6 @@
 [submodule "vim/bundle/Rename2"]
 	path = vim/bundle/Rename2
 	url = https://github.com/vim-scripts/Rename2.git
-[submodule "vim/bundle/snipmate-snippets"]
-	path = vim/bundle/snipmate-snippets
-	url = https://github.com/honza/snipmate-snippets.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
