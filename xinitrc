@@ -23,6 +23,7 @@ if [[ $(uname) == "Linux" ]]; then
 fi
 
 xset +fp /usr/share/fonts/local
+xset +fp ~/.fonts
 xset fp rehash
 # Disable pc speaker
 xset -b
@@ -30,6 +31,8 @@ xrandr --dpi 96
 
 # Start a D-Bus session
 source /etc/X11/xinit/xinitrc.d/30-dbus
+# PolKit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Start GNOME Keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 # You probably need to do this too:
@@ -45,4 +48,4 @@ nm-applet --sm-disable &
 keepassx &
 parcellite &
 
-exec ck-launch-session awesome
+exec ck-launch-session dbus-launch awesome > .xlog 2> .xerrors
