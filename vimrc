@@ -188,8 +188,8 @@ autocmd BufWinLeave * call clearmatches()
 imap <C-l> =><Space>
 
 " Toggle Words
-nmap <C-t> :ToggleWord<CR>
-imap <C-t> <ESC>:ToggleWord<CR>
+nmap <C-t> :Switch<CR>
+imap <C-t> <ESC>:Switch<CR>
 
 " Make vim-autoclose work with vim-endwise
 let g:AutoCloseExpandEnterOn = ""
