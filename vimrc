@@ -150,7 +150,8 @@ let g:ctrlp_open_multiple_files='1h'
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org            call org#SetOrgFileType()
 
-" CoffeeTags
+" Coffeescript
+autocmd BufEnter *.coffee set filetype=coffee
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
         \ 'ctagsbin' : 'coffeetags',
