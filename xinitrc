@@ -44,7 +44,7 @@ export GNOME_KEYRING_PID
 syndaemon -t -k -i 2 -d &
 
 dropboxd &
-nm-applet --sm-disable &
+#nm-applet --sm-disable &
 keepassx &
 parcellite &
 
