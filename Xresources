@@ -45,3 +45,6 @@ urxvt*cursorBlink: 0
 *color7: #ffffff
 *color15: #dedede
 
+! Emacs
+Emacs.FontBackend: xft
+Emacs.font: Inconsolata 11
