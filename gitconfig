@@ -12,7 +12,7 @@
   aa = add .
   ci = commit
   co = checkout
-  slog = log --pretty=format:'%C(white)[%C(yellow)%h%C(white)] %C(blue)(%ad) %C(white)%s %C(green)%cn' --date=local
+  slog = log --pretty=format:'%C(white)[%C(yellow)%h%C(white)] %C(blue)(%ad) %C(white)%s %C(green)%an' --date=local
   st = status -s
   blame = blame -w
 [core]
@@ -23,3 +23,5 @@
   user = antonio
 [push]
   default = upstream
+[credential]
+	helper = cache --timeout=3600
