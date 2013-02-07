@@ -259,3 +259,6 @@ let g:last_pos = 0
 " Sessions
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
+
+" Guardfile
+autocmd BufEnter Guardfile set filetype=ruby
