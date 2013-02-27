@@ -1,8 +1,15 @@
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 ! urxvt
 urxvt*scrollBar: false
 urxvt*background: #242424
 urxvt*foreground: white
-urxvt*urlLauncher: chromium
+urxvt*url-launcher: chromium
 urxvt*font: xft:Inconsolata:size=11
 urxvt*boldFont:
 urxvt*letterSpace: -1
@@ -14,7 +21,7 @@ urxvt*keysym.M-u: perl:matcher:list
 urxvt*underlineURLs: true
 urxvt*matcher.button: 1
 urxvt*matcher.pattern.1: \bwww\.[\w-]\.[\w./?&@#-]*[\w/-]
-urxvt*perl-ext-common: matcher
+URxvt.perl-ext-common : default,matcher
 urxvt*saveLines: 4000
 urxvt*buffered: 1
 urxvt*urgentOnBell: 1
