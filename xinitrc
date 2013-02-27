@@ -48,4 +48,4 @@ dropboxd &
 keepassx &
 parcellite &
 
-exec ck-launch-session dbus-launch awesome > .xlog 2> .xerrors
+exec awesome > .xlog 2> .xerrors
