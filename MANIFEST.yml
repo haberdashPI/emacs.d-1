@@ -6,3 +6,4 @@ beets: ~/.beets
 gitconfig: ~/.gitconfig
 tmux.conf: ~/.tmux.conf
 ncmpcpp: ~/.ncmpcpp/config
+termite: ~/.config/termite/config
