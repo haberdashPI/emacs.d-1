@@ -216,49 +216,12 @@ command! RSpecCurrent call RSpecCurrent()
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'xclip -selection clipboard'
 
-" Jump highlight
-function! s:Cursor_Moved()
-  let cur_pos = winline()
-  let col_cur_pos = wincol()
-  if g:last_pos == 0
-    "set cul
-    highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=4F2F4F
-    let g:last_pos = cur_pos
-    let g:last_col_pos = col_cur_pos
-    return
-  endif
-  let diff = g:last_pos - cur_pos
-  let col_diff = g:last_col_pos - col_cur_pos
-  if diff > 1 || diff < -1
-    "set cul
-    highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=4F2F4F
-  else
-    highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
-    "set nocul
-  endif
-  if col_diff > 1 || col_diff < -1
-    "set cul
-    highlight CursorColumn guifg=NONE guibg=NONE ctermfg=NONE ctermbg=3F2F4F
-  else
-    highlight CursorColumn guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
-    "set nocul
-  endif
-  let g:last_pos = cur_pos
-  let g:last_col_pos = col_cur_pos
-endfunction
-autocmd CursorMoved * call s:Cursor_Moved()
-",CursorMovedI
-let g:last_pos = 0
-
-"set cursorline
-"set cursorcolumn
-"autocmd InsertEnter * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=236
-"autocmd InsertEnter * highlight CursorColumn guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
-"autocmd InsertLeave * highlight CursorLine guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
-
 " Sessions
-let g:session_autoload = 'no'
-let g:session_autosave = 'no'
+let g:session_autoload = 1
+let g:session_autosave = 1
 
 " Guardfile
 autocmd BufEnter Guardfile set filetype=ruby
+
+" Slim
+autocmd BufEnter *.slim set filetype=slim
