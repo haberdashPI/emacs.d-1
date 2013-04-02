@@ -114,7 +114,7 @@ set pastetoggle=<F2>
 
 " Pathogen allows to deploy plugins in ~/.vim/bundle
 call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 
 " Yankring
 let g:yankring_history_file='.yankring'
