@@ -219,6 +219,3 @@
 [submodule "vim/bundle/vim-slim"]
 	path = vim/bundle/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
-[submodule "vim/bundle/vim-rubytest"]
-	path = vim/bundle/vim-rubytest
-	url = git://github.com/janx/vim-rubytest.git
