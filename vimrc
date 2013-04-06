@@ -199,15 +199,24 @@ let g:AutoCloseExpandEnterOn = ""
 "" Pressing return clears highlighted search
 "nnoremap <CR> :nohlsearch<CR>/<BS>
 
+
+function! RspecCmd()
+  if findfile(".zeus.sock") == ".zeus.sock"
+    return "zeus rspec"
+  else
+    return "rspec"
+  endif
+endfunction
+
 " Rspec
 function! RSpecFile()
-  execute("!clear && rspec " . expand("%p"))
+  execute("!clear && " . RspecCmd() . " " . expand("%p"))
 endfunction
 map <leader>R :call RSpecFile() <CR>
 command! RSpecFile call RSpecFile()
 
 function! RSpecCurrent()
-  execute("!clear && rspec " . expand("%p") . ":" . line("."))
+  execute("!clear && " . RspecCmd() . " " . expand("%p") . ":" . line("."))
 endfunction
 map <leader>r :call RSpecCurrent() <CR>
 command! RSpecCurrent call RSpecCurrent()
