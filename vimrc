@@ -71,11 +71,8 @@ endfunction
 
 filetype plugin indent on
 
-map <space> /
-map <c-space> ?
 nmap <C-j> :bn <CR>
 nmap <C-k> :bp <CR>
-nmap <silent> ,<space> :nohlsearch<CR>
 nmap <leader>w :w!<CR>
 " Automatic sudo
 cmap w!! w !sudo tee % >/dev/null
@@ -195,10 +192,21 @@ imap <C-t> <ESC>:Switch<CR>
 " Make vim-autoclose work with vim-endwise
 let g:AutoCloseExpandEnterOn = ""
 
-"set hlsearch    " highlight all matched terms
-"" Pressing return clears highlighted search
-"nnoremap <CR> :nohlsearch<CR>/<BS>
+function! HlSearch()
+  let @/=""
+  set hlsearch incsearch
+  call feedkeys('/')
+endfunction
 
+function! BackHlSearch()
+  let @/=""
+  set hlsearch incsearch
+  call feedkeys('?')
+endfunction
+
+map <space>:call HlSearch()<CR>
+map <c-space>:call BackHlSearch()<CR>
+nnoremap <CR> :nohlsearch<CR>/<BS>
 
 function! RspecCmd()
   if findfile(".zeus.sock") == ".zeus.sock"
