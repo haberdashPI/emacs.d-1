@@ -234,8 +234,10 @@ let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'xclip -selection clipboard'
 
 " Sessions
+let g:session_default_to_last = 1
 let g:session_autoload = 1
 let g:session_autosave = 1
+let g:session_directory = getcwd() . '/.vim-sessions'
 
 " Guardfile
 autocmd BufEnter Guardfile set filetype=ruby
