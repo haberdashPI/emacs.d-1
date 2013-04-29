@@ -192,21 +192,9 @@ imap <C-t> <ESC>:Switch<CR>
 " Make vim-autoclose work with vim-endwise
 let g:AutoCloseExpandEnterOn = ""
 
-function! HlSearch()
-  let @/=""
-  set hlsearch incsearch
-  call feedkeys('/')
-endfunction
-
-function! BackHlSearch()
-  let @/=""
-  set hlsearch incsearch
-  call feedkeys('?')
-endfunction
-
-map <space>:call HlSearch()<CR>
-map <c-space>:call BackHlSearch()<CR>
-nnoremap <CR> :nohlsearch<CR>/<BS>
+map <space> /
+map <c-space> ?
+nnoremap <CR> :nohlsearch<CR>
 
 function! RspecCmd()
   if findfile(".zeus.sock") == ".zeus.sock"
