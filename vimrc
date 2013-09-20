@@ -237,7 +237,7 @@ nno <leader>cd :<C-u>Unite directory_mru directory -start-insert -buffer-name=cd
 " vim-airline
 let g:airline_powerline_fonts = 1
 
-set undodir=/home/antonio/.vim/undo " where to save undo histories
-set undolevels=1000                 " How many undos
-set undoreload=10000                " number of lines to save for undo
-set undofile                        " Save undo's after file closes
+set undodir=~/.vim/undo " where to save undo histories
+set undolevels=1000     " How many undos
+set undoreload=10000    " number of lines to save for undo
+set undofile            " Save undo's after file closes
