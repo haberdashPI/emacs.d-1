@@ -282,3 +282,8 @@ nnoremap ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 " Snippets
 imap <C-s> <Plug>snipMateNextOrTrigger
 smap <C-s> <Plug>snipMateNextOrTrigger
+
+" Trailing white spaces
+:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+:au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+:au InsertLeave * match ExtraWhitespace /\s\+$/
