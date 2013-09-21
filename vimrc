@@ -7,58 +7,58 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Plugins
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'AndrewRadev/switch.vim'             
-NeoBundle 'MarcWeber/vim-addon-mw-utils'       
-NeoBundle 'ReekenX/vim-rename2'                
-NeoBundle 'Rykka/colorv.vim'                   
-NeoBundle 'Shougo/unite.vim'                   
-NeoBundle 'Shougo/vimproc'                     
-NeoBundle 'bling/vim-airline'                  
-NeoBundle 'cakebaker/scss-syntax.vim'          
-NeoBundle 'chrisbra/NrrwRgn'                   
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'ReekenX/vim-rename2'
+NeoBundle 'Rykka/colorv.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'danchoi/ri.vim'
 NeoBundle 'danro/rename.vim'
 NeoBundle 'edsono/vim-matchit'
 NeoBundle 'ervandew/supertab'
-NeoBundle 'garbas/vim-snipmate'                
+NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'honza/vim-snippets'                 
+NeoBundle 'honza/vim-snippets'
 NeoBundle 'jnwhiteh/vim-golang'
-NeoBundle 'kchmck/vim-coffee-script'           
-NeoBundle 'kien/rainbow_parentheses.vim'       
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'lucapette/vim-ruby-doc'
-NeoBundle 'majutsushi/tagbar'                  
+NeoBundle 'majutsushi/tagbar'
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'
-NeoBundle 'mattn/gist-vim'                     
-NeoBundle 'mattn/webapi-vim'                   
-NeoBundle 'pangloss/vim-javascript'            
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'rgarver/Kwbd.vim'
-NeoBundle 'scrooloose/nerdcommenter'           
-NeoBundle 'scrooloose/nerdtree'                
-NeoBundle 'scrooloose/syntastic'               
-NeoBundle 'sjl/gundo.vim'                      
-NeoBundle 'slim-template/vim-slim'             
-NeoBundle 'stephenmckinney/vim-dochub'             
-NeoBundle 'terryma/vim-multiple-cursors'       
-NeoBundle 'tomtom/tcomment_vim'                
-NeoBundle 'tomtom/tlib_vim'                    
-NeoBundle 'tpope/vim-bundler'                  
-NeoBundle 'tpope/vim-cucumber'                 
-NeoBundle 'tpope/vim-dispatch'                  
-NeoBundle 'tpope/vim-endwise'                  
-NeoBundle 'tpope/vim-fugitive'                 
-NeoBundle 'tpope/vim-git'                      
-NeoBundle 'tpope/vim-haml'                     
-NeoBundle 'tpope/vim-markdown'                 
-NeoBundle 'tpope/vim-rails'                    
-NeoBundle 'tpope/vim-rake'                     
-NeoBundle 'tpope/vim-repeat'                     
-NeoBundle 'tpope/vim-surround'                 
-NeoBundle 'vim-ruby/vim-ruby'                 
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'stephenmckinney/vim-dochub'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-git'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/ruby-matchit'
-NeoBundle 'xolox/vim-misc'                     
-NeoBundle 'xolox/vim-session'                  
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-session'
 
 NeoBundle 'Align'
 NeoBundle 'ZoomWin'
@@ -69,49 +69,49 @@ NeoBundle 'tpope/vim-vividchalk'
 
 " General configuration
 set nocompatible
-set laststatus=2                         " Always show the statusline                                               
-set encoding=utf-8                       " Necessary to show Unicode glyphs                                         
-let mapleader=","                                                                        
-let g:mapleader =","                                                                        
+set laststatus=2                         " Always show the statusline
+set encoding=utf-8                       " Necessary to show Unicode glyphs
+let mapleader=","
+let g:mapleader =","
 set hidden
-set nowrap                               " don't wrap lines                                                         
-set tabstop=2                            " a tab is four spaces                                                     
+set nowrap                               " don't wrap lines
+set tabstop=2                            " a tab is four spaces
 set backspace=indent,eol,start
-set number                               " always show line numbers                                                 
-set shiftwidth=2                         " number of spaces to use for autoindenting                                
-set shiftround                           " use multiple of shiftwidth when indenting with '<' and '>'               
-set showmatch                            " set show matching parenthesis                                            
-set ignorecase                           " ignore case when searching                                               
-set smartcase                            " ignore case if search pattern is all lowercase, case-sensitive otherwise 
-set autoindent                           " automatic indent new lines                                               
-set smartindent                          " be smart about it                                                        
-set softtabstop=2                        " yep, two                                                                 
-set shiftwidth=2                         " ..                                                                       
-set expandtab                            " expand tabs to spaces                                                    
-set nosmarttab                           " fuck tabs                                                                
-set formatoptions+=n                     " support for numbered/bullet lists                                        
-set textwidth=80                         " wrap at 80 chars by default                                              
-set virtualedit=block                    " allow virtual edit in visual block ..                                    
+set number                               " always show line numbers
+set shiftwidth=2                         " number of spaces to use for autoindenting
+set shiftround                           " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch                            " set show matching parenthesis
+set ignorecase                           " ignore case when searching
+set smartcase                            " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set autoindent                           " automatic indent new lines
+set smartindent                          " be smart about it
+set softtabstop=2                        " yep, two
+set shiftwidth=2                         " ..
+set expandtab                            " expand tabs to spaces
+set nosmarttab                           " fuck tabs
+set formatoptions+=n                     " support for numbered/bullet lists
+set textwidth=80                         " wrap at 80 chars by default
+set virtualedit=block                    " allow virtual edit in visual block ..
 
-set hlsearch                             " highlight search terms                                                    
-set history=1000                         " remember more commands and search history                                 
-set undolevels=1000                      " use many muchos levels of undo                                            
+set hlsearch                             " highlight search terms
+set history=1000                         " remember more commands and search history
+set undolevels=1000                      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set title                                " change the terminal's title                                               
-set visualbell                           " don't beep                                                                
-set noerrorbells                         " don't beep                                                                
+set title                                " change the terminal's title
+set visualbell                           " don't beep
+set noerrorbells                         " don't beep
 set nobackup
 set noswapfile
-set wildmenu                             " turn on wild menu                                                         
-set wildmode=longest,list                " filename completion                                                       
-set ruler                                " Always show current positions along the bottom                            
-set cmdheight=2                          " the command bar is 2 high                                                 
+set wildmenu                             " turn on wild menu
+set wildmode=longest,list                " filename completion
+set ruler                                " Always show current positions along the bottom
+set cmdheight=2                          " the command bar is 2 high
 set t_Co=256
-set showmatch                            " show matching brackets                                                    
-set mat=5                                " how many tenths of a second to blink matching brackets for                
-set so=10                                " Keep 10 lines (top/bottom) for scope                                      
+set showmatch                            " show matching brackets
+set mat=5                                " how many tenths of a second to blink matching brackets for
+set so=10                                " Keep 10 lines (top/bottom) for scope
 set wrap
-set gdefault                             " global substitution by default                                            
+set gdefault                             " global substitution by default
 set formatoptions=qrn1
 set mouse=a
 set clipboard=unnamed
@@ -141,6 +141,12 @@ if has('autocmd')
   autocmd bufwritepost vimrc source $HOME/.vimrc " autoreaload .vimrc
   autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 endif
+
+" Trailing white spaces
+:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+:au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+:au InsertLeave * match ExtraWhitespace /\s\+$/
+:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Color
 if &t_Co >= 256 || has("gui_running")
@@ -283,7 +289,3 @@ nnoremap ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 imap <C-s> <Plug>snipMateNextOrTrigger
 smap <C-s> <Plug>snipMateNextOrTrigger
 
-" Trailing white spaces
-:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-:au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-:au InsertLeave * match ExtraWhitespace /\s\+$/
