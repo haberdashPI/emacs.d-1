@@ -1,10 +1,11 @@
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set runtimepath+=$GOROOT/misc/vim
 endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Plugins
-NeoBundleFetch   'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'AndrewRadev/switch.vim'             
 NeoBundle 'MarcWeber/vim-addon-mw-utils'       
@@ -15,29 +16,31 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'bling/vim-airline'                  
 NeoBundle 'cakebaker/scss-syntax.vim'          
 NeoBundle 'chrisbra/NrrwRgn'                   
-NeoBundle 'danchoi/ri.vim'                   
-" NeoBundle 'ervandew/supertab'                  
+NeoBundle 'danchoi/ri.vim'
+NeoBundle 'danro/rename.vim'
+NeoBundle 'edsono/vim-matchit'
+NeoBundle 'ervandew/supertab'
 NeoBundle 'garbas/vim-snipmate'                
+NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'honza/vim-snippets'                 
+NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'kchmck/vim-coffee-script'           
 NeoBundle 'kien/rainbow_parentheses.vim'       
-NeoBundle 'lepture/vim-css'                    
 NeoBundle 'lucapette/vim-ruby-doc'
 NeoBundle 'majutsushi/tagbar'                  
+NeoBundle 'MarcWeber/vim-addon-local-vimrc'
 NeoBundle 'mattn/gist-vim'                     
 NeoBundle 'mattn/webapi-vim'                   
-NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'            
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'rgarver/Kwbd.vim'
 NeoBundle 'scrooloose/nerdcommenter'           
 NeoBundle 'scrooloose/nerdtree'                
 NeoBundle 'scrooloose/syntastic'               
 NeoBundle 'sjl/gundo.vim'                      
 NeoBundle 'slim-template/vim-slim'             
 NeoBundle 'stephenmckinney/vim-dochub'             
-NeoBundle 't9md/vim-unite-ack' " Check config! 
 NeoBundle 'terryma/vim-multiple-cursors'       
-NeoBundle 'thoughtbot/vim-rspec'                
 NeoBundle 'tomtom/tcomment_vim'                
 NeoBundle 'tomtom/tlib_vim'                    
 NeoBundle 'tpope/vim-bundler'                  
@@ -52,8 +55,8 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-rake'                     
 NeoBundle 'tpope/vim-repeat'                     
 NeoBundle 'tpope/vim-surround'                 
-NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'vim-ruby/vim-ruby'                 
+NeoBundle 'vim-scripts/ruby-matchit'
 NeoBundle 'xolox/vim-misc'                     
 NeoBundle 'xolox/vim-session'                  
 
@@ -111,9 +114,7 @@ set wrap
 set gdefault                             " global substitution by default                                            
 set formatoptions=qrn1
 set mouse=a
-if !has("mac")
-  set clipboard=unnamed
-endif
+set clipboard=unnamed
 set iskeyword+=_
 
 filetype plugin indent on
@@ -206,14 +207,10 @@ endfunction
 function! RSpecFile()
   execute("!clear && " . RspecCmd() . " " . expand("%p"))
 endfunction
-map <leader>R :call RSpecFile() <CR>
-command! RSpecFile call RSpecFile()
 
 function! RSpecCurrent()
   execute("!clear && " . RspecCmd() . " " . expand("%p") . ":" . line("."))
 endfunction
-map <leader>r :call RSpecCurrent() <CR>
-command! RSpecCurrent call RSpecCurrent()
 
 " Gist
 let g:gist_detect_filetype = 1
@@ -232,13 +229,56 @@ autocmd BufEnter Guardfile set filetype=ruby
 autocmd BufEnter *.slim set filetype=slim
 
 " Unite
-nno <leader>. :<C-u>Unite file_mru file_rec/async:! -start-insert -buffer-name=files<CR>
-nno <leader>cd :<C-u>Unite directory_mru directory -start-insert -buffer-name=cd -default-action=cd<CR>
+let g:unite_source_history_yank_enable = 1
+let g:unite_split_rule = 'botright'
+let g:unite_enable_start_insert = 1
+let g:unite_source_rec_max_cache_files = 10000
+
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()"{{{
+  " Overwrite settings.
+
+  nmap <buffer> <ESC>      <Plug>(unite_exit)
+
+  imap <buffer> <TAB>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
+  nmap <buffer> <C-l> <Plug>(unite_redraw)
+
+endfunction"}}}
+
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--noheading --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+elseif executable('ack')
+  let g:unite_source_grep_command = 'ack'
+  let g:unite_source_grep_default_opts = '--no-heading --no-color -a -H'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nno <leader>. :<C-u>Unite file_rec/async:! -start-insert<CR>
+nno <leader>b :<C-u>Unite buffer -start-insert<CR>
+nno <leader>y :<C-u>Unite history/yank -start-insert<CR>
+nno <leader>o :<C-u>Unite outline -start-insert<CR>
+nno <leader>f :<C-u>Unite grep:.<CR>
 
 " vim-airline
 let g:airline_powerline_fonts = 1
 
-set undodir=/home/antonio/.vim/undo " where to save undo histories     
-set undolevels=1000                 " How many undos                   
-set undoreload=10000                " number of lines to save for undo 
-set undofile                        " Save undo's after file closes    
+set undodir=~/.vim/undo " where to save undo histories
+set undolevels=1000     " How many undos
+set undoreload=10000    " number of lines to save for undo
+set undofile            " Save undo's after file closes
+
+map <leader>R :call RSpecFile() <CR>
+command! RSpecFile call RSpecFile()
+map <leader>r :call RSpecCurrent() <CR>
+command! RSpecCurrent call RSpecCurrent()
+
+nnoremap ,ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
+nnoremap ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
+nnoremap ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
+
+" Snippets
+imap <C-s> <Plug>snipMateNextOrTrigger
+smap <C-s> <Plug>snipMateNextOrTrigger
