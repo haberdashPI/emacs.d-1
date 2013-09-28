@@ -266,6 +266,7 @@ elseif executable('ack')
   let g:unite_source_grep_recursive_opt = ''
 endif
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
 nno <leader>. :<C-u>Unite file_rec/async:! -start-insert<CR>
 nno <leader>b :<C-u>Unite buffer -start-insert<CR>
 nno <leader>y :<C-u>Unite history/yank -start-insert<CR>
