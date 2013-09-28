@@ -201,19 +201,15 @@ map <space> /
 map <c-space> ?
 nnoremap <CR> :nohlsearch<CR>
 
-function! PreRspecCmd()
-  if match(system("nc -z localhost 2113"), "succeeded")
-    return "jruby --ng -S "
-  else
-    return ""
-  endif
-endfunction
-
 function! RspecCmd()
+  let l:precmd = ""
+  if g:jruby == 1
+    let l:precmd = "jruby --ng -S "
+  endif
   if findfile(".zeus.sock") == ".zeus.sock"
     return "zeus rspec"
   else
-    return PreRspecCmd() . "rspec"
+    return l:precmd . "rspec"
   endif
 endfunction
 
