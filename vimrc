@@ -13,7 +13,14 @@ NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'ReekenX/vim-rename2'
 NeoBundle 'Rykka/colorv.vim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 NeoBundle 'bling/vim-airline'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'chrisbra/NrrwRgn'
