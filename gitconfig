@@ -25,6 +25,6 @@
 [push]
   default = upstream
 [credential]
-	helper = cache --timeout=3600
+	helper = netrc -f ~/.netrc.gpg -v
 [rerere]
 	enabled = true
