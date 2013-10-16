@@ -7,6 +7,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Plugins
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'antonio/ri.vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
@@ -333,3 +334,9 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
+
+" Splitjoin
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
