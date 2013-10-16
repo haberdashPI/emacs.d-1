@@ -7,6 +7,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Plugins
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'antonio/ri.vim'
@@ -340,3 +341,7 @@ let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
+
+" Sideways
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
