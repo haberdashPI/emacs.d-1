@@ -303,12 +303,8 @@ nnoremap ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_refresh_always = 1
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:neocomplete#disable_auto_complete = 1
+inoremap <expr><CR> pumvisible() ? neocomplete#smart_close_popup() : "\<C-g>u\<CR>"
 let g:neocomplete#force_overwrite_completefunc = 1
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -328,13 +324,16 @@ endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
 let g:neocomplete#keyword_patterns.perl = '\h\w*->\h\w*\|\h\w*::\w*'
 
-" Neosnippet
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+" Hypertab
+imap <expr><TAB> pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_expand_or_jump)"
+        \: neocomplete#start_manual_complete()
+  function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction"}}}
 
 " Splitjoin
 let g:splitjoin_split_mapping = ''
@@ -345,3 +344,6 @@ nmap sk :SplitjoinJoin<cr>
 " Sideways
 nnoremap <c-h> :SidewaysLeft<cr>
 nnoremap <c-l> :SidewaysRight<cr>
+
+" Endwise
+let g:endwise_no_mappings = 1
