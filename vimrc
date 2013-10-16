@@ -301,6 +301,7 @@ nnoremap ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_refresh_always = 1
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
