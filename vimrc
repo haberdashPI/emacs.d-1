@@ -232,6 +232,11 @@ function! RSpecCurrent()
   execute("!clear && " . RspecCmd() . " " . expand("%p") . ":" . line("."))
 endfunction
 
+map <leader>R :call RSpecFile() <CR>
+command! RSpecFile call RSpecFile()
+map <leader>r :call RSpecCurrent() <CR>
+command! RSpecCurrent call RSpecCurrent()
+
 " Gist
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'xclip -selection clipboard'
@@ -290,11 +295,6 @@ set undodir=~/.vim/undo " where to save undo histories
 set undolevels=1000     " How many undos
 set undoreload=10000    " number of lines to save for undo
 set undofile            " Save undo's after file closes
-
-map <leader>R :call RSpecFile() <CR>
-command! RSpecFile call RSpecFile()
-map <leader>r :call RSpecCurrent() <CR>
-command! RSpecCurrent call RSpecCurrent()
 
 nnoremap ,ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
 nnoremap ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
