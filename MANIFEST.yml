@@ -1,8 +1,7 @@
 ---
 Xresources: ~/.Xresources
 xinitrc: ~/.xinitrc
-beetsconfig: ~/.beetsconfig
-beets: ~/.beets
+beets: ~/.config/beets
 gitconfig: ~/.gitconfig
 tmux.conf: ~/.tmux.conf
 ncmpcpp: ~/.ncmpcpp/config
