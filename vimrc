@@ -125,7 +125,7 @@ set gdefault                             " global substitution by default
 set formatoptions=qrn1
 set mouse=a
 set clipboard=unnamed
-set iskeyword+=_
+set iskeyword-=_
 
 filetype plugin indent on
 
