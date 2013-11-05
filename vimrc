@@ -212,7 +212,7 @@ nnoremap <CR> :nohlsearch<CR>
 
 function! RspecCmd()
   let l:precmd = ""
-  if g:jruby == 1
+  if exists("g:jruby")
     let l:precmd = "jruby --ng -S "
   endif
   if findfile(".zeus.sock") == ".zeus.sock"
@@ -224,11 +224,11 @@ endfunction
 
 " Rspec
 function! RSpecFile()
-  execute("!clear && " . RspecCmd() . " " . expand("%p"))
+  execute(":Dispatch " . RspecCmd() . " " . expand("%p"))
 endfunction
 
 function! RSpecCurrent()
-  execute("!clear && " . RspecCmd() . " " . expand("%p") . ":" . line("."))
+  execute(":Dispatch " . RspecCmd() . " " . expand("%p") . ":" . line("."))
 endfunction
 
 map <leader>R :call RSpecFile() <CR>
