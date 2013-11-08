@@ -48,6 +48,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'skalnik/vim-vroom'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'stephenmckinney/vim-dochub'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -211,32 +212,6 @@ map <space> /
 map <c-space> ?
 nnoremap <CR> :nohlsearch<CR>
 
-function! RspecCmd()
-  let l:precmd = ""
-  if g:jruby == 1
-    let l:precmd = "jruby --ng -S "
-  endif
-  if findfile(".zeus.sock") == ".zeus.sock"
-    return "zeus rspec"
-  else
-    return l:precmd . "rspec"
-  endif
-endfunction
-
-" Rspec
-function! RSpecFile()
-  execute("!clear && " . RspecCmd() . " " . expand("%p"))
-endfunction
-
-function! RSpecCurrent()
-  execute("!clear && " . RspecCmd() . " " . expand("%p") . ":" . line("."))
-endfunction
-
-map <leader>R :call RSpecFile() <CR>
-command! RSpecFile call RSpecFile()
-map <leader>r :call RSpecCurrent() <CR>
-command! RSpecCurrent call RSpecCurrent()
-
 " Gist
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'xclip -selection clipboard'
@@ -347,3 +322,10 @@ nnoremap <c-l> :SidewaysRight<cr>
 
 " Endwise
 let g:endwise_no_mappings = 1
+
+" vim-vroom
+let g:vroom_map_keys = 0
+let g:vroom_use_dispatch = 1
+let g:vroom_use_zeus = 1
+nmap <leader>r :VroomRunNearestTest<cr>
+nmap <leader>R :VroomRunTestFile<cr>
