@@ -324,7 +324,7 @@ let g:endwise_no_mappings = 1
 
 " vim-vroom
 let g:vroom_map_keys = 0
-let g:vroom_use_dispatch = 1
-let g:vroom_use_zeus = 1
+let g:vroom_use_dispatch = 0
+let g:vroom_use_zeus = 0
 nmap <leader>r :VroomRunNearestTest<cr>
 nmap <leader>R :VroomRunTestFile<cr>
