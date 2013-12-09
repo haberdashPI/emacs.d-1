@@ -17,6 +17,7 @@ NeoBundle 'Rykka/colorv.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
@@ -30,7 +31,6 @@ NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'danro/rename.vim'
 NeoBundle 'edsono/vim-matchit'
-NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'jnwhiteh/vim-golang'
