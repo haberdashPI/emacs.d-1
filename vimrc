@@ -160,6 +160,7 @@ endif
 
 " Color
 if &t_Co >= 256 || has("gui_running")
+  set background=dark
   colorscheme mustang
 endif
 
