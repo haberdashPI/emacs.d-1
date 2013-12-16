@@ -30,13 +30,10 @@ var focusLastWindow = function() {
 };
 
 slate.bind("1:cmd", slate.operation("focus", { app: "Google Chrome" }));
-slate.bind("2:cmd", focusWindow("cms"));
-slate.bind("3:cmd", focusWindow("zaynar"));
-slate.bind("4:cmd", focusWindow("libs"));
-slate.bind("5:cmd", focusWindow("nexus"));
-slate.bind("7:cmd", slate.operation("focus", { app: "Mail" }));
+slate.bind("2:cmd", slate.operation("focus", { app: "GitHub Chat" }));
+slate.bind("7:cmd", slate.operation("focus", { app: "iTunes" }));
 slate.bind("8:cmd", slate.operation("focus", { app: "Adium" }));
-slate.bind("9:cmd", focusWindow("Terminal"));
+slate.bind("9:cmd", focusWindow("Shell"));
 slate.bind("esc:cmd", focusLastWindow);
 slate.bind("return:cmd", fullScreen);
 
