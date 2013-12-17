@@ -265,6 +265,7 @@ nno <leader>f :<C-u>Unite grep:.<CR>
 
 " vim-airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'tomorrow'
 
 set undodir=~/.vim/undo " where to save undo histories
 set undolevels=1000     " How many undos
