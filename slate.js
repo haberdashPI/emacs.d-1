@@ -33,7 +33,7 @@ slate.bind("1:cmd", slate.operation("focus", { app: "Google Chrome" }));
 slate.bind("2:cmd", slate.operation("focus", { app: "GitHub Chat" }));
 slate.bind("7:cmd", slate.operation("focus", { app: "iTunes" }));
 slate.bind("8:cmd", slate.operation("focus", { app: "Adium" }));
-slate.bind("9:cmd", focusWindow("Shell"));
+slate.bind("9:cmd", slate.operation("focus", { app: "iTerm" }));
 slate.bind("esc:cmd", focusLastWindow);
 slate.bind("return:cmd", fullScreen);
 
