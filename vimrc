@@ -29,6 +29,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'bling/vim-airline'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'chrisbra/NrrwRgn'
+NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'danro/rename.vim'
 NeoBundle 'edsono/vim-matchit'
 NeoBundle 'honza/vim-snippets'
@@ -159,15 +160,10 @@ endif
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Color
-if &t_Co >= 256 || has("gui_running")
-  set background=dark
-  colorscheme mustang
-endif
-
-if &t_Co > 2 || has("gui_running")
-  " switch syntax highlighting on, when the terminal has colors
-  syntax on
-endif
+set background=dark
+syntax on
+let base16colorspace=256  " Access colors present in 256 colorspace"
+colorscheme base16-tomorrow
 
 set pastetoggle=<F2>
 
