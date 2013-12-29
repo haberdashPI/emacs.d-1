@@ -1,18 +1,19 @@
-# Automatically migrated from legacy .beetsconfig.
-
-directory: /media/data/Music/.recent
-plugins: chroma rewrite inline lastgenre scrub fetchart embedart
-
-import:
-    move: true
-
-pathfields:
-    subdirectory: 'u''yes'' if
-
-        disctotal > 1 else u'''''
+directory: ~/Music/
+plugins: chroma rewrite inline lastgenre lyrics scrub fetchart embedart discogs zero ftintitle duplicates missing
+original_date: yes
 
 paths:
-    default: $albumartist/$year - $album%aunique{}/%if{$subdirectory,disc $disc}/$track - $title
+  default: $albumartist/$year - $album%aunique{}/$track - $title
+
+import:
+  languages:
+    - en
 
 acoustid:
-    apikey: 14bfpR0w
+  apikey: 14bfpR0w
+
+lastgenre:
+  canonical: ''
+
+zero:
+  fields: comments
