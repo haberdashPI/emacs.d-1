@@ -22,6 +22,8 @@
   editor = vim
 [github]
   user = antonio
+[hub]
+  protocol = https
 [push]
   default = upstream
 [credential]
