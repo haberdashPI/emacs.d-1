@@ -6,6 +6,7 @@ paths:
   default: $albumartist/$year - $album%aunique{}/$track - $title
 
 import:
+  move: yes
   languages:
     - en
 
