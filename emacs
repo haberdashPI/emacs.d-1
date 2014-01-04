@@ -14,7 +14,8 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
+(setq el-get-user-package-directory "~/.emacs.d/init-files/")
 (el-get 'sync)
 
 ;; Column/Row numbering
