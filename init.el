@@ -3,6 +3,7 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
 (setq el-get-user-package-directory "~/.emacs.d/init-files/")
@@ -18,6 +19,6 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
-(setq el-get-packages '(evil))
+(setq el-get-packages '(evil org))
 
 (el-get 'sync el-get-packages)
