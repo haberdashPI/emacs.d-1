@@ -1,9 +1,9 @@
 (load "~/.emacs.d/custom.el")
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(("org" . "http://orgmode.org/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
 (setq el-get-user-package-directory "~/.emacs.d/init-files/")
@@ -16,7 +16,7 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
 (el-get 'sync)
 
 (setq el-get-packages '(evil org))
