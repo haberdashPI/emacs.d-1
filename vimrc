@@ -326,9 +326,3 @@ let g:vroom_use_dispatch = 0
 let g:vroom_use_zeus = 0
 nmap <leader>r :VroomRunNearestTest<cr>
 nmap <leader>R :VroomRunTestFile<cr>
-
-" Window Movement
-noremap <c-s-h> <c-w>h
-noremap <c-s-j> <c-w>j
-noremap <c-s-k> <c-w>k
-noremap <c-s-l> <c-w>l
