@@ -54,9 +54,6 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program (getenv "BROWSER"))
 
-;; delete trailing whitespaces when saving buffer
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 ;; comment or uncomment region
 (defun comment-or-uncomment-line-or-region ()
   "Comments or uncomments current current line or whole lines in region."
