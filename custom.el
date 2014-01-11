@@ -20,7 +20,7 @@
   (t (self-insert-command (or arg 1)))))
 
 ;; no menubar, no toolbar, no scrollbar, no splash
-;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (setq inhibit-splash-screen t)
