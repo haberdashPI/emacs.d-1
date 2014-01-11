@@ -2,7 +2,7 @@
 (setq column-number-mode t)
 (require 'linum)
 (global-linum-mode t)
-(setq linum-format "%d ")
+(setq linum-format "%3d  ")
 
 ;; substitute the yes/no to y/n
 (fset 'yes-or-no-p 'y-or-n-p)
