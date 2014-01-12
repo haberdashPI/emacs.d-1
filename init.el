@@ -1,6 +1,7 @@
 (load "~/.emacs.d/settings.el")
 
-(set 'evil-want-C-i-jump nil)
+(mapcar 'load (directory-files
+	       (expand-file-name "~/.emacs.d/pre-init") t ".*elc?"))
 
 (require 'package)
 (setq package-archives '(
@@ -10,7 +11,7 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")
 			))
 
-(setq el-get-user-package-directory "~/.emacs.d/init-files/")
+(setq el-get-user-package-directory "~/.emacs.d/init/")
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil 'noerror)
