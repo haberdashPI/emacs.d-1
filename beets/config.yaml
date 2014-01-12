@@ -1,5 +1,5 @@
 directory: ~/Music/
-plugins: chroma rewrite inline lastgenre lyrics scrub fetchart embedart discogs zero ftintitle duplicates missing
+plugins: chroma rewrite inline lastgenre lyrics scrub fetchart embedart zero ftintitle duplicates missing
 original_date: yes
 
 paths:
