@@ -1,4 +1,6 @@
-(load "~/.emacs.d/custom.el")
+(load "~/.emacs.d/settings.el")
+
+(set 'evil-want-C-i-jump nil)
 
 (require 'package)
 (setq package-archives '(

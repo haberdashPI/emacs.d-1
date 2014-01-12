@@ -50,10 +50,6 @@
 (c-set-offset 'arglist-intro '+) ;; for FAPI arrays and DBTNG
 (c-set-offset 'arglist-cont-nonempty 'c-lineup-math) ;; for DBTNG fields and values
 
-;; browser
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program (getenv "BROWSER"))
-
 ;; comment or uncomment region
 (defun comment-or-uncomment-line-or-region ()
   "Comments or uncomments current current line or whole lines in region."
