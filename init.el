@@ -1,7 +1,7 @@
 (load "~/.emacs.d/settings.el")
 
-(mapcar 'load (directory-files
-	       (expand-file-name "~/.emacs.d/pre-init") t ".*elc?"))
+(mapc 'load (directory-files
+	     (expand-file-name "~/.emacs.d/pre-init") t ".*\.el"))
 
 (require 'package)
 (setq package-archives '(
