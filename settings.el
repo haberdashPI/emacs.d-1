@@ -42,13 +42,10 @@
 (setq vc-follow-symlinks t)
 
 ;; indentation
-(set 'tab-width 2)
-(set 'standard-indent 2)
-(set 'c-basic-offset 2)
-(set 'indent-tabs-mode nil)
-(c-set-offset 'case-label '+)
-(c-set-offset 'arglist-intro '+) ;; for FAPI arrays and DBTNG
-(c-set-offset 'arglist-cont-nonempty 'c-lineup-math) ;; for DBTNG fields and values
+(setq-default indent-tabs-mode nil)
+(setq tab-width 2)
+(defvaralias 'c-basic-offset 'tab-width)
+(defvaralias 'cperl-indent-level 'tab-width)
 
 ;; comment or uncomment region
 (defun comment-or-uncomment-line-or-region ()
