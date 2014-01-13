@@ -61,4 +61,7 @@
        (progn (goto-char max) (line-end-position))))))
 (global-set-key (kbd "C-c C-SPC") 'comment-or-uncomment-line-or-region)
 
+;; themes
+(setq custom-theme-directory "~/.emacs.d/themes/")
+;;(load-theme 'base16-tomorrow-dark)
 (load-theme 'wombat)
