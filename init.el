@@ -25,6 +25,8 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
 (el-get 'sync)
 
-(setq el-get-packages '(evil org))
+(setq el-get-packages '(evil
+                        rainbow-mode
+                        org))
 
 (el-get 'sync el-get-packages)
