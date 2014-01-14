@@ -2,7 +2,7 @@
 (setq column-number-mode t)
 (require 'linum)
 (global-linum-mode t)
-(setq linum-format "%3d  ")
+(setq linum-format "%3d ")
 
 ;; substitute the yes/no to y/n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -63,5 +63,4 @@
 
 ;; themes
 (setq custom-theme-directory "~/.emacs.d/themes/")
-;;(load-theme 'base16-tomorrow-dark)
-(load-theme 'wombat)
+(load-theme 'base16-tomorrow-dark t)
