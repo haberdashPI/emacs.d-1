@@ -30,6 +30,7 @@
                         evil-surround
                         evil-numbers
                         evil-nerd-commenter
+                        evil-matchit
                         rainbow-mode
                         org))
 
