@@ -28,6 +28,7 @@
 (setq el-get-packages '(evil
                         evil-leader
                         evil-surround
+                        evil-numbers
                         rainbow-mode
                         org))
 
