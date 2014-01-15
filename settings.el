@@ -60,20 +60,6 @@
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 
-;; comment or uncomment region
-(defun comment-or-uncomment-line-or-region ()
-  "Comments or uncomments current current line or whole lines in region."
-  (interactive)
-  (save-excursion
-    (let (min max)
-      (if (region-active-p)
-          (setq min (region-beginning) max (region-end))
-        (setq min (point) max (point)))
-      (comment-or-uncomment-region
-       (progn (goto-char min) (line-beginning-position))
-       (progn (goto-char max) (line-end-position))))))
-(global-set-key (kbd "C-c C-SPC") 'comment-or-uncomment-line-or-region)
-
 ;; themes
 (setq custom-theme-directory "~/.emacs.d/themes/")
 (load-theme 'base16-tomorrow-dark t)

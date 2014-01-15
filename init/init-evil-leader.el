@@ -4,4 +4,5 @@
 (evil-leader/set-key
   "." 'find-file
   "b" 'switch-to-buffer
+  "c" 'evilnc-comment-or-uncomment-lines
 )

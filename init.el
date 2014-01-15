@@ -29,6 +29,7 @@
                         evil-leader
                         evil-surround
                         evil-numbers
+                        evil-nerd-commenter
                         rainbow-mode
                         org))
 
