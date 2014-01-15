@@ -26,6 +26,7 @@
 (el-get 'sync)
 
 (setq el-get-packages '(evil
+                        evil-leader
                         rainbow-mode
                         org))
 
