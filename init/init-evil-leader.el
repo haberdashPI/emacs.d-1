@@ -2,7 +2,7 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
-  "." 'find-file
-  "b" 'switch-to-buffer
+  "." 'helm-find-files
+  "b" 'helm-buffers-list
   "c" 'evilnc-comment-or-uncomment-lines
 )

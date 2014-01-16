@@ -31,6 +31,7 @@
                         evil-numbers
                         evil-nerd-commenter
                         evil-matchit
+                        helm
                         org
                         rainbow-mode
                         ruby-mode
