@@ -32,6 +32,7 @@
                         evil-nerd-commenter
                         evil-matchit
                         helm
+                        helm-ag
                         org
                         rainbow-mode
                         ruby-mode
