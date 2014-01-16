@@ -31,7 +31,9 @@
                         evil-numbers
                         evil-nerd-commenter
                         evil-matchit
+                        org
                         rainbow-mode
-                        org))
+                        ruby-mode
+                        ))
 
 (el-get 'sync el-get-packages)
