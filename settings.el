@@ -23,15 +23,6 @@
     (setq x-select-enable-clipboard t)
 )
 
-;; Matching parenthesis
-(global-set-key "%" 'match-paren)
-(defun match-paren (arg)
-  "Go to the matching paren if on a parent otherwise insert %."
-  (interactive "p")
-  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
-  ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
-  (t (self-insert-command (or arg 1)))))
-
 ;; no menubar, no toolbar, no scrollbar, no splash
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
