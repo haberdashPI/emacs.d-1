@@ -33,7 +33,9 @@
                         evil-matchit
                         helm
                         helm-ag
+                        helm-projectile
                         org
+                        projectile
                         rainbow-mode
                         ruby-mode
                         ))

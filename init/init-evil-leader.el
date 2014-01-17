@@ -2,7 +2,7 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
-  "." 'helm-find-files
+  "." 'helm-projectile
   "b" 'helm-buffers-list
   "c" 'evilnc-comment-or-uncomment-lines
   "f" 'helm-ag
