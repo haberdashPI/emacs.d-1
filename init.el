@@ -1,4 +1,6 @@
 (load "~/.emacs.d/settings.el")
+(setq custom-file "~/.emacs.d/customize.el")
+(load custom-file)
 
 (mapc 'load (directory-files
 	     (expand-file-name "~/.emacs.d/pre-init") t ".*\.el"))
