@@ -46,7 +46,7 @@
 (setq tab-width 2)
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
-(electric-indent-mode)
+(electric-indent-mode t)
 
 ;; themes
 (setq custom-theme-directory "~/.emacs.d/themes/")
@@ -59,3 +59,6 @@
 
 ;; highlight current line
 (global-hl-line-mode)
+
+;; automatically close brackets
+(electric-pair-mode t)
