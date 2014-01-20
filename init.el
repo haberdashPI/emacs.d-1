@@ -33,6 +33,7 @@
                         evil-numbers
                         evil-nerd-commenter
                         evil-matchit
+                        fixme-mode
                         helm
                         helm-ag
                         helm-projectile
