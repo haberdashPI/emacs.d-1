@@ -16,6 +16,7 @@ NeoBundle 'ReekenX/vim-rename2'
 NeoBundle 'Rykka/colorv.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/vimproc', {
@@ -326,3 +327,6 @@ let g:vroom_use_dispatch = 0
 let g:vroom_use_zeus = 0
 nmap <leader>r :VroomRunNearestTest<cr>
 nmap <leader>R :VroomRunTestFile<cr>
+
+" snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
