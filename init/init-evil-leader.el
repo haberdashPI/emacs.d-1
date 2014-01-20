@@ -6,4 +6,5 @@
   "b" 'helm-buffers-list
   "c" 'evilnc-comment-or-uncomment-lines
   "f" 'helm-ag
+  "o" 'helm-imenu
 )
