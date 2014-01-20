@@ -71,3 +71,10 @@
 (global-set-key (kbd "M-l") 'windmove-right)
 (global-set-key (kbd "M-k") 'windmove-up)
 (global-set-key (kbd "M-j") 'windmove-down)
+
+;; go back and forth the last two buffers
+(defun switch-to-previous-buffer ()
+  (interactive)
+  (switch-to-buffer (other-buffer)))
+
+(global-set-key (kbd "M-SPC") 'switch-to-previous-buffer)
