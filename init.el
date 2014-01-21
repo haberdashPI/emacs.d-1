@@ -33,12 +33,14 @@
                         evil-numbers
                         evil-nerd-commenter
                         evil-matchit
+                        flycheck
                         fixme-mode
                         helm
                         helm-ag
                         helm-projectile
                         org
                         projectile
+                        popwin
                         rainbow-mode
                         ruby-mode
                         smartparens
