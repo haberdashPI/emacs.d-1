@@ -41,6 +41,7 @@
                         projectile
                         rainbow-mode
                         ruby-mode
+                        smartparens
                         ))
 
 (el-get 'sync el-get-packages)

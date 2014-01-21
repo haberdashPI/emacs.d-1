@@ -60,9 +60,6 @@
 ;; highlight current line
 (global-hl-line-mode)
 
-;; automatically close brackets
-(electric-pair-mode t)
-
 ;; automatically refresh files
 (global-auto-revert-mode t)
 
