@@ -57,9 +57,6 @@
           (lambda ()
             (setq default-directory command-line-default-directory)))
 
-;; highlight current line
-(global-hl-line-mode)
-
 ;; automatically refresh files
 (global-auto-revert-mode t)
 
