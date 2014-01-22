@@ -2,3 +2,5 @@ url
 auto-save-list
 el-get
 *.elc
+eshell
+elpa
