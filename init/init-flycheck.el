@@ -1,2 +1,3 @@
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'ruby-mode-hook 'flycheck-mode)
+
 (setq flycheck-indication-mode 'right-fringe)
