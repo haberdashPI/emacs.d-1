@@ -27,7 +27,9 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
 (el-get 'sync)
 
-(setq el-get-packages '(evil
+(setq el-get-packages '(
+                        bundler
+                        evil
                         evil-leader
                         evil-surround
                         evil-numbers
@@ -38,6 +40,7 @@
                         helm
                         helm-ag
                         helm-projectile
+                        inf-ruby
                         org
                         projectile
                         popwin
