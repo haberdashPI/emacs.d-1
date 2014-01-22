@@ -44,6 +44,7 @@
                         rainbow-mode
                         ruby-mode
                         smartparens
+                        yasnippet
                         ))
 
 (el-get 'sync el-get-packages)
