@@ -28,6 +28,7 @@
 (el-get 'sync)
 
 (setq el-get-packages '(
+                        bookmark+
                         bundler
                         evil
                         evil-leader
