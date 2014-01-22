@@ -51,6 +51,7 @@
                         slim-mode
                         smartparens
                         web-mode
+                        yaml-mode
                         yasnippet
                         ))
 
