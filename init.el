@@ -37,6 +37,7 @@
                         evil-matchit
                         flycheck
                         fixme-mode
+                        haml-mode
                         helm
                         helm-ag
                         helm-projectile
@@ -46,7 +47,10 @@
                         popwin
                         rainbow-mode
                         ruby-mode
+                        scss-mode
+                        slim-mode
                         smartparens
+                        web-mode
                         yasnippet
                         ))
 
