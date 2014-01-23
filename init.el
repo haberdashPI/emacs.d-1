@@ -28,6 +28,7 @@
 (el-get 'sync)
 
 (setq el-get-packages '(
+                        auto-complete
                         bookmark+
                         bundler
                         ethan-wspace
@@ -48,6 +49,7 @@
                         projectile
                         popwin
                         rainbow-mode
+                        robe
                         ruby-mode
                         scss-mode
                         slim-mode
