@@ -63,3 +63,6 @@
   (switch-to-buffer (other-buffer)))
 
 (global-set-key (kbd "M-SPC") 'switch-to-previous-buffer)
+
+;; don't add a new line at the end of the file
+(setq-default mode-require-final-newline nil)
