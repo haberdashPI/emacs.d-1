@@ -45,6 +45,7 @@
                         helm-ag
                         helm-projectile
                         inf-ruby
+                        markdown-mode
                         org
                         projectile
                         popwin
