@@ -51,6 +51,7 @@
                         projectile
                         popwin
                         rainbow-mode
+                        rinari
                         robe
                         ruby-mode
                         scss-mode
