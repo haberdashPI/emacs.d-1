@@ -31,6 +31,7 @@
                         auto-complete
                         bookmark+
                         bundler
+                        dash-at-point
                         ethan-wspace
                         evil
                         evil-leader
