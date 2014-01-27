@@ -67,3 +67,6 @@
 
 ;; don't add a new line at the end of the file
 (setq-default mode-require-final-newline nil)
+
+;; minibuffer history
+(savehist-mode 1)
