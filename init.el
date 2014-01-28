@@ -55,6 +55,7 @@
                         rinari
                         robe
                         ruby-mode
+                        ruby-test-mode
                         scss-mode
                         slim-mode
                         smartparens
