@@ -1,5 +1,7 @@
 (require 'popwin)
 (popwin-mode 1)
 (setq popwin:popup-window-height 30)
+(push '("*" :regexp t :height 30) popwin:special-display-config)
 (push '("*helm" :regexp t :height 30) popwin:special-display-config)
 (push '("*compilation" :regexp t :height 50) popwin:special-display-config)
+(push '("*Bundler" :regexp t :height 50) popwin:special-display-config)
