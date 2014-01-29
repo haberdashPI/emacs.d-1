@@ -30,6 +30,7 @@
 
 (setq el-get-packages '(
                         auto-complete
+                        auto-complete-css
                         bookmark+
                         bundler
                         dash-at-point
@@ -52,6 +53,7 @@
                         projectile
                         popwin
                         rainbow-mode
+                        rcodetools
                         rinari
                         robe
                         ruby-mode
