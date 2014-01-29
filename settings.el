@@ -70,3 +70,7 @@
 
 ;; minibuffer history
 (savehist-mode 1)
+
+;; alias and functions
+(defalias 'ar #'align-regexp)
+(defalias 'K #'kill-buffer)
