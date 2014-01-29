@@ -17,7 +17,7 @@
 
 (defun ac-ruby-mode ()
   (setq ac-sources
-        '(ac-source-yasnippet ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers ac-source-imenu ac-source-rcodetools)))
+        '(ac-source-yasnippet ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers ac-source-imenu)))
 
 (add-hook 'ruby-mode-hook 'ac-ruby-mode)
 

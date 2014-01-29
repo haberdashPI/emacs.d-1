@@ -53,7 +53,6 @@
                         projectile
                         popwin
                         rainbow-mode
-                        rcodetools
                         rinari
                         robe
                         ruby-mode
