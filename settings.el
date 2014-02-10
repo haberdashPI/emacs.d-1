@@ -73,4 +73,4 @@
 
 ;; alias and functions
 (defalias 'ar #'align-regexp)
-(defalias 'K #'kill-buffer)
+(defalias 'K #'kill-this-buffer)
