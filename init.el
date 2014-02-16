@@ -33,6 +33,7 @@
                         auto-complete-css
                         bookmark+
                         bundler
+                        coffee-mode
                         dash-at-point
                         ethan-wspace
                         evil
@@ -42,6 +43,7 @@
                         evil-nerd-commenter
                         evil-matchit
                         flycheck
+                        flymake-coffee
                         fixme-mode
                         haml-mode
                         helm
