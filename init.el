@@ -50,6 +50,7 @@
                         helm-ag
                         helm-projectile
                         inf-ruby
+                        json-mode
                         markdown-mode
                         org
                         projectile
