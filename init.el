@@ -45,6 +45,7 @@
                         flycheck
                         flymake-coffee
                         fixme-mode
+                        git-blame
                         haml-mode
                         helm
                         helm-ag
