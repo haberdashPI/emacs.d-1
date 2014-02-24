@@ -74,3 +74,5 @@
 ;; alias and functions
 (defalias 'ar #'align-regexp)
 (defalias 'K #'kill-this-buffer)
+
+(require 'uniquify)
