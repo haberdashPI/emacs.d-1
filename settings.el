@@ -1,3 +1,7 @@
+;; Customizations
+(setq custom-file "~/.emacs.d/customize.el")
+(load custom-file)
+
 ;; Column/Row numbering
 (setq column-number-mode t)
 (require 'linum)
