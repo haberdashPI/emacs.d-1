@@ -22,6 +22,10 @@
 (use-package coffee-mode
   :mode ("\\.coffee\\'" . coffee-mode))
 
+(use-package ethan-wspace
+  :defer t
+  :config (global-ethan-wspace-mode)))
+
 (use-package evil
   :pre-load
   (progn
@@ -50,6 +54,4 @@
      "o" 'helm-imenu
      "r" 'ruby-test-run-at-point
      "R" 'ruby-test-run
-     )
-    )
-  )
+     )))
