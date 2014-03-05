@@ -24,7 +24,7 @@
 
 (use-package ethan-wspace
   :defer t
-  :config (global-ethan-wspace-mode)))
+  :config (global-ethan-wspace-mode))
 
 (use-package evil
   :pre-load
@@ -40,8 +40,7 @@
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)))
 
 (use-package evil-leader
-  :defer t
-  :init
+  :config
   (progn
     (global-evil-leader-mode)
     (evil-leader/set-leader ",")
@@ -55,3 +54,15 @@
      "r" 'ruby-test-run-at-point
      "R" 'ruby-test-run
      )))
+
+(use-package evil-nerd-commenter
+  :commands evilnc-comment-or-uncomment-lines)
+
+(use-package evil-numbers
+  :init
+  (progn
+    (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
+    (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
+
+(use-package surround
+  :config (global-surround-mode))

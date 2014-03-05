@@ -7,13 +7,11 @@
 (depends-on "bundler")
 (depends-on "coffee-mode")
                         ;dash-at-point
-                        ;ethan-wspace
+(depends-on "ethan-wspace")
 (depends-on "evil")
 (depends-on "evil-leader")
-                        ;evil-surround
-                        ;evil-numbers
-                        ;evil-nerd-commenter
-                        ;evil-matchit
+(depends-on "evil-nerd-commenter")
+(depends-on "evil-numbers")
                         ;flycheck
                         ;flymake-coffee
                         ;fixme-mode
@@ -36,6 +34,7 @@
                         ;scss-mode
                         ;slim-mode
                         ;smartparens
+(depends-on "surround")
 (depends-on "use-package")
                         ;web-mode
                         ;yaml-mode
