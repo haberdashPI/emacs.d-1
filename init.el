@@ -7,7 +7,7 @@
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keymap.el")
 
-(use-package auto-complete
+(use-package auto-complete-config
   :init
   (progn
     (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
@@ -25,3 +25,7 @@
     (evil-define-key 'normal global-map "\C-j" 'evil-next-buffer)
     (evil-define-key 'normal global-map "\C-k" 'evil-prev-buffer)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)))
+
+(use-package browse-kill-ring)
+
+(use-package bundler)

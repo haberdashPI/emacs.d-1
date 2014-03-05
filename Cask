@@ -3,7 +3,8 @@
 
 (depends-on "auto-complete")
                         ;bookmark+
-                        ;bundler
+(depends-on "browse-kill-ring")
+(depends-on "bundler")
                         ;coffee-mode
                         ;dash-at-point
                         ;ethan-wspace
