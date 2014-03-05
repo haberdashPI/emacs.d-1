@@ -26,7 +26,6 @@
                         ;json-mode
                         ;markdown-mode
                         ;org
-(depends-on "pallet")
                         ;projectile
                         ;popwin
                         ;rainbow-mode
