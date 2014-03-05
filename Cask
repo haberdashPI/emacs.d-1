@@ -1,8 +1,7 @@
 (source melpa)
 (source org)
 
-                        ;auto-complete
-                        ;auto-complete-css
+(depends-on "auto-complete")
                         ;bookmark+
                         ;bundler
                         ;coffee-mode
