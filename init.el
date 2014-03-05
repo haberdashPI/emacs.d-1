@@ -12,6 +12,12 @@
     (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
     (ac-config-default)))
 
+(use-package browse-kill-ring)
+
+(use-package bundler)
+
+(use-package coffee-mode)
+
 (use-package evil
   :pre-load
   (progn
@@ -24,9 +30,3 @@
     (evil-define-key 'normal global-map "\C-j" 'evil-next-buffer)
     (evil-define-key 'normal global-map "\C-k" 'evil-prev-buffer)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)))
-
-(use-package browse-kill-ring)
-
-(use-package bundler)
-
-(use-package coffee-mode)
