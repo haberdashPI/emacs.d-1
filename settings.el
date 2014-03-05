@@ -80,3 +80,6 @@
 (defalias 'K #'kill-this-buffer)
 
 (require 'uniquify)
+
+;; Cask is lisp-mode
+(add-to-list 'auto-mode-alist '("Cask" . lisp-mode))
