@@ -15,7 +15,7 @@
                         ;flycheck
                         ;flymake-coffee
                         ;fixme-mode
-                        ;git-blame
+(depends-on "git-blame")
                         ;haml-mode
                         ;helm
                         ;helm-ag

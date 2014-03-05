@@ -64,5 +64,8 @@
     (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
     (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
+(use-package git-blame
+  :commands git-blame-mode)
+
 (use-package surround
   :config (global-surround-mode))
