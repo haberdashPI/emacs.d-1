@@ -29,3 +29,5 @@
 (use-package browse-kill-ring)
 
 (use-package bundler)
+
+(use-package coffee-mode)

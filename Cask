@@ -5,7 +5,7 @@
                         ;bookmark+
 (depends-on "browse-kill-ring")
 (depends-on "bundler")
-                        ;coffee-mode
+(depends-on "coffee-mode")
                         ;dash-at-point
                         ;ethan-wspace
 (depends-on "evil")
