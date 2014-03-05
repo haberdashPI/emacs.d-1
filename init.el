@@ -7,12 +7,14 @@
 (load "~/.emacs.d/keymap.el")
 
 (use-package auto-complete-config
-  :init
+  :defer t
+  :config
   (progn
     (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
     (ac-config-default)))
 
-(use-package browse-kill-ring)
+(use-package browse-kill-ring
+  :defer t)
 
 (use-package bundler
   :defer t)
@@ -25,10 +27,29 @@
   (progn
     (set 'evil-want-C-i-jump nil)
     (setq evil-toggle-key "M-V"))
-  :init
+  :config
   (progn
     (evil-mode)
     (setq evil-ex-substitute-global t)
     (evil-define-key 'normal global-map "\C-j" 'evil-next-buffer)
     (evil-define-key 'normal global-map "\C-k" 'evil-prev-buffer)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)))
+
+(use-package evil-leader
+  :defer t
+  :init
+  (progn
+    (global-evil-leader-mode)
+    (evil-leader/set-leader ",")
+
+    (evil-leader/set-key
+     "." 'helm-projectile
+     "b" 'helm-buffers-list
+     "c" 'evilnc-comment-or-uncomment-lines
+     "f" 'helm-ag
+     "o" 'helm-imenu
+     "r" 'ruby-test-run-at-point
+     "R" 'ruby-test-run
+     )
+    )
+  )

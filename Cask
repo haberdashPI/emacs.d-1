@@ -9,7 +9,7 @@
                         ;dash-at-point
                         ;ethan-wspace
 (depends-on "evil")
-                        ;evil-leader
+(depends-on "evil-leader")
                         ;evil-surround
                         ;evil-numbers
                         ;evil-nerd-commenter
