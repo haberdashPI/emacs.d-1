@@ -14,9 +14,11 @@
 
 (use-package browse-kill-ring)
 
-(use-package bundler)
+(use-package bundler
+  :defer t)
 
-(use-package coffee-mode)
+(use-package coffee-mode
+  :mode ("\\.coffee\\'" . coffee-mode))
 
 (use-package evil
   :pre-load
