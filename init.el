@@ -53,6 +53,7 @@
      "o" 'helm-imenu
      "r" 'ruby-test-run-at-point
      "R" 'ruby-test-run
+     "y" 'browse-kill-ring
      )))
 
 (use-package evil-nerd-commenter
