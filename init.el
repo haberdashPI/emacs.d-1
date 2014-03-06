@@ -7,11 +7,11 @@
 (load "~/.emacs.d/keymap.el")
 
 (use-package auto-complete-config
-  :defer t
   :config
   (progn
     (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-    (ac-config-default)))
+    (ac-config-default)
+    (auto-complete-mode)))
 
 (use-package browse-kill-ring
   :defer t)
