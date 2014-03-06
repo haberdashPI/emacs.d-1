@@ -14,7 +14,7 @@
     (auto-complete-mode)))
 
 (use-package browse-kill-ring
-  :defer t)
+  :commands browse-kill-ring)
 
 (use-package bundler
   :defer t)
@@ -23,7 +23,6 @@
   :mode ("\\.coffee\\'" . coffee-mode))
 
 (use-package ethan-wspace
-  :defer t
   :config (global-ethan-wspace-mode))
 
 (use-package evil
