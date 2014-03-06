@@ -12,8 +12,7 @@
 (depends-on "evil-leader")
 (depends-on "evil-nerd-commenter")
 (depends-on "evil-numbers")
-                        ;flycheck
-                        ;flymake-coffee
+(depends-on "flycheck")
                         ;fixme-mode
 (depends-on "git-blame")
                         ;haml-mode
