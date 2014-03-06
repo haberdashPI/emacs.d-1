@@ -78,3 +78,6 @@
 
 (use-package surround
   :config (global-surround-mode))
+
+(use-package uniquify
+  :config (setq uniquify-buffer-name-style 'forward))
