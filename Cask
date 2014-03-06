@@ -16,14 +16,14 @@
 (depends-on "flycheck")
 (depends-on "git-blame")
                         ;haml-mode
-                        ;helm
-                        ;helm-ag
-                        ;helm-projectile
+(depends-on "helm")
+(depends-on "helm-ag")
+(depends-on "helm-projectile")
                         ;inf-ruby
                         ;json-mode
                         ;markdown-mode
                         ;org
-                        ;projectile
+(depends-on "projectile")
                         ;popwin
                         ;rainbow-mode
                         ;rinari

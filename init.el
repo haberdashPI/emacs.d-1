@@ -75,6 +75,14 @@
 (use-package git-blame
   :commands git-blame-mode)
 
+(use-package helm)
+
+(use-package helm-ag)
+
+(use-package helm-projectile)
+
+(use-package projectile)
+
 (use-package surround
   :config (global-surround-mode))
 
