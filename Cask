@@ -12,8 +12,8 @@
 (depends-on "evil-leader")
 (depends-on "evil-nerd-commenter")
 (depends-on "evil-numbers")
+(depends-on "fic-mode")
 (depends-on "flycheck")
-                        ;fixme-mode
 (depends-on "git-blame")
                         ;haml-mode
                         ;helm

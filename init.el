@@ -65,9 +65,13 @@
     (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
     (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
+(use-package fic-mode
+  :diminish fic-mode
+  :commands fic-mode
+  :init (add-hook 'prog-mode-hook 'fic-mode))
+
 (use-package flycheck
-  :config
-  (add-hook 'ruby-mode-hook 'flycheck-mode))
+  :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
 (use-package git-blame
   :commands git-blame-mode)
