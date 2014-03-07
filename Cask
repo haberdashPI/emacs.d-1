@@ -22,7 +22,7 @@
                         ;inf-ruby
                         ;json-mode
                         ;markdown-mode
-                        ;org
+(depends-on "org")
 (depends-on "projectile")
                         ;popwin
                         ;rainbow-mode
