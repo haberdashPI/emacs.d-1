@@ -92,6 +92,9 @@
     (global-set-key "\C-ca" 'org-agenda)
     (global-set-key "\C-cb" 'org-iswitchb)))
 
+(use-package powerline
+  :config (powerline-center-theme))
+
 (use-package projectile)
 
 (use-package surround

@@ -23,6 +23,7 @@
                         ;json-mode
                         ;markdown-mode
 (depends-on "org")
+(depends-on "powerline")
 (depends-on "projectile")
                         ;popwin
                         ;rainbow-mode
