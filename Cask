@@ -38,4 +38,4 @@
 (depends-on "use-package")
 (depends-on "web-mode")
 (depends-on "yaml-mode")
-                        ;yasnippet
+(depends-on "yasnippet")

@@ -120,3 +120,6 @@
   :mode (("\\.erb\\'" . web-mode) ("\\.html?\\'" . web-mode)))
 
 (use-package yaml-mode)
+
+(use-package yasnippet
+  :config (yas-global-mode))
