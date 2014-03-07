@@ -81,6 +81,12 @@
 
 (use-package helm-projectile)
 
+(use-package json-mode)
+
+(use-package markdown-mode
+             :mode (("\\.md\\'" . markdown-mode)
+                    ("\\.markdown\\'" . markdown-mode)))
+
 (use-package org
   :config
   (progn
@@ -97,8 +103,20 @@
 
 (use-package projectile)
 
+(use-package scss-mode
+  :mode "\\.scss\\'"
+  :config
+  (progn
+    ((setq scss-compile-at-save nil)
+     (setq css-indent-offset 2))))
+
 (use-package surround
   :config (global-surround-mode))
 
 (use-package uniquify
   :config (setq uniquify-buffer-name-style 'forward))
+
+(use-package web-mode
+  :mode (("\\.erb\\'" . web-mode) ("\\.html?\\'" . web-mode)))
+
+(use-package yaml-mode)

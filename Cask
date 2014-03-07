@@ -20,8 +20,8 @@
 (depends-on "helm-ag")
 (depends-on "helm-projectile")
                         ;inf-ruby
-                        ;json-mode
-                        ;markdown-mode
+(depends-on "json-mode")
+(depends-on "markdown-mode")
 (depends-on "org")
 (depends-on "powerline")
 (depends-on "projectile")
@@ -31,11 +31,11 @@
                         ;robe
                         ;ruby-mode
                         ;ruby-test-mode
-                        ;scss-mode
-                        ;slim-mode
+(depends-on "scss-mode")
+(depends-on "slim-mode")
                         ;smartparens
 (depends-on "surround")
 (depends-on "use-package")
-                        ;web-mode
-                        ;yaml-mode
+(depends-on "web-mode")
+(depends-on "yaml-mode")
                         ;yasnippet
