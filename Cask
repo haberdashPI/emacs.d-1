@@ -16,7 +16,7 @@
 (depends-on "fic-mode")
 (depends-on "flycheck")
 (depends-on "git-blame")
-                        ;haml-mode
+(depends-on "haml-mode")
 (depends-on "helm")
 (depends-on "helm-ag")
 (depends-on "helm-projectile")

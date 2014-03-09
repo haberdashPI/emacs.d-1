@@ -75,6 +75,9 @@
 (use-package git-blame
   :commands git-blame-mode)
 
+(use-package haml-mode
+  :mode ("\\.haml\\'" . haml-mode))
+
 (use-package helm)
 
 (use-package helm-ag)
