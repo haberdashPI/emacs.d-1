@@ -113,6 +113,9 @@
 
 (use-package projectile)
 
+(use-package rainbow-mode
+  :commands rainbow-mode)
+
 (use-package scss-mode
   :mode "\\.scss\\'"
   :config

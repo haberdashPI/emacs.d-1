@@ -1,3 +1,4 @@
+(source gnu)
 (source melpa)
 (source org)
 
@@ -26,7 +27,7 @@
 (depends-on "powerline")
 (depends-on "projectile")
 (depends-on "popwin")
-                        ;rainbow-mode
+(depends-on "rainbow-mode")
                         ;rinari
                         ;robe
                         ;ruby-mode
