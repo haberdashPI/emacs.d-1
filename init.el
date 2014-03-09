@@ -123,6 +123,13 @@
 (use-package surround
   :config (global-surround-mode))
 
+(use-package undo-tree
+  :config
+  (progn
+  (setq undo-tree-history-directory-alist (quote (("." . "~/.undo/"))))
+  (setq undo-tree-auto-save-history t)
+  (global-undo-tree-mode)))
+
 (use-package uniquify
   :config (setq uniquify-buffer-name-style 'forward))
 
