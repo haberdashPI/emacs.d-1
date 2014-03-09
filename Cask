@@ -25,7 +25,7 @@
 (depends-on "org")
 (depends-on "powerline")
 (depends-on "projectile")
-                        ;popwin
+(depends-on "popwin")
                         ;rainbow-mode
                         ;rinari
                         ;robe
