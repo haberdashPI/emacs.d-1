@@ -126,6 +126,14 @@
     ((setq scss-compile-at-save nil)
      (setq css-indent-offset 2))))
 
+(use-package smartparens-config
+  :config
+  (progn
+    (require 'smartparens-ruby)
+    (smartparens-global-strict-mode t)
+    (show-smartparens-global-mode t)
+    ))
+
 (use-package surround
   :config (global-surround-mode))
 

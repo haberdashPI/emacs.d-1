@@ -34,7 +34,7 @@
                         ;ruby-test-mode
 (depends-on "scss-mode")
 (depends-on "slim-mode")
-                        ;smartparens
+(depends-on "smartparens")
 (depends-on "surround")
 (depends-on "undo-tree")
 (depends-on "use-package")
