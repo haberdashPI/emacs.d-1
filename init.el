@@ -126,6 +126,10 @@
     (add-hook 'robe-mode-hook 'robe-ac-setup)
     ))
 
+(use-package ruby-mode
+  :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
+         ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
+
 (use-package scss-mode
   :mode "\\.scss\\'"
   :config
