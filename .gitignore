@@ -4,5 +4,6 @@ el-get
 *.elc
 eshell
 elpa
+.cask
 ac-comphist.dat
 history

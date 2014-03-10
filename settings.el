@@ -1,3 +1,7 @@
+;; Customizations
+(setq custom-file "~/.emacs.d/customize.el")
+(load custom-file)
+
 ;; Column/Row numbering
 (setq column-number-mode t)
 (require 'linum)
@@ -76,3 +80,6 @@
 (defalias 'K #'kill-this-buffer)
 
 (require 'uniquify)
+
+;; Cask is lisp-mode
+(add-to-list 'auto-mode-alist '("Cask" . lisp-mode))
