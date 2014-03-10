@@ -119,6 +119,13 @@
 (use-package rainbow-mode
   :commands rainbow-mode)
 
+(use-package robe
+  :config
+  (progn
+    (add-hook 'ruby-mode-hook 'robe-mode)
+    (add-hook 'robe-mode-hook 'robe-ac-setup)
+    ))
+
 (use-package scss-mode
   :mode "\\.scss\\'"
   :config

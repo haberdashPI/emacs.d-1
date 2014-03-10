@@ -20,7 +20,7 @@
 (depends-on "helm")
 (depends-on "helm-ag")
 (depends-on "helm-projectile")
-                        ;inf-ruby
+(depends-on "inf-ruby")
 (depends-on "json-mode")
 (depends-on "markdown-mode")
 (depends-on "org")
@@ -28,9 +28,7 @@
 (depends-on "projectile")
 (depends-on "popwin")
 (depends-on "rainbow-mode")
-                        ;rinari
-                        ;robe
-                        ;ruby-mode
+(depends-on "robe")
                         ;ruby-test-mode
 (depends-on "scss-mode")
 (depends-on "slim-mode")
