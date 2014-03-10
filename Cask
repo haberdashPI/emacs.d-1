@@ -29,7 +29,7 @@
 (depends-on "popwin")
 (depends-on "rainbow-mode")
 (depends-on "robe")
-                        ;ruby-test-mode
+(depends-on "ruby-test-mode")
 (depends-on "scss-mode")
 (depends-on "slim-mode")
 (depends-on "smartparens")

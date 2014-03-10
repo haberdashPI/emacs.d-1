@@ -130,6 +130,8 @@
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
 
+(use-package ruby-test-mode)
+
 (use-package scss-mode
   :mode "\\.scss\\'"
   :config
