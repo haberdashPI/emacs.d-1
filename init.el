@@ -138,6 +138,14 @@
 
 (use-package ruby-test-mode)
 
+(use-package ruby-tools
+  :init
+  (progn
+    (bind-key (kbd "C-c :") 'ruby-tools-to-symbol)
+    (bind-key (kbd "C-c '") 'ruby-tools-to-single-quote-string)
+    (bind-key (kbd "C-c \"") 'ruby-tools-to-double-quote-string)
+    ))
+
 (use-package scss-mode
   :mode "\\.scss\\'"
   :config

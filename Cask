@@ -31,6 +31,7 @@
 (depends-on "rainbow-mode")
 (depends-on "robe")
 (depends-on "ruby-test-mode")
+(depends-on "ruby-tools")
 (depends-on "scss-mode")
 (depends-on "slim-mode")
 (depends-on "smartparens")
