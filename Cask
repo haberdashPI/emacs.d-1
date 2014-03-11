@@ -27,6 +27,7 @@
 (depends-on "powerline")
 (depends-on "projectile")
 (depends-on "popwin")
+(depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
 (depends-on "robe")
 (depends-on "ruby-test-mode")

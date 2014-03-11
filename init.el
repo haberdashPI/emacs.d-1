@@ -116,6 +116,12 @@
 
 (use-package projectile)
 
+(use-package rainbow-delimiters
+  :config
+  (progn
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+    ))
+
 (use-package rainbow-mode
   :commands rainbow-mode)
 
