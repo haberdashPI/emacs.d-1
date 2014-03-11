@@ -136,6 +136,12 @@
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
 
+(use-package ruby-hash-syntax
+  :init
+  (progn
+    (bind-key (kbd "C-c h")  'ruby-toggle-hash-syntax ruby-mode-map)
+    ))
+
 (use-package ruby-test-mode)
 
 (use-package ruby-tools
