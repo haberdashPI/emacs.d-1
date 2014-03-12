@@ -7,7 +7,7 @@
 (load "~/.emacs.d/keymap.el")
 
 (use-package auto-complete-config
-  :config
+  :idle
   (progn
     (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
     (ac-config-default)
@@ -196,4 +196,4 @@
 (use-package yaml-mode)
 
 (use-package yasnippet
-  :config (yas-global-mode))
+  :idle (yas-global-mode))
