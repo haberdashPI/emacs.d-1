@@ -7,7 +7,7 @@
 (depends-on "browse-kill-ring")
 (depends-on "bundler")
 (depends-on "coffee-mode")
-                        ;dash-at-point
+(depends-on "dash-at-point")
 (depends-on "ethan-wspace")
 (depends-on "evil")
 (depends-on "evil-leader")

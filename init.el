@@ -22,6 +22,16 @@
 (use-package coffee-mode
   :mode ("\\.coffee\\'" . coffee-mode))
 
+(use-package dash-at-point
+  :init
+  (progn
+    (bind-key "C-c d" 'dash-at-point)
+    (bind-key "C-c e" 'dash-at-point-with-docset)
+    (add-to-list 'dash-at-point-mode-alist '(ruby-mode . "ruby"))
+    (add-to-list 'dash-at-point-mode-alist '(lisp-mode . "lisp"))
+    (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
+    ))
+
 (use-package ethan-wspace
   :config (global-ethan-wspace-mode))
 
