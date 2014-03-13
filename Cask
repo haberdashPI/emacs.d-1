@@ -8,6 +8,7 @@
 (depends-on "bundler")
 (depends-on "coffee-mode")
 (depends-on "dash-at-point")
+(depends-on "edit-server")
 (depends-on "ethan-wspace")
 (depends-on "evil")
 (depends-on "evil-leader")

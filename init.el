@@ -32,6 +32,14 @@
     (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
     ))
 
+(use-package edit-server
+  :idle
+  (progn
+    (if (equal (daemonp) "general")
+        (edit-server-start)
+      )
+    ))
+
 (use-package ethan-wspace
   :config (global-ethan-wspace-mode))
 
