@@ -43,7 +43,7 @@
    `(mode-line-emphasis ((t (:foreground ,base06 :slant italic))))
    `(mode-line-highlight ((t (:foreground ,base0E :box nil :weight bold))))
    `(mode-line-inactive ((t (:background ,base01 :foreground ,base03 :box nil))))
-   `(region ((t (:background ,base01))))
+   `(region ((t (:background ,base02))))
    `(secondary-selection ((t (:background ,base03))))
 
    `(header-line ((t (:inherit mode-line :foreground ,base0E :background nil))))
