@@ -177,6 +177,10 @@
     (show-smartparens-global-mode t)
     ))
 
+(use-package smex
+  :idle (smex-initialize)
+  :config (bind-key (kbd "M-x") 'smex))
+
 (use-package surround
   :config (global-surround-mode))
 
