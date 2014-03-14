@@ -1,5 +1,5 @@
 Config = {
-  last_window: slate.window()
+    lastAppPid: slate.app().pid()
 };
 
 var relaunch = slate.operation("relaunch");
@@ -34,7 +34,7 @@ var focusWindowWithPid = function(pid) {
 }
 
 var focusLastWindow = function() {
-  slate.operation("focus", { app: Config.last_window }).run();
+    focusWindowWithPid(Config.lastAppPid);
 };
 
 var cycleBetweenWindowsOfTheSameApp = function(appName) {
@@ -70,5 +70,5 @@ slate.bind("esc:cmd", focusLastWindow);
 slate.bind("return:cmd", fullScreen);
 
 slate.on("appDeactivated", function(event, app) {
-  Config.last_window = app.name();
+  Config.lastAppPid = app.pid();
 });
