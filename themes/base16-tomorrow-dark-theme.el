@@ -8,7 +8,7 @@
 
 (let ((base00 "#1d1f21")
       (base01 "#282a2e")
-      (base02 "#373b41")
+      (base02 "#303030")
       (base03 "#969896")
       (base04 "#b4b7b4")
       (base05 "#c5c8c6")
@@ -27,7 +27,7 @@
    'base16-tomorrow-dark
 
    ;; Built-in stuff (Emacs 23)
-   `(border ((t (:background ,base03))))
+   `(border ((t (:background ,base02))))
    `(border-glyph ((t (nil))))
    `(cursor ((t (:background ,base08))))
    `(default ((t (:foreground ,base05))))
@@ -36,7 +36,6 @@
    `(highlight ((t (:background ,base01))))
    `(link ((t (:foreground ,base0D))))
    `(link-visited ((t (:foreground ,base0E))))
-   `(linum ((t (:background ,base03))))
    `(minibuffer-prompt ((t (:foreground ,base0D))))
    `(mode-line ((t (:background ,base02 :foreground ,base04 :box nil))))
    `(mode-line-buffer-id ((t (:foreground ,base0E :background nil))))
@@ -67,7 +66,7 @@
    `(font-lock-warning-face ((t (:foreground ,base08))))
 
    ;; linum-mode
-   `(linum ((t (:background ,base01 :foreground ,base03))))
+   `(linum ((t (:background ,base01 :foreground ,base02))))
 
    ;; Search
    `(match ((t (:foreground ,base0D :background ,base01 :inverse-video t))))
