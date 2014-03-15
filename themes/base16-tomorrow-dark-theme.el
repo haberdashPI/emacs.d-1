@@ -49,7 +49,7 @@
 
    ;; Font-lock stuff
    `(font-lock-builtin-face ((t (:foreground ,base0C))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,base02))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,base03))))
    `(font-lock-comment-face ((t (:foreground ,base03))))
    `(font-lock-constant-face ((t (:foreground ,base09))))
    `(font-lock-doc-face ((t (:foreground ,base04))))
@@ -66,7 +66,7 @@
    `(font-lock-warning-face ((t (:foreground ,base08))))
 
    ;; linum-mode
-   `(linum ((t (:background ,base01 :foreground ,base02))))
+   `(linum ((t (:background ,base02 :foreground ,base03))))
 
    ;; Search
    `(match ((t (:foreground ,base0D :background ,base01 :inverse-video t))))
