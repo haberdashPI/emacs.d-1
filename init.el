@@ -108,7 +108,7 @@
     (setq org-mobile-inbox-for-pull "~/Dropbox/Apps/MobileOrg/")
 
     (setq org-todo-keywords
-        '((sequence "TODO(t)" "WAIT(w@/!)" "FUTURE(f)" "|" "DONE(d)" "CANCELED(c@)")))
+        '((sequence "TODO(t)" "FUTURE(f)" "WAIT(w@)" "|" "CANCELED(c@)" "DONE(d)")))
 
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
