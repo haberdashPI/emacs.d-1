@@ -25,6 +25,7 @@
 (depends-on "markdown-mode")
 (depends-on "org")
 (depends-on "powerline")
+(depends-on "puppet-mode")
 (depends-on "projectile")
 (depends-on "popwin")
 (depends-on "rainbow-delimiters")

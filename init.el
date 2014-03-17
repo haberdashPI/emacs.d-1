@@ -127,6 +127,8 @@
 (use-package powerline
   :config (powerline-center-theme))
 
+(use-package puppet-mode)
+
 (use-package projectile)
 
 (use-package rainbow-delimiters
