@@ -6,23 +6,23 @@ var relaunch = slate.operation("relaunch");
 slate.bind("r:cmd,ctrl", relaunch);
 
 focusWindow = function(title) {
-  findAndFocusWindow = function() {
-    var windowFound = false;
-    slate.eachApp(function(app) {
-      app.eachWindow(function(window) {
-        if (!windowFound && window.title() === title) {
-          windowFound = true;
-          window.focus();
-        }
-      });
-    });
-  };
-  return findAndFocusWindow;
+    findAndFocusWindow = function() {
+        var windowFound = false;
+        slate.eachApp(function(app) {
+            app.eachWindow(function(window) {
+                if (!windowFound && window.title() === title) {
+                    windowFound = true;
+                    window.focus();
+                }
+            });
+        });
+    };
+    return findAndFocusWindow;
 };
 
 var fullScreen = function() {
-  slate.operation("corner", { direction: "top-left"}).run();
-  slate.operation("resize", { width: "+100%", height: "+100%", anchor: "top-left" }).run();
+    slate.operation("corner", { direction: "top-left"}).run();
+    slate.operation("resize", { width: "+100%", height: "+100%", anchor: "top-left" }).run();
 };
 
 var focusWindowWithPid = function(pid) {
@@ -38,24 +38,24 @@ var focusLastWindow = function() {
 };
 
 var cycleBetweenWindowsOfTheSameApp = function(appName) {
-  slate.eachApp(function(app) {
-    var pids = [];
-    if (app.name() === appName) {
-      pids.push(app.pid());
-    }
-    pids.sort();
-    if (slate.app().name() !== appName) {
-      focusWindowWithPid(pids[0]);
-    } else {
-        currentAppPid = slate.app().pid();
-        i = pids.indexOf(currentAppPid);
-        if (i === (pids.length - 1)) {
+    slate.eachApp(function(app) {
+        var pids = [];
+        if (app.name() === appName) {
+            pids.push(app.pid());
+        }
+        pids.sort();
+        if (slate.app().name() !== appName) {
             focusWindowWithPid(pids[0]);
         } else {
-            focusWindowWithPid(pids[i+1]);
+            currentAppPid = slate.app().pid();
+            i = pids.indexOf(currentAppPid);
+            if (i === (pids.length - 1)) {
+                focusWindowWithPid(pids[0]);
+            } else {
+                focusWindowWithPid(pids[i+1]);
+            }
         }
-    }
-  });
+    });
 };
 
 var cycleBetweenEmacs = function() { cycleBetweenWindowsOfTheSameApp("Emacs") ; }
@@ -70,5 +70,5 @@ slate.bind("esc:cmd", focusLastWindow);
 slate.bind("return:cmd", fullScreen);
 
 slate.on("appDeactivated", function(event, app) {
-  Config.lastAppPid = app.pid();
+    Config.lastAppPid = app.pid();
 });
