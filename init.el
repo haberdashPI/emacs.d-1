@@ -85,6 +85,8 @@
 (use-package git-blame
   :commands git-blame-mode)
 
+(use-package git-gutter-fringe)
+
 (use-package haml-mode
   :mode ("\\.haml\\'" . haml-mode))
 
