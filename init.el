@@ -96,6 +96,8 @@
 
 (use-package helm-projectile)
 
+(use-package javascript-mode
+  :config (setq js-indent-level 2))
 (use-package json-mode)
 
 (use-package markdown-mode
