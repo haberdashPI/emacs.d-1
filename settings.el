@@ -49,11 +49,6 @@
 (setq custom-theme-directory "~/.emacs.d/themes/")
 (load-theme 'base16-tomorrow-dark t)
 
-;; stay in current directory
-(add-hook 'find-file-hook
-          (lambda ()
-            (setq default-directory command-line-default-directory)))
-
 ;; automatically refresh files
 (global-auto-revert-mode t)
 
