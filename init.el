@@ -82,8 +82,7 @@
 (use-package flycheck
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
-(use-package git-blame
-  :commands git-blame-mode)
+(use-package git-blame)
 
 (use-package git-gutter-fringe)
 
