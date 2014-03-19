@@ -172,8 +172,8 @@
   :mode "\\.scss\\'"
   :config
   (progn
-    ((setq scss-compile-at-save nil)
-     (setq css-indent-offset 2))))
+    (setq scss-compile-at-save nil)
+    (setq css-indent-offset 2)))
 
 (use-package smartparens-config
   :config
