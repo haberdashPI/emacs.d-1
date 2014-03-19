@@ -79,3 +79,9 @@
 
 ;; Cask is lisp-mode
 (add-to-list 'auto-mode-alist '("Cask" . lisp-mode))
+
+;; encoding
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-language-environment "UTF-8")
+(prefer-coding-system 'utf-8)
