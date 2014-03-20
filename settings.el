@@ -18,10 +18,10 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
-(if (eq system-type 'darwin)
-    (progn (setq interprogram-cut-function 'paste-to-osx))
-    (setq x-select-enable-clipboard t)
-)
+(unless (display-graphic-p)
+  (if (eq system-type 'darwin)
+      (setq interprogram-cut-function 'paste-to-osx)
+      (setq x-select-enable-clipboard t)))
 
 ;; no menubar, no toolbar, no scrollbar, no splash
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
