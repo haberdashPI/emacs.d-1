@@ -3,7 +3,7 @@
 (source org)
 
 (depends-on "auto-complete")
-                        ;bookmark+
+(depends-on "bookmark+")
 (depends-on "browse-kill-ring")
 (depends-on "bundler")
 (depends-on "coffee-mode")

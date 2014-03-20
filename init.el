@@ -13,6 +13,8 @@
     (ac-config-default)
     (auto-complete-mode)))
 
+(use-package bookmark+)
+
 (use-package browse-kill-ring
   :commands browse-kill-ring)
 
