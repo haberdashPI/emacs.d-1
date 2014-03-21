@@ -13,6 +13,7 @@
 (depends-on "evil-leader")
 (depends-on "evil-nerd-commenter")
 (depends-on "evil-numbers")
+(depends-on "dired+")
 (depends-on "fic-mode")
 (depends-on "flycheck")
 (depends-on "git-blame")

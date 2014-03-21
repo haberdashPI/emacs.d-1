@@ -34,6 +34,11 @@
     (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
     ))
 
+(use-package dired+
+  :init
+  (progn
+    (bind-key "C-x d" 'diredp-dired-files)))
+
 (use-package ethan-wspace
   :config (global-ethan-wspace-mode))
 
