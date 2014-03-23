@@ -6,8 +6,10 @@
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keymap.el")
 
+(use-package ac-emmet)
+
 (use-package auto-complete-config
-  :idle
+  :config
   (progn
     (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
     (ac-config-default)
@@ -38,6 +40,18 @@
   :init
   (progn
     (bind-key "C-x d" 'diredp-dired-files)))
+
+(use-package emmet-mode
+  :config
+  (progn
+    (add-hook 'sgml-mode-hook 'emmet-mode)
+    (add-hook 'web-mode-hook 'emmet-mode)
+    (add-hook 'css-mode-hook  'emmet-mode)
+    (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
+    (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
+    (add-hook 'web-mode-hook 'ac-emmet-html-setup)
+    (add-hook 'css-mode-hook 'ac-emmet-css-setup)
+    ))
 
 (use-package ethan-wspace
   :config (global-ethan-wspace-mode))

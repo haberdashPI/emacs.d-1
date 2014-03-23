@@ -2,6 +2,7 @@
 (source melpa)
 (source org)
 
+(depends-on "ac-emmet")
 (depends-on "auto-complete")
 (depends-on "bookmark+")
 (depends-on "browse-kill-ring")
@@ -9,6 +10,7 @@
 (depends-on "coffee-mode")
 (depends-on "dash-at-point")
 (depends-on "ethan-wspace")
+(depends-on "emmet-mode")
 (depends-on "evil")
 (depends-on "evil-leader")
 (depends-on "evil-nerd-commenter")
