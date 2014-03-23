@@ -210,6 +210,16 @@
 (use-package web-mode
   :mode (("\\.erb\\'" . web-mode) ("\\.html?\\'" . web-mode)))
 
+(use-package workgroups2
+  :init (workgroups-mode 1)
+  :config
+  (progn
+    (setq wg-use-default-session-file nil)
+    (setq wg-prefix-key (kbd "C-c z"))
+    (setq wg-default-session-file "~/.emacs.d/sessions")
+    )
+  )
+
 (use-package yaml-mode)
 
 (use-package yasnippet
