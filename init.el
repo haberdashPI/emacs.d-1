@@ -134,7 +134,11 @@
 
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
-    (global-set-key "\C-cb" 'org-iswitchb)))
+    (global-set-key "\C-cb" 'org-iswitchb)
+
+    (setq org-default-notes-file (concat org-directory "/inbox.org"))
+    (define-key global-map "\C-cc" 'org-capture)
+    ))
 
 (use-package popwin
   :config
