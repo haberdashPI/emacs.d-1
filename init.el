@@ -65,8 +65,6 @@
   (progn
     (evil-mode)
     (setq evil-ex-substitute-global t)
-    (evil-define-key 'normal global-map "\C-j" 'evil-next-buffer)
-    (evil-define-key 'normal global-map "\C-k" 'evil-prev-buffer)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)))
 
 (use-package evil-leader
