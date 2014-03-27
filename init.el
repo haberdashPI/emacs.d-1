@@ -5,6 +5,7 @@
 
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keymap.el")
+(load "~/.emacs.d/functions.el")
 
 (use-package ac-emmet)
 
@@ -181,7 +182,7 @@
 (use-package ruby-hash-syntax
   :init
   (progn
-    (bind-key (kbd "C-c h")  'ruby-toggle-hash-syntax ruby-mode-map)
+    (bind-key (kbd "C-c h")  'antonio/ruby-toggle-hash-syntax ruby-mode-map)
     ))
 
 (use-package ruby-test-mode)
