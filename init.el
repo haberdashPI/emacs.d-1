@@ -103,7 +103,8 @@
 
 (use-package git-blame)
 
-(use-package git-gutter-fringe)
+(use-package git-gutter-fringe
+  :config (global-git-gutter-mode))
 
 (use-package haml-mode
   :mode ("\\.haml\\'" . haml-mode))
