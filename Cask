@@ -11,6 +11,7 @@
 (depends-on "dash-at-point")
 (depends-on "ethan-wspace")
 (depends-on "emmet-mode")
+(depends-on "expand-region")
 (depends-on "evil")
 (depends-on "evil-leader")
 (depends-on "evil-nerd-commenter")

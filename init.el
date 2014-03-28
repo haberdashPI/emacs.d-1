@@ -54,6 +54,9 @@
     (add-hook 'css-mode-hook 'ac-emmet-css-setup)
     ))
 
+(use-package expand-region
+  :config (global-set-key (kbd "C-=") 'er/expand-region))
+
 (use-package ethan-wspace
   :config (global-ethan-wspace-mode))
 
