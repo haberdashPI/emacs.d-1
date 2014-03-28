@@ -3,5 +3,5 @@
   (save-excursion
     (re-search-backward "[({]")
     (push-mark (point) t t)
-    (evil-jump-item)
+    (forward-list)
     (ruby-toggle-hash-syntax (region-beginning) (region-end))))
