@@ -175,6 +175,12 @@
     (add-hook 'robe-mode-hook 'robe-ac-setup)
     ))
 
+(use-package ruby-additional)
+
+(use-package ruby-block
+  :config
+    (add-hook 'ruby-mode-hook 'ruby-block-mode))
+
 (use-package ruby-mode
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))

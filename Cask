@@ -35,6 +35,8 @@
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
 (depends-on "robe")
+(depends-on "ruby-additional")
+(depends-on "ruby-block")
 (depends-on "ruby-hash-syntax")
 (depends-on "ruby-test-mode")
 (depends-on "ruby-tools")
