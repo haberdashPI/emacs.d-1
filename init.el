@@ -178,6 +178,11 @@
     (add-hook 'robe-mode-hook 'robe-ac-setup)
     ))
 
+(use-package rotate-text
+  :config
+  (progn
+    (bind-key (kbd "C-x C-t") 'rotate-text)))
+
 (use-package ruby-additional)
 
 (use-package ruby-block
