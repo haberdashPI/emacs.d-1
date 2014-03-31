@@ -146,6 +146,13 @@
     (define-key global-map "\C-cc" 'org-capture)
 
     (setq org-archive-location "~/Dropbox/org/archives/%s::datetree/")
+
+    (add-hook 'org-agenda-mode-hook
+              (lambda ()
+                (define-key org-agenda-mode-map "j" 'evil-next-line)
+                (define-key org-agenda-mode-map "\C-j" 'org-agenda-goto-date)
+                (define-key org-agenda-mode-map "k" 'evil-previous-line)
+                ))
     ))
 
 (use-package popwin
