@@ -8,3 +8,5 @@ elpa
 ac-comphist.dat
 history
 bookmarks
+org-loaddefs.el
+.org-id-locations
