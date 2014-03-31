@@ -146,6 +146,7 @@
     (define-key global-map "\C-cc" 'org-capture)
 
     (setq org-archive-location "~/Dropbox/org/archives/%s::datetree/")
+    (setq org-agenda-start-on-weekday nil)
 
     (add-hook 'org-agenda-mode-hook
               (lambda ()
