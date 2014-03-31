@@ -78,8 +78,9 @@
 
 (require 'uniquify)
 
-;; Cask is lisp-mode
+;; modes
 (add-to-list 'auto-mode-alist '("Cask" . lisp-mode))
+(add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 
 ;; encoding
 (set-terminal-coding-system 'utf-8)
