@@ -27,6 +27,7 @@
 (depends-on "helm-projectile")
 (depends-on "inf-ruby")
 (depends-on "json-mode")
+(depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "org")
 (depends-on "powerline")

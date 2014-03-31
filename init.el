@@ -121,6 +121,9 @@
 
 (use-package json-mode)
 
+(use-package magit
+  :commands magit-status)
+
 (use-package markdown-mode
              :mode (("\\.md\\'" . markdown-mode)
                     ("\\.markdown\\'" . markdown-mode)))
