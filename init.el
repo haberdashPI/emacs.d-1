@@ -102,7 +102,7 @@
 (use-package flycheck
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
-(use-package git-blame)
+(use-package mo-git-blame)
 
 (use-package git-gutter-fringe
   :config (global-git-gutter-mode))

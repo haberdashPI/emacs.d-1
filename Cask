@@ -18,7 +18,7 @@
 (depends-on "dired+")
 (depends-on "fic-mode")
 (depends-on "flycheck")
-(depends-on "git-blame" :git "https://github.com/git/git.git" :files ("contrib/emacs/git-blame.el"))
+(depends-on "mo-git-blame")
 (depends-on "git-gutter-fringe")
 (depends-on "haml-mode")
 (depends-on "helm")
