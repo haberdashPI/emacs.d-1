@@ -5,7 +5,6 @@
 (depends-on "ac-emmet")
 (depends-on "auto-complete")
 (depends-on "bookmark+")
-(depends-on "browse-kill-ring")
 (depends-on "bundler")
 (depends-on "coffee-mode")
 (depends-on "dash-at-point")

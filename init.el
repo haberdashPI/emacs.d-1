@@ -18,9 +18,6 @@
 
 (use-package bookmark+)
 
-(use-package browse-kill-ring
-  :commands browse-kill-ring)
-
 (use-package bundler
   :defer t)
 
@@ -85,7 +82,7 @@
      "o" 'helm-imenu
      "r" 'ruby-test-run-at-point
      "R" 'ruby-test-run
-     "y" 'browse-kill-ring
+     "y" 'helm-show-kill-ring
      )))
 
 (use-package evil-nerd-commenter
