@@ -102,7 +102,8 @@
 (use-package flycheck
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
-(use-package mo-git-blame)
+(use-package mo-git-blame
+  :init (evil-set-initial-state 'mo-git-blame-mode 'emacs))
 
 (use-package git-gutter-fringe
   :config (global-git-gutter-mode))
