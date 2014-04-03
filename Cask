@@ -39,6 +39,7 @@
 (depends-on "rotate-text" :git "https://github.com/nschum/rotate-text.el")
 (depends-on "ruby-additional")
 (depends-on "ruby-block")
+(depends-on "ruby-electric")
 (depends-on "ruby-hash-syntax")
 (depends-on "ruby-test-mode")
 (depends-on "ruby-tools")
