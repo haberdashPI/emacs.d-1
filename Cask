@@ -24,6 +24,7 @@
 (depends-on "helm")
 (depends-on "helm-ag")
 (depends-on "helm-projectile")
+(depends-on "hrb-mode" :git "https://github.com/ckruse/hrb-mode")
 (depends-on "inf-ruby")
 (depends-on "json-mode")
 (depends-on "magit")
