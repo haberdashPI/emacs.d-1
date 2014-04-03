@@ -146,6 +146,10 @@
     (setq org-archive-location "~/Dropbox/org/archives/%s::datetree/")
     (setq org-agenda-start-on-weekday nil)
 
+    (setq org-capture-templates
+          '(("t" "Task" entry (file+headline "~/Dropbox/org/inbox.org" "Tasks")
+             "* TODO %?\n")))
+
     (add-hook 'org-agenda-mode-hook
               (lambda ()
                 (define-key org-agenda-mode-map "j" 'evil-next-line)
