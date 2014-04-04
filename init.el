@@ -202,6 +202,7 @@
 (use-package rotate-text
   :config
   (progn
+    (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false")))
     (bind-key (kbd "C-x C-t") 'rotate-text)))
 
 (use-package ruby-additional)
