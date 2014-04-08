@@ -164,6 +164,15 @@
                 (define-key org-agenda-mode-map "\C-j" 'org-agenda-goto-date)
                 (define-key org-agenda-mode-map "k" 'evil-previous-line)
                 ))
+
+    (setq org-tag-alist
+          '(("COMPUTER" . ?c)
+            (:startgroup . nil)
+            ("HOME" . ?h) ("OFFICE" . ?o)
+            (:endgroup . nil)
+            ("READING" . ?r)
+            ("FUTURE" . ?f)
+            ))
     ))
 
 (use-package popwin
