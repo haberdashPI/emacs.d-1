@@ -23,6 +23,9 @@
       (setq interprogram-cut-function 'paste-to-osx)
       (setq x-select-enable-clipboard t)))
 
+(if (eq system-type 'darwin)
+    (setq ns-use-srgb-colorspace t))
+
 ;; no menubar, no toolbar, no scrollbar, no splash
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
