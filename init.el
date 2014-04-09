@@ -77,7 +77,7 @@
     (evil-leader/set-key
      "." 'helm-projectile
      "b" 'helm-buffers-list
-     "c" 'evilnc-comment-or-uncomment-lines
+     "c" 'comment-dwim
      "f" 'helm-ag
      "o" 'helm-imenu
      "r" 'ruby-test-run-at-point
@@ -85,8 +85,8 @@
      "y" 'helm-show-kill-ring
      )))
 
-(use-package evil-nerd-commenter
-  :commands evilnc-comment-or-uncomment-lines)
+;; (use-package evil-nerd-commenter
+;;   :config (evilnc-default-hotkeys))
 
 (use-package evil-numbers
   :init
