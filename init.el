@@ -200,7 +200,12 @@
 
 (use-package puppet-mode)
 
-(use-package projectile)
+(use-package projectile
+  :config
+  (progn
+    (setq projectile-remember-window-configs t)
+    (projectile-global-mode)
+    ))
 
 (use-package rainbow-delimiters
   :config

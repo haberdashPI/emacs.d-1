@@ -11,3 +11,5 @@ bookmarks
 org-loaddefs.el
 .org-id-locations
 sessions
+projectile.cache
+projectile-bookmarks.eld
