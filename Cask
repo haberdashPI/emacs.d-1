@@ -7,6 +7,7 @@
 (depends-on "bookmark+")
 (depends-on "bundler")
 (depends-on "coffee-mode")
+(depends-on "company")
 (depends-on "dash-at-point")
 (depends-on "ethan-wspace")
 (depends-on "emmet-mode")

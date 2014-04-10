@@ -7,15 +7,6 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
-(use-package ac-emmet)
-
-(use-package auto-complete-config
-  :config
-  (progn
-    (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-    (ac-config-default)
-    (auto-complete-mode)))
-
 (use-package bookmark+)
 
 (use-package bundler
@@ -23,6 +14,13 @@
 
 (use-package coffee-mode
   :mode ("\\.coffee\\'" . coffee-mode))
+
+(use-package company
+  :config
+  (progn
+    (global-company-mode)
+    (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)
+    ))
 
 (use-package dash-at-point
   :init
@@ -46,9 +44,6 @@
     (add-hook 'web-mode-hook 'emmet-mode)
     (add-hook 'css-mode-hook  'emmet-mode)
     (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
-    (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
-    (add-hook 'web-mode-hook 'ac-emmet-html-setup)
-    (add-hook 'css-mode-hook 'ac-emmet-css-setup)
     ))
 
 (use-package expand-region
@@ -220,7 +215,7 @@
   :config
   (progn
     (add-hook 'ruby-mode-hook 'robe-mode)
-    (add-hook 'robe-mode-hook 'robe-ac-setup)
+    (push 'company-robe company-backends)
     ))
 
 (use-package rotate-text
