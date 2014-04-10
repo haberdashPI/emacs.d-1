@@ -13,3 +13,4 @@ org-loaddefs.el
 sessions
 projectile.cache
 projectile-bookmarks.eld
+ido.last
