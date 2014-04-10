@@ -17,6 +17,7 @@
 (depends-on "evil-numbers")
 (depends-on "dired+")
 (depends-on "fic-mode")
+(depends-on "flx-ido")
 (depends-on "flycheck")
 (depends-on "mo-git-blame")
 (depends-on "git-gutter-fringe")

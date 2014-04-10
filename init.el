@@ -99,6 +99,8 @@
   :commands fic-mode
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
+(use-package flx-ido)
+
 (use-package flycheck
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
