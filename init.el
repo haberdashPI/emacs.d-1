@@ -275,7 +275,7 @@
   :config
   (progn
     (setq wg-use-default-session-file nil)
-    (setq wg-prefix-key (kbd "C-c z"))
+    (setq wg-prefix-key (kbd "C-c w"))
     (setq wg-default-session-file "~/.emacs.d/sessions")
     (workgroups-mode 1)
     )
