@@ -61,6 +61,7 @@
   (progn
     (evil-mode)
     (setq evil-ex-substitute-global t)
+    (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)))
 
 (use-package evil-leader
