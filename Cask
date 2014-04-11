@@ -9,6 +9,7 @@
 (depends-on "coffee-mode")
 (depends-on "company")
 (depends-on "dash-at-point")
+(depends-on "dired+")
 (depends-on "ethan-wspace")
 (depends-on "emmet-mode")
 (depends-on "expand-region")
