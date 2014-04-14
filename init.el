@@ -129,7 +129,11 @@
 
 (use-package helm-ag)
 
-(use-package helm-projectile)
+(use-package helm-projectile
+  :config
+  (progn
+    (setq projectile-switch-project-action 'helm-projectile)
+    ))
 
 (use-package hrb-mode
   :config (progn
