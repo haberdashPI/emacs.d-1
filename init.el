@@ -79,7 +79,7 @@
     (evil-leader/set-leader ",")
 
     (evil-leader/set-key
-     "." 'helm-projectile
+     "." 'antonio/helm-projectile
      "b" 'helm-buffers-list
      "c" 'comment-dwim
      "f" 'helm-ag
