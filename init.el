@@ -32,6 +32,14 @@
     (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
     ))
 
+(use-package delight
+  :config
+  (progn
+    (delight '(
+               (hrb-mode)
+               (yas-minor-mode nil "yasnippet")
+               ))))
+
 (use-package dired+
   :init
   (progn
