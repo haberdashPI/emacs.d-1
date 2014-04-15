@@ -116,8 +116,9 @@
 (use-package flycheck
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
-(use-package mo-git-blame
-  :init (evil-set-initial-state 'mo-git-blame-mode 'emacs))
+(use-package ggtags
+  :config
+  (add-hook 'prog-mode-hook 'ggtags-mode))
 
 (use-package git-gutter-fringe
   :config (global-git-gutter-mode))
@@ -151,6 +152,9 @@
 (use-package markdown-mode
              :mode (("\\.md\\'" . markdown-mode)
                     ("\\.markdown\\'" . markdown-mode)))
+
+(use-package mo-git-blame
+  :init (evil-set-initial-state 'mo-git-blame-mode 'emacs))
 
 (use-package org
   :config
