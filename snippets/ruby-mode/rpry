@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: rpry
+# key: rpry
+# --
+require 'pry'; binding.remote_pry
