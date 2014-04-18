@@ -196,6 +196,11 @@
             ("READING" . ?r)
             ("FUTURE" . ?f)
             ))
+
+    (setq org-completion-use-ido t)
+
+    (setq org-refile-use-outline-path t)
+    (setq org-refile-targets '((nil :maxlevel . 9)))
     ))
 
 (use-package popwin
