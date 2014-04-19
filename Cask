@@ -2,8 +2,6 @@
 (source melpa)
 (source org)
 
-(depends-on "ac-emmet")
-(depends-on "auto-complete")
 (depends-on "bookmark+")
 (depends-on "bundler")
 (depends-on "coffee-mode")
