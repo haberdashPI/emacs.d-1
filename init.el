@@ -7,6 +7,12 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
+(use-package ag
+  :config (progn
+            (setq ag-reuse-buffers 't)
+            (setq ag-highlight-search t)
+            ))
+
 (use-package bookmark+)
 
 (use-package bundler
@@ -83,7 +89,7 @@
      "." 'antonio/helm-files
      "b" 'antonio/helm-buffers
      "c" 'comment-dwim
-     "f" 'helm-ag
+     "f" 'projectile-ag
      "o" 'helm-imenu
      "r" 'ruby-test-run-at-point
      "R" 'ruby-test-run
