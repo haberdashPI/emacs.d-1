@@ -206,7 +206,6 @@
 
     (setq org-completion-use-ido t)
 
-    (setq org-refile-use-outline-path t)
     (setq org-refile-targets '((nil :maxlevel . 9)))
     ))
 
