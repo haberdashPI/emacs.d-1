@@ -133,7 +133,8 @@
 (use-package haml-mode
   :mode ("\\.haml\\'" . haml-mode))
 
-(use-package helm)
+(use-package helm
+  :config (helm-mode))
 
 (use-package helm-ag)
 
