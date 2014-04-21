@@ -62,3 +62,6 @@
       )
     )
   )
+
+(defun antonio/helm-ag ()
+  (with-helm-default-directory (projectile-project-root) (helm-ag)))

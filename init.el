@@ -89,7 +89,7 @@
      "." 'antonio/helm-files
      "b" 'antonio/helm-buffers
      "c" 'comment-dwim
-     "f" 'projectile-ag
+     "f" 'helm-ag
      "o" 'helm-imenu
      "r" 'ruby-test-run-at-point
      "R" 'ruby-test-run
