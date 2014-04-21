@@ -7,12 +7,6 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
-(use-package ag
-  :config (progn
-            (setq ag-reuse-buffers 't)
-            (setq ag-highlight-search t)
-            ))
-
 (use-package bookmark+)
 
 (use-package bundler
