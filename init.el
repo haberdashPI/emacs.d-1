@@ -134,7 +134,11 @@
   :mode ("\\.haml\\'" . haml-mode))
 
 (use-package helm
-  :config (helm-mode))
+  :config
+  (progn
+    (helm-mode)
+    (global-set-key (kbd "M-x") 'helm-M-x)
+    ))
 
 (use-package helm-ag)
 
