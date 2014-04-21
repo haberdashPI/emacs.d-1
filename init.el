@@ -137,7 +137,6 @@
   :config
   (progn
     (helm-mode)
-    (global-set-key (kbd "M-x") 'helm-M-x)
     ))
 
 (use-package helm-ag)
@@ -328,3 +327,5 @@
 
 (use-package yasnippet
   :idle (yas-global-mode))
+
+(global-set-key (kbd "M-x") 'helm-M-x)
