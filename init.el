@@ -93,6 +93,12 @@
 ;; (use-package evil-nerd-commenter
 ;;   :config (evilnc-default-hotkeys))
 
+(use-package evil-matchit
+  :config
+  (progn
+    (add-hook 'web-mode-hook 'evil-matchit-mode)
+    ))
+
 (use-package evil-numbers
   :init
   (progn
