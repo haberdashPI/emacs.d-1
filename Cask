@@ -37,6 +37,7 @@
 (depends-on "powerline")
 (depends-on "puppet-mode")
 (depends-on "projectile")
+(depends-on "projectile-rails")
 (depends-on "popwin")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")

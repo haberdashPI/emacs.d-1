@@ -234,6 +234,12 @@
     (projectile-global-mode)
     ))
 
+(use-package projectile-rails
+  :config
+  (progn
+    (add-hook 'projectile-mode-hook 'projectile-rails-on)
+    ))
+
 (use-package rainbow-delimiters
   :config
   (progn
