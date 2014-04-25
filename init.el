@@ -38,6 +38,7 @@
     (delight '(
                (hrb-mode)
                (yas-minor-mode nil "yasnippet")
+               (workgroups-mode nil "workgroups2")
                ))))
 
 (use-package dired+
