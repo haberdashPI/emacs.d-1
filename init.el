@@ -37,6 +37,7 @@
   (progn
     (delight '(
                (hrb-mode)
+               (git-gutter-mode nil "git-gutter-fringe")
                (yas-minor-mode nil "yasnippet")
                (workgroups-mode nil "workgroups2")
                ))))
