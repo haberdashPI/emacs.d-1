@@ -15,7 +15,6 @@
 (depends-on "evil")
 (depends-on "evil-leader")
 (depends-on "evil-matchit")
-(depends-on "evil-nerd-commenter")
 (depends-on "evil-numbers")
 (depends-on "dired+")
 (depends-on "fic-mode")

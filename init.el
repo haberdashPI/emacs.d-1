@@ -92,9 +92,6 @@
      "y" 'helm-show-kill-ring
      )))
 
-;; (use-package evil-nerd-commenter
-;;   :config (evilnc-default-hotkeys))
-
 (use-package evil-matchit
   :config
   (progn
