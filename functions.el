@@ -65,3 +65,17 @@
 
 (defun antonio/helm-ag ()
   (with-helm-default-directory (projectile-project-root) (helm-ag)))
+
+(defun antonio/cleanup-mode-line ()
+  (delight '(
+             (company-mode nil "company")
+             (ethan-wspace-mode nil "ethan-wspace")
+             (helm-mode nil "helm")
+             (hrb-mode)
+             (ggtags-mode nil "ggtags")
+             (git-gutter-mode nil "git-gutter-fringe")
+             (ruby-block-mode nil "ruby-block")
+             (undo-tree-mode nil "undo-tree")
+             (workgroups-mode nil "workgroups2")
+             (yas-minor-mode nil "yasnippet")
+             )))

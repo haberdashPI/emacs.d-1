@@ -9,7 +9,7 @@
 
 (define-minor-mode custom-minor-mode
   "A minor mode so that my key settings override annoying major modes."
-  t " custom-keymap" 'custom-minor-mode-map)
+  t nil 'custom-minor-mode-map)
 
 (defun custom-minibuffer-setup-hook ()
   (custom-minor-mode 0))

@@ -35,12 +35,7 @@
 (use-package delight
   :config
   (progn
-    (delight '(
-               (hrb-mode)
-               (git-gutter-mode nil "git-gutter-fringe")
-               (yas-minor-mode nil "yasnippet")
-               (workgroups-mode nil "workgroups2")
-               ))))
+    (add-hook 'after-init-hook 'antonio/cleanup-mode-line)))
 
 (use-package dired+
   :init
