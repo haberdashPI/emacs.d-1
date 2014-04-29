@@ -19,6 +19,7 @@
   :config
   (progn
     (global-company-mode)
+    (setq company-idle-delay 0.1)
     (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)
     ))
 
