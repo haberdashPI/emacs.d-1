@@ -150,6 +150,12 @@
             (setq hrb-highlight-mode 'keywords)
             (add-hook 'ruby-mode-hook 'hrb-mode)))
 
+(use-package imenu+
+  :config (progn
+            (imenup-toggle-sort nil)
+            )
+  )
+
 (use-package json-mode)
 
 (use-package magit
