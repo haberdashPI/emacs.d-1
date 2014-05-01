@@ -43,6 +43,8 @@
   (progn
     (bind-key "C-x d" 'diredp-dired-files)))
 
+(use-package emamux)
+
 (use-package emmet-mode
   :config
   (progn

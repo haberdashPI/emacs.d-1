@@ -10,6 +10,7 @@
 (depends-on "delight" :git "https://github.com/antonio/delight.el")
 (depends-on "dired+")
 (depends-on "ethan-wspace")
+(depends-on "emamux")
 (depends-on "emmet-mode")
 (depends-on "expand-region")
 (depends-on "evil")
