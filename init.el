@@ -36,7 +36,7 @@
 (use-package delight
   :config
   (progn
-    (add-hook 'after-init-hook 'antonio/cleanup-mode-line)))
+    (add-hook 'after-init-hook 'antonio-cleanup-mode-line)))
 
 (use-package dired+
   :init
@@ -80,8 +80,8 @@
     (evil-leader/set-leader ",")
 
     (evil-leader/set-key
-     "." 'antonio/helm-files
-     "b" 'antonio/helm-buffers
+     "." 'antonio-helm-files
+     "b" 'antonio-helm-buffers
      "c" 'comment-dwim
      "f" 'helm-ag
      "o" 'helm-imenu
@@ -282,7 +282,7 @@
 (use-package ruby-hash-syntax
   :init
   (progn
-    (bind-key (kbd "C-c h")  'antonio/ruby-toggle-hash-syntax ruby-mode-map)
+    (bind-key (kbd "C-c h")  'antonio-ruby-toggle-hash-syntax ruby-mode-map)
     ))
 
 (use-package ruby-test-mode)

@@ -1,4 +1,4 @@
-(defun antonio/ruby-toggle-hash-syntax ()
+(defun antonio-ruby-toggle-hash-syntax ()
   (interactive)
   (save-excursion
     (backward-up-list)
@@ -6,7 +6,7 @@
     (forward-list)
     (ruby-toggle-hash-syntax (region-beginning) (region-end))))
 
-(defun antonio/helm-files ()
+(defun antonio-helm-files ()
   "Custom function to list files."
   (interactive)
   (let ((helm-ff-transformer-show-only-basename nil))
@@ -14,7 +14,7 @@
           :buffer "*helm*"
           :prompt (projectile-prepend-project-name "pattern: "))))
 
-(defun antonio/helm-buffers ()
+(defun antonio-helm-buffers ()
   "Custom function to list buffers."
   (interactive)
   (let ((helm-ff-transformer-show-only-basename nil))
@@ -63,10 +63,10 @@
     )
   )
 
-(defun antonio/helm-ag ()
+(defun antonio-helm-ag ()
   (with-helm-default-directory (projectile-project-root) (helm-ag)))
 
-(defun antonio/cleanup-mode-line ()
+(defun antonio-cleanup-mode-line ()
   (delight '(
              (company-mode nil "company")
              (ethan-wspace-mode nil "ethan-wspace")

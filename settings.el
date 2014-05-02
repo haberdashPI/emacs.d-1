@@ -63,12 +63,12 @@
 
 ;; go back and forth the last two buffers
 (defadvice switch-to-buffer (before save-current-buffer activate)
-  (setq antonio/last-visited-buffer (buffer-name))
+  (setq antonio-last-visited-buffer (buffer-name))
 )
 
 (defun switch-to-previous-buffer ()
   (interactive)
-  (switch-to-buffer antonio/last-visited-buffer))
+  (switch-to-buffer antonio-last-visited-buffer))
 
 (global-set-key (kbd "M-SPC") 'switch-to-previous-buffer)
 
