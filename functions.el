@@ -79,3 +79,8 @@
              (workgroups-mode nil "workgroups2")
              (yas-minor-mode nil "yasnippet")
              )))
+
+(defun antonio-ruby-spec-var-to-let ()
+  (interactive)
+  (perform-replace "\\(\\w+\\) *= \\(.*\\)" "let(:\\1) { \\2 }" nil t nil nil nil (line-beginning-position) (line-end-position))
+  )

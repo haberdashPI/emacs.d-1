@@ -276,6 +276,10 @@
     (add-hook 'ruby-mode-hook 'ruby-electric-mode))
 
 (use-package ruby-mode
+  :config
+  (progn
+    (bind-key (kbd "C-x l") 'antonio-ruby-spec-var-to-let ruby-mode-map)
+    )
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
 
