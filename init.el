@@ -1,6 +1,8 @@
 (require 'cask "~/.emacs.d/cask.el/cask.el")
 (cask-initialize)
 
+(require 'benchmark-init)
+
 (require 'use-package)
 
 (load "~/.emacs.d/settings.el")
