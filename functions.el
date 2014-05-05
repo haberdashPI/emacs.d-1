@@ -84,3 +84,7 @@
   (interactive)
   (perform-replace "\\(\\w+\\) *= \\(.*\\)" "let(:\\1) { \\2 }" nil t nil nil nil (line-beginning-position) (line-end-position))
   )
+
+(defun antonio-switch-to-previous-buffer ()
+  (interactive)
+  (switch-to-buffer antonio-last-visited-buffer))

@@ -66,11 +66,7 @@
   (setq antonio-last-visited-buffer (buffer-name))
 )
 
-(defun switch-to-previous-buffer ()
-  (interactive)
-  (switch-to-buffer antonio-last-visited-buffer))
-
-(global-set-key (kbd "M-SPC") 'switch-to-previous-buffer)
+(global-set-key (kbd "M-SPC") 'antonio-switch-to-previous-buffer)
 
 ;; don't add a new line at the end of the file
 (setq-default mode-require-final-newline nil)
@@ -113,4 +109,3 @@
               (list 'buffer-file-name
                     (propertized-buffer-identification "%12f")
                     (propertized-buffer-identification "%12b")))
-
