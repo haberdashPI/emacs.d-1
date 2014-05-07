@@ -158,7 +158,8 @@
             )
   )
 
-(use-package json-mode)
+(use-package json-mode
+  :mode "\\.json\\'")
 
 (use-package magit
   :commands magit-status)
