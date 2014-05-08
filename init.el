@@ -131,6 +131,7 @@
   :mode ("\\.haml\\'" . haml-mode))
 
 (use-package helm
+  :defer t
   :config
   (progn
     (helm-mode)
