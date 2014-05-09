@@ -173,6 +173,7 @@
   :init (evil-set-initial-state 'mo-git-blame-mode 'emacs))
 
 (use-package org
+  :mode ("\\.org\\'" . org-mode)
   :config
   (progn
     (setq org-directory "~/Dropbox/org")
