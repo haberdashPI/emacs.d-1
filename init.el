@@ -216,6 +216,9 @@
     (setq org-completion-use-ido t)
 
     (setq org-refile-targets '((nil :maxlevel . 9)))
+
+    (setq org-clock-persist 'history)
+    (org-clock-persistence-insinuate)
     ))
 
 (use-package popwin
