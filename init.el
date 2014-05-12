@@ -9,7 +9,8 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
-(use-package bookmark+)
+(use-package bookmark+
+  :defer t)
 
 (use-package bundler
   :defer t)
@@ -26,6 +27,7 @@
     ))
 
 (use-package dash-at-point
+  :defer t
   :init
   (progn
     (bind-key "C-c d" 'dash-at-point)
@@ -36,16 +38,19 @@
     ))
 
 (use-package delight
+  :defer t
   :config
   (progn
     (add-hook 'after-init-hook 'antonio-cleanup-mode-line)))
 
 (use-package dired+
+  :defer t
   :init
   (progn
     (bind-key "C-x d" 'diredp-dired-files)))
 
 (use-package emmet-mode
+  :defer t
   :config
   (progn
     (add-hook 'sgml-mode-hook 'emmet-mode)
@@ -121,10 +126,12 @@
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
 (use-package ggtags
+  :defer t
   :config
   (add-hook 'prog-mode-hook 'ggtags-mode))
 
 (use-package git-gutter-fringe
+  :defer t
   :config (global-git-gutter-mode))
 
 (use-package haml-mode
@@ -135,14 +142,13 @@
   :config
   (progn
     (helm-mode)
-    ))
+    (use-package helm-ag)
 
-(use-package helm-ag)
-
-(use-package helm-projectile
-  :config
-  (progn
-    (setq projectile-switch-project-action 'helm-projectile)
+    (use-package helm-projectile
+      :config
+      (progn
+        (setq projectile-switch-project-action 'helm-projectile)
+        ))
     ))
 
 (use-package hrb-mode
@@ -345,6 +351,7 @@
 (use-package yaml-mode)
 
 (use-package yasnippet
+  :defer t
   :idle (yas-global-mode))
 
 (global-set-key (kbd "M-x") 'helm-M-x)
