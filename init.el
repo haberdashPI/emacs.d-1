@@ -225,6 +225,11 @@
 
     (setq org-clock-persist 'history)
     (org-clock-persistence-insinuate)
+
+    (add-hook 'org-mode-hook
+              (lambda ()
+                (setq evil-auto-indent nil)
+                ))
     ))
 
 (use-package popwin
