@@ -13,7 +13,7 @@
   :defer t)
 
 (use-package bundler
-  :defer t)
+  :commands (bundle-check bundle-console bundle-install bundle-open bundle-update))
 
 (use-package coffee-mode
   :mode ("\\.coffee\\'" . coffee-mode))
