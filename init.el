@@ -77,36 +77,37 @@
     (setq evil-ex-substitute-global t)
     (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
-    (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)))
+    (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
 
-(use-package evil-leader
-  :config
-  (progn
-    (global-evil-leader-mode)
-    (evil-leader/set-leader ",")
+    (use-package evil-leader
+      :config
+      (progn
+        (global-evil-leader-mode)
+        (evil-leader/set-leader ",")
 
-    (evil-leader/set-key
-     "." 'antonio-helm-files
-     "b" 'antonio-helm-buffers
-     "c" 'comment-dwim
-     "f" 'helm-ag
-     "o" 'helm-imenu
-     "r" 'ruby-test-run-at-point
-     "R" 'ruby-test-run
-     "y" 'helm-show-kill-ring
-     )))
+        (evil-leader/set-key
+          "." 'antonio-helm-files
+          "b" 'antonio-helm-buffers
+          "c" 'comment-dwim
+          "f" 'helm-ag
+          "o" 'helm-imenu
+          "r" 'ruby-test-run-at-point
+          "R" 'ruby-test-run
+          "y" 'helm-show-kill-ring
+          )))
 
-(use-package evil-matchit
-  :config
-  (progn
-    (add-hook 'web-mode-hook 'evil-matchit-mode)
+    (use-package evil-matchit
+      :config
+      (progn
+        (add-hook 'web-mode-hook 'evil-matchit-mode)
+        ))
+
+    (use-package evil-numbers
+      :init
+      (progn
+        (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
+        (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
     ))
-
-(use-package evil-numbers
-  :init
-  (progn
-    (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
-    (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
 (use-package fic-mode
   :diminish fic-mode
