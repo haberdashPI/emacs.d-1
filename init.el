@@ -59,9 +59,11 @@
     ))
 
 (use-package expand-region
+  :defer t
   :config (global-set-key (kbd "C-=") 'er/expand-region))
 
 (use-package ethan-wspace
+  :defer t
   :config (global-ethan-wspace-mode))
 
 (use-package evil
