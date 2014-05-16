@@ -181,6 +181,7 @@
                     ("\\.markdown\\'" . markdown-mode)))
 
 (use-package mo-git-blame
+  :commands mo-git-blame
   :init (evil-set-initial-state 'mo-git-blame-mode 'emacs))
 
 (use-package org
