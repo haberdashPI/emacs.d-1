@@ -110,11 +110,11 @@
     ))
 
 (use-package fic-mode
-  :diminish fic-mode
   :commands fic-mode
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
 (use-package flx-ido
+  :defer t
   :config
   (progn
     (ido-mode 1)
@@ -125,6 +125,7 @@
     ))
 
 (use-package flycheck
+  :defer t
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
 (use-package ggtags
@@ -154,6 +155,7 @@
     ))
 
 (use-package hrb-mode
+  :defer t
   :config (progn
             (setq hrb-delay 0)
             (setq hrb-highlight-keyword-face 'show-paren-match-face)
@@ -162,6 +164,7 @@
             (add-hook 'ruby-mode-hook 'hrb-mode)))
 
 (use-package imenu+
+  :defer t
   :config (progn
             (imenup-toggle-sort nil)
             )
