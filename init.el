@@ -146,12 +146,8 @@
   (progn
     (helm-mode)
     (use-package helm-ag)
-
-    (use-package helm-projectile
-      :config
-      (progn
-        (setq projectile-switch-project-action 'helm-projectile)
-        ))
+    (use-package helm-projectile)
+    (setq projectile-switch-project-action 'helm-projectile)
     ))
 
 (use-package hrb-mode
@@ -253,19 +249,15 @@
 
 (use-package puppet-mode
   :mode "\\.pp\\'")
-  )
 
 (use-package projectile
+  :defer t
   :config
   (progn
     (setq projectile-remember-window-configs t)
-    (projectile-global-mode)
-    ))
-
-(use-package projectile-rails
-  :config
-  (progn
+    (use-package projectile-rails)
     (add-hook 'projectile-mode-hook 'projectile-rails-on)
+    (projectile-global-mode)
     ))
 
 (use-package rainbow-delimiters
