@@ -251,7 +251,9 @@
 (use-package powerline
   :config (powerline-center-theme))
 
-(use-package puppet-mode)
+(use-package puppet-mode
+  :mode "\\.pp\\'")
+  )
 
 (use-package projectile
   :config
