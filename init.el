@@ -271,9 +271,9 @@
   :commands rainbow-mode)
 
 (use-package robe
-  :config
+  :mode ("\\.rb\\'" . robe-mode)
+  :init
   (progn
-    (add-hook 'ruby-mode-hook 'robe-mode)
     (push 'company-robe company-backends)
     ))
 
@@ -287,12 +287,10 @@
 (use-package ruby-additional)
 
 (use-package ruby-block
-  :config
-    (add-hook 'ruby-mode-hook 'ruby-block-mode))
+  :mode ("\\.rb\\'" . ruby-block-mode))
 
 (use-package ruby-electric
-  :config
-    (add-hook 'ruby-mode-hook 'ruby-electric-mode))
+  :mode ("\\.rb\\'" . ruby-electric-mode))
 
 (use-package ruby-mode
   :config
