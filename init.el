@@ -278,6 +278,7 @@
     ))
 
 (use-package rotate-text
+  :defer t
   :config
   (progn
     (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false")))
