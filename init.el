@@ -261,6 +261,7 @@
     ))
 
 (use-package rainbow-delimiters
+  :defer t
   :config
   (progn
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
