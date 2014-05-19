@@ -281,15 +281,14 @@
     (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false")))
     (bind-key (kbd "C-x C-t") 'rotate-text)))
 
-(use-package ruby-additional
-  :defer t
-  )
+(use-package ruby-additional)
 
 (use-package ruby-block
   :mode ("\\.rb\\'" . ruby-block-mode))
 
 (use-package ruby-electric
-  :mode ("\\.rb\\'" . ruby-electric-mode))
+  :config
+  (add-hook 'ruby-mode-hook 'ruby-electric-mode))
 
 (use-package ruby-mode
   :config
@@ -311,7 +310,6 @@
   )
 
 (use-package ruby-tools
-  :defer t
   :config
   (progn
     (bind-key (kbd "C-c :")  'ruby-tools-to-symbol ruby-mode-map)
