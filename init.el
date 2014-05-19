@@ -110,6 +110,7 @@
     ))
 
 (use-package fic-mode
+  :defer t
   :commands fic-mode
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
@@ -284,15 +285,20 @@
     (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false")))
     (bind-key (kbd "C-x C-t") 'rotate-text)))
 
-(use-package ruby-additional)
+(use-package ruby-additional
+  :defer t
+  )
 
 (use-package ruby-block
+  :defer t
   :mode ("\\.rb\\'" . ruby-block-mode))
 
 (use-package ruby-electric
+  :defer t
   :mode ("\\.rb\\'" . ruby-electric-mode))
 
 (use-package ruby-mode
+  :defer t
   :config
   (progn
     (bind-key (kbd "C-x l") 'antonio-ruby-spec-var-to-let ruby-mode-map)
@@ -301,15 +307,19 @@
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
 
 (use-package ruby-hash-syntax
+  :defer t
   :init
   (progn
     (bind-key (kbd "C-c h")  'antonio-ruby-toggle-hash-syntax ruby-mode-map)
     ))
 
-(use-package ruby-test-mode)
+(use-package ruby-test-mode
+  :defer t
+  )
 
 (use-package ruby-tools
-  :init
+  :defer t
+  :config
   (progn
     (bind-key (kbd "C-c :")  'ruby-tools-to-symbol ruby-mode-map)
     (bind-key (kbd "C-c '")  'ruby-tools-to-single-quote-string ruby-mode-map)
