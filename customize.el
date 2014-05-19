@@ -11,8 +11,6 @@
  '(custom-safe-themes
    (quote
     ("5ae8f7212ee110e161e54c14ac6730508ac2de722aa38272b7fb1ee55a6f21e1" "ea605f54caf4b40e044c4bb553924dab30d1b110aa801c238916fbcfe5a8ca09" "e53cc4144192bb4e4ed10a3fa3e7442cae4c3d231df8822f6c02f1220a0d259a" default)))
- '(helm-match-plugin-mode t nil (helm-match-plugin))
- '(helm-mode t)
  '(org-agenda-files (quote ("~/Dropbox/org/plan.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
