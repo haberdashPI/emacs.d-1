@@ -63,7 +63,6 @@
   :config (global-set-key (kbd "C-=") 'er/expand-region))
 
 (use-package ethan-wspace
-  :defer t
   :config (global-ethan-wspace-mode))
 
 (use-package evil
@@ -287,15 +286,12 @@
   )
 
 (use-package ruby-block
-  :defer t
   :mode ("\\.rb\\'" . ruby-block-mode))
 
 (use-package ruby-electric
-  :defer t
   :mode ("\\.rb\\'" . ruby-electric-mode))
 
 (use-package ruby-mode
-  :defer t
   :config
   (progn
     (bind-key (kbd "C-x l") 'antonio-ruby-spec-var-to-let ruby-mode-map)
