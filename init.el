@@ -115,7 +115,6 @@
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
 (use-package flx-ido
-  :defer t
   :config
   (progn
     (ido-mode 1)
@@ -142,7 +141,6 @@
   :mode ("\\.haml\\'" . haml-mode))
 
 (use-package helm
-  :defer t
   :config
   (progn
     (helm-mode)
@@ -252,7 +250,6 @@
   :mode "\\.pp\\'")
 
 (use-package projectile
-  :defer t
   :config
   (progn
     (setq projectile-remember-window-configs t)
