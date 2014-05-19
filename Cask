@@ -10,6 +10,7 @@
 (depends-on "dash-at-point")
 (depends-on "delight" :git "https://github.com/antonio/delight.el")
 (depends-on "dired+")
+(depends-on "dockerfile-mode")
 (depends-on "ethan-wspace")
 (depends-on "emmet-mode")
 (depends-on "expand-region")

@@ -48,6 +48,10 @@
   (progn
     (bind-key "C-x d" 'diredp-dired-files)))
 
+(use-package dockerfile-mode
+  :mode "\\Dockerfile\\'"
+  )
+
 (use-package emmet-mode
   :defer t
   :config
