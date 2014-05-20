@@ -358,7 +358,9 @@
     )
   )
 
-(use-package yaml-mode)
+(use-package yaml-mode
+  :mode ("\\.yml\\'")
+  )
 
 (use-package yasnippet
   :defer t
