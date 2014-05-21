@@ -348,16 +348,6 @@
 (use-package web-mode
   :mode (("\\.erb\\'" . web-mode) ("\\.html?\\'" . web-mode)))
 
-(use-package workgroups2
-  :config
-  (progn
-    (setq wg-use-default-session-file nil)
-    (setq wg-prefix-key (kbd "C-c w"))
-    (setq wg-default-session-file "~/.emacs.d/sessions")
-    (workgroups-mode 1)
-    )
-  )
-
 (use-package yaml-mode
   :mode "\\.yml\\'"
   )
