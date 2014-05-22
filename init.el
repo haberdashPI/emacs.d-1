@@ -38,7 +38,8 @@
     ))
 
 (use-package delight
-  :config
+  :commands (antonio-cleanup-mode-line)
+  :init
   (progn
     (add-hook 'after-init-hook 'antonio-cleanup-mode-line)))
 
