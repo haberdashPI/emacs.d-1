@@ -347,7 +347,14 @@
   :config (setq uniquify-buffer-name-style 'forward))
 
 (use-package web-mode
-  :mode (("\\.erb\\'" . web-mode) ("\\.html?\\'" . web-mode)))
+  :mode "\\.\\(erb\\|html?\\|css\\|scss\\)\\'"
+  :config
+  (progn
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-enable-css-colorization t)
+    )
+  )
 
 (use-package yaml-mode
   :mode "\\.yml\\'"
