@@ -42,7 +42,6 @@
 (depends-on "projectile-rails")
 (depends-on "popwin")
 (depends-on "rainbow-delimiters")
-(depends-on "rainbow-mode")
 (depends-on "robe")
 (depends-on "rotate-text" :git "https://github.com/nschum/rotate-text.el")
 (depends-on "ruby-additional")

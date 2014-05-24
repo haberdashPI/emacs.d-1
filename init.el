@@ -269,9 +269,6 @@
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
     ))
 
-(use-package rainbow-mode
-  :commands rainbow-mode)
-
 (use-package robe
   :mode ("\\.rb\\'" . robe-mode)
   :init
