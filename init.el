@@ -319,13 +319,6 @@
     (bind-key (kbd "C-c \"") 'ruby-tools-to-double-quote-string ruby-mode-map)
     ))
 
-(use-package scss-mode
-  :mode "\\.scss\\'"
-  :config
-  (progn
-    (setq scss-compile-at-save nil)
-    (setq css-indent-offset 2)))
-
 (use-package smex
   :idle (smex-initialize)
   :config (bind-key (kbd "M-x") 'smex))

@@ -50,7 +50,6 @@
 (depends-on "ruby-hash-syntax")
 (depends-on "ruby-test-mode")
 (depends-on "ruby-tools")
-(depends-on "scss-mode")
 (depends-on "slim-mode")
 (depends-on "smex")
 (depends-on "surround")
