@@ -297,7 +297,7 @@
   :config
   (progn
     (bind-key (kbd "C-x l") 'antonio-ruby-spec-var-to-let ruby-mode-map)
-    )
+    (add-hook 'ruby-mode-hook (lambda () (setq require-final-newline nil))))
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
 

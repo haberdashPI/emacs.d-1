@@ -70,6 +70,9 @@
 
 ;; don't add a new line at the end of the file
 (setq-default mode-require-final-newline nil)
+(setq-default require-final-newline nil)
+(setq mode-require-final-newline nil)
+(setq require-final-newline nil)
 
 ;; minibuffer history
 (setq savehist-additional-variables '(kill-ring mark-ring global-mark-ring search-ring regexp-search-ring extended-command-history))
