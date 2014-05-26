@@ -16,7 +16,7 @@
   :commands (bundle-check bundle-console bundle-install bundle-open bundle-update))
 
 (use-package coffee-mode
-  :mode ("\\.coffee\\'" . coffee-mode))
+  :mode "\\.coffee\\'")
 
 (use-package company
   :config
