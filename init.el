@@ -19,12 +19,13 @@
   :mode "\\.coffee\\'")
 
 (use-package company
-  :config
+  :init
   (progn
-    (global-company-mode)
     (setq company-idle-delay 0.1)
     (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)
-    ))
+    )
+  :idle (global-company-mode)
+  )
 
 (use-package dash-at-point
   :defer t
