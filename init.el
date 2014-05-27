@@ -52,6 +52,7 @@
 
 (use-package dockerfile-mode
   :mode "\\Dockerfile\\'"
+  :config (add-hook 'dockerfile-mode-hook (lambda () (setq require-final-newline nil)))
   )
 
 (use-package emmet-mode
