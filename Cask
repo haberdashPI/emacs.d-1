@@ -3,7 +3,6 @@
 (source org)
 
 (depends-on "benchmark-init")
-(depends-on "bookmark+")
 (depends-on "bundler")
 (depends-on "coffee-mode")
 (depends-on "company")

@@ -9,9 +9,6 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
-(use-package bookmark+
-  :defer t)
-
 (use-package bundler
   :commands (bundle-check bundle-console bundle-install bundle-open bundle-update))
 
