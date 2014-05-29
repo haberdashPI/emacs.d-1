@@ -42,10 +42,7 @@
     (add-hook 'after-init-hook 'antonio-cleanup-mode-line)))
 
 (use-package dired+
-  :defer t
-  :init
-  (progn
-    (bind-key "C-x d" 'diredp-dired-files)))
+  :defer t)
 
 (use-package dockerfile-mode
   :mode "\\Dockerfile\\'"
