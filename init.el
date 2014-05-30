@@ -60,8 +60,10 @@
     ))
 
 (use-package expand-region
-  :defer t
-  :config (global-set-key (kbd "C-=") 'er/expand-region))
+  :commands er/expand-region
+  :init
+  (bind-key "C-=" 'er/expand-region)
+  )
 
 (use-package ethan-wspace
   :config (global-ethan-wspace-mode))
