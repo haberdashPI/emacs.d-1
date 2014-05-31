@@ -25,11 +25,13 @@
   )
 
 (use-package dash-at-point
-  :defer t
+  :commands (dash-at-point dash-at-point-with-docset)
   :init
   (progn
     (bind-key "C-c d" 'dash-at-point)
-    (bind-key "C-c e" 'dash-at-point-with-docset)
+    (bind-key "C-c e" 'dash-at-point-with-docset))
+  :config
+  (progn
     (add-to-list 'dash-at-point-mode-alist '(ruby-mode . "ruby"))
     (add-to-list 'dash-at-point-mode-alist '(lisp-mode . "lisp"))
     (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
