@@ -68,7 +68,9 @@
   )
 
 (use-package ethan-wspace
-  :config (global-ethan-wspace-mode))
+  :commands (global-ethan-wspace-mode)
+  :init (add-hook 'after-init-hook 'global-ethan-wspace-mode)
+  )
 
 (use-package evil
   :pre-load
