@@ -72,6 +72,7 @@
   :init (add-hook 'after-init-hook 'global-ethan-wspace-mode)
   )
 
+
 (use-package evil
   :pre-load
   (progn
@@ -103,12 +104,14 @@
           )))
 
     (use-package evil-matchit
+      :commands (evil-matchit-mode)
       :config
       (progn
         (add-hook 'web-mode-hook 'evil-matchit-mode)
         ))
 
     (use-package evil-numbers
+      :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
       :init
       (progn
         (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
