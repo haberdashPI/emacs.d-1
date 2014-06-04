@@ -119,7 +119,6 @@
     ))
 
 (use-package fic-mode
-  :defer t
   :commands fic-mode
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
