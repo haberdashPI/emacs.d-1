@@ -122,16 +122,6 @@
   :commands fic-mode
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
-(use-package flx-ido
-  :config
-  (progn
-    (ido-mode 1)
-    (ido-everywhere 1)
-    (flx-ido-mode 1)
-    ;; disable ido faces to see flx highlights.
-    (setq ido-use-faces nil)
-    ))
-
 (use-package flycheck
   :defer t
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
