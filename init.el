@@ -74,17 +74,20 @@
 
 
 (use-package evil
+  :commands (evil-mode)
   :pre-load
   (progn
     (set 'evil-want-C-i-jump nil)
     (setq evil-toggle-key "M-V"))
+  :init (add-hook 'prog-mode-hook 'evil-mode)
   :config
   (progn
-    (evil-mode)
     (setq evil-ex-substitute-global t)
     (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
+
+    (add-hook 'mo-git-blame-mode 'turn-off-evil-mode)
 
     (use-package evil-leader
       :config
@@ -174,8 +177,7 @@
                     ("\\.markdown\\'" . markdown-mode)))
 
 (use-package mo-git-blame
-  :commands mo-git-blame
-  :init (evil-set-initial-state 'mo-git-blame-mode 'emacs))
+  :commands mo-git-blame)
 
 (use-package org
   :mode ("\\.org\\'" . org-mode)
