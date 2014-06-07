@@ -79,15 +79,17 @@
   (progn
     (set 'evil-want-C-i-jump nil)
     (setq evil-toggle-key "M-V"))
-  :init (add-hook 'prog-mode-hook 'evil-mode)
+  :init
+  (progn
+    (add-hook 'text-mode-hook 'turn-on-evil-mode)
+    (add-hook 'prog-mode-hook 'turn-on-evil-mode)
+    (add-hook 'conf-mode-hook 'turn-on-evil-mode))
   :config
   (progn
     (setq evil-ex-substitute-global t)
     (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
-
-    (add-hook 'mo-git-blame-mode 'turn-off-evil-mode)
 
     (use-package evil-leader
       :config
