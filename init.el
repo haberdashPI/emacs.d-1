@@ -72,9 +72,8 @@
   :init (add-hook 'after-init-hook 'global-ethan-wspace-mode)
   )
 
-
 (use-package evil
-  :commands (evil-mode)
+  :commands (evil-mode turn-on-evil-mode)
   :pre-load
   (progn
     (set 'evil-want-C-i-jump nil)
@@ -90,6 +89,8 @@
     (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
+    (evil-define-key 'insert global-map (kbd "ESC") 'evil-normal-state)
+    (evil-define-key 'visual global-map (kbd "ESC") 'evil-normal-state)
 
     (use-package evil-leader
       :config
