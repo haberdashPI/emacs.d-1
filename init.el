@@ -146,9 +146,10 @@
   :mode ("\\.haml\\'" . haml-mode))
 
 (use-package helm
+  :commands (helm-M-x helm helm-ag
+                      helm-imenu helm-show-kill-ring)
   :config
   (progn
-    (helm-mode)
     (use-package helm-ag)
     (use-package helm-projectile)
     (setq projectile-switch-project-action 'helm-projectile)
