@@ -22,7 +22,6 @@
 (depends-on "flycheck")
 (depends-on "imenu+")
 (depends-on "ggtags")
-(depends-on "git-gutter-fringe")
 (depends-on "haml-mode")
 (depends-on "helm")
 (depends-on "helm-ag")

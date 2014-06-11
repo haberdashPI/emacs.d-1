@@ -138,10 +138,6 @@
   :config
   (add-hook 'prog-mode-hook 'ggtags-mode))
 
-(use-package git-gutter-fringe
-  :defer t
-  :config (global-git-gutter-mode))
-
 (use-package haml-mode
   :mode ("\\.haml\\'" . haml-mode))
 
