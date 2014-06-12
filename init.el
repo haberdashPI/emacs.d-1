@@ -149,8 +149,9 @@
     (use-package helm-ag
       :commands (helm-ag))
 
-    (use-package helm-projectile)
-    (setq projectile-switch-project-action 'helm-projectile)
+    (use-package helm-projectile
+      :config (setq projectile-switch-project-action 'helm-projectile)
+      )
     ))
 
 (use-package hrb-mode
