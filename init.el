@@ -277,10 +277,10 @@
     ))
 
 (use-package rotate-text
-  :defer t
+  :commands (rotate-text)
   :config
   (progn
-    (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false")))
+    (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false") ("assert" "refute")))
     (bind-key (kbd "C-x C-t") 'rotate-text)))
 
 (use-package ruby-additional)
