@@ -130,8 +130,7 @@
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
 (use-package flycheck
-  :defer t
-  :config (add-hook 'ruby-mode-hook 'flycheck-mode))
+  :config (add-hook 'after-init-hook #'global-flycheck-mode))
 
 (use-package ggtags
   :defer t
