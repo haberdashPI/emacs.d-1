@@ -19,6 +19,7 @@
 (depends-on "evil-numbers")
 (depends-on "dired+")
 (depends-on "fic-mode")
+(depends-on "flycheck")
 (depends-on "imenu+")
 (depends-on "ggtags")
 (depends-on "haml-mode")
