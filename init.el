@@ -130,7 +130,6 @@
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
 (use-package ggtags
-  :defer t
   :config
   (add-hook 'prog-mode-hook 'ggtags-mode))
 
