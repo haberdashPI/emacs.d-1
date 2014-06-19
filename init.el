@@ -147,6 +147,9 @@
     (use-package helm-ag
       :commands (helm-ag))
 
+    (use-package helm-gtags
+      :commands (helm-gtags-select))
+
     (use-package helm-projectile
       :config (setq projectile-switch-project-action 'helm-projectile)
       )
