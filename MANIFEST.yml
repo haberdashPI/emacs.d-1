@@ -9,4 +9,6 @@ termite: ~/.config/termite/config
 bin: ~/.bin
 osx: ~/.osx
 pryrc: ~/.pryrc
-rubocop.yml: ~/.rubocop.yml
+rubocop/default.yml: ~/.rubocop.yml
+rubocop/enabled.yml: ~/.rubocop/enabled.yml
+rubocop/disabled.yml: ~/.rubocop/disabled.yml
