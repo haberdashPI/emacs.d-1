@@ -155,15 +155,6 @@
       )
     ))
 
-(use-package hrb-mode
-  :defer t
-  :config (progn
-            (setq hrb-delay 0)
-            (setq hrb-highlight-keyword-face 'show-paren-match-face)
-            (setq hrb-highlight-block-face 'highlight)
-            (setq hrb-highlight-mode 'keywords)
-            (add-hook 'ruby-mode-hook 'hrb-mode)))
-
 (use-package imenu+
   :defer t
   :config (progn
