@@ -155,13 +155,6 @@
       )
     ))
 
-(use-package imenu+
-  :defer t
-  :config (progn
-            (imenup-toggle-sort nil)
-            )
-  )
-
 (use-package json-mode
   :mode "\\.json\\'")
 
