@@ -247,13 +247,6 @@
     (projectile-global-mode)
     ))
 
-(use-package rainbow-delimiters
-  :defer t
-  :config
-  (progn
-    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-    ))
-
 (use-package robe
   :mode ("\\.rb\\'" . robe-mode)
   :init
