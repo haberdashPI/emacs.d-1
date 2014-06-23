@@ -80,10 +80,12 @@
     (setq evil-toggle-key "M-V"))
   :init
   (progn
-    (add-hook 'text-mode-hook 'turn-on-evil-mode)
-    (add-hook 'prog-mode-hook 'turn-on-evil-mode)
     (add-hook 'conf-mode-hook 'turn-on-evil-mode)
-    (add-hook 'yaml-mode-hook 'turn-on-evil-mode))
+    (add-hook 'help-mode-hook 'turn-on-evil-mode)
+    (add-hook 'prog-mode-hook 'turn-on-evil-mode)
+    (add-hook 'text-mode-hook 'turn-on-evil-mode)
+    (add-hook 'yaml-mode-hook 'turn-on-evil-mode)
+    )
   :config
   (progn
     (setq evil-ex-substitute-global t)
