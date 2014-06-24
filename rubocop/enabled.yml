@@ -143,10 +143,6 @@ Style/DeprecatedHashMethods:
   Description: 'Checks for use of deprecated Hash methods.'
   Enabled: true
 
-Style/Documentation:
-  Description: 'Document classes and non-namespace modules.'
-  Enabled: true
-
 Style/DotPosition:
   Description: 'Checks the position of the dot in multi-line method calls.'
   Enabled: true

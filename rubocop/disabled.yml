@@ -11,3 +11,7 @@ Style/MethodCalledOnDoEndBlock:
 Style/SymbolArray:
   Description: 'Use %i or %I for arrays of symbols.'
   Enabled: false
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
