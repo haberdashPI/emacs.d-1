@@ -144,6 +144,8 @@
 (use-package helm
   :commands (helm-M-x helm
                       helm-imenu helm-show-kill-ring)
+
+  :bind ("M-x" . helm-M-x)
   :config
   (progn
     (use-package helm-ag
@@ -300,8 +302,7 @@
     ))
 
 (use-package smex
-  :idle (smex-initialize)
-  :config (bind-key (kbd "M-x") 'smex))
+  :idle (smex-initialize))
 
 (use-package surround
   :config (global-surround-mode))
@@ -333,5 +334,3 @@
 (use-package yasnippet
   :defer t
   :idle (yas-global-mode))
-
-(global-set-key (kbd "M-x") 'helm-M-x)
