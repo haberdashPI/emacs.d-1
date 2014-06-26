@@ -144,9 +144,8 @@
 (use-package helm
   :commands (helm-M-x helm
                       helm-imenu helm-show-kill-ring)
-
-  :bind ("M-x" . helm-M-x)
   :config
+  (bind-key (kbd "M-x") 'helm-M-x)
   (progn
     (use-package helm-ag
       :commands (helm-ag))
