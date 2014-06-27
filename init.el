@@ -301,7 +301,8 @@
     ))
 
 (use-package smex
-  :idle (smex-initialize))
+  :bind ("M-x" . smex)
+  :commands (smex))
 
 (use-package surround
   :config (global-surround-mode))
