@@ -137,10 +137,6 @@
 (use-package flycheck
   :config (add-hook 'ruby-mode-hook 'flycheck-mode))
 
-(use-package ggtags
-  :config
-  (add-hook 'prog-mode-hook 'ggtags-mode))
-
 (use-package haml-mode
   :mode ("\\.haml\\'" . haml-mode))
 
