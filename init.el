@@ -150,7 +150,7 @@
       :commands (helm-ag))
 
     (use-package helm-gtags
-      :commands (helm-gtags-select))
+      :commands (helm-gtags-select helm-gtags-find-pattern helm-gtags-find-tag))
 
     (use-package helm-projectile
       :config (setq projectile-switch-project-action 'helm-projectile)
