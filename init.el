@@ -109,7 +109,8 @@
           "o" 'helm-imenu
           "r" 'ruby-test-run-at-point
           "R" 'ruby-test-run
-          "y" 'helm-show-kill-ring
+          "p" 'helm-show-kill-ring
+          "t" 'helm-gtags-select
           )))
 
     (use-package evil-matchit
