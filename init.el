@@ -136,7 +136,8 @@
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
 (use-package flycheck
-  :config (add-hook 'ruby-mode-hook 'flycheck-mode))
+  :init (add-hook 'ruby-mode-hook 'flycheck-mode)
+  :commands (flycheck-mode))
 
 (use-package haml-mode
   :mode ("\\.haml\\'" . haml-mode))
