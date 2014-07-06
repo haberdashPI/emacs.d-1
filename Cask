@@ -34,7 +34,6 @@
 (depends-on "powerline")
 (depends-on "puppet-mode")
 (depends-on "projectile")
-(depends-on "projectile-rails")
 (depends-on "popwin")
 (depends-on "robe")
 (depends-on "rotate-text" :git "https://github.com/nschum/rotate-text.el")

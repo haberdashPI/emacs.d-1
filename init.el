@@ -246,8 +246,6 @@
   :config
   (progn
     (setq projectile-remember-window-configs t)
-    (use-package projectile-rails)
-    (add-hook 'projectile-mode-hook 'projectile-rails-on)
     (projectile-global-mode)
     ))
 
