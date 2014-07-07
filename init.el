@@ -73,27 +73,17 @@
   )
 
 (use-package evil
-  :commands (evil-mode turn-on-evil-mode)
   :pre-load
   (progn
-    (set 'evil-want-C-i-jump nil)
     (setq evil-toggle-key "M-V"))
   :init
-  (progn
-    (add-hook 'conf-mode-hook 'turn-on-evil-mode)
-    (add-hook 'help-mode-hook 'turn-on-evil-mode)
-    (add-hook 'prog-mode-hook 'turn-on-evil-mode)
-    (add-hook 'text-mode-hook 'turn-on-evil-mode)
-    (add-hook 'yaml-mode-hook 'turn-on-evil-mode)
-    )
+  (evil-mode 1)
   :config
   (progn
     (setq evil-ex-substitute-global t)
     (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
-    (evil-define-key 'insert global-map (kbd "ESC") 'evil-normal-state)
-    (evil-define-key 'visual global-map (kbd "ESC") 'evil-normal-state)
 
     (use-package evil-leader
       :config
