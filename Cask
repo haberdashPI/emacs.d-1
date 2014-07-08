@@ -45,7 +45,7 @@
 (depends-on "ruby-tools")
 (depends-on "slim-mode")
 (depends-on "smex")
-(depends-on "surround")
+(depends-on "evil-surround")
 (depends-on "undo-tree")
 (depends-on "use-package")
 (depends-on "web-mode")

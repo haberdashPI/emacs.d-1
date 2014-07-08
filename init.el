@@ -117,8 +117,8 @@
         (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
         (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
-    (use-package surround
-      :config (global-surround-mode 1))
+    (use-package evil-surround
+      :config (global-evil-surround-mode 1))
     ))
 
 (use-package fic-mode
