@@ -152,6 +152,10 @@
 (use-package json-mode
   :mode "\\.json\\'")
 
+(use-package lua-mode
+  :config (setq lua-indent-level 2)
+  :mode "\\.lua\\'")
+
 (use-package magit
   :commands magit-status)
 

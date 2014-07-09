@@ -27,6 +27,7 @@
 (depends-on "helm-projectile")
 (depends-on "inf-ruby")
 (depends-on "json-mode")
+(depends-on "lua-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "mo-git-blame")
