@@ -14,6 +14,7 @@
 (depends-on "emmet-mode")
 (depends-on "expand-region")
 (depends-on "evil")
+(depends-on "evil-jumper")
 (depends-on "evil-leader")
 (depends-on "evil-matchit")
 (depends-on "evil-numbers")

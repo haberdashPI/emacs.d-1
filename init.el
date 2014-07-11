@@ -85,6 +85,8 @@
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
 
+    (use-package evil-jumper)
+
     (use-package evil-leader
       :config
       (progn
