@@ -33,6 +33,8 @@
 (depends-on "markdown-mode")
 (depends-on "mo-git-blame")
 (depends-on "org")
+(depends-on "persp-projectile")
+(depends-on "perspective")
 (depends-on "powerline")
 (depends-on "puppet-mode")
 (depends-on "projectile")
