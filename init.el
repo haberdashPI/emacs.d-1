@@ -238,13 +238,16 @@
 (use-package puppet-mode
   :mode "\\.pp\\'")
 
+(use-package perspective
+  :init (persp-mode)
+  )
+
 (use-package projectile
   :commands (projectile-switch-project projectile-persp-switch-project)
   :bind (("C-c p s" . projectile-persp-switch-project))
   :config
   (progn
     (use-package persp-projectile)
-    (persp-mode)
     (setq projectile-remember-window-configs t)
     (projectile-global-mode)
     ))
