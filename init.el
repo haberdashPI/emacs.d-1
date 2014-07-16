@@ -252,13 +252,6 @@
     (projectile-global-mode)
     ))
 
-(use-package robe
-  :mode ("\\.rb\\'" . robe-mode)
-  :init
-  (progn
-    (push 'company-robe company-backends)
-    ))
-
 (use-package rotate-text
   :commands (rotate-text)
   :config
@@ -266,41 +259,37 @@
     (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false") ("assert" "refute")))
     (bind-key (kbd "C-x C-t") 'rotate-text)))
 
-(use-package ruby-additional)
-
-(use-package ruby-block
-  :mode ("\\.rb\\'" . ruby-block-mode))
-
-(use-package ruby-electric
-  :config
-  (add-hook 'ruby-mode-hook 'ruby-electric-mode))
-
 (use-package ruby-mode
   :config
   (progn
+    (use-package robe
+      :config (push 'company-robe company-backends))
+
+    (use-package ruby-additional)
+
+    (use-package ruby-block
+      :config (ruby-block-mode))
+
+    (use-package ruby-electric)
+
+    (use-package ruby-hash-syntax
+      :config (bind-key (kbd "C-c h")  'antonio-ruby-toggle-hash-syntax ruby-mode-map))
+
+    (use-package ruby-test-mode)
+
+    (use-package ruby-tools
+      :config
+      (progn
+        (bind-key (kbd "C-c :")  'ruby-tools-to-symbol ruby-mode-map)
+        (bind-key (kbd "C-c '")  'ruby-tools-to-single-quote-string ruby-mode-map)
+        (bind-key (kbd "C-c \"") 'ruby-tools-to-double-quote-string ruby-mode-map)
+        ))
+
     (bind-key (kbd "C-x l") 'antonio-ruby-spec-var-to-let ruby-mode-map)
+    (add-hook 'ruby-mode-hook 'ruby-electric-mode)
     (add-hook 'ruby-mode-hook (lambda () (setq require-final-newline nil))))
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
-
-(use-package ruby-hash-syntax
-  :defer t
-  :init
-  (progn
-    (bind-key (kbd "C-c h")  'antonio-ruby-toggle-hash-syntax ruby-mode-map)
-    ))
-
-(use-package ruby-test-mode
-  :defer t
-  )
-
-(use-package ruby-tools
-  :config
-  (progn
-    (bind-key (kbd "C-c :")  'ruby-tools-to-symbol ruby-mode-map)
-    (bind-key (kbd "C-c '")  'ruby-tools-to-single-quote-string ruby-mode-map)
-    (bind-key (kbd "C-c \"") 'ruby-tools-to-double-quote-string ruby-mode-map)
-    ))
 
 (use-package smex
   :bind ("M-x" . smex)
