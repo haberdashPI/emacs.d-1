@@ -19,7 +19,7 @@
 [core]
   excludesfile = ~/.gitignore
   preloadindex = true
-  editor = vim
+  editor = emacs
 [github]
   user = antonio
 [hub]
