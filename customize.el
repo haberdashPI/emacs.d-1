@@ -17,4 +17,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#282a2e" :foreground "#e0e0e0" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "apple" :family "Inconsolata for Powerline"))))
- '(helm-source-header ((t (:background "#22083397778B" :foreground "white" :family "Sans Serif")))))
+ '(helm-source-header ((t (:background "#22083397778B" :foreground "white" :family "Sans Serif"))))
+ '(persp-selected-face ((t (:foreground "light green" :weight bold)))))
