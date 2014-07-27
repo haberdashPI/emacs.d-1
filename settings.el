@@ -112,3 +112,6 @@
               (list 'buffer-file-name
                     (propertized-buffer-identification "%12f")
                     (propertized-buffer-identification "%12b")))
+
+;; scratch buffer
+(setq initial-scratch-message nil)
