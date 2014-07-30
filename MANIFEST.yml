@@ -12,3 +12,4 @@ pryrc: ~/.pryrc
 rubocop/default.yml: ~/.rubocop.yml
 rubocop/enabled.yml: ~/.rubocop/enabled.yml
 rubocop/disabled.yml: ~/.rubocop/disabled.yml
+hydra/init.lua: ~/.hydra/init.lua
