@@ -285,10 +285,9 @@
 
 (use-package projectile
   :commands (projectile-switch-project projectile-persp-switch-project)
-  :bind (("C-c p p" . projectile-persp-switch-project))
+  :bind (("C-c p p" . projectile-switch-project))
   :config
   (progn
-    (use-package persp-projectile)
     (setq projectile-remember-window-configs t)
     (projectile-global-mode)
     ))
