@@ -1,8 +1,5 @@
 ---
-- hosts: 127.0.0.1
-  remote_user: antonio
-  tasks:
-    - name: copy the service file
-      copy: src=files/org.gnu.emacs.plist dest=~/Library/LaunchAgents/org.gnu.emacs.plist
-    - name: enable the service
-      command: launchctl load -w ~/Library/LaunchAgents/org.gnu.emacs.plist
+- name: copy the service file
+  copy: src=org.gnu.emacs.plist dest=~/Library/LaunchAgents/org.gnu.emacs.plist
+- name: enable the service
+  command: launchctl load -w ~/Library/LaunchAgents/org.gnu.emacs.plist
