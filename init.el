@@ -173,6 +173,7 @@
   :commands mo-git-blame)
 
 (use-package org
+  :mode ("\\.org\\'" . org-mode)
   :config
   (progn
     (setq org-todo-keywords
@@ -226,32 +227,11 @@
     (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
     (setq org-mobile-inbox-for-pull "~/Dropbox/Apps/MobileOrg/")
 
-    ;; http://kenmankoff.com/2012/08/17/emacs-org-mode-and-mobileorg-auto-sync/
-    ;; Fork the work (async) of pushing to mobile
-    ;; https://gist.github.com/3111823 ASYNC org mobile push...
-    (require 'gnus-async)
-    ;; Define a timer variable
-    (defvar org-mobile-push-timer nil
-      "Timer that `org-mobile-push-timer' used to reschedule itself, or nil.")
-    ;; Push to mobile when the idle timer runs out
-    (defun org-mobile-push-with-delay (secs)
-      (when org-mobile-push-timer
-        (cancel-timer org-mobile-push-timer))
-      (setq org-mobile-push-timer
-            (run-with-idle-timer
-             (* 1 secs) nil 'org-mobile-push)))
-    ;; After saving files, start an idle timer after which we are going to push
     (add-hook 'after-save-hook
               (lambda ()
                 (if (or (eq major-mode 'org-mode) (eq major-mode 'org-agenda-mode))
-                    (dolist (file (org-mobile-files-alist))
-                      (if (string= (expand-file-name (car file)) (buffer-file-name))
-                          (org-mobile-push-with-delay 10)))
-                  )))
-    ;; Run after midnight each day (or each morning upon wakeup?).
-    (run-at-time "00:01" 86400 '(lambda () (org-mobile-push-with-delay 1)))
-    ;; Run 1 minute after launch, and once a day after that.
-    (run-at-time "1 min" 86400 '(lambda () (org-mobile-push-with-delay 1)))
+                    (org-mobile-push))
+                ))
 
     ;; watch mobileorg.org for changes, and then call org-mobile-pull
     ;; http://stackoverflow.com/questions/3456782/emacs-lisp-how-to-monitor-changes-of-a-file-directory
