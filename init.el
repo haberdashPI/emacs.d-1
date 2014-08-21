@@ -154,6 +154,10 @@
 (use-package json-mode
   :mode "\\.json\\'")
 
+(use-package linum
+  :idle (global-linum-mode t)
+  )
+
 (use-package lua-mode
   :config (setq lua-indent-level 2)
   :mode "\\.lua\\'")
