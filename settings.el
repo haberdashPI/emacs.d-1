@@ -38,6 +38,9 @@
 ;; follow symlinks
 (setq vc-follow-symlinks t)
 
+;; disable vc
+(setq vc-handled-backends ())
+
 ;; indentation
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
