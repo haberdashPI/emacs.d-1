@@ -95,15 +95,15 @@
 
         (evil-leader/set-key
           "." 'antonio-helm-files
-          "b" 'antonio-helm-buffers
+          "b" 'helm-buffers-list
           "c" 'comment-dwim
           "f" 'helm-ag
           "o" 'helm-imenu
           "r" 'ruby-test-run-at-point
           "R" 'ruby-test-run
           "p" 'helm-show-kill-ring
-          "t" 'helm-gtags-select
-          )))
+          "t" 'helm-gtags-select)
+        ))
 
     (use-package evil-matchit
       :commands (evil-matchit-mode)
