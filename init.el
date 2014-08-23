@@ -227,14 +227,14 @@
     (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
     (setq org-mobile-inbox-for-pull "~/Dropbox/Apps/MobileOrg/")
 
-    (add-hook 'after-save-hook
-              (lambda ()
-                (if (or (eq major-mode 'org-mode) (eq major-mode 'org-agenda-mode))
-                    (org-mobile-push))
-                ))
+    ;; (add-hook 'after-save-hook
+    ;;           (lambda ()
+    ;;             (if (eq major-mode 'org-mode)
+    ;;                 (org-mobile-push))
+    ;;             ))
 
-    ;; watch mobileorg.org for changes, and then call org-mobile-pull
-    ;; http://stackoverflow.com/questions/3456782/emacs-lisp-how-to-monitor-changes-of-a-file-directory
+    ;; ;; watch mobileorg.org for changes, and then call org-mobile-pull
+    ;; ;; http://stackoverflow.com/questions/3456782/emacs-lisp-how-to-monitor-changes-of-a-file-directory
     (defun install-monitor (file secs)
       (run-with-timer
        0 secs
