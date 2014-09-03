@@ -315,6 +315,14 @@
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
 
+(use-package scss-mode
+  :mode "\\.scss\\'"
+  :init
+  (progn
+    (setq scss-compile-at-save nil)
+    (setq css-indent-offset 2)
+    )
+  )
 (use-package smex
   :bind ("M-x" . smex)
   :commands (smex))
@@ -330,7 +338,7 @@
   :config (setq uniquify-buffer-name-style 'forward))
 
 (use-package web-mode
-  :mode "\\.\\(erb\\|html?\\|css\\|scss\\)\\'"
+  :mode "\\.\\(erb\\|html?\\)\\'"
   :config
   (progn
     (setq web-mode-markup-indent-offset 2)
