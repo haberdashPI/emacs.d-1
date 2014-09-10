@@ -79,3 +79,7 @@
 (defun antonio-switch-to-previous-buffer ()
   (interactive)
   (switch-to-buffer antonio-last-visited-buffer))
+
+(defun antonio-insert-hashrocket ()
+    (interactive)
+    (insert "=> "))
