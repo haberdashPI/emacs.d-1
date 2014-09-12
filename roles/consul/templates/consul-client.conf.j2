@@ -1,0 +1,4 @@
+; {{ ansible_managed }}
+
+[program:consul]
+command=consul agent -data-dir /tmp/consul -join={{ ansible_default_ipv4.gateway }} -config-dir=/etc/consul.d
