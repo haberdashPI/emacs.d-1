@@ -3,7 +3,7 @@
   apt: name=unzip state=present
 
 - name: download consul
-  get_url: url=https://dl.bintray.com/mitchellh/consul/0.3.1_linux_amd64.zip dest=/tmp/consul.zip
+  get_url: url=https://dl.bintray.com/mitchellh/consul/0.4.0_linux_amd64.zip dest=/tmp/consul.zip
 
 - name: unzip consul
   command: unzip -n /tmp/consul.zip -d /usr/local/bin
