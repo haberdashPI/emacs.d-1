@@ -1,0 +1,9 @@
+---
+- name: install supervisor
+  apt: name=supervisor
+
+- name: copy supervisor configuration
+  template: src=supervisord.conf.j2 dest=/etc/supervisor/supervisord.conf
+
+- name: start supervisor
+  service: name=supervisor state=started enabled=yes

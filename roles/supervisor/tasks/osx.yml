@@ -1,0 +1,23 @@
+---
+- name: install supervisor
+  pip: name=supervisor
+  sudo: yes
+
+- name: mkdir supervisor configuration folder
+  file: path=/etc/supervisor/conf.d state=directory
+  sudo: yes
+
+- name: copy supervisor configuration
+  template: src=supervisord.conf.j2 dest=/etc/supervisor/supervisord.conf
+  sudo: yes
+
+- shell: which supervisord
+  register: supervisord_path
+
+- name: copy the plist file
+  template: src=com.agendaless.supervisord.plist.j2 dest=/Library/LaunchDaemons/com.agendaless.supervisord.plist
+  sudo: yes
+
+- name: enable the plist
+  shell: launchctl load /Library/LaunchDaemons/com.agendaless.supervisord.plist
+  sudo: yes
