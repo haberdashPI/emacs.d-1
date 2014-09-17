@@ -1,4 +1,5 @@
 directory: ~/Beets/
+library: ~/Beets/library.db
 plugins: chroma rewrite inline lastgenre lyrics scrub fetchart embedart zero ftintitle duplicates missing
 original_date: yes
 
