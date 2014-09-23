@@ -116,3 +116,25 @@
 
 ;; scratch buffer
 (setq initial-scratch-message nil)
+
+(require 'align)
+(add-to-list 'align-rules-list
+             '(hash-fat-arrow-pairs
+               (regexp . "\\(\\s-*\\)=>\\s-*[^# \t\n]")
+               (repeat . t)
+               (modes  . '(cperl-mode ruby-mode))))
+(add-to-list 'align-rules-list
+             '(ruby-arguments
+               (regexp . ",\\(\\s-*\\)[^# \t\n]")
+               (repeat . t)
+               (modes  . '(ruby-mode))))
+(add-to-list 'align-rules-list
+             '(ruby-hash-colon-pairs
+               (regexp . "[A-Za-z0-9_]:\\(\\s-*\\)[^# \t\n]")
+               (repeat . t)
+               (modes  . '(ruby-mode))))
+(add-to-list 'align-rules-list
+             '(ruby-assignment-literal
+               (regexp . "\\(\\s-*\\)=\\s-*[^# \t\n]")
+               (repeat . t)
+               (modes  . '(ruby-mode))))
