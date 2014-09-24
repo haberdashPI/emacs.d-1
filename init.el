@@ -84,6 +84,8 @@
     (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
+    (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
+    (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
 
     (use-package evil-jumper)
 
