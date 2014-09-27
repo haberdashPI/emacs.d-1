@@ -104,10 +104,6 @@
 ;; calendar
 (setq calendar-week-start-day 1)
 
-;; parenthesis
-(add-hook 'prog-mode-hook 'electric-pair-mode)
-(show-paren-mode t)
-
 ;; mode-line
 (setq-default mode-line-buffer-identification
               (list 'buffer-file-name

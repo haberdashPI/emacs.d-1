@@ -326,6 +326,11 @@
     (setq css-indent-offset 2)
     )
   )
+
+(use-package smartparens
+  :init (require 'smartparens-config)
+  :config (smartparens-global-mode))
+
 (use-package smex
   :bind ("M-x" . smex)
   :commands (smex))
