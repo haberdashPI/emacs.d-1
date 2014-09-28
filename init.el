@@ -178,6 +178,8 @@
   :mode ("\\.org\\'" . org-mode)
   :config
   (progn
+    (auto-fill-mode)
+
     (setq org-todo-keywords
         '((sequence "TODO(t)" "FUTURE(f)" "WAIT(w@)" "|" "CANCELED(c@)" "DONE(d)")))
 
