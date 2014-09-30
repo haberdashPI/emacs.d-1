@@ -99,7 +99,7 @@
           "." 'antonio-helm-files
           "b" 'helm-buffers-list
           "c" 'comment-dwim
-          "f" 'helm-ag
+          "f" 'antonio-helm-ag
           "o" 'helm-imenu
           "r" 'ruby-test-run-at-point
           "R" 'ruby-test-run

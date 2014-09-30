@@ -55,7 +55,8 @@
   )
 
 (defun antonio-helm-ag ()
-  (with-helm-default-directory (projectile-project-root) (helm-ag)))
+  (interactive)
+  (helm-ag (projectile-project-root)))
 
 (defun antonio-cleanup-mode-line ()
   (delight '(
