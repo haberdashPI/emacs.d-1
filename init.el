@@ -53,7 +53,10 @@
 
 (use-package emmet-mode
   :commands (emmet-mode)
-  :config (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
+  :config (add-hook 'emmet-mode-hook (lambda ()
+                                       (setq emmet-preview-default nil)
+                                       (setq emmet-indentation 2)
+                                       ))
   :init
   (progn
     (add-hook 'sgml-mode-hook 'emmet-mode)
