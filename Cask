@@ -31,7 +31,6 @@
 (depends-on "lua-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
-(depends-on "mo-git-blame")
 (depends-on "org")
 (depends-on "persp-projectile")
 (depends-on "perspective")

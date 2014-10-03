@@ -82,7 +82,7 @@
 ;; alias and functions
 (defalias 'ar #'align-regexp)
 (defalias 'K #'kill-this-buffer)
-(defalias 'blame #'mo-git-blame-current)
+(defalias 'blame #'magit-blame-mode)
 (defalias 'bundle #'bundle-install)
 
 (require 'uniquify)

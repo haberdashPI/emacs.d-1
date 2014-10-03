@@ -174,9 +174,6 @@
              :mode (("\\.md\\'" . markdown-mode)
                     ("\\.markdown\\'" . markdown-mode)))
 
-(use-package mo-git-blame
-  :commands mo-git-blame)
-
 (use-package org
   :mode ("\\.org\\'" . org-mode)
   :config
