@@ -261,9 +261,6 @@
     (push '("*compilation" :regexp t :height 50) popwin:special-display-config)
     (push '("*Bundler" :regexp t :height 50) popwin:special-display-config)))
 
-(use-package powerline
-  :config (powerline-center-theme))
-
 (use-package puppet-mode
   :mode "\\.pp\\'")
 
@@ -328,6 +325,12 @@
     (setq css-indent-offset 2)
     )
   )
+
+(use-package smart-mode-line
+  :config (progn
+            (sml/setup)
+            (sml/apply-theme 'respectful)
+            ))
 
 (use-package smartparens
   :init (require 'smartparens-config)
