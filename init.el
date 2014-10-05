@@ -279,10 +279,11 @@
 
 (use-package rotate-text
   :commands (rotate-text)
+  :bind (("C-x C-t" . rotate-text))
   :config
   (progn
     (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false") ("assert" "refute")))
-    (bind-key (kbd "C-x C-t") 'rotate-text)))
+    ))
 
 (use-package ruby-mode
   :config
