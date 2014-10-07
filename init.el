@@ -335,7 +335,31 @@
 
 (use-package smartparens
   :init (require 'smartparens-config)
-  :config (smartparens-global-mode))
+  :config
+  (progn
+    (smartparens-global-mode)
+    (show-smartparens-global-mode)
+    (setq sp-autoescape-string-quote nil)
+
+    (defun space-and-space-on-each-side (&rest _ignored)
+      (save-excursion
+        (insert "  ")))
+
+    (defun space-on-each-side (&rest _ignored)
+      (when (or (looking-back "=")
+                (looking-back "#"))
+        (insert " ")
+        (save-excursion
+          (insert " "))))
+
+    (sp-local-pair 'web-mode "%" "%"
+                   :unless '(sp-in-string-or-word-p)
+                   :post-handlers '(
+                                    (space-and-space-on-each-side "SPC")
+                                    (space-on-each-side "=" "#")
+                                    ))
+    )
+  )
 
 (use-package smex
   :bind ("M-x" . smex)
@@ -358,6 +382,7 @@
     (setq web-mode-markup-indent-offset 2)
     (setq web-mode-css-indent-offset 2)
     (setq web-mode-enable-css-colorization t)
+    (setq web-mode-enable-auto-pairing nil)
     )
   )
 
