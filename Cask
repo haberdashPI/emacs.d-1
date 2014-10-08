@@ -26,6 +26,7 @@
 (depends-on "helm-ag")
 (depends-on "helm-gtags")
 (depends-on "helm-projectile")
+(depends-on "helm-swoop")
 (depends-on "inf-ruby")
 (depends-on "json-mode")
 (depends-on "lua-mode")

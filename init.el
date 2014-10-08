@@ -104,6 +104,8 @@
           "c" 'comment-dwim
           "f" 'antonio-helm-ag
           "o" 'helm-imenu
+          "s" 'helm-swoop
+          "S" 'helm-multi-swoop
           "r" 'ruby-test-run-at-point
           "R" 'ruby-test-run
           "p" 'helm-show-kill-ring
@@ -153,6 +155,10 @@
 
     (use-package helm-projectile
       :config (setq projectile-switch-project-action 'helm-projectile)
+      )
+
+    (use-package helm-swoop
+      :commands (helm-swoop helm-multi-swoop)
       )
     ))
 
