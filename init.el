@@ -99,8 +99,8 @@
         (evil-leader/set-leader ",")
 
         (evil-leader/set-key
-          "." 'antonio-helm-files
-          "b" 'helm-buffers-list
+          "." 'helm-projectile-find-file
+          "b" 'helm-projectile-switch-to-buffer
           "c" 'comment-dwim
           "f" 'antonio-helm-ag
           "o" 'helm-imenu
@@ -142,7 +142,7 @@
   :mode ("\\.haml\\'" . haml-mode))
 
 (use-package helm
-  :commands (helm-M-x helm
+  :commands (helm-M-x helm helm-projectile-find-file helm-projectile-switch-to-buffer
                       helm-imenu helm-show-kill-ring)
   :config
   (bind-key (kbd "M-x") 'helm-M-x)

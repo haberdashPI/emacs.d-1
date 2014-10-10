@@ -6,14 +6,6 @@
     (forward-list)
     (ruby-toggle-hash-syntax (region-beginning) (region-end))))
 
-(defun antonio-helm-files ()
-  "Custom function to list files."
-  (interactive)
-  (let ((helm-ff-transformer-show-only-basename nil))
-    (helm :sources '(helm-source-projectile-files-list)
-          :buffer "*helm*"
-          :prompt (projectile-prepend-project-name "pattern: "))))
-
 ;; http://ck.kennt-wayne.de/2013/may/emacs%3A-jump-to-matching-paren-beginning-of-block
 (defun ck/goto-match-paren (arg)
   "Go to the matching  if on (){}[], similar to vi style of % "
