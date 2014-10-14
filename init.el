@@ -1,3 +1,6 @@
+;; do not load outdated compiled files
+(setq load-prefer-newer t)
+
 (require 'cask "~/.emacs.d/cask.el/cask.el")
 (cask-initialize)
 
