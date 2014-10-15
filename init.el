@@ -89,7 +89,7 @@
     (setq evil-ex-substitute-global t)
     (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
-    (evil-define-key 'normal global-map (kbd "SPC") 'helm-swoop)
+    (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
     (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
     (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
 
@@ -146,7 +146,7 @@
 
 (use-package helm
   :commands (helm-M-x helm helm-projectile-find-file helm-projectile-switch-to-buffer
-                      helm-imenu helm-show-kill-ring helm-swoop)
+                      helm-imenu helm-show-kill-ring)
   :config
   (bind-key (kbd "M-x") 'helm-M-x)
   (progn
