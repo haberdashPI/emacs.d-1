@@ -23,8 +23,8 @@
   (progn
     (setq company-idle-delay 0.1)
     (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)
+    (global-company-mode)
     )
-  :idle (global-company-mode)
   )
 
 (use-package dash-at-point
@@ -92,6 +92,7 @@
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
     (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
     (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
+    (evil-define-key 'insert global-map (kbd "TAB") 'tab-indent-or-complete)
 
     (use-package evil-jumper)
 
@@ -416,5 +417,29 @@
   )
 
 (use-package yasnippet
-  :defer t
-  :idle (yas-global-mode))
+  :config
+  (progn
+    (defun check-expansion ()
+      (save-excursion
+        (if (looking-at "\\_>") t
+          (backward-char 1)
+          (if (looking-at "\\.") t
+            (backward-char 1)
+            (if (looking-at "->") t nil)))))
+
+    (defun do-yas-expand ()
+      (let ((yas/fallback-behavior 'return-nil))
+        (yas/expand)))
+
+    (defun tab-indent-or-complete ()
+      (interactive)
+      (if (minibufferp)
+          (minibuffer-complete)
+        (if (or (not yas/minor-mode)
+                (null (do-yas-expand)))
+            (if (check-expansion)
+                (company-complete-common)
+              (indent-for-tab-command)))))
+    )
+  :init (yas-global-mode)
+  )
