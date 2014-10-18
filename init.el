@@ -54,6 +54,13 @@
   :config (add-hook 'dockerfile-mode-hook (lambda () (setq require-final-newline nil)))
   )
 
+(use-package eldoc
+  :init
+  (progn
+    (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+    )
+  )
+
 (use-package emmet-mode
   :commands (emmet-mode)
   :config (add-hook 'emmet-mode-hook (lambda ()
