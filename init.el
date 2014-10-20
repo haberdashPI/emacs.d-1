@@ -94,7 +94,9 @@
   :config
   (progn
     (setq evil-ex-substitute-global t)
-    (evil-define-key 'insert global-map (kbd "RET") 'newline-and-indent)
+
+    (define-key evil-insert-state-map [remap newline] 'newline)
+    (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
     (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
