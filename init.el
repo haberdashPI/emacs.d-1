@@ -40,12 +40,6 @@
     (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
     ))
 
-(use-package delight
-  :commands (antonio-cleanup-mode-line)
-  :init
-  (progn
-    (add-hook 'after-init-hook 'antonio-cleanup-mode-line)))
-
 (use-package dired+
   :defer t)
 
@@ -368,6 +362,10 @@
   :config (progn
             (sml/setup)
             (sml/apply-theme 'respectful)
+
+            (setq rm-blacklist '(" FIC" " ew:mnlt" " company" " ElDoc"
+                                 " Undo-Tree" " yas" " SP" " rt"
+                                 " Ruby-Test" " REl" " RBlock"))
             ))
 
 (use-package smartparens

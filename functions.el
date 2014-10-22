@@ -50,20 +50,6 @@
   (interactive)
   (helm-ag (projectile-project-root)))
 
-(defun antonio-cleanup-mode-line ()
-  (delight '(
-             (company-mode nil "company")
-             (ethan-wspace-mode nil "ethan-wspace")
-             (helm-mode nil "helm")
-             (hrb-mode)
-             (ggtags-mode nil "ggtags")
-             (git-gutter-mode nil "git-gutter-fringe")
-             (ruby-block-mode nil "ruby-block")
-             (undo-tree-mode nil "undo-tree")
-             (workgroups-mode nil "workgroups2")
-             (yas-minor-mode nil "yasnippet")
-             )))
-
 (defun antonio-ruby-spec-var-to-let ()
   (interactive)
   (perform-replace "\\(\\w+\\) *= \\(.*\\)" "let(:\\1) { \\2 }" nil t nil nil nil (line-beginning-position) (line-end-position))
