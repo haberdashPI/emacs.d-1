@@ -175,7 +175,7 @@
   :mode "\\.json\\'")
 
 (use-package linum
-  :idle (global-linum-mode t)
+  :init (global-linum-mode t)
   )
 
 (use-package lua-mode
