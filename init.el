@@ -12,6 +12,15 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
+(use-package buffer-move
+  :bind (
+         ("C-M-h" . buf-move-left)
+         ("C-M-j" . buf-move-down)
+         ("C-M-k" . buf-move-up)
+         ("C-M-l" . buf-move-right)
+         )
+  )
+
 (use-package bundler
   :commands (bundle-check bundle-console bundle-install bundle-open bundle-update))
 

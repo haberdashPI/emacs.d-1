@@ -53,11 +53,15 @@
 ;; automatically refresh files
 (global-auto-revert-mode t)
 
-;; window movement
+;; window management
 (global-set-key (kbd "M-h") 'windmove-left)
 (global-set-key (kbd "M-l") 'windmove-right)
 (global-set-key (kbd "M-k") 'windmove-up)
 (global-set-key (kbd "M-j") 'windmove-down)
+(global-set-key (kbd "M-H") 'move-border-left)
+(global-set-key (kbd "M-L") 'move-border-right)
+(global-set-key (kbd "M-K") 'move-border-up)
+(global-set-key (kbd "M-J") 'move-border-down)
 
 ;; go back and forth the last two buffers
 (defadvice switch-to-buffer (before save-current-buffer activate)
