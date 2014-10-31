@@ -160,8 +160,6 @@
   :mode ("\\.haml\\'" . haml-mode))
 
 (use-package helm
-  :commands (helm-M-x helm helm-projectile-find-file helm-projectile-switch-to-buffer
-                      helm-imenu helm-show-kill-ring)
   :config
   (bind-key (kbd "M-x") 'helm-M-x)
   (progn
@@ -404,10 +402,6 @@
                                     ))
     )
   )
-
-(use-package smex
-  :bind ("M-x" . smex)
-  :commands (smex))
 
 (use-package undo-tree
   :config
