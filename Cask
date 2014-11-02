@@ -2,6 +2,7 @@
 (source melpa)
 (source org)
 
+(depends-on "ansible-doc")
 (depends-on "benchmark-init")
 (depends-on "buffer-move")
 (depends-on "bundler")

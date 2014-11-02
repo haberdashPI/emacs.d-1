@@ -12,6 +12,11 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
+(use-package ansible-doc
+  :mode "\\.yml\\'"
+  :init (add-hook 'yaml-mode-hook #'ansible-doc-mode)
+  )
+
 (use-package buffer-move
   :bind (
          ("C-M-h" . buf-move-left)
