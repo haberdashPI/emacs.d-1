@@ -429,6 +429,23 @@
     )
   )
 
+(use-package workgroups2
+  :config
+  (progn
+    (setq wg-prefix-key (kbd "C-c z"))
+    (setq wg-session-load-on-start nil)
+    (setq wg-session-file "~/.emacs.d/.emacs_workgroups")
+    (setq wg-emacs-exit-save-behavior nil)
+    (setq wg-workgroups-mode-exit-save-behavior nil)
+    (setq wg-mode-line-display-on nil)
+    (setq wg-flag-modified nil)
+
+    (workgroups-mode 1)
+    (bind-key "C-x x S" 'antonio-save-perspective)
+    (bind-key "C-x x l" 'antonio-load-perspective)
+    )
+  )
+
 (use-package yaml-mode
   :mode "\\.yml\\'"
   )

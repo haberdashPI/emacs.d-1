@@ -103,3 +103,23 @@
 (defun move-border-down (arg)
   (interactive "P")
   (move-border-up-or-down arg nil))
+
+(defun antonio-current-perspective-name ()
+  (interactive)
+  (nth (persp-curr-position) (persp-all-names))
+  )
+
+(defun antonio-current-perspective-file ()
+  (interactive)
+  (format "~/.emacs.d/perspectives/%s" (antonio-current-perspective-name)))
+
+(defun antonio-save-perspective ()
+  (interactive)
+  (wg-create-workgroup (antonio-current-perspective-name))
+  (wg-save-session-as (antonio-current-perspective-file))
+  )
+
+(defun antonio-load-perspective ()
+  (interactive)
+  (wg-open-session (antonio-current-perspective-file))
+  )

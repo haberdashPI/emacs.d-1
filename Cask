@@ -55,5 +55,6 @@
 (depends-on "undo-tree")
 (depends-on "use-package")
 (depends-on "web-mode")
+(depends-on "workgroups2")
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
