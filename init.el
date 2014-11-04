@@ -107,6 +107,7 @@
     (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
+    (evil-define-key 'visual global-map (kbd "SPC") 'evil-search-forward)
     (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
     (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
     (evil-define-key 'insert global-map (kbd "TAB") 'tab-indent-or-complete)
