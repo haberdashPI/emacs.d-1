@@ -231,6 +231,9 @@
     (global-set-key "\C-ca" 'org-agenda)
 
     (setq org-agenda-window-setup 'current-window)
+
+    (add-hook 'org-capture-mode-hook 'delete-other-windows)
+
     (setq org-default-notes-file (concat org-directory "/plan.org"))
     (define-key global-map "\C-cc" 'org-capture)
 
