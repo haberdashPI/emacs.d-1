@@ -454,6 +454,10 @@
   :mode "\\.yml\\'"
   )
 
+(use-package yafolding
+  :init (add-hook 'prog-mode-hook 'yafolding-mode)
+  )
+
 (use-package yasnippet
   :config
   (progn

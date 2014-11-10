@@ -57,4 +57,5 @@
 (depends-on "web-mode")
 (depends-on "workgroups2")
 (depends-on "yaml-mode")
+(depends-on "yafolding")
 (depends-on "yasnippet")
