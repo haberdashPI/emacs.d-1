@@ -235,7 +235,7 @@
     (add-hook 'org-capture-mode-hook 'delete-other-windows)
 
     (setq org-default-notes-file (concat org-directory "/plan.org"))
-    (define-key global-map "\C-cc" 'org-capture)
+    (define-key global-map "\C-cc" (lambda () (interactive) (org-capture nil "t")))
 
     (setq org-archive-location "~/Dropbox/org/archives/%s::datetree/")
     (setq org-agenda-start-on-weekday nil)
