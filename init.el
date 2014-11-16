@@ -381,6 +381,7 @@
 
             (setq rm-blacklist '(" FIC" " ew:mnlt" " company" " ElDoc"
                                  " Undo-Tree" " yas" " SP" " rt"
+                                 " Helm" " wg" " ADoc"
                                  " Ruby-Test" " REl" " RBlock"))
             ))
 
