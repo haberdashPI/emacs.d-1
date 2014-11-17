@@ -154,6 +154,10 @@
       :config (global-evil-surround-mode 1))
     ))
 
+(use-package go-mode
+  :mode "\\.go\\'"
+  )
+
 (use-package fic-mode
   :commands fic-mode
   :init (add-hook 'prog-mode-hook 'fic-mode))

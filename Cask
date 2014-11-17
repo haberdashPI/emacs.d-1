@@ -22,6 +22,7 @@
 (depends-on "dired+")
 (depends-on "fic-mode")
 (depends-on "flycheck")
+(depends-on "go-mode")
 (depends-on "haml-mode")
 (depends-on "helm")
 (depends-on "helm-ag")
