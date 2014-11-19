@@ -49,6 +49,7 @@
 ;; themes
 (setq custom-theme-directory "~/.emacs.d/themes/")
 (load-theme 'base16-tomorrow-dark t)
+(set-face-attribute 'region nil :background "#444")
 
 ;; automatically refresh files
 (global-auto-revert-mode t)
