@@ -156,6 +156,14 @@
 
 (use-package go-mode
   :mode "\\.go\\'"
+  :init
+  (progn
+    (add-hook 'go-mode-hook (lambda () (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors)) ))
+    )
+  :config
+  (progn
+    (add-hook 'before-save-hook 'gofmt-before-save)
+    )
   )
 
 (use-package fic-mode
