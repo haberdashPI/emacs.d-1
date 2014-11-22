@@ -422,6 +422,9 @@
                                     (space-and-space-on-each-side "SPC")
                                     (space-on-each-side "=" "#")
                                     ))
+    (sp-pair "{" "}" :post-handlers '((
+                                       "||\n[i]" "RET"
+                                       )))
     )
   )
 
