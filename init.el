@@ -209,6 +209,10 @@
 
 (use-package magit
   :commands magit-status
+  :init
+  (progn
+    (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
+    )
   :config
   (progn
     (defadvice magit-status (around magit-fullscreen activate)
