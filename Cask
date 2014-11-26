@@ -34,6 +34,7 @@
 (depends-on "lua-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
+(depends-on "org-gcal")
 (depends-on "org-plus-contrib")
 (depends-on "persp-projectile")
 (depends-on "perspective")
