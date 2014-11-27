@@ -11,7 +11,6 @@
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
-(load "~/.emacs.d/secrets.el")
 
 (use-package ansible-doc
   :mode "\\.yml\\'"
@@ -312,11 +311,8 @@
        file secs))
     (defvar monitor-timer (install-monitor (concat org-mobile-directory "/mobileorg.org") 30)
       "Check if file changed every 30 s.")
-
-    (use-package org-gcal
-      :init (setq org-gcal-file-alist '(("antonio@santosvelasco.com" .  "~/Dropbox/org/gcal.org")))
-      )
-    ))
+    )
+  )
 
 (use-package popwin
   :config
