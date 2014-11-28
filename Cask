@@ -60,3 +60,4 @@
 (depends-on "yaml-mode")
 (depends-on "yafolding")
 (depends-on "yasnippet")
+(depends-on "zoom-window" :git "https://github.com/syohex/emacs-zoom-window")
