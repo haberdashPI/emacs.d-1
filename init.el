@@ -57,6 +57,8 @@
 (use-package dired+
   :defer t)
 
+(use-package discover)
+
 (use-package dockerfile-mode
   :mode "\\Dockerfile\\'"
   :config (add-hook 'dockerfile-mode-hook (lambda () (setq require-final-newline nil)))

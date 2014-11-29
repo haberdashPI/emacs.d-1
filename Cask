@@ -20,6 +20,7 @@
 (depends-on "evil-matchit")
 (depends-on "evil-numbers")
 (depends-on "dired+")
+(depends-on "discover")
 (depends-on "fic-mode")
 (depends-on "flycheck")
 (depends-on "go-mode")
