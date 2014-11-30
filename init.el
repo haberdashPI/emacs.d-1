@@ -430,6 +430,10 @@
                                     ))
     (sp-pair "{" "}" :post-handlers '((
                                        "||\n[i]" "RET"
+                                       "|| " "SPC"
+                                       )))
+    (sp-pair "(" ")" :post-handlers '((
+                                       "|| " "SPC"
                                        )))
     )
   )
