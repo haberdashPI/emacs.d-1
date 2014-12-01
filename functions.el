@@ -123,3 +123,12 @@
   (interactive)
   (wg-open-session (antonio-current-perspective-file))
   )
+
+(defun antonio-open-newline ()
+  (interactive)
+  (if (s-blank? (s-trim (buffer-substring-no-properties (line-beginning-position) (line-end-position))))
+      (next-line)
+    (progn
+      (end-of-line)
+      (newline-and-indent)
+      )))
