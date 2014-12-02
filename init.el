@@ -328,7 +328,12 @@
     (push '("*Bundler" :regexp t :height 50) popwin:special-display-config)))
 
 (use-package puppet-mode
-  :mode "\\.pp\\'")
+  :mode "\\.pp\\'"
+  :config
+  (progn
+    (evil-define-key 'insert puppet-mode-map (kbd "C-.") 'antonio-insert-hashrocket)
+    )
+  )
 
 (use-package perspective
   :init (persp-mode)
