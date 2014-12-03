@@ -196,6 +196,7 @@
 
     (use-package helm-swoop
       :commands (helm-swoop helm-multi-swoop)
+      :config (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-evil-search)
       )
     ))
 
