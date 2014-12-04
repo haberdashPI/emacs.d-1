@@ -291,6 +291,7 @@
               (lambda ()
                 (setq evil-auto-indent nil)
                 ))
+    (add-to-list 'org-modules 'org-habit)
     )
   :init
   (progn
