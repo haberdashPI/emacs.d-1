@@ -244,8 +244,8 @@
   (progn
     (auto-fill-mode)
 
-    (setq org-todo-keywords
-        '((sequence "TODO(t)" "FUTURE(f)" "WAIT(w@)" "|" "CANCELED(c@)" "DONE(d)")))
+    (setq org-log-done t
+          org-todo-keywords '((sequence "TODO(t)" "FUTURE(f)" "WAIT(w@)" "|" "CANCELED(c@)" "DONE(d)")))
 
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
@@ -291,7 +291,12 @@
               (lambda ()
                 (setq evil-auto-indent nil)
                 ))
-    (add-to-list 'org-modules 'org-habit)
+
+    (require 'org-habit)
+
+    (setq org-habit-following-days 1
+          org-habit-graph-column 100
+          org-habit-show-habits-only-for-today t)
     )
   :init
   (progn
