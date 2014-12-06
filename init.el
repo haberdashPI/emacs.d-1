@@ -250,19 +250,35 @@
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
 
-    (setq org-agenda-window-setup 'current-window)
+    (setq org-agenda-files '("~/Dropbox/org/plan.org"
+                             "~/Dropbox/org/habits.org"
+                             "~/Dropbox/org/github.org"
+                             "~/Dropbox/org/readlist.org"
+                             "~/Dropbox/org/talks.org"
+                             "~/Dropbox/org/google.org")
+          org-agenda-window-setup 'current-window
+          org-default-notes-file (concat org-directory "/plan.org")
+          org-archive-location "~/Dropbox/org/archives/%s::datetree/"
+          org-agenda-start-on-weekday nil
+          org-tag-alist '(("COMPUTER" . ?c)
+                          (:startgroup . nil)
+                          ("HOME" . ?h) ("OFFICE" . ?o)
+                          (:endgroup . nil)
+                          ("READING" . ?r)
+                          ("FUTURE" . ?f))
+          org-completion-use-ido t
+          org-refile-targets '((nil :maxlevel . 9))
+          org-clock-persist 'history
+          org-habit-following-days 1
+          org-habit-graph-column 100
+          org-habit-show-habits-only-for-today t
+
+          org-capture-templates '(("t" "Task" entry (file+headline "~/Dropbox/org/plan.org" "INBOX")
+                                   "* TODO %?\n")))
 
     (add-hook 'org-capture-mode-hook 'delete-other-windows)
 
-    (setq org-default-notes-file (concat org-directory "/plan.org"))
     (define-key global-map "\C-cc" (lambda () (interactive) (org-capture nil "t")))
-
-    (setq org-archive-location "~/Dropbox/org/archives/%s::datetree/")
-    (setq org-agenda-start-on-weekday nil)
-
-    (setq org-capture-templates
-          '(("t" "Task" entry (file+headline "~/Dropbox/org/plan.org" "INBOX")
-             "* TODO %?\n")))
 
     (add-hook 'org-agenda-mode-hook
               (lambda ()
@@ -271,20 +287,6 @@
                 (define-key org-agenda-mode-map "k" 'evil-previous-line)
                 ))
 
-    (setq org-tag-alist
-          '(("COMPUTER" . ?c)
-            (:startgroup . nil)
-            ("HOME" . ?h) ("OFFICE" . ?o)
-            (:endgroup . nil)
-            ("READING" . ?r)
-            ("FUTURE" . ?f)
-            ))
-
-    (setq org-completion-use-ido t)
-
-    (setq org-refile-targets '((nil :maxlevel . 9)))
-
-    (setq org-clock-persist 'history)
     (org-clock-persistence-insinuate)
 
     (add-hook 'org-mode-hook
@@ -294,9 +296,9 @@
 
     (require 'org-habit)
 
-    (setq org-habit-following-days 1
-          org-habit-graph-column 100
-          org-habit-show-habits-only-for-today t)
+    (require 'org-pomodoro)
+
+    (require 'org-trello)
     )
   :init
   (progn
