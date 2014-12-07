@@ -5,7 +5,6 @@
 (cask-initialize)
 
 (require 'benchmark-init)
-
 (require 'use-package)
 
 (load "~/.emacs.d/settings.el")
@@ -215,6 +214,7 @@
   :commands magit-status
   :init
   (progn
+    (define-key global-map (kbd "C-x C-g") 'magit-status)
     (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
     )
   :config
@@ -231,6 +231,9 @@
       (jump-to-register :magit-fullscreen))
 
     (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+    (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
+    (define-key magit-status-mode-map (kbd "j") 'magit-goto-next-section)
+    (define-key magit-status-mode-map (kbd "k") 'magit-goto-previous-section)
     )
   )
 
