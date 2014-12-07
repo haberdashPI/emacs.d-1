@@ -234,6 +234,10 @@
     (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
     (define-key magit-status-mode-map (kbd "j") 'magit-goto-next-section)
     (define-key magit-status-mode-map (kbd "k") 'magit-goto-previous-section)
+
+    (use-package magit-gh-pulls
+      :config (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
+      )
     )
   )
 
