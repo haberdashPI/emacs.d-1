@@ -39,7 +39,6 @@
 (depends-on "org-plus-contrib")
 (depends-on "org-pomodoro")
 (depends-on "org-trello")
-(depends-on "pallet")
 (depends-on "persp-projectile")
 (depends-on "perspective")
 (depends-on "popwin")

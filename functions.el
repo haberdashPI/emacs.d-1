@@ -132,3 +132,8 @@
       (end-of-line)
       (newline-and-indent)
       )))
+
+(defun antonio-update-packages ()
+  (interactive)
+  (cask-update (cask-initialize)))
+(define-key global-map (kbd "C-x C-u") 'antonio-update-packages)
