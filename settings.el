@@ -136,3 +136,6 @@
                (regexp . "\\(\\s-*\\)=\\s-*[^# \t\n]")
                (repeat . t)
                (modes  . '(ruby-mode))))
+
+;; stop the annoying 'still has buffer messages'
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
