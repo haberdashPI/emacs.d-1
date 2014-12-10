@@ -139,3 +139,9 @@
 
 ;; stop the annoying 'still has buffer messages'
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+
+;; tramp configuration
+(setq tramp-default-method "ssh")
+
+;; suppress warnings
+(setq warning-minimum-level :error)
