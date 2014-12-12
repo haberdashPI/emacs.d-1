@@ -132,6 +132,7 @@
 
      (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
      (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
+     (add-to-list 'evil-insert-state-modes 'git-commit-mode)
 
      (use-package evil-jumper
        :bind (("C-o" . evil-jumper/backward)
