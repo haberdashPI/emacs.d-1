@@ -1,187 +1,216 @@
 ;; do not load outdated compiled files
 (setq load-prefer-newer t)
 
-(require 'cask "~/.emacs.d/cask.el/cask.el")
-(cask-initialize)
+(require 'package)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(package-initialize)
 
+(setq quelpa-update-melpa-p nil)
+(unless (require 'quelpa nil t)
+  (with-temp-buffer
+    (url-insert-file-contents "http://raw.github.com/quelpa/quelpa/master/bootstrap.el")
+    (eval-buffer)))
+
+(quelpa 'benchmark-init)
 (require 'benchmark-init)
+
+(quelpa 'use-package)
 (require 'use-package)
+(setq use-package-idle-interval 0.5)
 
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
+(quelpa 'ansible-doc)
 (use-package ansible-doc
   :mode "\\.yml\\'"
-  :init (add-hook 'yaml-mode-hook #'ansible-doc-mode)
-  )
+  :init (add-hook 'yaml-mode-hook #'ansible-doc-mode))
 
+(quelpa 'buffer-move)
 (use-package buffer-move
   :bind (
          ("C-M-h" . buf-move-left)
          ("C-M-j" . buf-move-down)
          ("C-M-k" . buf-move-up)
-         ("C-M-l" . buf-move-right)
-         )
-  )
+         ("C-M-l" . buf-move-right)))
 
+(quelpa 'bundler)
 (use-package bundler
   :commands (bundle-check bundle-console bundle-install bundle-open bundle-update))
 
+(quelpa 'coffee-mode)
 (use-package coffee-mode
   :mode "\\.coffee\\'")
 
+(quelpa 'company)
 (use-package company
-  :init
+  :commands (global-company-mode)
+  :idle (global-company-mode)
+  :idle-priority 2
+  :config
   (progn
     (setq company-idle-delay 0.1)
-    (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)
-    (global-company-mode)
-    )
-  )
+    (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)))
 
+(quelpa 'dash-at-point)
 (use-package dash-at-point
   :commands (dash-at-point dash-at-point-with-docset)
-  :init
-  (progn
-    (bind-key "C-c d" 'dash-at-point)
-    (bind-key "C-c e" 'dash-at-point-with-docset))
+  :bind (("C-c d" . dash-at-point)
+         ("C-c e" . dash-at-point-with-docset))
   :config
   (progn
     (add-to-list 'dash-at-point-mode-alist '(ruby-mode . "ruby"))
     (add-to-list 'dash-at-point-mode-alist '(lisp-mode . "lisp"))
-    (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
-    ))
+    (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))))
 
+(quelpa 'dired+)
 (use-package dired+
-  :defer t)
+  :commands (dired-jump)
+  :bind (("C-x C-j" . dired-jump)))
 
-(use-package discover)
-
+(quelpa 'dockerfile-mode)
 (use-package dockerfile-mode
   :mode "\\Dockerfile\\'"
-  :config (add-hook 'dockerfile-mode-hook (lambda () (setq require-final-newline nil)))
-  )
+  :config (add-hook 'dockerfile-mode-hook (lambda () (setq require-final-newline nil))))
 
+(quelpa 'eldoc)
 (use-package eldoc
-  :init
-  (progn
-    (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
-    )
-  )
+  :commands (eldoc-mode)
+  :init (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode))
 
+(quelpa 'emmet-mode)
 (use-package emmet-mode
   :commands (emmet-mode)
-  :config (add-hook 'emmet-mode-hook (lambda ()
-                                       (setq emmet-preview-default nil)
-                                       (setq emmet-indentation 2)
-                                       ))
+  :config
+  (add-hook 'emmet-mode-hook (lambda ()
+                               (setq emmet-preview-default nil)
+                               (setq emmet-indentation 2)))
   :init
   (progn
     (add-hook 'sgml-mode-hook 'emmet-mode)
     (add-hook 'web-mode-hook 'emmet-mode)
-    (add-hook 'css-mode-hook 'emmet-mode)
-    ))
+    (add-hook 'css-mode-hook 'emmet-mode)))
 
+(quelpa 'expand-region)
 (use-package expand-region
-  :commands er/expand-region
-  :init
-  (bind-key "C-=" 'er/expand-region)
-  )
+  :commands (er/expand-region)
+  :bind ("C-=" . er/expand-region))
 
+(quelpa 'ethan-wspace)
 (use-package ethan-wspace
   :commands (global-ethan-wspace-mode)
-  :init (add-hook 'after-init-hook 'global-ethan-wspace-mode)
-  )
+  :idle-priority 10
+  :idle (global-ethan-wspace-mode))
 
+(quelpa 'evil)
+(quelpa 'evil-jumper)
+(quelpa 'evil-leader)
+(quelpa 'evil-matchit)
+(quelpa 'evil-numbers)
+(quelpa 'evil-surround)
 (use-package evil
-  :pre-load
-  (progn
-    (setq evil-toggle-key "M-V"))
-  :init
-  (evil-mode 1)
+  :idle-priority 1
+  :commands (evil-mode)
+  :idle (evil-mode 1)
+  :pre-load (setq evil-toggle-key "M-V")
   :config
   (progn
     (setq evil-ex-substitute-global t)
 
-    (define-key evil-insert-state-map [remap newline] 'newline)
-    (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
-    (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
-    (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
-    (evil-define-key 'visual global-map (kbd "SPC") 'evil-search-forward)
-    (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
-    (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
-    (evil-define-key 'insert global-map (kbd "TAB") 'tab-indent-or-complete)
-    (evil-define-key 'insert global-map (kbd "M-RET") 'antonio-open-newline)
+     (define-key evil-insert-state-map [remap newline] 'newline)
+     (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
+     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
+     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
+     (evil-define-key 'visual global-map (kbd "SPC") 'evil-search-forward)
+     (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
+     (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
+     (evil-define-key 'insert global-map (kbd "TAB") 'tab-indent-or-complete)
+     (evil-define-key 'insert global-map (kbd "M-RET") 'antonio-open-newline)
 
-    (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
+     (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
+     (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
 
-    (use-package evil-jumper)
+     (use-package evil-jumper
+       :bind (("C-o" . evil-jumper/backward)
+              ("C-i" . evil-jumper/forward)))
 
-    (use-package evil-leader
-      :config
-      (progn
-        (global-evil-leader-mode)
-        (evil-leader/set-leader ",")
+     (use-package evil-leader
+       :config
+       (progn
+         (global-evil-leader-mode)
+         (evil-leader/set-leader ",")
 
-        (evil-leader/set-key
-          "." 'helm-projectile-find-file
-          "b" 'helm-projectile-switch-to-buffer
-          "c" 'comment-dwim
-          "f" 'antonio-helm-ag
-          "o" 'helm-imenu
-          "s" 'helm-swoop
-          "S" 'helm-multi-swoop
-          "r" 'ruby-test-run-at-point
-          "R" 'ruby-test-run
-          "p" 'helm-show-kill-ring
-          "t" 'helm-gtags-select)
-        ))
+         (evil-leader/set-key
+           "." 'helm-projectile-find-file
+           "b" 'helm-projectile-switch-to-buffer
+           "c" 'comment-dwim
+           "f" 'antonio-helm-ag
+           "o" 'helm-semantic-or-imenu
+           "s" 'helm-swoop
+           "S" 'helm-multi-swoop
+           "r" 'ruby-test-run-at-point
+           "R" 'ruby-test-run
+           "p" 'helm-show-kill-ring
+           "t" 'helm-gtags-select)))
 
-    (use-package evil-matchit
-      :commands (evil-matchit-mode)
-      :config
-      (progn
-        (add-hook 'web-mode-hook 'evil-matchit-mode)
-        ))
+     (use-package evil-matchit
+       :commands (evil-matchit-mode)
+       :config (add-hook 'web-mode-hook 'evil-matchit-mode))
 
-    (use-package evil-numbers
-      :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
-      :init
-      (progn
-        (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
-        (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
+     (use-package evil-numbers
+       :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
+       :init
+       (progn
+         (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
+         (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
-    (use-package evil-surround
-      :config (global-evil-surround-mode 1))
-    ))
+     (use-package evil-surround
+       :config (global-evil-surround-mode 1))))
 
+(quelpa 'go-mode)
 (use-package go-mode
   :mode "\\.go\\'"
-  :init
-  (progn
-    (add-hook 'go-mode-hook (lambda () (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors)) ))
-    )
-  :config
-  (progn
-    (add-hook 'before-save-hook 'gofmt-before-save)
-    )
-  )
+  :init (add-hook 'go-mode-hook (lambda () (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors))))
+  :config (add-hook 'before-save-hook 'gofmt-before-save))
 
+(quelpa 'fic-mode)
 (use-package fic-mode
   :commands fic-mode
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
+(quelpa 'flycheck)
 (use-package flycheck
-  :init (add-hook 'ruby-mode-hook 'flycheck-mode)
+  :init
+  (progn
+    (add-hook 'ruby-mode-hook 'flycheck-mode)
+    (add-hook 'go-mode-hook 'flycheck-mode)
+    (add-hook 'puppet-mode-hook 'flycheck-mode))
   :commands (flycheck-mode))
 
+(quelpa 'haml-mode)
 (use-package haml-mode
   :mode ("\\.haml\\'" . haml-mode))
 
+(quelpa 'helm)
+(quelpa 'helm-ag)
+(quelpa 'helm-gtags)
+(quelpa 'helm-projectile)
+(quelpa 'helm-swoop)
 (use-package helm
+  :bind (("M-x" . helm-M-x))
+  :commands (helm-M-x
+             helm-projectile-find-file
+             helm-projectile-switch-to-buffer
+             antonio-helm-ag
+             helm-imenu
+             helm-swoop
+             helm-multi-swoop
+             helm-show-kill-ring
+             helm-gtags-select)
   :config
-  (bind-key (kbd "M-x") 'helm-M-x)
   (progn
     (use-package helm-ag
       :commands (helm-ag))
@@ -190,39 +219,36 @@
       :commands (helm-gtags-select helm-gtags-find-pattern helm-gtags-find-tag))
 
     (use-package helm-projectile
-      :config (setq projectile-switch-project-action 'helm-projectile)
-      )
+      :config (setq projectile-switch-project-action 'helm-projectile))
 
     (use-package helm-swoop
       :commands (helm-swoop helm-multi-swoop)
-      :config (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-evil-search)
-      )
-    ))
+      :config (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-evil-search))))
 
+(quelpa 'json-mode)
 (use-package json-mode
   :mode "\\.json\\'")
 
+(quelpa 'linum)
 (use-package linum
   :init (global-linum-mode t)
   )
 
+(quelpa 'lua-mode)
 (use-package lua-mode
   :config (setq lua-indent-level 2)
   :mode "\\.lua\\'")
 
+(quelpa 'magit)
+(quelpa 'magit-gh-pulls)
 (use-package magit
-  :commands magit-status
-  :init
-  (progn
-    (define-key global-map (kbd "C-x C-g") 'magit-status)
-    (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
-    )
+  :commands (magit-status)
+  :bind (("C-x g" . magit-status))
   :config
   (progn
     (defadvice magit-status (around magit-fullscreen activate)
       (window-configuration-to-register :magit-fullscreen)
-      ad-do-it
-      (delete-other-windows))
+      ad-do-it (delete-other-windows))
 
     (defun magit-quit-session ()
       "Restores the previous window configuration and kills the magit buffer"
@@ -235,16 +261,17 @@
     (define-key magit-status-mode-map (kbd "j") 'magit-goto-next-section)
     (define-key magit-status-mode-map (kbd "k") 'magit-goto-previous-section)
 
-    (use-package magit-gh-pulls
-      :config (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
-      )
-    )
-  )
+    (use-package magit-gh-pulls)))
 
+(quelpa 'markdown-mode)
 (use-package markdown-mode
-             :mode (("\\.md\\'" . markdown-mode)
-                    ("\\.markdown\\'" . markdown-mode)))
+  :commands (markdown-mode)
+  :mode (("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)))
 
+(quelpa 'org-plus-contrib)
+(quelpa 'org-pomodoro)
+(quelpa 'org-trello)
 (use-package org
   :mode ("\\.org\\'" . org-mode)
   :config
@@ -291,48 +318,22 @@
               (lambda ()
                 (define-key org-agenda-mode-map "j" 'evil-next-line)
                 (define-key org-agenda-mode-map "\C-j" 'org-agenda-goto-date)
-                (define-key org-agenda-mode-map "k" 'evil-previous-line)
-                ))
+                (define-key org-agenda-mode-map "k" 'evil-previous-line)))
 
     (org-clock-persistence-insinuate)
 
-    (add-hook 'org-mode-hook
-              (lambda ()
-                (setq evil-auto-indent nil)
-                ))
+    (add-hook 'org-mode-hook (lambda () (setq evil-auto-indent nil)))
 
     (require 'org-habit)
-
     (require 'org-pomodoro)
-
-    (require 'org-trello)
-    )
+    (require 'org-trello))
   :init
   (progn
     (setq org-directory "~/Dropbox/org")
     (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-    (setq org-mobile-inbox-for-pull "~/Dropbox/Apps/MobileOrg/")
+    (setq org-mobile-inbox-for-pull "~/Dropbox/Apps/MobileOrg/")))
 
-    ;; (add-hook 'after-save-hook
-    ;;           (lambda ()
-    ;;             (if (eq major-mode 'org-mode)
-    ;;                 (org-mobile-push))
-    ;;             ))
-
-    ;; ;; watch mobileorg.org for changes, and then call org-mobile-pull
-    ;; ;; http://stackoverflow.com/questions/3456782/emacs-lisp-how-to-monitor-changes-of-a-file-directory
-    (defun install-monitor (file secs)
-      (run-with-timer
-       0 secs
-       (lambda (f p)
-         (unless (< p (second (time-since (elt (file-attributes f) 5))))
-           (org-mobile-pull)))
-       file secs))
-    (defvar monitor-timer (install-monitor (concat org-mobile-directory "/mobileorg.org") 30)
-      "Check if file changed every 30 s.")
-    )
-  )
-
+(quelpa 'popwin)
 (use-package popwin
   :config
   (progn
@@ -343,36 +344,38 @@
     (push '("*compilation" :regexp t :height 50) popwin:special-display-config)
     (push '("*Bundler" :regexp t :height 50) popwin:special-display-config)))
 
+(quelpa 'puppet-mode)
 (use-package puppet-mode
+  :commands (puppet-mode)
   :mode "\\.pp\\'"
-  :config
-  (progn
-    (evil-define-key 'insert puppet-mode-map (kbd "C-.") 'antonio-insert-hashrocket)
-    )
-  )
+  :config (evil-define-key 'insert puppet-mode-map (kbd "C-.") 'antonio-insert-hashrocket))
 
+(quelpa 'perspective)
 (use-package perspective
-  :init (persp-mode)
-  )
+  :init (persp-mode))
 
+(quelpa 'projectile)
 (use-package projectile
-  :commands (projectile-switch-project projectile-persp-switch-project)
+  :commands (projectile-switch-project
+             projectile-persp-switch-project)
   :bind (("C-c p p" . projectile-switch-project))
   :config
   (progn
     (setq projectile-remember-window-configs t)
-    (projectile-global-mode)
-    ))
+    (projectile-global-mode)))
 
+(quelpa '(rotate-text :fetcher github :repo "nschum/rotate-text.el"))
 (use-package rotate-text
   :commands (rotate-text)
   :bind (("C-x C-t" . rotate-text))
   :config
   (progn
-    (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false") ("assert" "refute")))
-    ))
+    (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false") ("assert" "refute")))))
 
+(quelpa 'ruby-mode)
 (use-package ruby-mode
+  :commands (ruby-mode)
+  :mode "\\.rb\\'"
   :config
   (progn
     (use-package robe
@@ -405,30 +408,29 @@
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
 
+(quelpa 'scss-mode)
 (use-package scss-mode
   :mode "\\.scss\\'"
   :init
   (progn
     (setq scss-compile-at-save nil)
-    (setq css-indent-offset 2)
-    )
-  )
+    (setq css-indent-offset 2)))
 
+(quelpa 'smart-mode-line)
 (use-package smart-mode-line
-  :config (progn
+  :commands (sml/setup)
+  :idle (progn
             (sml/setup)
-            (sml/apply-theme 'respectful)
+            (sml/apply-theme 'respectful)))
 
-            (setq rm-blacklist '(" FIC" " ew:mnlt" " company" " ElDoc"
-                                 " Undo-Tree" " yas" " SP" " rt"
-                                 " Helm" " wg" " ADoc"
-                                 " Ruby-Test" " REl" " RBlock"))
-            ))
-
+(quelpa 'smartparens)
 (use-package smartparens
-  :init (require 'smartparens-config)
+  :idle-priority 2
+  :idle (smartparens-global-mode)
+  :commands (smartparens-global-mode)
   :config
   (progn
+    (require 'smartparens-config)
     (smartparens-global-mode)
     (show-smartparens-global-mode)
     (setq sp-autoescape-string-quote nil)
@@ -446,42 +448,39 @@
 
     (sp-local-pair 'web-mode "%" "%"
                    :unless '(sp-in-string-or-word-p)
-                   :post-handlers '(
-                                    (space-and-space-on-each-side "SPC")
-                                    (space-on-each-side "=" "#")
-                                    ))
-    (sp-pair "{" "}" :post-handlers '((
-                                       "||\n[i]" "RET"
-                                       "| " "SPC"
-                                       )))
-    (sp-pair "(" ")" :post-handlers '((
-                                       "| " "SPC"
-                                       )))
-    )
-  )
+                   :post-handlers '((space-and-space-on-each-side "SPC")
+                                    (space-on-each-side "=" "#")))
+    (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET"
+                                       "| " "SPC")))
+    (sp-pair "(" ")" :post-handlers '(("| " "SPC")))))
 
+(quelpa 'undo-tree)
 (use-package undo-tree
+  :commands (undo-tree-visualize undo-tree-undo undo-tree-redo)
   :config
   (progn
   (setq undo-tree-history-directory-alist (quote (("." . "~/.undo/"))))
   (setq undo-tree-auto-save-history t)
   (global-undo-tree-mode)))
 
+(quelpa 'uniquify)
 (use-package uniquify
   :config (setq uniquify-buffer-name-style 'forward))
 
+(quelpa 'web-mode)
 (use-package web-mode
   :mode "\\.\\(erb\\|html?\\)\\'"
+  :commands (web-mode)
   :config
   (progn
     (setq web-mode-markup-indent-offset 2)
     (setq web-mode-css-indent-offset 2)
     (setq web-mode-enable-css-colorization t)
-    (setq web-mode-enable-auto-pairing nil)
-    )
-  )
+    (setq web-mode-enable-auto-pairing nil)))
 
+(quelpa 'workgroups2)
 (use-package workgroups2
+  :commands (workgroups-mode antonio-save-perspective antonio-load-perspective)
   :config
   (progn
     (setq wg-prefix-key (kbd "C-c z"))
@@ -490,22 +489,21 @@
     (setq wg-emacs-exit-save-behavior nil)
     (setq wg-workgroups-mode-exit-save-behavior nil)
     (setq wg-mode-line-display-on nil)
-    (setq wg-flag-modified nil)
+    (setq wg-flag-modified nil))
+  :bind (("C-x x S" . antonio-save-perspective)
+         ("C-x x l" . antonio-load-perspective)))
 
-    (workgroups-mode 1)
-    (bind-key "C-x x S" 'antonio-save-perspective)
-    (bind-key "C-x x l" 'antonio-load-perspective)
-    )
-  )
-
+(quelpa 'yaml-mode)
 (use-package yaml-mode
-  :mode "\\.yml\\'"
-  )
+  :commands (yaml-mode)
+  :mode "\\.yml\\'")
 
+(quelpa 'yafolding)
 (use-package yafolding
-  :init (add-hook 'prog-mode-hook 'yafolding-mode)
-  )
+  :commands (yafolding-mode)
+  :init (add-hook 'prog-mode-hook 'yafolding-mode))
 
+(quelpa 'yasnippet)
 (use-package yasnippet
   :config
   (progn
@@ -529,13 +527,14 @@
                 (null (do-yas-expand)))
             (if (check-expansion)
                 (company-complete-common)
-              (indent-for-tab-command)))))
-    )
-  :init (yas-global-mode)
-  )
+              (indent-for-tab-command))))))
+  :idle (yas-global-mode)
+  :commands (yas-global-mode))
 
+(quelpa '(zoom-window :fetcher github :repo "syohex/emacs-zoom-window"))
 (use-package zoom-window
   :commands (zoom-window-zoom)
   :bind (("C-x z" . zoom-window-zoom))
-  :config (setq zoom-window-mode-line-color "#202020")
-  )
+  :config (setq zoom-window-mode-line-color "#202020"))
+
+(benchmark-init/show-durations-tree)
