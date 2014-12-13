@@ -135,5 +135,9 @@
 
 (defun antonio-update-packages ()
   (interactive)
-  (cask-update (cask-initialize)))
+  (package-refresh-contents)
+  (package-show-package-list)
+  (package-menu-mark-upgrades)
+  (package-menu-execute t)
+  (quit-window))
 (define-key global-map (kbd "C-x C-u") 'antonio-update-packages)
