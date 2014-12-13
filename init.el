@@ -537,5 +537,3 @@
   :commands (zoom-window-zoom)
   :bind (("C-x z" . zoom-window-zoom))
   :config (setq zoom-window-mode-line-color "#202020"))
-
-(benchmark-init/show-durations-tree)
