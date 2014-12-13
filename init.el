@@ -302,7 +302,7 @@
                           ("READING" . ?r)
                           ("FUTURE" . ?f))
           org-completion-use-ido t
-          org-refile-targets '((nil :maxlevel . 9))
+          org-refile-targets '((org-agenda-files :maxlevel . 9))
           org-clock-persist 'history
           org-habit-following-days 1
           org-habit-graph-column 100
