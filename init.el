@@ -145,8 +145,7 @@
          (evil-leader/set-leader ",")
 
          (evil-leader/set-key
-           "." 'helm-projectile-find-file
-           "b" 'helm-projectile-switch-to-buffer
+           "." 'helm-projectile
            "c" 'comment-dwim
            "f" 'antonio-helm-ag
            "o" 'helm-semantic-or-imenu
