@@ -52,6 +52,19 @@
   :idle-priority 2
   :config
   (progn
+    (defvar-local company-fci-mode-on-p nil)
+
+    (defun company-turn-off-fci (&rest ignore)
+      (when (boundp 'fci-mode)
+        (setq company-fci-mode-on-p fci-mode)
+        (when fci-mode (fci-mode -1))))
+
+    (defun company-maybe-turn-on-fci (&rest ignore)
+      (when company-fci-mode-on-p (fci-mode 1)))
+
+    (add-hook 'company-completion-started-hook 'company-turn-off-fci)
+    (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
+    (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
     (setq company-idle-delay 0.1)
     (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)))
 
@@ -181,6 +194,15 @@
   :commands fic-mode
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
+(quelpa 'fill-column-indicator)
+(use-package fill-column-indicator
+  :commands (fci-mode)
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'fci-mode)
+    (setq fci-rule-color "#333333"
+          fci-rule-column 80)))
+
 (quelpa 'flycheck)
 (use-package flycheck
   :init
@@ -206,10 +228,19 @@
              helm-projectile-switch-to-buffer
              antonio-helm-ag
              helm-imenu
+             helm-mode
              helm-swoop
              helm-multi-swoop
              helm-show-kill-ring
              helm-gtags-select)
+  :idle
+  (progn
+    (helm-mode)
+    (add-to-list 'helm-completing-read-handlers-alist '(ibuffer-find-file . ido))
+    (add-to-list 'helm-completing-read-handlers-alist '(switch-to-buffer . ido))
+    (add-to-list 'helm-completing-read-handlers-alist '(find-file . ido))
+    (add-to-list 'helm-completing-read-handlers-alist '(persp-switch . ido)))
+  :idle-priority 3
   :config
   (progn
     (use-package helm-ag
