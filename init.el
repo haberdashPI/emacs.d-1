@@ -404,6 +404,13 @@
     (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false") ("assert" "refute")))))
 
 (quelpa 'ruby-mode)
+(quelpa 'robe)
+(quelpa 'ruby-additional)
+(quelpa 'ruby-block)
+(quelpa 'ruby-electric)
+(quelpa 'ruby-hash-syntax)
+(quelpa 'ruby-test-mode)
+(quelpa 'ruby-tools)
 (use-package ruby-mode
   :commands (ruby-mode)
   :mode "\\.rb\\'"
