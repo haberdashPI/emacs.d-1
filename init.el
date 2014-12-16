@@ -454,6 +454,11 @@
     (setq scss-compile-at-save nil)
     (setq css-indent-offset 2)))
 
+(quelpa 'slim-mode)
+(use-package slim-mode
+  :mode (("\\.slim\\'" . slim-mode)
+         ("\\.slim.html\\'" . slim-mode)))
+
 (quelpa 'smart-mode-line)
 (use-package smart-mode-line
   :commands (sml/setup)
