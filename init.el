@@ -289,8 +289,8 @@
 
     (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
     (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
-    (define-key magit-status-mode-map (kbd "j") 'magit-goto-next-section)
-    (define-key magit-status-mode-map (kbd "k") 'magit-goto-previous-section)
+    (define-key magit-status-mode-map (kbd "j") 'next-line)
+    (define-key magit-status-mode-map (kbd "k") 'previous-line)
 
     (use-package magit-gh-pulls)))
 
