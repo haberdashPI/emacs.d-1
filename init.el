@@ -475,7 +475,6 @@
   (progn
     (require 'smartparens-config)
     (smartparens-global-mode)
-    (show-smartparens-global-mode)
     (setq sp-autoescape-string-quote nil)
 
     (defun space-and-space-on-each-side (&rest _ignored)
