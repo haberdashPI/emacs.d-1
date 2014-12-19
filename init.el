@@ -160,7 +160,7 @@
          (evil-leader/set-key
            "." 'helm-projectile
            "c" 'comment-dwim
-           "f" 'antonio-helm-ag
+           "f" 'helm-projectile-ag
            "o" 'helm-semantic-or-imenu
            "s" 'helm-swoop
            "S" 'helm-multi-swoop

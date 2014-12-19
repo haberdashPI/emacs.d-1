@@ -46,10 +46,6 @@
     )
   )
 
-(defun antonio-helm-ag ()
-  (interactive)
-  (helm-ag (projectile-project-root)))
-
 (defun antonio-ruby-spec-var-to-let ()
   (interactive)
   (perform-replace "\\(\\w+\\) *= \\(.*\\)" "let(:\\1) { \\2 }" nil t nil nil nil (line-beginning-position) (line-end-position))
