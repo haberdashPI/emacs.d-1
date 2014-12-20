@@ -500,7 +500,6 @@
 
 (quelpa 'undo-tree)
 (use-package undo-tree
-  :commands (undo-tree-visualize undo-tree-undo undo-tree-redo)
   :config
   (progn
   (setq undo-tree-history-directory-alist (quote (("." . "~/.undo/"))))
