@@ -355,7 +355,10 @@
 
     (org-clock-persistence-insinuate)
 
-    (add-hook 'org-mode-hook (lambda () (setq evil-auto-indent nil)))
+    (add-hook 'org-mode-hook
+              (lambda ()
+                ;; stop the annoying 'still has buffer messages'
+                (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)))
 
     (require 'org-habit)
     (require 'org-pomodoro)
