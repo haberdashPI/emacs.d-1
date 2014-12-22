@@ -369,6 +369,10 @@
     (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
     (setq org-mobile-inbox-for-pull "~/Dropbox/Apps/MobileOrg/")))
 
+(quelpa 'perspective)
+(use-package perspective
+  :init (persp-mode))
+
 (quelpa 'popwin)
 (use-package popwin
   :config
@@ -380,16 +384,6 @@
     (push '("*compilation" :regexp t :height 50) popwin:special-display-config)
     (push '("*Bundler" :regexp t :height 50) popwin:special-display-config)))
 
-(quelpa 'puppet-mode)
-(use-package puppet-mode
-  :commands (puppet-mode)
-  :mode "\\.pp\\'"
-  :config (evil-define-key 'insert puppet-mode-map (kbd "C-.") 'antonio-insert-hashrocket))
-
-(quelpa 'perspective)
-(use-package perspective
-  :init (persp-mode))
-
 (quelpa 'projectile)
 (use-package projectile
   :commands (projectile-switch-project
@@ -399,6 +393,12 @@
   (progn
     (setq projectile-remember-window-configs t)
     (projectile-global-mode)))
+
+(quelpa 'puppet-mode)
+(use-package puppet-mode
+  :commands (puppet-mode)
+  :mode "\\.pp\\'"
+  :config (evil-define-key 'insert puppet-mode-map (kbd "C-.") 'antonio-insert-hashrocket))
 
 (quelpa '(rotate-text :fetcher github :repo "nschum/rotate-text.el"))
 (use-package rotate-text
