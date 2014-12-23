@@ -55,6 +55,8 @@
 (global-auto-revert-mode t)
 
 ;; window management
+(defadvice windmove-do-window-select (after windmove-blink-mode-line activate)
+  (antonio-blink-mode-line))
 (global-set-key (kbd "M-h") 'windmove-left)
 (global-set-key (kbd "M-l") 'windmove-right)
 (global-set-key (kbd "M-k") 'windmove-up)

@@ -137,3 +137,12 @@
   (package-menu-execute t)
   (quit-window))
 (define-key global-map (kbd "C-x C-u") 'antonio-update-packages)
+
+(defun antonio-invert-mode-line ()
+  (interactive)
+  (invert-face 'mode-line))
+
+(defun antonio-blink-mode-line ()
+  (interactive)
+  (antonio-invert-mode-line)
+  (run-at-time "0.3 sec" nil 'antonio-invert-mode-line))
