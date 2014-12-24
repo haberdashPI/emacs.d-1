@@ -146,4 +146,4 @@
 (setq warning-minimum-level :error)
 
 ;; show matching parenthesis
-(show-smartparens-mode)
+(show-paren-mode)
