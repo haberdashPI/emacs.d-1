@@ -147,3 +147,6 @@
 
 ;; show matching parenthesis
 (show-paren-mode)
+
+;; keybinds
+(global-set-key (kbd "C-x C-e") 'eval-region)
