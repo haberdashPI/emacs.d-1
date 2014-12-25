@@ -123,65 +123,72 @@
 (quelpa 'evil-leader)
 (quelpa 'evil-matchit)
 (quelpa 'evil-numbers)
+(quelpa 'evil-snipe)
 (quelpa 'evil-surround)
 (use-package evil
-  :idle-priority 1
-  :commands (evil-mode)
-  :idle (evil-mode 1)
   :pre-load (setq evil-toggle-key "M-V")
+  :init (evil-mode 1)
   :config
   (progn
     (setq evil-ex-substitute-global t)
 
-     (define-key evil-insert-state-map [remap newline] 'newline)
-     (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
-     (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
-     (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
-     (evil-define-key 'visual global-map (kbd "SPC") 'evil-search-forward)
-     (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
-     (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
-     (evil-define-key 'insert global-map (kbd "TAB") 'tab-indent-or-complete)
-     (evil-define-key 'insert global-map (kbd "M-RET") 'antonio-open-newline)
+    (define-key evil-insert-state-map [remap newline] 'newline)
+    (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
+    (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
+    (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
+    (evil-define-key 'visual global-map (kbd "SPC") 'evil-search-forward)
+    (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
+    (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
+    (evil-define-key 'insert global-map (kbd "TAB") 'tab-indent-or-complete)
+    (evil-define-key 'insert global-map (kbd "M-RET") 'antonio-open-newline)
 
-     (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
-     (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
-     (add-to-list 'evil-insert-state-modes 'git-commit-mode)
+    (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
+    (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
+    (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
+    (add-to-list 'evil-insert-state-modes 'git-commit-mode)
 
-     (use-package evil-jumper
-       :bind (("C-o" . evil-jumper/backward)
-              ("C-i" . evil-jumper/forward)))
+    (use-package evil-jumper
+      :bind (("C-o" . evil-jumper/backward)
+             ("C-i" . evil-jumper/forward)))
 
-     (use-package evil-leader
-       :config
-       (progn
-         (global-evil-leader-mode)
-         (evil-leader/set-leader ",")
+    (use-package evil-leader
+      :config
+      (progn
+        (global-evil-leader-mode)
+        (evil-leader/set-leader ",")
 
-         (evil-leader/set-key
-           "." 'helm-projectile
-           "c" 'comment-dwim
-           "f" 'helm-projectile-ag
-           "o" 'helm-semantic-or-imenu
-           "s" 'helm-swoop
-           "S" 'helm-multi-swoop
-           "r" 'ruby-test-run-at-point
-           "R" 'ruby-test-run
-           "p" 'helm-show-kill-ring
-           "t" 'helm-gtags-select)))
+        (evil-leader/set-key
+          "." 'helm-projectile
+          "c" 'comment-dwim
+          "f" 'helm-projectile-ag
+          "h" 'helm-resume
+          "o" 'helm-semantic-or-imenu
+          "s" 'helm-swoop
+          "S" 'helm-multi-swoop
+          "r" 'ruby-test-run-at-point
+          "R" 'ruby-test-run
+          "p" 'helm-show-kill-ring
+          "t" 'helm-gtags-select)))
 
-     (use-package evil-matchit
-       :commands (evil-matchit-mode)
-       :config (add-hook 'web-mode-hook 'evil-matchit-mode))
+    (use-package evil-matchit
+      :commands (evil-matchit-mode)
+      :config (add-hook 'web-mode-hook 'evil-matchit-mode))
 
-     (use-package evil-numbers
-       :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
-       :init
-       (progn
-         (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
-         (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
+    (use-package evil-numbers
+      :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
+      :init
+      (progn
+        (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
+        (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
-     (use-package evil-surround
-       :config (global-evil-surround-mode 1))))
+    (use-package evil-snipe
+      :config
+      (progn
+        (global-evil-snipe-mode)
+        (evil-snipe-replace-evil)))
+
+    (use-package evil-surround
+      :config (global-evil-surround-mode 1))))
 
 (quelpa 'go-mode)
 (use-package go-mode
