@@ -376,6 +376,10 @@
     (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
     (setq org-mobile-inbox-for-pull "~/Dropbox/Apps/MobileOrg/")))
 
+(quelpa 'paradox)
+(use-package paradox
+  :commands (paradox-list-packages))
+
 (quelpa 'perspective)
 (use-package perspective
   :init (persp-mode))
