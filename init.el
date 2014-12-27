@@ -508,8 +508,7 @@
                    :unless '(sp-in-string-or-word-p)
                    :post-handlers '((space-and-space-on-each-side "SPC")
                                     (space-on-each-side "=" "#")))
-    (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET"
-                                       "| " "SPC")))
+    (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET")))
     (sp-pair "(" ")" :post-handlers '(("| " "SPC")))))
 
 (quelpa 'undo-tree)
