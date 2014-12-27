@@ -536,7 +536,9 @@
 
 (quelpa 'workgroups2)
 (use-package workgroups2
-  :commands (workgroups-mode antonio-save-perspective antonio-load-perspective)
+  :commands (workgroups-mode antonio-save-perspective
+                             antonio-load-perspective
+                             wg-create-workgroup wg-open-session)
   :config
   (progn
     (setq wg-prefix-key (kbd "C-c z"))
@@ -545,7 +547,8 @@
     (setq wg-emacs-exit-save-behavior nil)
     (setq wg-workgroups-mode-exit-save-behavior nil)
     (setq wg-mode-line-display-on nil)
-    (setq wg-flag-modified nil))
+    (setq wg-flag-modified nil)
+    (workgroups-mode 1))
   :bind (("C-x x S" . antonio-save-perspective)
          ("C-x x l" . antonio-load-perspective)))
 
