@@ -119,15 +119,18 @@
   :idle (global-ethan-wspace-mode))
 
 (quelpa 'evil)
-(quelpa 'evil-jumper)
 (quelpa 'evil-leader)
 (quelpa 'evil-matchit)
 (quelpa 'evil-numbers)
 (quelpa 'evil-snipe)
 (quelpa 'evil-surround)
 (use-package evil
-  :pre-load (setq evil-toggle-key "M-V")
+  :pre-load
+  (setq evil-toggle-key "M-V"
+        evil-want-C-i-jump nil)
   :init (evil-mode 1)
+  :bind (("C-M-o" . evil-jump-backward)
+         ("C-M-i" . evil-jump-forward))
   :config
   (progn
     (setq evil-ex-substitute-global t)
@@ -146,10 +149,6 @@
     (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
     (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
     (add-to-list 'evil-insert-state-modes 'git-commit-mode)
-
-    (use-package evil-jumper
-      :bind (("C-o" . evil-jumper/backward)
-             ("C-i" . evil-jumper/forward)))
 
     (use-package evil-leader
       :config
