@@ -243,6 +243,7 @@
   :idle
   (progn
     (helm-mode)
+    (add-to-list 'helm-completing-read-handlers-alist '(cd . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(ibuffer-find-file . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(switch-to-buffer . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(find-file . ido))
