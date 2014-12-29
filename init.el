@@ -115,6 +115,11 @@
 (quelpa 'ethan-wspace)
 (use-package ethan-wspace
   :commands (global-ethan-wspace-mode)
+  :config
+  (progn
+    (defun remove-tabs-from-ethan-wspace-errors ()
+      (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors)))
+    (add-hook 'go-mode-hook 'remove-tabs-from-ethan-wspace-errors))
   :idle-priority 10
   :idle (global-ethan-wspace-mode))
 
