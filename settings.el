@@ -150,3 +150,6 @@
 
 ;; keybinds
 (global-set-key (kbd "C-x C-e") 'eval-region)
+
+;; ediff
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
