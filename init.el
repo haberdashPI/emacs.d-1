@@ -66,7 +66,8 @@
     (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
     (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
     (setq company-idle-delay 0.1)
-    (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)))
+    (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
+    (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)))
 
 (quelpa 'dash-at-point)
 (use-package dash-at-point
