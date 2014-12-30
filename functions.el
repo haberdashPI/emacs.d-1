@@ -129,15 +129,6 @@
       (newline-and-indent)
       )))
 
-(defun antonio-update-packages ()
-  (interactive)
-  (package-refresh-contents)
-  (package-show-package-list)
-  (package-menu-mark-upgrades)
-  (package-menu-execute t)
-  (quit-window))
-(define-key global-map (kbd "C-x C-u") 'antonio-update-packages)
-
 (defun antonio-invert-mode-line ()
   (interactive)
   (invert-face 'mode-line))

@@ -384,7 +384,9 @@
 
 (quelpa 'paradox)
 (use-package paradox
-  :commands (paradox-list-packages))
+  :bind (("C-x C-u" . paradox-upgrade-packages))
+  :config (setq paradox-execute-asynchronously t)
+  :commands (paradox-upgrade-packages paradox-list-packages))
 
 (quelpa 'perspective)
 (use-package perspective
