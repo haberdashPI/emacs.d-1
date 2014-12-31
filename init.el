@@ -466,6 +466,7 @@
     (bind-key (kbd "C-x l") 'antonio-ruby-spec-var-to-let ruby-mode-map)
     (evil-define-key 'insert ruby-mode-map (kbd "C-.") 'antonio-insert-hashrocket)
     (add-hook 'ruby-mode-hook 'ruby-electric-mode)
+    (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
     (add-hook 'ruby-mode-hook (lambda () (setq require-final-newline nil))))
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
