@@ -62,6 +62,18 @@
     (defun company-maybe-turn-on-fci (&rest ignore)
       (when company-fci-mode-on-p (fci-mode 1)))
 
+    (defun antonio-company-show-doc-buffer ()
+      "Temporarily show the documentation buffer for the selection."
+      (interactive)
+      (let* ((selected (nth company-selection company-candidates))
+             (doc-buffer (or (company-call-backend
+                              'doc-buffer selected)
+                             (error "No documentation available"))))
+        (with-current-buffer doc-buffer
+          (goto-char (point-min)))
+        (display-buffer doc-buffer t)))
+    (define-key company-active-map (kbd "C-h") #'antonio-company-show-doc-buffer)
+
     (add-hook 'company-completion-started-hook 'company-turn-off-fci)
     (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
     (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
