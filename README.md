@@ -1,4 +1,6 @@
-# Usage
+# Dotfiles
+
+## Vim
 
 1. Install NeoBundle
 
