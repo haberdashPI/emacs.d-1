@@ -7,3 +7,6 @@
 [submodule "modules/prezto"]
 	path = modules/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "cask.el"]
+	path = emacs.d/cask.el
+	url = https://github.com/cask/cask.git
