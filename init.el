@@ -299,7 +299,8 @@
 (quelpa 'magit-gh-pulls)
 (use-package magit
   :commands (magit-status)
-  :bind (("C-x g" . magit-status))
+  :bind (("C-x g" . magit-status)
+         ("C-x C-q" . magit-quit-session))
   :config
   (progn
     (defadvice magit-status (around magit-fullscreen activate)
