@@ -299,7 +299,8 @@
 (quelpa 'magit-gh-pulls)
 (use-package magit
   :commands (magit-status)
-  :bind (("C-x g" . magit-status))
+  :bind (("C-x g" . magit-status)
+         ("C-x C-q" . magit-quit-session))
   :config
   (progn
     (defadvice magit-status (around magit-fullscreen activate)
@@ -502,11 +503,13 @@
          ("\\.slim.html\\'" . slim-mode)))
 
 (quelpa 'smart-mode-line)
+(quelpa 'smart-mode-line-powerline)
 (use-package smart-mode-line
   :commands (sml/setup)
   :idle (progn
-            (sml/setup)
-            (sml/apply-theme 'respectful)))
+          (use-package smart-mode-line-powerline)
+          (sml/setup)
+          (sml/apply-theme 'respectful)))
 
 (quelpa 'smartparens)
 (use-package smartparens
