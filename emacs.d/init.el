@@ -453,13 +453,13 @@
   :mode "\\.rb\\'"
   :config
   (progn
-    (use-package robe
-      :config
-      (progn
-        (add-hook 'ruby-mode-hook 'robe-mode)
-        (inf-ruby-console-auto)
-        (robe-start)
-        (push 'company-robe company-backends)))
+    ;; (use-package robe
+    ;;   :config
+    ;;   (progn
+    ;;     (add-hook 'ruby-mode-hook 'robe-mode)
+    ;;     (inf-ruby-console-auto)
+    ;;     (robe-start)
+    ;;     (push 'company-robe company-backends)))
 
     (use-package ruby-additional)
 
