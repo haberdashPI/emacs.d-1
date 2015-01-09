@@ -52,7 +52,7 @@ source ~/.zsh/keys.zsh
 prompt antonio
 
 if $(which chruby > /dev/null); then
-  chruby ruby
+  chruby 2.1.4
 fi
 
 # completion system
