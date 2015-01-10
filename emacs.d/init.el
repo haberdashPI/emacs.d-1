@@ -264,6 +264,7 @@
     (add-to-list 'helm-completing-read-handlers-alist '(ibuffer-find-file . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(switch-to-buffer . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(find-file . ido))
+    (add-to-list 'helm-completing-read-handlers-alist '(dired-do-rename . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(persp-switch . ido)))
   :idle-priority 3
   :config
@@ -542,7 +543,7 @@
 
 (quelpa 'undo-tree)
 (use-package undo-tree
-  :config
+  :init
   (progn
   (setq undo-tree-history-directory-alist (quote (("." . "~/.undo/"))))
   (setq undo-tree-auto-save-history t)
