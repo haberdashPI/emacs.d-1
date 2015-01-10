@@ -543,7 +543,7 @@
 
 (quelpa 'undo-tree)
 (use-package undo-tree
-  :config
+  :init
   (progn
   (setq undo-tree-history-directory-alist (quote (("." . "~/.undo/"))))
   (setq undo-tree-auto-save-history t)
