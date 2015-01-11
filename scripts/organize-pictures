@@ -1,0 +1,8 @@
+#!/bin/bash
+
+format="%Y/%m/%d/%F-%H%M%%-c.%%e"
+
+exiftool -r "-FileName<CreateDate" -d $format $1
+
+echo "Unprocessed files:"
+find $1 -type f
