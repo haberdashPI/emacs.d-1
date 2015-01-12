@@ -1,0 +1,14 @@
+---
+- hosts: 127.0.0.1
+
+  vars:
+    home: "{{ lookup('env','HOME') }}"
+    base_dir: "{{ lookup('pipe', 'git rev-parse --show-toplevel') }}"
+
+  tasks:
+    - name: install emacs on osx
+      homebrew: name="emacs" state="present" install_options="use-git-head,with-gnutls,cocoa,with-imagemagick"
+      when: ansible_os_family == "Darwin"
+
+    - name: link emacs.d
+      file: path="{{ home }}/.emacs.d" src="{{ base_dir }}/files/home/antonio/emacs.d"
