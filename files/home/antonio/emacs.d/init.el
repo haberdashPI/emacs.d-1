@@ -13,6 +13,11 @@
     (url-insert-file-contents "http://raw.github.com/quelpa/quelpa/master/bootstrap.el")
     (eval-buffer)))
 
+(quelpa 'auto-compile)
+(require 'auto-compile)
+(auto-compile-on-load-mode 1)
+(auto-compile-on-save-mode 1)
+
 (quelpa 'benchmark-init)
 (require 'benchmark-init)
 
@@ -605,14 +610,14 @@
             (if (looking-at "->") t nil)))))
 
     (defun do-yas-expand ()
-      (let ((yas/fallback-behavior 'return-nil))
-        (yas/expand)))
+      (let ((yas-fallback-behavior 'return-nil))
+        (yas-expand)))
 
     (defun tab-indent-or-complete ()
       (interactive)
       (if (minibufferp)
           (minibuffer-complete)
-        (if (or (not yas/minor-mode)
+        (if (or (not yas-minor-mode)
                 (null (do-yas-expand)))
             (if (check-expansion)
                 (company-complete-common)
