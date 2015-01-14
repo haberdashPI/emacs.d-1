@@ -1,0 +1,6 @@
+---
+- include: osx.yml
+  when: ansible_os_family == "Darwin"
+
+- name: link emacs.d
+  file: path="{{ home }}/.emacs.d" src="{{ base_dir }}/files/home/antonio/emacs.d"
