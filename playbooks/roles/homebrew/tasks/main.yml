@@ -1,0 +1,9 @@
+---
+- name: check if homebrew is installed
+  shell: brew
+  register: homebrew_brew_output
+  ignore_errors: True
+
+- name: install homebrew on OS X
+  shell: "ruby -e $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: homebrew_brew_output | failed
