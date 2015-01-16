@@ -1,0 +1,16 @@
+---
+- name: install macvim on osx
+  homebrew: name="macvim" state="present" install_options="with-lua"
+  when: ansible_os_family == "Darwin"
+
+- name: make ~/.vim
+  file: path="{{ home }}/.vim" state="directory"
+
+- name: link vimrc
+  file: path="{{ home }}/.vimrc" src="{{ base_dir }}/files/home/antonio/vimrc"
+        state="link"
+
+- name: link snippets
+  file: path="{{ home }}/.vim/snippets"
+        src="{{ base_dir }}/files/home/antonio/vim/snippets"
+        state="link"

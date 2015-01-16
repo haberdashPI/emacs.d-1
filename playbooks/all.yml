@@ -3,3 +3,4 @@
   roles:
     - { role: homebrew, when: "ansible_os_family == 'Darwin'" }
     - emacs
+    - vim
