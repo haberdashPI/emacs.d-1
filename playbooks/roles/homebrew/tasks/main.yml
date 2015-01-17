@@ -1,6 +1,6 @@
 ---
 - name: check if homebrew is installed
-  shell: brew
+  shell: brew config
   register: homebrew_brew_output
   ignore_errors: True
 
