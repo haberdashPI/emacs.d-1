@@ -1,9 +1,9 @@
-[submodule "modules/zsh-completions"]
-	path = modules/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "modules/fasd"]
-	path = modules/fasd
+[submodule "files/home/antonio/zsh/modules/fasd"]
+	path = files/home/antonio/zsh/modules/fasd
 	url = https://github.com/clvv/fasd.git
-[submodule "modules/prezto"]
-	path = modules/prezto
+[submodule "files/home/antonio/zsh/modules/zsh-completions"]
+	path = files/home/antonio/zsh/modules/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "files/home/antonio/zsh/modules/prezto"]
+	path = files/home/antonio/zsh/modules/prezto
 	url = https://github.com/sorin-ionescu/prezto.git

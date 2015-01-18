@@ -1,0 +1,12 @@
+---
+- name: install zsh on osx
+  homebrew: name="zsh" state="present"
+  when: ansible_os_family == "Darwin"
+
+- name: link files
+  file: path="{{ home }}/.{{ item }}" src="{{ base_dir }}/files/home/antonio/{{ item }}"
+        state="link"
+  with_items:
+    - zshrc
+    - zshenv
+    - zsh
