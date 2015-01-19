@@ -1,0 +1,12 @@
+path=$1
+
+if [[ -z $path ]]; then
+  echo "Please provide a path" && exit 1
+fi
+
+git rm --cached $path
+rm -rf $path
+git config -f .git/config --remove-section submodule.$path
+git config -f .gitmodules --remove-section submodule.$path
+git add .gitmodules
+git commit -m "Remove submodule $path"

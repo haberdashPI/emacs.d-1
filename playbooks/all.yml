@@ -1,7 +1,18 @@
 ---
 - hosts: 127.0.0.1
+  vars:
+    - home: "{{ lookup('env','HOME') }}"
+    - base_dir: "{{ lookup('pipe', 'git rev-parse --show-toplevel') }}"
   roles:
     - { role: homebrew, when: "ansible_os_family == 'Darwin'" }
     - emacs
     - vim
     - zsh
+  tasks:
+    - name: create $HOME/.bin
+      file: path="{{ home }}/.bin" state="directory"
+
+    - name: copy scripts
+      copy: dest="{{ home }}/.bin" src="{{ item }}" mode="0755"
+      with_fileglob:
+        - "{{ base_dir }}/files/home/antonio/bin/*"

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# customize these
+ICS2ORG="/Users/antonio/.emacs.d/ical2org "
+ICSFILE="/Users/antonio/Dropbox/org/google.ics"
+ORGFILE="/Users/antonio/Dropbox/org/google.org"
+URL="http://www.google.com/calendar/ical/antonio%40santosvelasco.com/private-36ad7f344240040203d5d88d25e44e53/basic.ics"
+WGET="/opt/boxen/homebrew/bin/wget"
+CURL="/usr/bin/curl -L"
+export PATH="/opt/boxen/homebrew/bin:$PATH"
+
+set -e
+$CURL $URL > $ICSFILE 2> /tmp/curl_error
+$ICS2ORG < $ICSFILE > $ORGFILE 2> /tmp/icsorg_error

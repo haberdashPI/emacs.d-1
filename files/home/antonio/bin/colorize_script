@@ -1,0 +1,8 @@
+#!/bin/sh
+case "$1" in
+   # add all extensions you want to handle here
+   *.js|*.php|*.pl|*.sh|*.[ch]|*.[ch]pp|*.[ch]xx|*.cc|*.hh|\
+   *.xml|*.diff|*.patch|*.py|*.rb|*.sql|*.html|*.haml)
+      pygmentize "$1" ;;
+   *) exit 0;;
+esac
