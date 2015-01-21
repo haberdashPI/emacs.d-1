@@ -183,6 +183,7 @@
 
         (evil-leader/set-key
           "." 'helm-projectile
+          "b" 'blame
           "c" 'comment-dwim
           "f" 'helm-projectile-ag
           "h" 'helm-resume
