@@ -5,6 +5,7 @@
     - base_dir: "{{ lookup('pipe', 'git rev-parse --show-toplevel') }}"
   roles:
     - { role: homebrew, when: "ansible_os_family == 'Darwin'" }
+    - { role: osx, when: "ansible_os_family == 'Darwin'" }
     - emacs
     - vim
     - zsh

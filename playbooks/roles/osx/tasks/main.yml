@@ -1,0 +1,40 @@
+---
+- name: install packages on osx
+  homebrew: name="{{ item }}" state="present"
+  with_items:
+    - coreutils
+    - ctags
+    - curl
+    - dnsmasq
+    - docker
+    - dtrx
+    - exiftool
+    - faac
+    - ffmpeg
+    - findutils
+    - git
+    - gnupg2
+    - gpg-agent
+    - imagemagick
+    - lastpass-cli
+    - lua
+    - netcat
+    - nmap
+    - ntfs-3g
+    - p7zip
+    - pass
+    - pigz
+    - privoxy
+    - ranger
+    - reattach-to-user-namespace
+    - ruby-install
+    - sshfs
+    - syncthing
+    - the_silver_searcher
+    - tmate
+    - tmux
+    - unrar
+    - wakeonlan
+    - wget
+    - youtube-dl
+    - zsh
