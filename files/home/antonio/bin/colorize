@@ -1,8 +1,12 @@
 #!/bin/sh
-case "$1" in
-   # add all extensions you want to handle here
-   *.js|*.php|*.pl|*.sh|*.[ch]|*.[ch]pp|*.[ch]xx|*.cc|*.hh|\
-   *.xml|*.diff|*.patch|*.py|*.rb|*.sql|*.html|*.haml)
-      pygmentize "$1" ;;
-   *) exit 0;;
-esac
+
+shebang=$(head -1 "$1" | grep "#!" | rev | cut -d / -f1 | rev)
+extension=$(basename "$1" | rev | cut -d . -f1 | rev)
+
+if [ "$shebang" != "" ]; then
+  pygmentize -l $shebang "$1"
+elif [ "$extension" != "" -a "$extension" != $(basename "$1") ]; then
+  pygmentize -l $extension "$1"
+else
+  cat "$1"
+fi
