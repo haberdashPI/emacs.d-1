@@ -153,3 +153,5 @@
 
 ;; ediff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+(add-to-list 'find-file-not-found-functions #'antonio-create-non-existent-directory)

@@ -137,3 +137,8 @@
   (interactive)
   (antonio-invert-mode-line)
   (run-at-time "0.3 sec" nil 'antonio-invert-mode-line))
+
+(defun antonio-create-non-existent-directory ()
+  (let ((parent-directory (file-name-directory buffer-file-name)))
+    (if (not (file-exists-p parent-directory))
+        (make-directory parent-directory t))))
