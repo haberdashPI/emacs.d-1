@@ -379,6 +379,7 @@
                                    "* TODO %?\n")))
 
     (add-hook 'org-capture-mode-hook 'delete-other-windows)
+    (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
     (define-key global-map "\C-cc" (lambda () (interactive) (org-capture nil "t")))
 
