@@ -62,6 +62,9 @@ var cycleBetweenEmacs = function() { cycleBetweenWindowsOfTheSameApp("Emacs", []
 
 slate.bind("1:cmd", slate.operation("focus", { app: "Google Chrome" }));
 slate.bind("2:cmd", slate.operation("focus", { app: "GitHub Chat" }));
+slate.bind("3:cmd", slate.operation("focus", { app: "Textual IRC Client" }));
+slate.bind("4:cmd", slate.operation("focus", { app: "Slack" }));
+slate.bind("5:cmd", slate.operation("focus", { app: "Firefox" }));
 slate.bind("7:cmd", slate.operation("focus", { app: "iTunes" }));
 slate.bind("8:cmd", slate.operation("focus", { app: "Adium" }));
 slate.bind("9:cmd", slate.operation("focus", { app: "iTerm" }));
