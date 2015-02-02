@@ -2,7 +2,21 @@
 
 format="%Y/%m/%d/%F-%H%M%%-c.%%e"
 
-exiftool -r "-FileName<CreateDate" -d $format $1
+src=$1
+dest=$2
+
+# if possible, use the exif data
+exiftool -r "-FileName<CreateDate" -d $format $src >/dev/null
+
+# iPhoto processing
+if [ -n $IPHOTO ]; then
+  IFS=
+  find $src -type f | while read -r picture; do
+    path=$(echo $picture | rev | cut -d/ -f3-5 | rev)
+    mkdir -p $dest/$path
+    mv "$picture" $dest/$path
+  done
+fi
 
 echo "Unprocessed files:"
-find $1 -type f
+find $src -type f
