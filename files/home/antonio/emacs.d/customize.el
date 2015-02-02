@@ -10,6 +10,9 @@
  '(custom-safe-themes
    (quote
     ("e56f1b1c1daec5dbddc50abd00fcd00f6ce4079f4a7f66052cf16d96412a09a9" "c5a044ba03d43a725bd79700087dea813abcb6beb6be08c7eb3303ed90782482" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "3a727bdc09a7a141e58925258b6e873c65ccf393b2240c51553098ca93957723" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "5ae8f7212ee110e161e54c14ac6730508ac2de722aa38272b7fb1ee55a6f21e1" "ea605f54caf4b40e044c4bb553924dab30d1b110aa801c238916fbcfe5a8ca09" "e53cc4144192bb4e4ed10a3fa3e7442cae4c3d231df8822f6c02f1220a0d259a" default)))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/open_source.org" "~/Dropbox/org/plan.org" "~/Dropbox/org/habits.org" "~/Dropbox/org/github.org" "~/Dropbox/org/readlist.org" "~/Dropbox/org/talks.org" "~/Dropbox/org/google.org")))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
