@@ -1,12 +1,12 @@
 #!/bin/bash
 
-format="%Y/%m/%d/%F-%H%M%%-c.%%e"
-
 src=$1
 dest=$2
 
+format="%Y/%m/%d/%F-%H%M%%-c.%%e"
+
 # if possible, use the exif data
-exiftool -r "-FileName<CreateDate" -d $format $src >/dev/null
+exiftool -r "-FileName<CreateDate" -d $dest/$format $src >/dev/null
 
 # iPhoto processing
 if [ -n $IPHOTO ]; then
