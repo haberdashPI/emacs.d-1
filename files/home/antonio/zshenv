@@ -8,5 +8,5 @@ export PAGER='less'
 export LESS='-XR'
 export LESSOPEN='|colorize %s'
 
-fpath+=(~/.zsh/functions ~/.zsh/zsh-completions)
+fpath+=(~/.zsh/functions ~/.zsh/modules/zsh-completions)
 path+=(./bin ~/.bin /usr/local/bin)
