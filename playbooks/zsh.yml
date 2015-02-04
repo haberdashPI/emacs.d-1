@@ -1,0 +1,7 @@
+---
+- hosts: 127.0.0.1
+  vars:
+    - home: "{{ lookup('env','HOME') }}"
+    - base_dir: "{{ lookup('pipe', 'git rev-parse --show-toplevel') }}"
+  roles:
+    - zsh
