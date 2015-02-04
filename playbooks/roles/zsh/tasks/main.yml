@@ -3,10 +3,15 @@
   homebrew: name="zsh" state="present"
   when: ansible_os_family == "Darwin"
 
-- name: link files
-  file: path="{{ home }}/.{{ item }}" src="{{ base_dir }}/files/home/antonio/{{ item }}"
-        state="link"
+- name: copy files
+  copy: dest="{{ home }}/.{{ item }}" src="{{ base_dir }}/files/home/antonio/{{ item }}"
   with_items:
     - zshrc
     - zshenv
-    - zsh
+
+- name: set up ~/.zsh
+  synchronize: dest="{{ home }}/.zsh" src="{{ base_dir }}/files/home/antonio/zsh/"
+
+- name: checkout external projects
+  git: repo="{{ item.value.repo }}" dest="{{ item.value.dest }}"
+  with_dict: zsh_projects

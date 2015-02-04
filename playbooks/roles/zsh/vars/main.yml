@@ -1,0 +1,11 @@
+---
+zsh_projects:
+  fasd:
+    repo: "git@github.com:clvv/fasd.git"
+    dest: "{{ home }}/.zsh/modules/fasd"
+  prezto:
+    repo: "git@github.com:sorin-ionescu/prezto.git"
+    dest: "{{ home }}/.zsh/modules/prezto"
+  zsh-completions:
+    repo: "git@github.com:zsh-users/zsh-completions.git"
+    dest: "{{ home }}/.zsh/modules/zsh-completions"
