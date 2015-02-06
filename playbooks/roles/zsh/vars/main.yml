@@ -12,3 +12,9 @@ zsh_projects:
   zsh-autosuggestions:
     repo: "git@github.com:tarruda/zsh-autosuggestions.git"
     dest: "{{ home }}/.zsh/modules/zsh-autosuggestions"
+  zsh-history-substring-search:
+    repo: "git@github.com:zsh-users/zsh-history-substring-search.git"
+    dest: "{{ home }}/.zsh/modules/zsh-history-substring-search"
+  zsh-syntax-highlighting:
+    repo: "git@github.com:zsh-users/zsh-syntax-highlighting.git"
+    dest: "{{ home }}/.zsh/modules/zsh-syntax-highlighting"
