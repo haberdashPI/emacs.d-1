@@ -9,9 +9,6 @@ zsh_projects:
   zsh-completions:
     repo: "git@github.com:zsh-users/zsh-completions.git"
     dest: "{{ home }}/.zsh/modules/zsh-completions"
-  zsh-autosuggestions:
-    repo: "git@github.com:tarruda/zsh-autosuggestions.git"
-    dest: "{{ home }}/.zsh/modules/zsh-autosuggestions"
   zsh-history-substring-search:
     repo: "git@github.com:zsh-users/zsh-history-substring-search.git"
     dest: "{{ home }}/.zsh/modules/zsh-history-substring-search"
