@@ -159,3 +159,16 @@
 
 ;; use right alt to enter international characters
 (setq ns-right-alternate-modifier nil)
+
+;; emacs-mac-port tweaking
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'hyper)
+(global-set-key [(hyper v)] 'yank)
+(global-set-key [(hyper c)] 'kill-ring-save)
+
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter nil 'fullscreen
+                       (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+(global-set-key [(hyper f)] 'toggle-fullscreen)
