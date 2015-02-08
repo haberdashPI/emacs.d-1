@@ -154,4 +154,8 @@
 ;; ediff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
+;; automatically create directories
 (add-to-list 'find-file-not-found-functions #'antonio-create-non-existent-directory)
+
+;; use right alt to enter international characters
+(setq ns-right-alternate-modifier nil)
