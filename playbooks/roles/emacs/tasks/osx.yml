@@ -1,6 +1,9 @@
 ---
+- name: add brew tap
+  homebrew_tap: tap="railwaycat/emacsmacport"
+
 - name: install emacs on osx
-  homebrew: name="emacs" state="present" install_options="use-git-head,with-gnutls,cocoa,with-imagemagick"
+  homebrew: name="emacs-mac" state="present" install_options="with-gnutls,with-imagemagick,icon-modern"
 
 - name: copy the service file
   copy: src=org.gnu.emacs.plist dest=~/Library/LaunchAgents/org.gnu.emacs.plist
