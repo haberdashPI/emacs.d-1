@@ -31,3 +31,5 @@ bindkey '^M' antonio-accept-line
 bindkey '^[^M' .accept-line
 bindkey '^R' antonio-history-incremental-search-backward
 bindkey '^S' antonio-history-incremental-search-forward
+bindkey '^X^Z' predict-on
+bindkey '^Z' predict-off
