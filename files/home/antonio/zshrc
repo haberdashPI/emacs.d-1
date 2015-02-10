@@ -13,7 +13,6 @@ autoload -U zmv
 typeset -U PATH
 
 # run-help
-unalias run-help
 autoload -U run-help
 export HELPDIR=~/.zsh/help
 
