@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+fpath+=(~/.zsh/modules/zsh-completions/src)
+
 autoload -U compinit && compinit
 
 zmodload -i zsh/complist
@@ -14,5 +16,5 @@ zstyle ':completion::complete:*' use-cache on               # completion caching
 zstyle ':completion:*' cache-path ~/.zsh/cache              # cache path
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # ignore case
 zstyle ':completion:*' menu select=2                        # menu if nb items > 2
-# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
-# zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
+zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use

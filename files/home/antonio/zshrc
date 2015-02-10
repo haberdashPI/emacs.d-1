@@ -50,6 +50,8 @@ source ~/.zsh/keys.zsh
 source ~/.zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/history-substring-search.zsh
 
+source ~/.zsh/completions.zsh
+
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 prompt antonio
@@ -57,9 +59,6 @@ prompt antonio
 if $(which chruby > /dev/null); then
   chruby 2.1.4
 fi
-
-# completion system
-autoload -U compinit && compinit
 
 [[ -n $DISPLAY ]] && [[ -z $TMUX ]] && tmux
 
