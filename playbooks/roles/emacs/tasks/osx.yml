@@ -6,7 +6,9 @@
   homebrew: name="emacs-mac" state="present" install_options="with-gnutls,with-imagemagick,icon-modern"
 
 - name: copy the service file
-  copy: src=org.gnu.emacs.plist dest=~/Library/LaunchAgents/org.gnu.emacs.plist
+  copy: src="{{ item }}" dest="{{ home }}/Library/LaunchAgents/{{ item }}"
+  with_items: emacs_service_files
 
 - name: enable the service
-  command: launchctl load -w ~/Library/LaunchAgents/org.gnu.emacs.plist
+  command: "launchctl load -w ~/Library/LaunchAgents/{{ item }}"
+  with_items: emacs_service_files

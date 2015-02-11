@@ -1,3 +1,6 @@
 ---
 home: "{{ lookup('env','HOME') }}"
 base_dir: "{{ lookup('pipe', 'git rev-parse --show-toplevel') }}"
+emacs_service_files:
+  - org.gnu.emacs.plist
+  - org.gnu.emacsterminal.plist
