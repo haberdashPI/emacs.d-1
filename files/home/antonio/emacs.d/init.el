@@ -206,14 +206,14 @@
         (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
         (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
+    (use-package evil-surround
+      :config (global-evil-surround-mode 1)))
+
     (use-package evil-snipe
       :config
       (progn
         (global-evil-snipe-mode)
-        (evil-snipe-replace-evil)))
-
-    (use-package evil-surround
-      :config (global-evil-surround-mode 1))))
+        (evil-snipe-replace-evil))))
 
 (quelpa 'go-mode)
 (use-package go-mode
