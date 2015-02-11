@@ -4,6 +4,8 @@ setopt promptsubst
 promptinit
 
 # colors
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
 autoload -U colors && colors
 
 # zmv
@@ -41,7 +43,6 @@ export REPORTTIME=5
 source ~/.zsh/aliases.zsh
 source ~/.zsh/git.zsh
 source ~/.zsh/functions.zsh
-source ~/.zsh/fasd.zsh
 source ~/.zsh/wakeonlan.zsh
 source ~/.zsh/dotenv.zsh
 source ~/.zsh/keys.zsh
@@ -50,6 +51,7 @@ source ~/.zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/history-substring-search.zsh
 
 source ~/.zsh/completions.zsh
+source ~/.zsh/fasd.zsh
 
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
