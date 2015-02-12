@@ -31,4 +31,4 @@ zstyle ':vcs_info:git+set-message:*' hooks stash ahead untracked
   fi
 }
 
-export GIT_EDITOR="emacsclient -t -a ''"
+export GIT_EDITOR=$EDITOR
