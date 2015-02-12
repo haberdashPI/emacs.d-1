@@ -15,7 +15,7 @@ e() {
 }
 
 et() {
-  emacsclient -t -a '' $*
+  emacsclient -t -s terminal "$@"
 }
 
 fname() {
