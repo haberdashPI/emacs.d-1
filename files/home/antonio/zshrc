@@ -65,7 +65,7 @@ fi
 
 [[ -n $DISPLAY ]] && [[ -z $TMUX ]] && tmux
 
-eval $(gpg-agent --daemon)
+which gpg-agent >/dev/null 2>&1 && eval $(gpg-agent --daemon)
 
 if [[ -n $TMUX ]]; then
   window_name=$(tmux display -p "#W")
