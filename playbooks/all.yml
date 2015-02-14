@@ -1,7 +1,7 @@
 ---
 - hosts: 127.0.0.1
   vars:
-    - home: "{{ lookup('env','HOME') }}"
+    - home: "{{ ansible_env.HOME }}"
     - base_dir: "{{ lookup('pipe', 'git rev-parse --show-toplevel') }}"
   roles:
     - { role: homebrew, when: "ansible_os_family == 'Darwin'" }
