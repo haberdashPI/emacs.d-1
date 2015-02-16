@@ -53,6 +53,7 @@
   :mode "\\.coffee\\'")
 
 (quelpa 'company)
+(quelpa 'company-quickhelp)
 (use-package company
   :commands (global-company-mode)
   :idle (global-company-mode)
@@ -86,7 +87,9 @@
     (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
     (setq company-idle-delay 0.1)
     (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
-    (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)))
+    (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
+    (use-package company-quickhelp
+      :init (company-quickhelp-mode 1))))
 
 (quelpa 'dash-at-point)
 (use-package dash-at-point
