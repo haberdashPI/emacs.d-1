@@ -16,5 +16,13 @@
     <string>Gnu Emacs Daemon</string>
     <key>UserName</key>
     <string>antonio</string>
+    <key>KeepAlive</key>
+    <dict>
+      <key>OtherJobEnabled</key>
+      <dict>
+        <key>com.santosvelasco.environment</key>
+        <true/>
+      </dict>
+    </dict>
   </dict>
 </plist>

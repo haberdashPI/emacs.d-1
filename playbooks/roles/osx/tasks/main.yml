@@ -38,3 +38,9 @@
     - wget
     - youtube-dl
     - zsh
+
+- name: set up the environment
+  copy: src="com.santosvelasco.environment.plist" dest="{{ home }}/Library/LaunchAgents/com.santosvelasco.environment.plist"
+
+- name: load environment launch agent
+  command: "launchctl load -w ~/Library/LaunchAgents/com.santosvelasco.environment"

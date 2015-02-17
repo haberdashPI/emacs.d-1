@@ -7,3 +7,7 @@
 - name: install homebrew on OS X
   shell: "ruby -e $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   when: homebrew_brew_output | failed
+
+- name: get homebrew prefix directory
+  shell: "brew config 2>/dev/null | grep HOMEBREW_PREFIX | cut -d: -f2 | sed 's/^[[:space:]]//'"
+  register: homebrew_prefix
