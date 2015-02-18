@@ -172,3 +172,6 @@
   (set-frame-parameter nil 'fullscreen
                        (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 (global-set-key [(hyper f)] 'toggle-fullscreen)
+
+;; ido stop autocorrecting
+(setq ido-auto-merge-work-directories-length -1)
