@@ -161,8 +161,16 @@
 (setq ns-right-alternate-modifier nil)
 
 ;; emacs-mac-port tweaking
+(defun antonio-swap-alts ()
+  "Swap the alt keys"
+  (interactive)
+  (let ((current-mac-option-modifier mac-option-modifier))
+    (setq mac-option-modifier mac-right-option-modifier)
+    (setq mac-right-option-modifier current-mac-option-modifier)))
+(global-set-key (kbd "C-x t") 'antonio-swap-alts)
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'hyper)
+(setq mac-right-option-modifier nil)
 (global-set-key [(hyper v)] 'yank)
 (global-set-key [(hyper c)] 'kill-ring-save)
 
