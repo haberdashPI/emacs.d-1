@@ -20,3 +20,8 @@
 - name: clone external projects
   git: repo="{{ item.value.repo }}" dest="{{ item.value.dest }}"
   with_dict: zsh_projects
+
+- name: change default shell
+  user: name="{{ ansible_user_id }}" shell="/bin/zsh"
+  sudo: yes
+  when: ansible_os_family == "Linux"
