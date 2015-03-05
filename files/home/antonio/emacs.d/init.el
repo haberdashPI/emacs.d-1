@@ -215,8 +215,7 @@
     (use-package evil-snipe
       :config
       (progn
-        (global-evil-snipe-mode)
-        (evil-snipe-replace-evil))))
+        (global-evil-snipe-mode))))
 
 (quelpa 'go-mode)
 (use-package go-mode
