@@ -151,6 +151,7 @@
 
 ;; keybinds
 (global-set-key (kbd "C-x C-e") 'eval-region)
+(global-set-key (kbd "C-c C-o") 'browse-url-at-point)
 
 ;; ediff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
