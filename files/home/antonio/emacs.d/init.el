@@ -150,7 +150,6 @@
 (quelpa 'evil-leader)
 (quelpa 'evil-matchit)
 (quelpa 'evil-numbers)
-(quelpa 'evil-snipe)
 (quelpa 'evil-surround)
 (use-package evil
   :pre-load
@@ -210,12 +209,7 @@
         (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
     (use-package evil-surround
-      :config (global-evil-surround-mode 1)))
-
-    (use-package evil-snipe
-      :config
-      (progn
-        (global-evil-snipe-mode))))
+      :config (global-evil-surround-mode 1))))
 
 (quelpa 'go-mode)
 (use-package go-mode
