@@ -122,6 +122,7 @@
   :commands (emmet-mode)
   :config
   (add-hook 'emmet-mode-hook (lambda ()
+                               (define-key emmet-mode-keymap (kbd "C-c w") 'web-mode-element-wrap)
                                (setq emmet-preview-default nil)
                                (setq emmet-indentation 2)))
   :init
