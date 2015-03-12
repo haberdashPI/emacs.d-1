@@ -285,7 +285,12 @@
 
     (use-package helm-swoop
       :commands (helm-swoop helm-multi-swoop)
-      :config (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-evil-search))))
+      :config
+      (progn
+        ;; disable pre-input
+        (setq helm-swoop-pre-input-function
+              (lambda () ""))
+        (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-evil-search)))))
 
 (quelpa 'json-mode)
 (use-package json-mode
