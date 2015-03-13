@@ -456,7 +456,6 @@
 (quelpa 'robe)
 (quelpa 'ruby-additional)
 (quelpa 'ruby-block)
-(quelpa 'ruby-electric)
 (quelpa 'ruby-hash-syntax)
 (quelpa 'ruby-test-mode)
 (quelpa 'ruby-tools)
@@ -478,8 +477,6 @@
     (use-package ruby-block
       :config (ruby-block-mode))
 
-    (use-package ruby-electric)
-
     (use-package ruby-hash-syntax
       :config (bind-key (kbd "C-c h")  'antonio-ruby-toggle-hash-syntax ruby-mode-map))
 
@@ -495,7 +492,6 @@
 
     (bind-key (kbd "C-x l") 'antonio-ruby-spec-var-to-let ruby-mode-map)
     (evil-define-key 'insert ruby-mode-map (kbd "C-.") 'antonio-insert-hashrocket)
-    (add-hook 'ruby-mode-hook 'ruby-electric-mode)
     (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
     (add-hook 'ruby-mode-hook (lambda () (setq require-final-newline nil))))
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
@@ -548,9 +544,10 @@
     (sp-local-pair 'web-mode "%" "%"
                    :unless '(sp-in-string-or-word-p)
                    :post-handlers '((space-and-space-on-each-side "SPC")
-                                    (space-on-each-side "=" "#")))))
-    ;; (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET")))
-    ;; (sp-pair "(" ")" :post-handlers '(("| " "SPC")))))
+                                    (space-on-each-side "=" "#"))))
+
+    (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET")))
+    (sp-pair "(" ")" :post-handlers '(("| " "SPC"))))))
 
 (quelpa 'undo-tree)
 (use-package undo-tree
