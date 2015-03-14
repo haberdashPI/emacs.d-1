@@ -10,4 +10,4 @@ export LESS='-XR'
 export LESSOPEN='|colorize %s'
 
 fpath+=(~/.zsh/functions)
-path+=(./bin ~/.bin /usr/local/bin)
+path+=(~/.bin /usr/local/bin)
