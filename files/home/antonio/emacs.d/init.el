@@ -567,6 +567,7 @@
   :commands (web-mode)
   :config
   (progn
+    (add-hook 'web-mode-hook 'turn-off-fci-mode)
     (setq web-mode-markup-indent-offset 2)
     (setq web-mode-css-indent-offset 2)
     (setq web-mode-enable-css-colorization t)
