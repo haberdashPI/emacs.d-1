@@ -56,8 +56,7 @@
 (quelpa 'company-quickhelp)
 (use-package company
   :commands (global-company-mode)
-  :idle (global-company-mode)
-  :idle-priority 2
+  :init (global-company-mode)
   :config
   (progn
     (defvar-local company-fci-mode-on-p nil)
@@ -144,8 +143,7 @@
     (defun remove-tabs-from-ethan-wspace-errors ()
       (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors)))
     (add-hook 'go-mode-hook 'remove-tabs-from-ethan-wspace-errors))
-  :idle-priority 10
-  :idle (global-ethan-wspace-mode))
+  :init (global-ethan-wspace-mode))
 
 (quelpa 'evil)
 (quelpa 'evil-leader)
@@ -262,7 +260,7 @@
              helm-multi-swoop
              helm-show-kill-ring
              helm-gtags-select)
-  :idle
+  :init
   (progn
     (helm-mode)
     (add-to-list 'helm-completing-read-handlers-alist '(cd . ido))
@@ -271,7 +269,6 @@
     (add-to-list 'helm-completing-read-handlers-alist '(find-file . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(dired-do-rename . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(persp-switch . ido)))
-  :idle-priority 3
   :config
   (progn
     (use-package helm-ag
@@ -514,15 +511,14 @@
 (quelpa 'smart-mode-line-powerline)
 (use-package smart-mode-line
   :commands (sml/setup)
-  :idle (progn
+  :init (progn
           (use-package smart-mode-line-powerline)
           (sml/setup)
           (sml/apply-theme 'respectful)))
 
 (quelpa 'smartparens)
 (use-package smartparens
-  :idle-priority 2
-  :idle (smartparens-global-mode)
+  :init (smartparens-global-mode)
   :commands (smartparens-global-mode)
   :config
   (progn
@@ -626,7 +622,7 @@
             (if (check-expansion)
                 (company-complete-common)
               (indent-for-tab-command))))))
-  :idle (yas-global-mode)
+  :init (yas-global-mode)
   :commands (yas-global-mode))
 
 (quelpa '(zoom-window :fetcher github :repo "syohex/emacs-zoom-window"))
