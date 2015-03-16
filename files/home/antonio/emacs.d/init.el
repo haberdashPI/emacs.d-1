@@ -542,8 +542,8 @@
                    :post-handlers '((space-and-space-on-each-side "SPC")
                                     (space-on-each-side "=" "#"))))
 
-    (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET")))
-    (sp-pair "(" ")" :post-handlers '(("| " "SPC"))))))
+  (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET")))
+  (sp-pair "(" ")" :post-handlers '(("| " "SPC"))))
 
 (quelpa 'undo-tree)
 (use-package undo-tree
