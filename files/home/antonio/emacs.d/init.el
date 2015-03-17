@@ -151,10 +151,10 @@
 (quelpa 'evil-numbers)
 (quelpa 'evil-surround)
 (use-package evil
-  :pre-load
+  :init
   (setq evil-toggle-key "M-V"
         evil-want-C-i-jump nil)
-  :init (evil-mode 1)
+  (evil-mode 1)
   :bind (("C-M-o" . evil-jump-backward)
          ("C-M-i" . evil-jump-forward))
   :config
@@ -261,16 +261,16 @@
              helm-show-kill-ring
              helm-gtags-select)
   :init
+  (setq helm-completing-read-handlers-alist ())
+  :config
   (progn
-    (helm-mode)
     (add-to-list 'helm-completing-read-handlers-alist '(cd . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(ibuffer-find-file . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(switch-to-buffer . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(find-file . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(dired-do-rename . ido))
-    (add-to-list 'helm-completing-read-handlers-alist '(persp-switch . ido)))
-  :config
-  (progn
+    (add-to-list 'helm-completing-read-handlers-alist '(persp-switch . ido))
+
     (use-package helm-ag
       :commands (helm-ag))
 
