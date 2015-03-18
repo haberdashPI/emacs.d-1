@@ -24,8 +24,9 @@
 (require 'benchmark-init)
 
 (quelpa 'use-package)
-(require 'use-package)
-(setq use-package-idle-interval 0.5)
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
 
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keymap.el")
@@ -88,6 +89,7 @@
     (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
     (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
     (use-package company-quickhelp
+      :commands (company-quickhelp-mode)
       :init (company-quickhelp-mode 1))))
 
 (quelpa 'dash-at-point)
@@ -151,64 +153,67 @@
 (quelpa 'evil-numbers)
 (quelpa 'evil-surround)
 (use-package evil
+  :bind (("C-M-o" . evil-jump-backward)
+         ("C-M-i" . evil-jump-forward))
+  :commands (evil-mode)
   :init
   (setq evil-toggle-key "M-V"
         evil-want-C-i-jump nil)
   (evil-mode 1)
-  :bind (("C-M-o" . evil-jump-backward)
-         ("C-M-i" . evil-jump-forward))
   :config
-  (progn
-    (setq evil-ex-substitute-global t)
+  (setq evil-ex-substitute-global t)
 
-    (define-key evil-insert-state-map [remap newline] 'newline)
-    (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
-    (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
-    (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
-    (evil-define-key 'visual global-map (kbd "SPC") 'evil-search-forward)
-    (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
-    (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
-    (evil-define-key 'insert global-map (kbd "TAB") 'tab-indent-or-complete)
-    (evil-define-key 'insert global-map (kbd "M-RET") 'antonio-open-newline)
+  (define-key evil-insert-state-map [remap newline] 'newline)
+  (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
+  (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
+  (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
+  (evil-define-key 'visual global-map (kbd "SPC") 'evil-search-forward)
+  (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
+  (evil-define-key 'normal global-map (kbd "k") 'evil-previous-visual-line)
+  (evil-define-key 'insert global-map (kbd "TAB") 'tab-indent-or-complete)
+  (evil-define-key 'insert global-map (kbd "M-RET") 'antonio-open-newline)
 
-    (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
-    (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
-    (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
-    (add-to-list 'evil-insert-state-modes 'git-commit-mode)
+  (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
+  (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
+  (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
+  (add-to-list 'evil-insert-state-modes 'git-commit-mode)
 
-    (use-package evil-leader
-      :config
-      (progn
-        (global-evil-leader-mode)
-        (evil-leader/set-leader ",")
+  (use-package evil-leader
+    :config
+    (progn
+      (global-evil-leader-mode)
+      (evil-leader/set-leader ",")
 
-        (evil-leader/set-key
-          "." 'helm-projectile
-          "b" 'blame
-          "c" 'comment-dwim
-          "f" 'helm-projectile-ag
-          "h" 'helm-resume
-          "o" 'helm-semantic-or-imenu
-          "s" 'helm-swoop
-          "S" 'helm-multi-swoop
-          "r" 'ruby-test-run-at-point
-          "R" 'ruby-test-run
-          "p" 'helm-show-kill-ring
-          "t" 'helm-gtags-select)))
+      (evil-leader/set-key
+        "." 'helm-projectile
+        "b" 'blame
+        "c" 'evilnc-comment-or-uncomment-lines
+        "C" 'evilnc-comment-or-uncomment-paragraphs
+        "f" 'helm-projectile-ag
+        "g" 'git-messenger:popup-message
+        "h" 'helm-resume
+        "o" 'helm-semantic-or-imenu
+        "s" 'helm-swoop
+        "S" 'helm-multi-swoop
+        "r" 'ruby-test-run-at-point
+        "R" 'ruby-test-run
+        "p" 'helm-show-kill-ring
+        "t" 'helm-gtags-select)))
 
-    (use-package evil-matchit
-      :commands (evil-matchit-mode)
-      :config (add-hook 'web-mode-hook 'evil-matchit-mode))
+  (use-package evil-matchit
+    :commands (evil-matchit-mode)
+    :config (add-hook 'web-mode-hook 'evil-matchit-mode))
 
-    (use-package evil-numbers
-      :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
-      :init
-      (progn
-        (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
-        (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
+  (use-package evil-numbers
+    :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
+    :init
+    (progn
+      (define-key evil-normal-state-map (kbd "C-x C-a") 'evil-numbers/inc-at-pt)
+      (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
-    (use-package evil-surround
-      :config (global-evil-surround-mode 1))))
+  (use-package evil-surround
+    :config (global-evil-surround-mode 1)))
+
 
 (quelpa 'go-mode)
 (use-package go-mode
@@ -218,7 +223,7 @@
 
 (quelpa 'fic-mode)
 (use-package fic-mode
-  :commands fic-mode
+  :commands (fic-mode)
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
 (quelpa 'fill-column-indicator)
@@ -518,29 +523,28 @@
 
 (quelpa 'smartparens)
 (use-package smartparens
-  :init (smartparens-global-mode)
-  :commands (smartparens-global-mode)
+  :commands (smartparens-global-mode smartparens-mode)
+  :init
+  (add-hook 'prog-mode-hook 'smartparens-mode)
   :config
-  (progn
-    (require 'smartparens-config)
-    (smartparens-global-mode)
-    (setq sp-autoescape-string-quote nil)
+  (require 'smartparens-config)
+  (setq sp-autoescape-string-quote nil)
 
-    (defun space-and-space-on-each-side (&rest _ignored)
+  (defun space-and-space-on-each-side (&rest _ignored)
+    (save-excursion
+      (insert "  ")))
+
+  (defun space-on-each-side (&rest _ignored)
+    (when (or (looking-back "=")
+              (looking-back "#"))
+      (insert " ")
       (save-excursion
-        (insert "  ")))
+        (insert " "))))
 
-    (defun space-on-each-side (&rest _ignored)
-      (when (or (looking-back "=")
-                (looking-back "#"))
-        (insert " ")
-        (save-excursion
-          (insert " "))))
-
-    (sp-local-pair 'web-mode "%" "%"
-                   :unless '(sp-in-string-or-word-p)
-                   :post-handlers '((space-and-space-on-each-side "SPC")
-                                    (space-on-each-side "=" "#"))))
+  (sp-local-pair 'web-mode "%" "%"
+                 :unless '(sp-in-string-or-word-p)
+                 :post-handlers '((space-and-space-on-each-side "SPC")
+                                  (space-on-each-side "=" "#")))
 
   (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET")))
   (sp-pair "(" ")" :post-handlers '(("| " "SPC"))))
@@ -549,9 +553,9 @@
 (use-package undo-tree
   :init
   (progn
-  (setq undo-tree-history-directory-alist (quote (("." . "~/.undo/"))))
-  (setq undo-tree-auto-save-history t)
-  (global-undo-tree-mode)))
+    (setq undo-tree-history-directory-alist (quote (("." . "~/.undo/"))))
+    (setq undo-tree-auto-save-history t)
+    (global-undo-tree-mode)))
 
 (quelpa 'uniquify)
 (use-package uniquify
@@ -599,31 +603,32 @@
 
 (quelpa 'yasnippet)
 (use-package yasnippet
+  :init
+  (add-hook 'prog-mode-hook 'yas-minor-mode)
+  :commands (yas-minor-mode)
   :config
-  (progn
-    (defun check-expansion ()
-      (save-excursion
-        (if (looking-at "\\_>") t
+  (yas-reload-all)
+  (defun check-expansion ()
+    (save-excursion
+      (if (looking-at "\\_>") t
+        (backward-char 1)
+        (if (looking-at "\\.") t
           (backward-char 1)
-          (if (looking-at "\\.") t
-            (backward-char 1)
-            (if (looking-at "->") t nil)))))
+          (if (looking-at "->") t nil)))))
 
-    (defun do-yas-expand ()
-      (let ((yas-fallback-behavior 'return-nil))
-        (yas-expand)))
+  (defun do-yas-expand ()
+    (let ((yas-fallback-behavior 'return-nil))
+      (yas-expand)))
 
-    (defun tab-indent-or-complete ()
-      (interactive)
-      (if (minibufferp)
-          (minibuffer-complete)
-        (if (or (not yas-minor-mode)
-                (null (do-yas-expand)))
-            (if (check-expansion)
-                (company-complete-common)
-              (indent-for-tab-command))))))
-  :init (yas-global-mode)
-  :commands (yas-global-mode))
+  (defun tab-indent-or-complete ()
+    (interactive)
+    (if (minibufferp)
+        (minibuffer-complete)
+      (if (or (not yas-minor-mode)
+              (null (do-yas-expand)))
+          (if (check-expansion)
+              (company-complete-common)
+            (indent-for-tab-command))))))
 
 (quelpa '(zoom-window :fetcher github :repo "syohex/emacs-zoom-window"))
 (use-package zoom-window
