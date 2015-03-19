@@ -13,15 +13,17 @@
     (url-insert-file-contents "http://raw.github.com/quelpa/quelpa/master/bootstrap.el")
     (eval-buffer)))
 
+(if (getenv "EMACS_DEBUG_INIT")
+    (progn
+      ;; (quelpa 'benchmark-init)
+      (require 'benchmark-init)))
+
 (quelpa 'auto-compile)
 (require 'auto-compile)
 (setq auto-compile-display-buffer nil)
 (setq auto-compile-mode-line-counter t)
 (auto-compile-on-load-mode 1)
 (auto-compile-on-save-mode 1)
-
-(quelpa 'benchmark-init)
-(require 'benchmark-init)
 
 (quelpa 'use-package)
 (eval-when-compile
@@ -31,11 +33,6 @@
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
-
-(quelpa 'ansible-doc)
-(use-package ansible-doc
-  :mode "\\.yml\\'"
-  :init (add-hook 'yaml-mode-hook #'ansible-doc-mode))
 
 (use-package align
   :commands (align align-regexp)
@@ -61,6 +58,11 @@
                  (repeat . t)
                  (modes  . '(ruby-mode)))))
 
+(quelpa 'aggressive-indent)
+(use-package aggressive-indent
+  :init
+  (add-to-list 'aggressive-indent-excluded-modes 'puppet-mode)
+  (global-aggressive-indent-mode 1))
 
 (quelpa 'buffer-move)
 (use-package buffer-move
@@ -176,6 +178,7 @@
 (quelpa 'evil-leader)
 (quelpa 'evil-matchit)
 (quelpa 'evil-numbers)
+(quelpa 'evil-nerd-commenter)
 (quelpa 'evil-surround)
 (use-package evil
   :bind (("C-M-o" . evil-jump-backward)
@@ -201,7 +204,14 @@
   (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
   (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
-  (add-to-list 'evil-insert-state-modes 'git-commit-mode)
+
+  (defun antonio/evil-initial-git-commit-state ()
+    (save-excursion
+      (beginning-of-buffer)
+      (if (not (thing-at-point 'word))
+          (evil-insert-state))))
+
+  (add-hook 'git-commit-mode-hook 'antonio/evil-initial-git-commit-state)
 
   (use-package evil-leader
     :config
@@ -229,6 +239,9 @@
     :commands (evil-matchit-mode)
     :config (add-hook 'web-mode-hook 'evil-matchit-mode))
 
+  (use-package evil-nerd-commenter
+    :commands (evilnc-comment-or-uncomment-lines))
+
   (use-package evil-numbers
     :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
     :init
@@ -239,6 +252,17 @@
   (use-package evil-surround
     :config (global-evil-surround-mode 1)))
 
+(quelpa 'hydra)
+(use-package hydra
+  :commands (defhydra))
+
+(quelpa 'git-messenger)
+(use-package git-messenger
+  :config
+  (setq git-messenger:show-detail t)
+  (add-hook 'git-messenger:before-popup-hook (lambda (args) (turn-off-fci-mode)))
+  (add-hook 'git-messenger:after-popup-hook (lambda (args) (turn-on-fci-mode)))
+  :commands (git-messenger:popup-message))
 
 (quelpa 'go-mode)
 (use-package go-mode
@@ -257,6 +281,17 @@
   :init
   (progn
     (add-hook 'prog-mode-hook 'fci-mode)
+    (defvar sanityinc/fci-mode-suppressed nil)
+    (defadvice popup-create (before suppress-fci-mode activate)
+      "Suspend fci-mode while popups are visible"
+      (set (make-local-variable 'sanityinc/fci-mode-suppressed) fci-mode)
+      (when fci-mode
+        (turn-off-fci-mode)))
+    (defadvice popup-delete (after restore-fci-mode activate)
+      "Restore fci-mode when all popups have closed"
+      (when (and (not popup-instances) sanityinc/fci-mode-suppressed)
+        (setq sanityinc/fci-mode-suppressed nil)
+        (turn-on-fci-mode)))
     (setq fci-rule-color "#333333"
           fci-rule-column 80)))
 
@@ -425,9 +460,9 @@
                 ;; stop the annoying 'still has buffer messages'
                 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)))
 
-    (require 'org-habit)
-    (require 'org-pomodoro)
-    (require 'org-trello))
+    (use-package org-habit)
+    (use-package org-pomodoro)
+    (use-package org-trello))
   :init
   (progn
     (setq org-directory "~/Dropbox/org")
@@ -661,3 +696,6 @@
   :commands (zoom-window-zoom)
   :bind (("C-x z" . zoom-window-zoom))
   :config (setq zoom-window-mode-line-color "#202020"))
+
+(if (getenv "EMACS_DEBUG_INIT")
+    (benchmark-init/show-durations-tree))

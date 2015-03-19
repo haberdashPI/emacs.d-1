@@ -4,3 +4,8 @@
 
 - name: copy emacs.d
   synchronize: dest="{{ home }}/.emacs.d" src="{{ base_dir }}/files/home/antonio/emacs.d/"
+  when: inventory_hostname != 'localhost'
+
+- name: link emacs.d
+  file: path="{{ home }}/.emacs.d" src="{{ base_dir }}/files/home/antonio/emacs.d" state="link"
+  when: inventory_hostname == 'localhost'
