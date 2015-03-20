@@ -60,8 +60,8 @@
 (quelpa 'aggressive-indent)
 (use-package aggressive-indent
   :init
-  (add-to-list 'aggressive-indent-excluded-modes 'puppet-mode)
-  (global-aggressive-indent-mode 1))
+  (global-aggressive-indent-mode 1)
+  (add-to-list 'aggressive-indent-excluded-modes 'puppet-mode))
 
 (quelpa 'buffer-move)
 (use-package buffer-move
