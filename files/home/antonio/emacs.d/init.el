@@ -33,11 +33,6 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
-(quelpa 'ansible-doc)
-(use-package ansible-doc
-  :mode "\\.yml\\'"
-  :init (add-hook 'yaml-mode-hook #'ansible-doc-mode))
-
 (use-package align
   :commands (align align-regexp)
   :config
