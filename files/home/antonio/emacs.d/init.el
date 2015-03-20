@@ -426,9 +426,9 @@
                 ;; stop the annoying 'still has buffer messages'
                 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)))
 
-    (require 'org-habit)
-    (require 'org-pomodoro)
-    (require 'org-trello))
+    (use-package org-habit)
+    (use-package org-pomodoro)
+    (use-package org-trello))
   :init
   (progn
     (setq org-directory "~/Dropbox/org")
