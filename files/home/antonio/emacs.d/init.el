@@ -205,6 +205,14 @@
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
   (add-to-list 'evil-insert-state-modes 'git-commit-mode)
 
+  (defun antonio/evil-initial-git-commit-state ()
+    (save-excursion
+      (beginning-of-buffer)
+      (if (thing-at-point 'word)
+          (evil-normal-state))))
+
+  (add-hook 'git-commit-mode-hook 'antonio/evil-initial-git-commit-state)
+
   (use-package evil-leader
     :config
     (progn
