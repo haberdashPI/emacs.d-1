@@ -203,13 +203,13 @@
   (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
   (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
-  (add-to-list 'evil-insert-state-modes 'git-commit-mode)
 
   (defun antonio/evil-initial-git-commit-state ()
     (save-excursion
       (beginning-of-buffer)
       (if (thing-at-point 'word)
-          (evil-normal-state))))
+          (evil-normal-state)
+        (evil-initial-state))))
 
   (add-hook 'git-commit-mode-hook 'antonio/evil-initial-git-commit-state)
 
