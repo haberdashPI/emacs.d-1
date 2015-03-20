@@ -177,6 +177,7 @@
 (quelpa 'evil-leader)
 (quelpa 'evil-matchit)
 (quelpa 'evil-numbers)
+(quelpa 'evil-nerd-commenter)
 (quelpa 'evil-surround)
 (use-package evil
   :bind (("C-M-o" . evil-jump-backward)
@@ -229,6 +230,9 @@
   (use-package evil-matchit
     :commands (evil-matchit-mode)
     :config (add-hook 'web-mode-hook 'evil-matchit-mode))
+
+  (use-package evil-nerd-commenter
+    :commands (evilnc-comment-or-uncomment-lines))
 
   (use-package evil-numbers
     :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
