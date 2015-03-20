@@ -13,15 +13,16 @@
     (url-insert-file-contents "http://raw.github.com/quelpa/quelpa/master/bootstrap.el")
     (eval-buffer)))
 
+(if (getenv "EMACS_DEBUG_INIT")
+    (progn
+      (require 'benchmark-init)))
+
 (quelpa 'auto-compile)
 (require 'auto-compile)
 (setq auto-compile-display-buffer nil)
 (setq auto-compile-mode-line-counter t)
 (auto-compile-on-load-mode 1)
 (auto-compile-on-save-mode 1)
-
-(quelpa 'benchmark-init)
-(require 'benchmark-init)
 
 (quelpa 'use-package)
 (eval-when-compile
@@ -661,3 +662,6 @@
   :commands (zoom-window-zoom)
   :bind (("C-x z" . zoom-window-zoom))
   :config (setq zoom-window-mode-line-color "#202020"))
+
+(if (getenv "EMACS_DEBUG_INIT")
+    (benchmark-init/show-durations-tree))
