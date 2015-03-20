@@ -244,6 +244,17 @@
   (use-package evil-surround
     :config (global-evil-surround-mode 1)))
 
+(quelpa 'hydra)
+(use-package hydra
+  :commands (defhydra))
+
+(quelpa 'git-messenger)
+(use-package git-messenger
+  :config
+  (setq git-messenger:show-detail t)
+  (add-hook 'git-messenger:before-popup-hook (lambda (args) (turn-off-fci-mode)))
+  (add-hook 'git-messenger:after-popup-hook (lambda (args) (turn-on-fci-mode)))
+  :commands (git-messenger:popup-message))
 
 (quelpa 'go-mode)
 (use-package go-mode
