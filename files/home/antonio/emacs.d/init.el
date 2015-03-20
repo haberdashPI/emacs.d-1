@@ -57,6 +57,11 @@
                  (repeat . t)
                  (modes  . '(ruby-mode)))))
 
+(quelpa 'aggressive-indent)
+(use-package aggressive-indent
+  :init
+  (add-to-list 'aggressive-indent-excluded-modes 'puppet-mode)
+  (global-aggressive-indent-mode 1))
 
 (quelpa 'buffer-move)
 (use-package buffer-move
