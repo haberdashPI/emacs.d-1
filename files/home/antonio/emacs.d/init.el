@@ -61,7 +61,8 @@
 (use-package aggressive-indent
   :init
   (global-aggressive-indent-mode 1)
-  (add-to-list 'aggressive-indent-excluded-modes 'puppet-mode))
+  (add-to-list 'aggressive-indent-excluded-modes 'puppet-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'coffee-mode))
 
 (quelpa 'buffer-move)
 (use-package buffer-move
