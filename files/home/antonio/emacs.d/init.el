@@ -113,11 +113,12 @@
     (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
     (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
     (setq company-idle-delay 0.1)
-    (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
-    (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
     (use-package company-quickhelp
       :commands (company-quickhelp-mode)
-      :init (company-quickhelp-mode 1))))
+      :init (company-quickhelp-mode 1))
+
+    (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
+    (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)))
 
 (quelpa 'dash-at-point)
 (use-package dash-at-point
