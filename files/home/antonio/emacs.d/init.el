@@ -371,7 +371,6 @@
   :mode "\\.lua\\'")
 
 (quelpa 'magit)
-(quelpa 'magit-gh-pulls)
 (use-package magit
   :commands (magit-status)
   :bind (("C-x g" . magit-status)
@@ -393,9 +392,8 @@
     (define-key magit-status-mode-map (kbd "j") 'next-line)
     (define-key magit-status-mode-map (kbd "k") 'previous-line)
     (define-key magit-diff-mode-map (kbd "j") 'next-line)
-    (define-key magit-diff-mode-map (kbd "k") 'previous-line)
+    (define-key magit-diff-mode-map (kbd "k") 'previous-line)))
 
-    (use-package magit-gh-pulls)))
 
 (quelpa 'markdown-mode)
 (use-package markdown-mode
