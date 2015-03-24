@@ -398,21 +398,20 @@
     (define-key magit-diff-mode-map (kbd "j") 'next-line)
     (define-key magit-diff-mode-map (kbd "k") 'previous-line)
 
-    (defun endless/visit-pull-request-url ()
+    (defun antonio/visit-pull-request-url ()
       "Visit the current branch's PR on Github."
       (interactive)
       (browse-url
-       (format "https://github.com/%s/compare/%s"
-               (replace-regexp-in-string
-                "\\`.+github\\.com:\\(.+\\)\\.git\\'" "\\1"
-                (magit-get "remote"
-                           (magit-get-current-remote)
-                           "url"))
-               (magit-get-current-branch))))
+       (let ((remote-branch (magit-get "remote" (magit-get-current-remote) "url")))
+         (format "https://github.com/%s/compare/%s"
+                 (if (string-prefix-p "http" remote-branch)
+                     (replace-regexp-in-string ".+github\.com/\\(\\w+/\\w+\\).*" "\\1" remote-branch)
+                   (replace-regexp-in-string "\\`.+github\\.com:\\(.+\\)\\.git\\'" "\\1" remote-branch))
+                 (magit-get-current-branch)))))
 
     (eval-after-load 'magit
       '(define-key magit-mode-map "V"
-         #'endless/visit-pull-request-url))))
+         #'antonio/visit-pull-request-url))))
 
 (quelpa 'markdown-mode)
 (use-package markdown-mode
