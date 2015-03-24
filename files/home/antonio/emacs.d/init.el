@@ -338,6 +338,8 @@
     (add-to-list 'helm-completing-read-handlers-alist '(dired-do-rename . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(persp-switch . ido))
 
+    (setq helm-imenu-execute-action-at-once-if-one nil)
+
     (use-package helm-ag
       :commands (helm-ag))
 
