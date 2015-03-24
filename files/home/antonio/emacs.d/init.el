@@ -356,7 +356,9 @@
         ;; disable pre-input
         (setq helm-swoop-pre-input-function
               (lambda () ""))
-        (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-evil-search)))))
+        (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-evil-search)))
+
+    (helm-mode 1)))
 
 (quelpa 'json-mode)
 (use-package json-mode
