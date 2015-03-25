@@ -6,11 +6,24 @@
 - name: make ~/.vim
   file: path="{{ home }}/.vim" state="directory"
 
+- name: copy vimrc
+  synchronize: dest="{{ home }}/.vimrc" src="{{ base_dir }}/files/home/antonio/vimrc"
+  when: inventory_hostname != 'localhost'
+
 - name: link vimrc
   file: path="{{ home }}/.vimrc" src="{{ base_dir }}/files/home/antonio/vimrc"
         state="link"
+  when: inventory_hostname == 'localhost'
+
+- name: copy snippets
+  synchronize: dest="{{ home }}/.vim/snippets" src="{{ base_dir }}/files/home/antonio/vim/snippets"
+  when: inventory_hostname != 'localhost'
 
 - name: link snippets
   file: path="{{ home }}/.vim/snippets"
         src="{{ base_dir }}/files/home/antonio/vim/snippets"
         state="link"
+  when: inventory_hostname == 'localhost'
+
+- name: install NeoBundle
+  git: repo="https://github.com/Shougo/neobundle.vim" dest="{{ home }}/.vim/bundle/neobundle.vim"
