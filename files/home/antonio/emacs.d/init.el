@@ -495,6 +495,7 @@
 
 (quelpa 'perspective)
 (use-package perspective
+  :commands (persp-mode)
   :init (persp-mode))
 
 (quelpa 'popwin)
