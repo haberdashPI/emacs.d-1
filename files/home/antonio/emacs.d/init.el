@@ -591,11 +591,9 @@
          ("\\.slim.html\\'" . slim-mode)))
 
 (quelpa 'smart-mode-line)
-(quelpa 'smart-mode-line-powerline)
 (use-package smart-mode-line
   :commands (sml/setup)
   :init (progn
-          (use-package smart-mode-line-powerline)
           (sml/setup)
           (sml/apply-theme 'respectful)))
 
