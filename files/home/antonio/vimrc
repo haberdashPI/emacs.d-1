@@ -2,7 +2,8 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
   set runtimepath+=$GOROOT/misc/vim
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Plugins
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -78,6 +79,8 @@ NeoBundle 'netrw.vim'
 
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'tpope/vim-vividchalk'
+
+call neobundle#end()
 
 " General configuration
 set nocompatible
