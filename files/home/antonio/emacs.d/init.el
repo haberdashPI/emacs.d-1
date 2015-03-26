@@ -382,14 +382,14 @@
   :config
   (progn
     (defadvice magit-status (around magit-fullscreen activate)
-      (window-configuration-to-register :magit-fullscreen)
+      (window-configuration-to-register (intern (format "magit-fullscreen-%s" (persp-name persp-curr))))
       ad-do-it (delete-other-windows))
 
     (defun magit-quit-session ()
       "Restores the previous window configuration and kills the magit buffer"
       (interactive)
       (kill-buffer)
-      (jump-to-register :magit-fullscreen))
+      (jump-to-register (intern (format "magit-fullscreen-%s" (persp-name persp-curr)))))
 
     (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
     (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
