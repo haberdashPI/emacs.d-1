@@ -1,17 +1,5 @@
 ---
-zsh_projects:
-  fasd:
-    repo: "git@github.com:clvv/fasd.git"
-    dest: "{{ home }}/.zsh/modules/fasd"
-  prezto:
-    repo: "git@github.com:sorin-ionescu/prezto.git"
-    dest: "{{ home }}/.zsh/modules/prezto"
-  zsh-completions:
-    repo: "git@github.com:zsh-users/zsh-completions.git"
-    dest: "{{ home }}/.zsh/modules/zsh-completions"
-  zsh-history-substring-search:
-    repo: "git@github.com:zsh-users/zsh-history-substring-search.git"
-    dest: "{{ home }}/.zsh/modules/zsh-history-substring-search"
-  zsh-syntax-highlighting:
-    repo: "git@github.com:zsh-users/zsh-syntax-highlighting.git"
-    dest: "{{ home }}/.zsh/modules/zsh-syntax-highlighting"
+zsh_files:
+  - zshrc
+  - zshenv
+  - zsh/

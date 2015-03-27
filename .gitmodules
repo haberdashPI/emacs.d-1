@@ -1,0 +1,15 @@
+[submodule "files/home/antonio/zsh/modules/fasd"]
+	path = files/home/antonio/zsh/modules/fasd
+	url = git@github.com:clvv/fasd.git
+[submodule "files/home/antonio/zsh/modules/prezto"]
+	path = files/home/antonio/zsh/modules/prezto
+	url = git@github.com:sorin-ionescu/prezto.git
+[submodule "files/home/antonio/zsh/modules/zsh-completions"]
+	path = files/home/antonio/zsh/modules/zsh-completions
+	url = git@github.com:zsh-users/zsh-completions.git
+[submodule "files/home/antonio/zsh/modules/zsh-history-substring-search"]
+	path = files/home/antonio/zsh/modules/zsh-history-substring-search
+	url = git@github.com:zsh-users/zsh-history-substring-search.git
+[submodule "files/home/antonio/zsh/modules/zsh-syntax-highlighting"]
+	path = files/home/antonio/zsh/modules/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
