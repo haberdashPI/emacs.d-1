@@ -142,3 +142,7 @@
   (let ((parent-directory (file-name-directory buffer-file-name)))
     (if (not (file-exists-p parent-directory))
         (make-directory parent-directory t))))
+
+(defun antonio-ag-in-project ()
+  (interactive)
+  (helm-do-ag (projectile-project-root)))

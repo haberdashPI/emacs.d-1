@@ -226,7 +226,7 @@
         "b" 'blame
         "c" 'evilnc-comment-or-uncomment-lines
         "C" 'evilnc-comment-or-uncomment-paragraphs
-        "f" 'helm-projectile-ag
+        "f" 'antonio-ag-in-project
         "g" 'git-messenger:popup-message
         "h" 'helm-resume
         "o" 'helm-semantic-or-imenu
@@ -354,8 +354,7 @@
       :config
       (progn
         ;; disable pre-input
-        (setq helm-swoop-pre-input-function
-              (lambda () ""))
+        (setq helm-swoop-pre-input-function #'ignore)
         (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-evil-search)))
 
     (helm-mode 1)))
