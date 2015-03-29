@@ -320,11 +320,10 @@
   :commands (helm-M-x
              helm-projectile-find-file
              helm-projectile-switch-to-buffer
-             antonio-helm-ag
-             helm-imenu
              helm-mode
              helm-swoop
              helm-multi-swoop
+             helm-semantic-or-imenu
              helm-show-kill-ring
              helm-gtags-select)
   :init
