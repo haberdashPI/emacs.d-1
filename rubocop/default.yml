@@ -198,7 +198,7 @@ Style/EmptyLineBetweenDefs:
 
 # Checks whether the source file has a utf-8 encoding comment or not
 Style/Encoding:
-  EnforcedStyle: always
+  EnforcedStyle: when_needed
   SupportedStyles:
     - when_needed
     - always
@@ -369,7 +369,7 @@ Style/SingleLineMethods:
   AllowIfMethodIsEmpty: true
 
 Style/StringLiterals:
-  EnforcedStyle: single_quotes
+  EnforcedStyle: double_quotes
   SupportedStyles:
     - single_quotes
     - double_quotes

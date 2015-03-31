@@ -1,5 +1,3 @@
-# These are all the cops that are enabled in the default configuration.
-
 Style/AccessModifierIndentation:
   Description: Check indentation of private/protected visibility modifiers.
   Enabled: true
@@ -513,10 +511,6 @@ Style/SpecialGlobalVars:
   Description: 'Avoid Perl-style global variables.'
   Enabled: true
 
-Style/StringLiterals:
-  Description: 'Checks if uses of quotes match the configured preference.'
-  Enabled: true
-
 Style/Tab:
   Description: 'No hard tabs.'
   Enabled: true
@@ -573,10 +567,6 @@ Style/WhileUntilModifier:
   Description: >-
                  Favor modifier while/until usage when you have a
                  single-line body.
-  Enabled: true
-
-Style/WordArray:
-  Description: 'Use %w or %W for arrays of words.'
   Enabled: true
 
 #################### Lint ################################
