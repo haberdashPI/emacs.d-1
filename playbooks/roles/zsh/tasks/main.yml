@@ -6,12 +6,18 @@
 - name: copy files
   synchronize: dest="{{ home }}/.{{ item }}" src="{{ base_dir }}/files/home/antonio/{{ item }}"
   when: inventory_hostname != 'localhost'
-  with_items: zsh_files
+  with_items:
+    - zshrc
+    - zshenv
+    - zsh/
 
 - name: link files
   file: path="{{ home }}/.{{ item }}" src="{{ base_dir }}/files/home/antonio/{{ item }}" state="link"
   when: inventory_hostname == 'localhost'
-  with_items: zsh_files
+  with_items:
+    - zshrc
+    - zshenv
+    - zsh
 
 - name: change default shell
   user: name="{{ ansible_user_id }}" shell="/bin/zsh"
