@@ -206,6 +206,8 @@
   (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
 
+  (add-to-list 'evil-insert-state-modes 'git-commit-mode)
+
   (use-package evil-leader
     :config
     (progn
