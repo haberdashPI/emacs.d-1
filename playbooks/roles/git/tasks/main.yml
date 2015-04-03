@@ -6,3 +6,4 @@
 - name: link gitconfig
   file: path="{{ home }}/.gitconfig" src="{{ base_dir }}/files/home/antonio/gitconfig" state="link"
   when: inventory_hostname == 'localhost'
+  ignore_errors: True
