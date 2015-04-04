@@ -11,6 +11,18 @@
       copy: dest="{{ home }}/.bin" src="{{ item }}" mode="0755"
       with_fileglob:
         - "{{ base_dir }}/files/home/antonio/bin/*"
+
+    - name: link rubocop rules
+      file: path="{{ home }}/.rubocop" src="{{ base_dir }}/files/home/antonio/rubocop" state="link"
+      when: inventory_hostname == 'localhost'
+
+    - name: copy rubocop rules
+      synchronize: dest="{{ home }}/.rubocop" src="{{ base_dir }}/files/home/antonio/rubocop" state="link"
+      when: inventory_hostname != 'localhost'
+
+    - name: rubocop config
+      file: path="{{ home }}/.rubocop.yml" src="{{ home }}/.rubocop/default.yml" state="link"
+
   roles:
     - { role: homebrew, when: "ansible_os_family == 'Darwin'" }
     - { role: osx, when: "ansible_os_family == 'Darwin'" }
