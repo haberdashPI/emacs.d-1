@@ -26,4 +26,4 @@
   when: inventory_hostname == 'localhost'
 
 - name: install NeoBundle
-  git: repo="https://github.com/Shougo/neobundle.vim" dest="{{ home }}/.vim/bundle/neobundle.vim"
+  git: repo="https://github.com/Shougo/neobundle.vim" dest="{{ home }}/.vim/bundle/neobundle.vim" update="no"
