@@ -26,10 +26,10 @@
 [github]
   user = antonio
 [hub]
-  protocol = https
+  protocol = ssh
 [push]
   default = upstream
 [credential]
-	helper = netrc -f ~/.netrc.gpg -v
+  helper = netrc -f ~/.netrc.gpg -v
 [rerere]
-	enabled = true
+  enabled = true
