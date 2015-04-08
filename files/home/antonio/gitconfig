@@ -29,7 +29,5 @@
   protocol = ssh
 [push]
   default = upstream
-[credential]
-  helper = netrc -f ~/.netrc.gpg -v
 [rerere]
   enabled = true
