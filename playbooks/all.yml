@@ -17,7 +17,7 @@
       when: inventory_hostname == 'localhost'
 
     - name: copy rubocop rules
-      synchronize: dest="{{ home }}/.rubocop" src="{{ base_dir }}/files/home/antonio/rubocop" state="link"
+      synchronize: dest="{{ home }}/.rubocop" src="{{ base_dir }}/files/home/antonio/rubocop/"
       when: inventory_hostname != 'localhost'
 
     - name: rubocop config
