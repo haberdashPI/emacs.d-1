@@ -10,6 +10,7 @@
     - dtrx
     - exiftool
     - faac
+    - fdupes
     - ffmpeg
     - findutils
     - git
