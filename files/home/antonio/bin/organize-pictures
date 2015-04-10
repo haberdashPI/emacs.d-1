@@ -3,6 +3,11 @@
 src=$1
 dest=$2
 
+if [ -z $src -o -z $dest ]; then
+  echo "Usage: organize-pictures <SRC> <DST>"
+  exit 1
+fi
+
 format="%Y/%m/%d/%F-%H%M%%-c.%%e"
 
 # if possible, use the exif data
@@ -17,6 +22,8 @@ if [ -n $IPHOTO ]; then
     mv "$picture" $dest/$path
   done
 fi
+
+fdupes -r $dest
 
 echo "Unprocessed files:"
 find $src -type f
