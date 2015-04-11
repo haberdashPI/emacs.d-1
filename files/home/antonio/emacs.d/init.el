@@ -57,32 +57,31 @@
                  (repeat . t)
                  (modes  . '(ruby-mode)))))
 
-(quelpa 'aggressive-indent)
 (use-package aggressive-indent
+  :ensure t
   :init
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'puppet-mode)
   (add-to-list 'aggressive-indent-excluded-modes 'coffee-mode))
 
-(quelpa 'buffer-move)
 (use-package buffer-move
+  :ensure t
   :bind (
          ("C-M-h" . buf-move-left)
          ("C-M-j" . buf-move-down)
          ("C-M-k" . buf-move-up)
          ("C-M-l" . buf-move-right)))
 
-(quelpa 'bundler)
 (use-package bundler
+  :ensure t
   :commands (bundle-check bundle-console bundle-install bundle-open bundle-update))
 
-(quelpa 'coffee-mode)
 (use-package coffee-mode
+  :ensure t
   :mode "\\.coffee\\'")
 
-(quelpa 'company)
-(quelpa 'company-quickhelp)
 (use-package company
+  :ensure t
   :commands (global-company-mode)
   :init (global-company-mode)
   :config
@@ -114,14 +113,15 @@
     (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
     (setq company-idle-delay 0.1)
     (use-package company-quickhelp
+      :ensure t
       :commands (company-quickhelp-mode)
       :init (company-quickhelp-mode 1))
 
     (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
     (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)))
 
-(quelpa 'dash-at-point)
 (use-package dash-at-point
+  :ensure t
   :commands (dash-at-point dash-at-point-with-docset)
   :bind (("C-c d" . dash-at-point)
          ("C-c e" . dash-at-point-with-docset))
@@ -131,23 +131,23 @@
     (add-to-list 'dash-at-point-mode-alist '(lisp-mode . "lisp"))
     (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))))
 
-(quelpa 'dired+)
 (use-package dired+
+  :ensure t
   :commands (dired-jump)
   :bind (("C-x C-j" . dired-jump)))
 
-(quelpa 'dockerfile-mode)
 (use-package dockerfile-mode
+  :ensure t
   :mode "\\Dockerfile\\'"
   :config (add-hook 'dockerfile-mode-hook (lambda () (setq require-final-newline nil))))
 
-(quelpa 'eldoc)
 (use-package eldoc
+  :ensure t
   :commands (eldoc-mode)
   :init (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode))
 
-(quelpa 'emmet-mode)
 (use-package emmet-mode
+  :ensure t
   :commands (emmet-mode)
   :config
   (add-hook 'emmet-mode-hook (lambda ()
@@ -160,13 +160,13 @@
     (add-hook 'web-mode-hook 'emmet-mode)
     (add-hook 'css-mode-hook 'emmet-mode)))
 
-(quelpa 'expand-region)
 (use-package expand-region
+  :ensure t
   :commands (er/expand-region)
   :bind ("C-=" . er/expand-region))
 
-(quelpa 'ethan-wspace)
 (use-package ethan-wspace
+  :ensure t
   :commands (global-ethan-wspace-mode)
   :config
   (progn
@@ -175,13 +175,8 @@
     (add-hook 'go-mode-hook 'remove-tabs-from-ethan-wspace-errors))
   :init (global-ethan-wspace-mode))
 
-(quelpa 'evil)
-(quelpa 'evil-leader)
-(quelpa 'evil-matchit)
-(quelpa 'evil-numbers)
-(quelpa 'evil-nerd-commenter)
-(quelpa 'evil-surround)
 (use-package evil
+  :ensure t
   :bind (("C-M-o" . evil-jump-backward)
          ("C-M-i" . evil-jump-forward))
   :commands (evil-mode)
@@ -209,6 +204,7 @@
   (add-to-list 'evil-insert-state-modes 'git-commit-mode)
 
   (use-package evil-leader
+    :ensure t
     :config
     (progn
       (global-evil-leader-mode)
@@ -231,13 +227,16 @@
         "t" 'helm-gtags-select)))
 
   (use-package evil-matchit
+    :ensure t
     :commands (evil-matchit-mode)
     :config (add-hook 'web-mode-hook 'evil-matchit-mode))
 
   (use-package evil-nerd-commenter
+    :ensure t
     :commands (evilnc-comment-or-uncomment-lines))
 
   (use-package evil-numbers
+    :ensure t
     :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
     :init
     (progn
@@ -245,33 +244,34 @@
       (define-key evil-normal-state-map (kbd "C-x C-x") 'evil-numbers/dec-at-pt)))
 
   (use-package evil-surround
+    :ensure t
     :config (global-evil-surround-mode 1)))
 
-(quelpa 'hydra)
 (use-package hydra
+  :ensure t
   :commands (defhydra))
 
-(quelpa 'git-messenger)
 (use-package git-messenger
+  :ensure t
   :config
   (setq git-messenger:show-detail t)
   (add-hook 'git-messenger:before-popup-hook (lambda (args) (turn-off-fci-mode)))
   (add-hook 'git-messenger:after-popup-hook (lambda (args) (turn-on-fci-mode)))
   :commands (git-messenger:popup-message))
 
-(quelpa 'go-mode)
 (use-package go-mode
+  :ensure t
   :mode "\\.go\\'"
   :init (add-hook 'go-mode-hook (lambda () (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors))))
   :config (add-hook 'before-save-hook 'gofmt-before-save))
 
-(quelpa 'fic-mode)
 (use-package fic-mode
+  :ensure t
   :commands (fic-mode)
   :init (add-hook 'prog-mode-hook 'fic-mode))
 
-(quelpa 'fill-column-indicator)
 (use-package fill-column-indicator
+  :ensure t
   :commands (fci-mode)
   :init
   (progn
@@ -290,8 +290,8 @@
     (setq fci-rule-color "#333333"
           fci-rule-column 80)))
 
-(quelpa 'flycheck)
 (use-package flycheck
+  :ensure t
   :init
   (progn
     (add-hook 'ruby-mode-hook 'flycheck-mode)
@@ -299,16 +299,12 @@
     (add-hook 'puppet-mode-hook 'flycheck-mode))
   :commands (flycheck-mode))
 
-(quelpa 'haml-mode)
 (use-package haml-mode
+  :ensure t
   :mode ("\\.haml\\'" . haml-mode))
 
-(quelpa 'helm)
-(quelpa 'helm-ag)
-(quelpa 'helm-gtags)
-(quelpa 'helm-projectile)
-(quelpa 'helm-swoop)
 (use-package helm
+  :ensure t
   :bind (("M-x" . helm-M-x))
   :commands (helm-M-x
              helm-projectile-find-file
@@ -333,15 +329,19 @@
     (setq helm-imenu-execute-action-at-once-if-one nil)
 
     (use-package helm-ag
+      :ensure t
       :commands (helm-ag))
 
     (use-package helm-gtags
+      :ensure t
       :commands (helm-gtags-select helm-gtags-find-pattern helm-gtags-find-tag))
 
     (use-package helm-projectile
+      :ensure t
       :config (setq projectile-switch-project-action 'helm-projectile))
 
     (use-package helm-swoop
+      :ensure t
       :commands (helm-swoop helm-multi-swoop)
       :config
       (progn
@@ -351,22 +351,22 @@
 
     (helm-mode 1)))
 
-(quelpa 'json-mode)
 (use-package json-mode
+  :ensure t
   :mode "\\.json\\'")
 
-(quelpa 'linum)
 (use-package linum
+  :ensure t
   :init (global-linum-mode t)
   )
 
-(quelpa 'lua-mode)
 (use-package lua-mode
+  :ensure t
   :config (setq lua-indent-level 2)
   :mode "\\.lua\\'")
 
-(quelpa 'magit)
 (use-package magit
+  :ensure t
   :commands (magit-status)
   :bind (("C-x g" . magit-status)
          ("C-x C-q" . magit-quit-session))
@@ -404,16 +404,14 @@
       '(define-key magit-mode-map "V"
          #'antonio/visit-pull-request-url))))
 
-(quelpa 'markdown-mode)
 (use-package markdown-mode
+  :ensure t
   :commands (markdown-mode)
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)))
 
-(quelpa 'org-plus-contrib)
-(quelpa 'org-pomodoro)
-(quelpa 'org-trello)
 (use-package org
+  :ensure t
   :mode ("\\.org\\'" . org-mode)
   :config
   (progn
@@ -470,27 +468,27 @@
                 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)))
 
     (use-package org-habit)
-    (use-package org-pomodoro)
-    (use-package org-trello))
+    (use-package org-trello
+      :ensure t))
   :init
   (progn
     (setq org-directory "~/Dropbox/org")
     (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
     (setq org-mobile-inbox-for-pull "~/Dropbox/Apps/MobileOrg/")))
 
-(quelpa 'paradox)
 (use-package paradox
+  :ensure t
   :bind (("C-x C-u" . paradox-upgrade-packages))
   :config (setq paradox-execute-asynchronously t)
   :commands (paradox-upgrade-packages paradox-list-packages))
 
-(quelpa 'perspective)
 (use-package perspective
+  :ensure t
   :commands (persp-mode)
   :init (persp-mode))
 
-(quelpa 'popwin)
 (use-package popwin
+  :ensure t
   :config
   (progn
     (popwin-mode)
@@ -500,8 +498,8 @@
     (push '("*compilation" :regexp t :height 50) popwin:special-display-config)
     (push '("*Bundler" :regexp t :height 50) popwin:special-display-config)))
 
-(quelpa 'projectile)
 (use-package projectile
+  :ensure t
   :commands (projectile-switch-project
              projectile-persp-switch-project)
   :bind (("C-c p p" . projectile-switch-project))
@@ -510,8 +508,8 @@
     (setq projectile-remember-window-configs t)
     (projectile-global-mode)))
 
-(quelpa 'puppet-mode)
 (use-package puppet-mode
+  :ensure t
   :commands (puppet-mode)
   :mode "\\.pp\\'"
   :config (evil-define-key 'insert puppet-mode-map (kbd "C-.") 'antonio-insert-hashrocket))
@@ -524,14 +522,8 @@
   (progn
     (setq rotate-text-words '(("width" "height") ("left" "right" "top" "bottom") ("true" "false") ("assert" "refute")))))
 
-(quelpa 'ruby-mode)
-(quelpa 'robe)
-(quelpa 'ruby-additional)
-(quelpa 'ruby-block)
-(quelpa 'ruby-hash-syntax)
-(quelpa 'ruby-test-mode)
-(quelpa 'ruby-tools)
 (use-package ruby-mode
+  :ensure t
   :commands (ruby-mode)
   :mode "\\.rb\\'"
   :config
@@ -544,17 +536,22 @@
     ;;     (robe-start)
     ;;     (push 'company-robe company-backends)))
 
-    (use-package ruby-additional)
+    (use-package ruby-additional
+      :ensure t)
 
     (use-package ruby-block
+      :ensure t
       :config (ruby-block-mode))
 
     (use-package ruby-hash-syntax
+      :ensure t
       :config (bind-key (kbd "C-c h")  'antonio-ruby-toggle-hash-syntax ruby-mode-map))
 
-    (use-package ruby-test-mode)
+    (use-package ruby-test-mode
+      :ensure t)
 
     (use-package ruby-tools
+      :ensure t
       :config
       (progn
         (bind-key (kbd "C-c :")  'ruby-tools-to-symbol ruby-mode-map)
@@ -569,28 +566,28 @@
   :mode (("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode)
          ("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
 
-(quelpa 'scss-mode)
 (use-package scss-mode
+  :ensure t
   :mode "\\.scss\\'"
   :init
   (progn
     (setq scss-compile-at-save nil)
     (setq css-indent-offset 2)))
 
-(quelpa 'slim-mode)
 (use-package slim-mode
+  :ensure t
   :mode (("\\.slim\\'" . slim-mode)
          ("\\.slim.html\\'" . slim-mode)))
 
-(quelpa 'smart-mode-line)
 (use-package smart-mode-line
+  :ensure t
   :commands (sml/setup)
   :init (progn
           (sml/setup)
           (sml/apply-theme 'respectful)))
 
-(quelpa 'smartparens)
 (use-package smartparens
+  :ensure t
   :commands (smartparens-global-mode smartparens-mode)
   :init
   (add-hook 'prog-mode-hook 'smartparens-mode)
@@ -617,21 +614,20 @@
   (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET")))
   (sp-pair "(" ")" :post-handlers '(("| " "SPC"))))
 
-(quelpa 'undo-tree)
 (use-package undo-tree
+  :ensure t
   :init
   (progn
     (setq undo-tree-history-directory-alist (quote (("." . "~/.undo/"))))
     (setq undo-tree-auto-save-history t)
     (global-undo-tree-mode)))
 
-(quelpa 'uniquify)
 (use-package uniquify
   :defer t
   :config (setq uniquify-buffer-name-style 'forward))
 
-(quelpa 'web-mode)
 (use-package web-mode
+  :ensure t
   :mode "\\.\\(erb\\|html?\\)\\'"
   :commands (web-mode)
   :config
@@ -642,8 +638,8 @@
     (setq web-mode-enable-css-colorization t)
     (setq web-mode-enable-auto-pairing nil)))
 
-(quelpa 'workgroups2)
 (use-package workgroups2
+  :ensure t
   :commands (workgroups-mode antonio-save-perspective
                              antonio-load-perspective
                              wg-create-workgroup wg-open-session)
@@ -660,18 +656,18 @@
   :bind (("C-x x S" . antonio-save-perspective)
          ("C-x x l" . antonio-load-perspective)))
 
-(quelpa 'yaml-mode)
 (use-package yaml-mode
+  :ensure t
   :commands (yaml-mode)
   :mode "\\.yml\\'")
 
-(quelpa 'yafolding)
 (use-package yafolding
+  :ensure t
   :commands (yafolding-mode)
   :init (add-hook 'prog-mode-hook 'yafolding-mode))
 
-(quelpa 'yasnippet)
 (use-package yasnippet
+  :ensure t
   :init
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   :commands (yas-minor-mode)
