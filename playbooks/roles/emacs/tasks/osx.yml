@@ -5,10 +5,10 @@
 - name: install emacs on osx
   homebrew: name="emacs-mac" state="present" install_options="with-gnutls,with-imagemagick,icon-modern"
 
-- name: copy the service file
-  copy: src="{{ item }}" dest="{{ home }}/Library/LaunchAgents/{{ item }}"
-  with_items: emacs_service_files
+# - name: copy the service file
+#   copy: src="{{ item }}" dest="{{ home }}/Library/LaunchAgents/{{ item }}"
+#   with_items: emacs_service_files
 
-- name: enable the service
-  command: "launchctl load -w ~/Library/LaunchAgents/{{ item }}"
-  with_items: emacs_service_files
+# - name: enable the service
+#   command: "launchctl load -w ~/Library/LaunchAgents/{{ item }}"
+#   with_items: emacs_service_files
