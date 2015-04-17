@@ -251,12 +251,20 @@
   :ensure t
   :commands (defhydra))
 
+(defun antonio-git-messenger-before-popup-hook (args)
+  (turn-off-fci-mode)
+  (linum-mode 0))
+
+(defun antonio-git-messenger-after-popup-hook (args)
+  (turn-on-fci-mode)
+  (linum-mode 1))
+
 (use-package git-messenger
   :ensure t
   :config
   (setq git-messenger:show-detail t)
-  (add-hook 'git-messenger:before-popup-hook (lambda (args) (turn-off-fci-mode)))
-  (add-hook 'git-messenger:after-popup-hook (lambda (args) (turn-on-fci-mode)))
+  (add-hook 'git-messenger:before-popup-hook 'antonio-git-messenger-before-popup-hook)
+  (add-hook 'git-messenger:after-popup-hook 'antonio-git-messenger-after-popup-hook)
   :commands (git-messenger:popup-message))
 
 (use-package go-mode
