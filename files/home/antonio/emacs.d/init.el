@@ -307,6 +307,11 @@
     (add-hook 'puppet-mode-hook 'flycheck-mode))
   :commands (flycheck-mode))
 
+(use-package ggtags
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook 'ggtags-mode))
+
 (use-package haml-mode
   :ensure t
   :mode ("\\.haml\\'" . haml-mode))
