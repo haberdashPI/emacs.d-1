@@ -11,3 +11,6 @@
 - name: get homebrew prefix directory
   shell: "brew config 2>/dev/null | grep HOMEBREW_PREFIX | cut -d: -f2 | sed 's/^[[:space:]]//'"
   register: homebrew_prefix
+
+- name: add cask tap
+  homebrew_tap: tap=caskroom/cask

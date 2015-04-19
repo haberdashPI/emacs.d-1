@@ -1,7 +1,8 @@
 ---
-- name: install packages on osx
+- name: install homebrew packages
   homebrew: name="{{ item }}" state="present"
   with_items:
+    - brew-cask
     - coreutils
     - ctags
     - curl
@@ -39,6 +40,11 @@
     - wget
     - youtube-dl
     - zsh
+
+- name: install homebrew cask packages
+  homebrew_cask: name="{{ item }}" state="present"
+  with_items:
+    - hammerspoon
 
 # - name: set up the environment
 #   copy: src="com.santosvelasco.environment.plist" dest="{{ home }}/Library/LaunchAgents/com.santosvelasco.environment.plist"
