@@ -1,0 +1,4 @@
+---
+- name: link init.lua
+  file: path="{{ home }}/.hammerspoon/init.lua" src="{{ base_dir }}/files/home/antonio/hammerspoon/init.lua" state="link"
+  when: inventory_hostname == 'localhost' and ansible_os_family == "Darwin"
