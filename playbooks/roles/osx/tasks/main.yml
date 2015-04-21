@@ -1,8 +1,12 @@
 ---
+- name: add tmate tap
+  homebrew_tap: tap="nviennot/tmate"
+
 - name: install homebrew packages
   homebrew: name="{{ item }}" state="present"
   with_items:
     - brew-cask
+    - chruby
     - coreutils
     - ctags
     - curl
@@ -10,10 +14,12 @@
     - docker
     - dtrx
     - exiftool
+    - fasd
     - faac
     - fdupes
     - ffmpeg
     - findutils
+    - fzf
     - git
     - gnupg2
     - gpg-agent
@@ -40,6 +46,9 @@
     - wget
     - youtube-dl
     - zsh
+
+- name: install global
+  homebrew: name="global" state="present" install_options="--with-exuberant-ctags --with-pygments"
 
 - name: install homebrew cask packages
   homebrew_cask: name="{{ item }}" state="present"
