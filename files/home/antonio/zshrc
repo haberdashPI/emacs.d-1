@@ -53,6 +53,8 @@ source ~/.zsh/history-substring-search.zsh
 source ~/.zsh/completions.zsh
 source ~/.zsh/fasd.zsh
 
+source ~/.fzf.zsh
+
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 compinit # Loading completions as late as possible
