@@ -1,0 +1,7 @@
+---
+- hosts: all
+  vars:
+    - home: "{{ ansible_env.HOME }}"
+    - base_dir: "{{ lookup('pipe', 'git rev-parse --show-toplevel') }}"
+  roles:
+    - tmux
