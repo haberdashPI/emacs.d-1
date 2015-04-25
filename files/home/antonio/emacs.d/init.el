@@ -511,6 +511,12 @@
     (push '("*compilation" :regexp t :height 50) popwin:special-display-config)
     (push '("*Bundler" :regexp t :height 50) popwin:special-display-config)))
 
+(use-package powerline
+  :ensure t
+  :commands (powerline-default-theme)
+  :init
+  (powerline-default-theme))
+
 (use-package projectile
   :ensure t
   :commands (projectile-switch-project
@@ -591,13 +597,6 @@
   :ensure t
   :mode (("\\.slim\\'" . slim-mode)
          ("\\.slim.html\\'" . slim-mode)))
-
-(use-package smart-mode-line
-  :ensure t
-  :commands (sml/setup)
-  :init (progn
-          (sml/setup)
-          (sml/apply-theme 'respectful)))
 
 (use-package smartparens
   :ensure t
