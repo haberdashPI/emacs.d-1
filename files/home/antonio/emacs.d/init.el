@@ -513,9 +513,9 @@
 
 (use-package powerline
   :ensure t
-  :commands (powerline-default-theme)
+  :commands (powerline-default-theme powerline-center-evil-theme)
   :init
-  (powerline-default-theme))
+  (powerline-center-evil-theme))
 
 (use-package projectile
   :ensure t
