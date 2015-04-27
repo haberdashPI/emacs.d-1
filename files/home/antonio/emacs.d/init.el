@@ -160,6 +160,12 @@
     (add-hook 'web-mode-hook 'emmet-mode)
     (add-hook 'css-mode-hook 'emmet-mode)))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :init
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
+
 (use-package expand-region
   :ensure t
   :commands (er/expand-region)
