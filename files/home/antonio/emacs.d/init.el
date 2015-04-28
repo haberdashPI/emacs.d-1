@@ -519,9 +519,8 @@
 
 (use-package powerline
   :ensure t
-  :commands (powerline-default-theme powerline-center-evil-theme)
   :init
-  (powerline-center-evil-theme))
+  (antonio-mode-line))
 
 (use-package projectile
   :ensure t
