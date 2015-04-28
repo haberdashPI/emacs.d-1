@@ -218,12 +218,10 @@
 
       (evil-leader/set-key
         "." 'helm-projectile
-        "b" 'blame
         "c" 'evilnc-comment-or-uncomment-lines
         "C" 'evilnc-comment-or-uncomment-paragraphs
         "f" 'antonio-ag-in-project
         "g" 'git-messenger:popup-message
-        "h" 'helm-resume
         "o" 'helm-semantic-or-imenu
         "s" 'helm-swoop
         "S" 'helm-multi-swoop
