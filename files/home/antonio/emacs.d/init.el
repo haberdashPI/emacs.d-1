@@ -629,6 +629,11 @@
   (sp-pair "{" "}" :post-handlers '(("||\n[i]" "RET")))
   (sp-pair "(" ")" :post-handlers '(("| " "SPC"))))
 
+(use-package undohist
+  :ensure t
+  :commands (undohist-initialize)
+  :init (undohist-initialize))
+
 (use-package undo-tree
   :ensure t
   :init
