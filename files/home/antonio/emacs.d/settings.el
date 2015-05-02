@@ -163,6 +163,7 @@
 (setq ido-auto-merge-work-directories-length -1)
 
 ;; modeline
+(setq powerline-default-separator "nil")
 (defun antonio-mode-line ()
   (setq-default mode-line-format
                 '("%e"
@@ -186,40 +187,31 @@
                           (format "powerline-%s-%s"
                                   (powerline-current-separator)
                                   (cdr powerline-default-separator-dir))))
-                        (lhs
-                         (list
-                          (powerline-raw "%*" nil 'l)
-                          (powerline-buffer-size nil 'l)
-                          (powerline-buffer-id nil 'l)
-                          (powerline-raw " ")
-                          (funcall separator-left mode-line face1)
-                          (powerline-narrow face1 'l)
-                          (powerline-vc face1)))
-                        (rhs
-                         (list
-                          (powerline-raw global-mode-string face1 'r)
-                          (powerline-raw "%4l" face1 'r)
-                          (powerline-raw ":" face1)
-                          (powerline-raw "%3c" face1 'r)
-                          (funcall separator-right face1 mode-line)
-                          (powerline-raw " ")
-                          (powerline-raw "%6p" nil 'r)
-                          (powerline-hud face2 face1)))
+                        (lhs (list))
+                        (rhs (list))
                         (center
                          (append
                           (list
+                           (powerline-raw "%*" nil 'l)
+                           (powerline-buffer-id nil 'l)
+                           (powerline-raw " ")
+                           (funcall separator-left mode-line face1)
+                           (powerline-narrow face1 'l)
+                           (powerline-vc face1)
                            (powerline-raw " " face1)
                            (funcall separator-left face1 face2)
                            (when
                                (boundp 'erc-modified-channels-object)
                              (powerline-raw erc-modified-channels-object face2 'l))
                            (powerline-major-mode face2 'l)
-                           (powerline-process face2)
-                           (powerline-raw " " face2))
+                           (powerline-process face2))
                           (append
                            (list
-                            (powerline-raw evil-mode-line-tag face2)
-                            (funcall separator-right face2 face1))))))
+                            (powerline-raw " " face2)
+                            (powerline-raw (powerline-trim evil-mode-line-tag) face2)
+                            (powerline-raw " " face2)
+                            (funcall separator-right face2 face1)
+                            (powerline-raw global-mode-string face1 'r))))))
                      (concat
                       (powerline-render lhs)
                       (powerline-fill-center face1
