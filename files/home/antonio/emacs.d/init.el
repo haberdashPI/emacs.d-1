@@ -206,6 +206,7 @@
   (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
   (add-to-list 'evil-emacs-state-modes 'magit-status-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
+  (add-to-list 'evil-emacs-state-modes 'neotree-mode)
 
   (add-to-list 'evil-insert-state-modes 'git-commit-mode)
 
@@ -222,12 +223,13 @@
         "C" 'evilnc-comment-or-uncomment-paragraphs
         "f" 'antonio-ag-in-project
         "g" 'git-messenger:popup-message
+        "n" 'neotree-toggle
         "o" 'helm-semantic-or-imenu
-        "s" 'helm-swoop
-        "S" 'helm-multi-swoop
+        "p" 'helm-show-kill-ring
         "r" 'ruby-test-run-at-point
         "R" 'ruby-test-run
-        "p" 'helm-show-kill-ring
+        "s" 'helm-swoop
+        "S" 'helm-multi-swoop
         "t" 'helm-gtags-select)))
 
   (use-package evil-matchit
@@ -426,6 +428,13 @@
   :commands (markdown-mode)
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)))
+
+(use-package neotree
+  :ensure t
+  :commands (neotree-toggle)
+  :config
+  (define-key neotree-mode-map (kbd "j") 'next-line)
+  (define-key neotree-mode-map (kbd "k") 'previous-line))
 
 (use-package org
   :ensure t
