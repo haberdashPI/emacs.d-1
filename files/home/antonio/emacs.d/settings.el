@@ -197,8 +197,8 @@
                            (powerline-raw " ")
                            (funcall separator-left mode-line face1)
                            (powerline-narrow face1 'l)
-                           (powerline-vc face1)
-                           (powerline-raw " " face1)
+                           (if (vc-backend (buffer-file-name))
+                               (concat (powerline-vc face1) (powerline-raw " " face1)))
                            (funcall separator-left face1 face2)
                            (when
                                (boundp 'erc-modified-channels-object)
@@ -211,6 +211,7 @@
                             (powerline-raw (powerline-trim evil-mode-line-tag) face2)
                             (powerline-raw " " face2)
                             (funcall separator-right face2 face1)
+                            (powerline-raw " " face1)
                             (powerline-raw global-mode-string face1 'r))))))
                      (concat
                       (powerline-render lhs)
