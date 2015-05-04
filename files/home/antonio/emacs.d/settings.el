@@ -193,7 +193,7 @@
                          (append
                           (list
                            (powerline-raw "%*" nil 'l)
-                           (powerline-buffer-id nil 'l)
+                           (powerline-raw "%b" 'mode-line-highlight 'l)
                            (powerline-raw " ")
                            (funcall separator-left mode-line face1)
                            (powerline-narrow face1 'l)
