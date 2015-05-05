@@ -4,8 +4,12 @@
     - home: "{{ ansible_env.HOME }}"
     - base_dir: "{{ lookup('pipe', 'git rev-parse --show-toplevel') }}"
   tasks:
-    - name: create $HOME/.bin
+    - name: setup directories
       file: path="{{ home }}/.bin" state="directory"
+      with_items:
+        - "{{ home }}/.bin"
+        - "{{ home }}/Code"
+        - "{{ home }}/Code/go"
 
     - name: copy scripts
       copy: dest="{{ home }}/.bin" src="{{ item }}" mode="0755"
