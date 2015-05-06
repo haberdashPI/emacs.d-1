@@ -70,7 +70,6 @@ slate.bind("8:cmd", slate.operation("focus", { app: "Adium" }));
 slate.bind("9:cmd", slate.operation("focus", { app: "iTerm" }));
 slate.bind("e:cmd", cycleBetweenEmacs);
 slate.bind("esc:cmd", focusLastWindow);
-slate.bind("return:cmd,alt", fullScreen);
 
 slate.on("appDeactivated", function(event, app) {
   Config.lastAppPid = app.pid();

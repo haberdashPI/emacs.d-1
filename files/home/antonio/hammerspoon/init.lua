@@ -2,6 +2,18 @@
 -- something has a different functionality
 
 -- full screen
+hs.hotkey.bind({"cmd", "alt"}, "return", function ()
+    local win    = hs.window.focusedWindow()
+    local f      = win:frame()
+    local max    = win:screen():frame()
+
+    f.x = max.x
+    f.y = max.y
+    f.w = max.w
+    f.h = max.h
+    win:setFrame(f)
+end)
+
 -- move to the left/right/down/up side
 -- move to the next windows with cmd+j, cmd+k
 -- caffeine replacement
