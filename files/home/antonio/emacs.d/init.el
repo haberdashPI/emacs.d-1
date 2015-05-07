@@ -444,7 +444,7 @@
     (auto-fill-mode)
 
     (setq org-log-done t
-          org-todo-keywords '((sequence "TODO(t)" "FUTURE(f)" "WAIT(w@)" "|" "CANCELED(c@)" "DONE(d)")))
+          org-todo-keywords '((sequence "TODO(t)" "IN PROGRESS(p)" "FUTURE(f)" "WAIT(w)" "|" "DONE(d)")))
 
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
