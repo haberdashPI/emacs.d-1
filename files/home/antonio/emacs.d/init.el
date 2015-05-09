@@ -641,7 +641,11 @@
 (use-package undohist
   :ensure t
   :commands (undohist-initialize)
-  :init (undohist-initialize))
+  :init
+  (undohist-initialize)
+  :config
+  (setq undohist-ignored-files
+        '("COMMIT_EDITMSG" "NOTES_EDITMSG" "MERGE_MSG" "TAG_EDITMSG")))
 
 (use-package undo-tree
   :ensure t
