@@ -67,9 +67,7 @@ end)
 
 -- move to the next windows with cmd+j, cmd+k
 -- caffeine replacement
--- cycle between windows of the same app
 -- hotkeys to the usual apps
--- focus last window (that's actually command tab)
 
 -- reload TODO: automatic
 hs.hotkey.bind({"cmd", "ctrl"}, "r", function()
