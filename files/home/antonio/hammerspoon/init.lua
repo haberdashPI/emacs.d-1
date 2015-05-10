@@ -69,7 +69,6 @@ end)
 -- caffeine replacement
 -- hotkeys to the usual apps
 
--- reload TODO: automatic
-hs.hotkey.bind({"cmd", "ctrl"}, "r", function()
+hs.hotkey.bind({"cmd", "shift"}, "r", function()
     hs.notify.new({title="Hammerspoon", informativeText="Config reloaded"}):send():release()
 end)
