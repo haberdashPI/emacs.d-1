@@ -1,8 +1,5 @@
 hs.window.animationDuration = 0
 
--- what i want is a modal keymap, like I do cmd and then cmd +
--- something has a different functionality
-
 -- full screen
 hs.hotkey.bind({"cmd", "shift"}, "return", function ()
     local win    = hs.window.focusedWindow()
@@ -17,7 +14,7 @@ hs.hotkey.bind({"cmd", "shift"}, "return", function ()
 end)
 
 -- move to the left/right/down/up side
-hs.hotkey.bind({"cmd", "shift"}, "h", function ()
+hs.hotkey.bind({"cmd", "ctrl"}, "h", function ()
     local win    = hs.window.focusedWindow() or hs.application.frontmostApplication():focusedWindow()
     local f      = win:frame()
     local max    = win:screen():frame()
@@ -29,7 +26,7 @@ hs.hotkey.bind({"cmd", "shift"}, "h", function ()
     win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "shift"}, "j", function ()
+hs.hotkey.bind({"cmd", "ctrl"}, "j", function ()
     local win    = hs.window.focusedWindow() or hs.application.frontmostApplication():focusedWindow()
     local f      = win:frame()
     local max    = win:screen():frame()
@@ -41,7 +38,7 @@ hs.hotkey.bind({"cmd", "shift"}, "j", function ()
     win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "shift"}, "k", function ()
+hs.hotkey.bind({"cmd", "ctrl"}, "k", function ()
     local win    = hs.window.focusedWindow() or hs.application.frontmostApplication():focusedWindow()
     local f      = win:frame()
     local max    = win:screen():frame()
@@ -53,7 +50,7 @@ hs.hotkey.bind({"cmd", "shift"}, "k", function ()
     win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "shift"}, "l", function ()
+hs.hotkey.bind({"cmd", "ctrl"}, "l", function ()
     local win    = hs.window.focusedWindow() or hs.application.frontmostApplication():focusedWindow()
     local f      = win:frame()
     local max    = win:screen():frame()
@@ -65,7 +62,7 @@ hs.hotkey.bind({"cmd", "shift"}, "l", function ()
     win:setFrame(f)
 end)
 
--- move to the next windows with cmd+j, cmd+k
+-- cmd shift j/k to go to the next/prev window
 -- caffeine replacement
 -- hotkeys to the usual apps
 
