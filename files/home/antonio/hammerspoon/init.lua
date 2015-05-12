@@ -63,7 +63,26 @@ hs.hotkey.bind({"cmd", "ctrl"}, "l", function ()
 end)
 
 -- cmd shift j/k to go to the next/prev window
+
 -- caffeine replacement
+local caffeine = hs.menubar.new()
+function setCaffeineDisplay(state)
+  if state then
+    caffeine:setTitle("C:ON")
+  else
+    caffeine:setTitle("C:OFF")
+  end
+end
+
+function caffeineClicked()
+  setCaffeineDisplay(hs.caffeinate.toggle("displayIdle"))
+end
+
+if caffeine then
+  caffeine:setClickCallback(caffeineClicked)
+  setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
+end
+
 -- hotkeys to the usual apps
 
 hs.hotkey.bind({"cmd", "shift"}, "r", function()
