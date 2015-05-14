@@ -66,8 +66,9 @@ end)
 
 -- caffeine replacement
 local caffeine = hs.menubar.new()
-function setCaffeineDisplay(state)
-  if state then
+
+function updateCaffeineDisplay()
+  if hs.caffeinate.get("displayIdle") then
     caffeine:setTitle("C:ON")
   else
     caffeine:setTitle("C:OFF")
@@ -75,12 +76,14 @@ function setCaffeineDisplay(state)
 end
 
 function caffeineClicked()
-  setCaffeineDisplay(hs.caffeinate.toggle("displayIdle"))
+  hs.caffeinate.toggle("displayIdle")
+  updateCaffeineDisplay()
 end
 
 if caffeine then
   caffeine:setClickCallback(caffeineClicked)
-  setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
+  hs.caffeinate.set("displayIdle", true)
+  updateCaffeineDisplay()
 end
 
 -- hotkeys to the usual apps
