@@ -80,9 +80,23 @@ function caffeineClicked()
   updateCaffeineDisplay()
 end
 
+function enableCaffeine()
+  hs.caffeinate.set("displayIdle", true)
+  updateCaffeineDisplay()
+end
+
+function disableCaffeine()
+  hs.caffeinate.set("displayIdle", false)
+  updateCaffeineDisplay()
+end
+
 if caffeine then
   caffeine:setClickCallback(caffeineClicked)
-  hs.caffeinate.set("displayIdle", true)
+  if hs.battery.powerSource() == "Battery Power" then
+    disableCaffeine()
+  else
+    enableCaffeine()
+  end
   updateCaffeineDisplay()
 end
 
