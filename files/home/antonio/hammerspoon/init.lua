@@ -90,8 +90,7 @@ function disableCaffeine()
   updateCaffeineDisplay()
 end
 
-if caffeine then
-  caffeine:setClickCallback(caffeineClicked)
+function setCaffeineBasedOnPowerSource()
   if hs.battery.powerSource() == "Battery Power" then
     disableCaffeine()
   else
@@ -99,6 +98,13 @@ if caffeine then
   end
   updateCaffeineDisplay()
 end
+
+if caffeine then
+  caffeine:setClickCallback(caffeineClicked)
+  setCaffeineBasedOnPowerSource()
+end
+
+hs.battery.watcher.new(setCaffeineBasedOnPowerSource):start()
 
 -- hotkeys to the usual apps
 hs.hotkey.bind({"cmd"}, "1", function()
