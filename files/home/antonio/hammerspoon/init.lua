@@ -75,11 +75,6 @@ function updateCaffeineDisplay()
   end
 end
 
-function caffeineClicked()
-  hs.caffeinate.toggle("displayIdle")
-  updateCaffeineDisplay()
-end
-
 function enableCaffeine()
   hs.caffeinate.set("displayIdle", true)
   updateCaffeineDisplay()
@@ -99,12 +94,26 @@ function setCaffeineBasedOnPowerSource()
   updateCaffeineDisplay()
 end
 
+local caffeine_watcher = hs.battery.watcher.new(setCaffeineBasedOnPowerSource)
+caffeine_watcher:start()
+
+function caffeineClicked(modifiers)
+  if modifiers.cmd then
+    caffeine_watcher:start()
+    hs.notify.new({title="Hammerspoon", informativeText="Caffeine Watcher On"}):send():release()
+  elseif modifiers.alt then
+    caffeine_watcher:stop()
+    hs.notify.new({title="Hammerspoon", informativeText="Caffeine Watcher Off"}):send():release()
+  else
+    hs.caffeinate.toggle("displayIdle")
+  end
+  updateCaffeineDisplay()
+end
+
 if caffeine then
   caffeine:setClickCallback(caffeineClicked)
   setCaffeineBasedOnPowerSource()
 end
-
-hs.battery.watcher.new(setCaffeineBasedOnPowerSource):start()
 
 -- hotkeys to the usual apps
 hs.hotkey.bind({"cmd"}, "1", function()
