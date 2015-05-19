@@ -7,6 +7,7 @@
   with_items:
     - brew-cask
     - chruby
+    - colordiff
     - coreutils
     - ctags
     - curl
@@ -33,6 +34,7 @@
     - pass
     - pigz
     - privoxy
+    - pstree
     - ranger
     - reattach-to-user-namespace
     - ruby-install
@@ -40,6 +42,7 @@
     - syncthing
     - the_silver_searcher
     - tmate
+    - tree
     - unrar
     - wakeonlan
     - wget
@@ -53,6 +56,7 @@
   homebrew_cask: name="{{ item }}" state="present"
   with_items:
     - hammerspoon
+    - yacreader
 
 # - name: set up the environment
 #   copy: src="com.santosvelasco.environment.plist" dest="{{ home }}/Library/LaunchAgents/com.santosvelasco.environment.plist"
