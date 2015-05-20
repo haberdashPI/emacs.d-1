@@ -55,6 +55,16 @@
 - name: install homebrew cask packages
   homebrew_cask: name="{{ item }}" state="present"
   with_items:
+    - alfred
+    - anki
+    - atom
+    - boxer
+    - calibre
+    - consul
+    - consul-template
+    - crashplan
+    - dash
+    - dropbox
     - hammerspoon
     - yacreader
 
