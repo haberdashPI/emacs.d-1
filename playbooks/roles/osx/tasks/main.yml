@@ -66,6 +66,18 @@
     - dash
     - dropbox
     - hammerspoon
+    - firefox
+    - flux
+    - gog-galaxy
+    - google-chrome
+    - iterm2
+    - karabiner
+    - kindle
+    - lastfm
+    - lastpass
+    - league-of-legends
+    - lyn
+    - minecraft
     - yacreader
 
 # - name: set up the environment
