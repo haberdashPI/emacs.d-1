@@ -141,6 +141,6 @@ hs.hotkey.bind({"cmd"}, "e", function()
     hs.appfinder.appFromName("Emacs"):mainWindow():focus()
 end)
 
-hs.hotkey.bind({"cmd", "shift"}, "r", function()
+hs.hotkey.bind({"cmd", "ctrl"}, "r", function()
     hs.notify.new({title="Hammerspoon", informativeText="Config reloaded"}):send():release()
 end)
