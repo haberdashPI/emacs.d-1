@@ -494,6 +494,8 @@
                 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)))
 
     (use-package org-habit)
+    (use-package org-pomodoro
+      :ensure t)
     (use-package org-trello
       :ensure t))
   :init
