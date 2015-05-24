@@ -495,7 +495,9 @@
 
     (use-package org-habit)
     (use-package org-pomodoro
-      :ensure t)
+      :ensure t
+      :bind
+      (("C-x p" . org-pomodoro)))
     (use-package org-trello
       :ensure t))
   :init
