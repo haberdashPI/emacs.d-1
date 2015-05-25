@@ -117,7 +117,7 @@ end
 
 -- hotkeys to the usual apps
 hs.hotkey.bind({"cmd"}, "1", function()
-    hs.application.launchOrFocus("Google Chrome")
+    hs.application.launchOrFocus("Firefox")
 end)
 hs.hotkey.bind({"cmd"}, "2", function()
     hs.application.launchOrFocus("GitHub Chat")
@@ -129,7 +129,7 @@ hs.hotkey.bind({"cmd"}, "4", function()
     hs.application.launchOrFocus("Slack")
 end)
 hs.hotkey.bind({"cmd"}, "5", function()
-    hs.application.launchOrFocus("Firefox")
+    hs.application.launchOrFocus("Google Chrome")
 end)
 hs.hotkey.bind({"cmd"}, "7", function()
     hs.application.launchOrFocus("iTunes")
