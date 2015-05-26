@@ -62,6 +62,27 @@ hs.hotkey.bind({"cmd", "ctrl"}, "l", function ()
     win:setFrame(f)
 end)
 
+firefoxChangeTabGroupHotkey = hs.hotkey.new({"cmd"}, "`", function ()
+    hs.eventtap.keyStroke({"ctrl"}, "n")
+end)
+
+watchers = {}
+hs.application.watcher.new(function (appName, eventType, app)
+    if appName == "Firefox" then
+      firefoxChangeTabGroupHotkey:disable()
+      if eventType == hs.application.watcher.activated and watchers["firefox"] == nil then
+        local watcher = app:newWatcher(function (element, event)
+            firefoxChangeTabGroupHotkey:enable()
+        end)
+        watchers["firefox"] = watcher
+        watcher:start({hs.uielement.watcher.applicationShown, hs.uielement.watcher.applicationActivated})
+      elseif eventType == hs.application.watcher.terminated then
+        watchers["firefox"]:stop()
+        watchers["firefox"] = nil
+      end
+    end
+end):start()
+
 -- cmd shift j/k to go to the next/prev window
 
 -- caffeine replacement
