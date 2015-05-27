@@ -408,6 +408,8 @@
     (define-key magit-diff-mode-map (kbd "j") 'next-line)
     (define-key magit-diff-mode-map (kbd "k") 'previous-line)
 
+    (setq magit-set-upstream-on-push 'dontask)
+
     (defun antonio/visit-pull-request-url ()
       "Visit the current branch's PR on Github."
       (interactive)
