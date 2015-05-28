@@ -33,6 +33,19 @@
 (load "~/.emacs.d/keymap.el")
 (load "~/.emacs.d/functions.el")
 
+(use-package alert
+  :ensure t
+  :config
+  (alert-define-style 'hammerspoon :title "Hammerspoon notifier"
+                      :notifier
+                      (lambda (info)
+                        (let ((message (plist-get info :message))
+                              (title (or (plist-get info :title) "Emacs"))
+                              (command (format "hs -c 'hs.notify.new({title=\"%s\", informativeText=\"%s\"}):send()'" title message)))
+                          (shell-command command))))
+  (setq alert-default-style 'notifier)
+  )
+
 (use-package align
   :commands (align align-regexp)
   :config
