@@ -43,8 +43,7 @@
                               (title (or (plist-get info :title) "Emacs"))
                               (command (format "hs -c 'hs.notify.new({title=\"%s\", informativeText=\"%s\"}):send()'" title message)))
                           (shell-command command))))
-  (setq alert-default-style 'notifier)
-  )
+  (setq alert-default-style 'notifier))
 
 (use-package align
   :commands (align align-regexp)
