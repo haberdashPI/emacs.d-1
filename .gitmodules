@@ -13,3 +13,6 @@
 [submodule "files/home/antonio/zsh/modules/zsh-syntax-highlighting"]
 	path = files/home/antonio/zsh/modules/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule "files/home/antonio/zsh/modules/k"]
+	path = files/home/antonio/zsh/modules/k
+	url = git@github.com:supercrabtree/k.git
