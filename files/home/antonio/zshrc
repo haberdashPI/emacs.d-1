@@ -50,6 +50,8 @@ source ~/.zsh/keys.zsh
 source ~/.zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/history-substring-search.zsh
 
+source ~/.zsh/modules/k/k.sh
+
 source ~/.zsh/completions.zsh
 source ~/.zsh/fasd.zsh
 
