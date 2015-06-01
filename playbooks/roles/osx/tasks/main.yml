@@ -5,7 +5,9 @@
 - name: install homebrew packages
   homebrew: name="{{ item }}" state="present"
   with_items:
+    - awscli
     - brew-cask
+    - chromaprint
     - chruby
     - colordiff
     - coreutils
