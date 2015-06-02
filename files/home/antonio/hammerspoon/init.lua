@@ -1,3 +1,5 @@
+require("hs.ipc")
+
 hs.window.animationDuration = 0
 
 -- full screen
@@ -63,7 +65,7 @@ hs.hotkey.bind({"cmd", "ctrl"}, "l", function ()
 end)
 
 firefoxChangeTabGroupHotkey = hs.hotkey.new({"cmd"}, "`", function ()
-    hs.eventtap.keyStroke({"ctrl"}, "n")
+    hs.eventtap.keyStroke({"alt"}, "n")
 end)
 
 watchers = {}
