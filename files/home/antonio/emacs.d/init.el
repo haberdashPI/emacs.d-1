@@ -526,10 +526,15 @@
   :config (setq paradox-execute-asynchronously t)
   :commands (paradox-upgrade-packages paradox-list-packages))
 
-(use-package perspective
+(use-package persp-mode
   :ensure t
   :commands (persp-mode)
-  :init (persp-mode))
+  :init
+  (setq persp-nil-name "org"
+        persp-auto-save-opt 1
+        persp-auto-resume-time 0
+        persp-keymap-prefix (kbd "C-x x"))
+  (persp-mode))
 
 (use-package popwin
   :ensure t
