@@ -212,6 +212,8 @@
                             (powerline-raw " " face2)
                             (funcall separator-right face2 face1)
                             (powerline-raw " " face1)
+                            (powerline-raw persp-last-persp-name face1)
+                            (powerline-raw " " face1)
                             (powerline-raw global-mode-string face1 'r))))))
                      (concat
                       (powerline-render lhs)
