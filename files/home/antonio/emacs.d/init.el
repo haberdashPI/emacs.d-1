@@ -508,8 +508,11 @@
                 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)))
 
     (use-package org-habit)
+    (quelpa '(org-pomodoro :fetcher github :repo "dsdshcym/org-pomodoro" :commit "70c68c121b0bae4e130b506a1986ac9d3059f7ec" :files (:defaults "resources")))
     (use-package org-pomodoro
-      :ensure t
+      :config
+      (setq org-agenda-clockreport-parameter-plist
+            '(:fileskip0 t :link t :maxlevel 2 :formula "$5=($3+$4)*(60/25);t"))
       :bind
       (("C-x p" . org-pomodoro)))
     (use-package org-trello
