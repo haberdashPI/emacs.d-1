@@ -27,6 +27,7 @@
     - gnupg2
     - gpg-agent
     - imagemagick
+    - jq
     - lastpass-cli
     - lua
     - netcat
