@@ -8,8 +8,6 @@ export RUBY_GC_HEAP_FREE_SLOTS=200000
 export PAGER='less'
 export LESS='-XR'
 export LESSOPEN='|colorize %s'
-export GOROOT=$HOME/Code/go
-export GOPATH=$HOME/Code/go
-
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 fpath+=(~/.zsh/functions)
-path+=(~/.bin /usr/local/bin $GOROOT/bin)
+path+=(~/.bin /usr/local/bin)

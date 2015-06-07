@@ -46,15 +46,12 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/wakeonlan.zsh
 source ~/.zsh/dotenv.zsh
 source ~/.zsh/keys.zsh
-
+source ~/.zsh/go.zsh
 source ~/.zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/history-substring-search.zsh
-
 source ~/.zsh/modules/k/k.sh
-
 source ~/.zsh/completions.zsh
 source ~/.zsh/fasd.zsh
-
 source ~/.fzf.zsh
 
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
