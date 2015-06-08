@@ -1,0 +1,3 @@
+#!/bin/bash
+#/ Usage: create-tags <language...>
+#/ Creates the gtags files for the list of passed languages
