@@ -1,3 +1,22 @@
 #!/bin/bash
 #/ Usage: create-tags <language...>
 #/ Creates the gtags files for the list of passed languages
+
+FILES=""
+
+for language in "$@"; do
+  case $language in
+    ruby)
+      FILES="$FILES\n$(find . -name '*.rb' | grep -v gems)"
+      ;;
+    shell)
+      FILES="$FILES\n$(find . -name '*.sh')"
+      ;;
+    *)
+  esac
+
+  echo $FILES >> gtags.files
+done
+
+gtags -vf gtags.files
+rm gtags.files
