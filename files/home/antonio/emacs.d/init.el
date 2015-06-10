@@ -491,6 +491,8 @@
 
     (add-hook 'org-capture-mode-hook 'delete-other-windows)
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
+    (add-hook 'org-clock-in-hook 'org-save-all-org-buffers)
+    (add-hook 'org-clock-out-hook 'org-save-all-org-buffers)
 
     (define-key global-map "\C-cc" (lambda () (interactive) (org-capture nil "t")))
 
