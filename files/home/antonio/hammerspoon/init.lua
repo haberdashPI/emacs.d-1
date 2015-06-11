@@ -108,34 +108,13 @@ function disableCaffeine()
   updateCaffeineDisplay()
 end
 
-function setCaffeineBasedOnPowerSource()
-  if hs.battery.powerSource() == "Battery Power" then
-    disableCaffeine()
-  else
-    enableCaffeine()
-  end
-  updateCaffeineDisplay()
-end
-
-local caffeine_watcher = hs.battery.watcher.new(setCaffeineBasedOnPowerSource)
-caffeine_watcher:start()
-
 function caffeineClicked(modifiers)
-  if modifiers.cmd then
-    caffeine_watcher:start()
-    hs.notify.new({title="Hammerspoon", informativeText="Caffeine Watcher On"}):send():release()
-  elseif modifiers.alt then
-    caffeine_watcher:stop()
-    hs.notify.new({title="Hammerspoon", informativeText="Caffeine Watcher Off"}):send():release()
-  else
-    hs.caffeinate.toggle("displayIdle")
-  end
+  hs.caffeinate.toggle("displayIdle")
   updateCaffeineDisplay()
 end
 
 if caffeine then
   caffeine:setClickCallback(caffeineClicked)
-  setCaffeineBasedOnPowerSource()
 end
 
 -- hotkeys to the usual apps
