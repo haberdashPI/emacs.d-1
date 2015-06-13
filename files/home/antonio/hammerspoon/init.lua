@@ -115,6 +115,7 @@ end
 
 if caffeine then
   caffeine:setClickCallback(caffeineClicked)
+  enableCaffeine()
 end
 
 -- hotkeys to the usual apps
