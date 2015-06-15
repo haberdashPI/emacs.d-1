@@ -16,3 +16,6 @@
 [submodule "files/home/antonio/zsh/modules/k"]
 	path = files/home/antonio/zsh/modules/k
 	url = git@github.com:supercrabtree/k.git
+[submodule "files/home/antonio/tmux/plugins/tpm"]
+	path = files/home/antonio/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

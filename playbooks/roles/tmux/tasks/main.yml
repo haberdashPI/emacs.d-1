@@ -3,11 +3,20 @@
   homebrew: name="tmux" state="present" install_options="with-lua"
   when: ansible_os_family == "Darwin"
 
-- name: copy tmux.conf
+- name: copy ~/.tmux.conf
   synchronize: dest="{{ home }}/.tmux.conf" src="{{ base_dir }}/files/home/antonio/tmux.conf"
   when: inventory_hostname != 'localhost'
 
-- name: link tmux.conf
+- name: link ~/.tmux.conf
   file: path="{{ home }}/.tmux.conf" src="{{ base_dir }}/files/home/antonio/tmux.conf"
+        state="link"
+  when: inventory_hostname == 'localhost'
+
+- name: copy ~/.tmux
+  synchronize: dest="{{ home }}/.tmux" src="{{ base_dir }}/files/home/antonio/tmux"
+  when: inventory_hostname != 'localhost'
+
+- name: link ~/.tmux
+  file: path="{{ home }}/.tmux" src="{{ base_dir }}/files/home/antonio/tmux"
         state="link"
   when: inventory_hostname == 'localhost'
