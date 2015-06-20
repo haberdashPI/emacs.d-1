@@ -19,3 +19,6 @@
 [submodule "files/home/antonio/tmux/plugins/tpm"]
 	path = files/home/antonio/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "files/home/antonio/tmux/plugins/tmux-continuum"]
+	path = files/home/antonio/tmux/plugins/tmux-continuum
+	url = https://git::@github.com/tmux-plugins/tmux-continuum
