@@ -30,6 +30,7 @@
     - jq
     - lastpass-cli
     - lua
+    - ncdu
     - netcat
     - nmap
     - ntfs-3g
