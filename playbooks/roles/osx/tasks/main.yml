@@ -90,6 +90,11 @@
     - spotify
     - yacreader
 
+- name: pip packages
+  pip: name="{{ item }}"
+  with_items:
+    - glances
+
 # - name: set up the environment
 #   copy: src="com.santosvelasco.environment.plist" dest="{{ home }}/Library/LaunchAgents/com.santosvelasco.environment.plist"
 
