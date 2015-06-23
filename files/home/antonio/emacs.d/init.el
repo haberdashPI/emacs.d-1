@@ -422,20 +422,21 @@
 
     (setq magit-set-upstream-on-push 'dontask)
 
-    (defun antonio/visit-pull-request-url ()
+    (defun endless/visit-pull-request-url ()
       "Visit the current branch's PR on Github."
       (interactive)
       (browse-url
-       (let ((remote-branch (magit-get "remote" (magit-get-current-remote) "url")))
-         (format "https://github.com/%s/compare/%s"
-                 (if (string-prefix-p "http" remote-branch)
-                     (replace-regexp-in-string ".+github\.com/\\(\\w+/\\w+\\).*" "\\1" remote-branch)
-                   (replace-regexp-in-string "\\`.+github\\.com:\\(.+\\)\\.git\\'" "\\1" remote-branch))
-                 (magit-get-current-branch)))))
+       (format "https://github.com/%s/pull/new/%s"
+               (replace-regexp-in-string
+                "\\`.+github\\.com:\\(.+\\)\\.git\\'" "\\1"
+                (magit-get "remote"
+                           (magit-get-remote)
+                           "url"))
+               (cdr (magit-get-remote-branch)))))
 
     (eval-after-load 'magit
-      '(define-key magit-mode-map "V"
-         #'antonio/visit-pull-request-url))))
+      '(define-key magit-mode-map "v"
+         #'endless/visit-pull-request-url))))
 
 (use-package markdown-mode
   :ensure t
