@@ -357,7 +357,18 @@
     (add-to-list 'helm-completing-read-handlers-alist '(dired-do-rename . ido))
     (add-to-list 'helm-completing-read-handlers-alist '(persp-switch . ido))
 
-    (setq helm-imenu-execute-action-at-once-if-one nil)
+    (setq helm-imenu-execute-action-at-once-if-one nil
+          helm-echo-input-in-header-line t)
+
+    (defun helm-hide-minibuffer-maybe ()
+      (when (with-helm-buffer helm-echo-input-in-header-line)
+        (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
+          (overlay-put ov 'window (selected-window))
+          (overlay-put ov 'face (let ((bg-color (face-background 'default nil)))
+                                  `(:background ,bg-color :foreground ,bg-color)))
+          (setq-local cursor-type nil))))
+
+    (add-hook 'helm-minibuffer-set-up-hook 'helm-hide-minibuffer-maybe)
 
     (use-package helm-ag
       :ensure t
