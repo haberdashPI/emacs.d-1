@@ -207,7 +207,6 @@
 
   (define-key evil-insert-state-map [remap newline] 'newline)
   (define-key evil-insert-state-map [remap newline-and-indent] 'newline-and-indent)
-  (evil-define-key 'normal global-map (kbd "%") 'ck/dispatch-goto-matching)
   (evil-define-key 'normal global-map (kbd "SPC") 'evil-search-forward)
   (evil-define-key 'visual global-map (kbd "SPC") 'evil-search-forward)
   (evil-define-key 'normal global-map (kbd "j") 'evil-next-visual-line)
@@ -246,8 +245,9 @@
 
   (use-package evil-matchit
     :ensure t
-    :commands (evil-matchit-mode)
-    :config (add-hook 'web-mode-hook 'evil-matchit-mode))
+    :commands (evil-matchit-mode global-evil-matchit-mode)
+    :config
+    (global-evil-matchit-mode 1))
 
   (use-package evil-nerd-commenter
     :ensure t
