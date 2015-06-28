@@ -502,6 +502,7 @@
 
     (add-hook 'org-capture-mode-hook 'delete-other-windows)
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
+    (add-hook 'org-capture-after-finalize-hook 'org-save-all-org-buffers)
     (add-hook 'org-clock-in-hook 'org-save-all-org-buffers)
     (add-hook 'org-clock-out-hook 'org-save-all-org-buffers)
 
