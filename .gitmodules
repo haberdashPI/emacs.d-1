@@ -25,3 +25,6 @@
 [submodule "files/home/antonio/tmux/plugins/tmux-copycat"]
 	path = files/home/antonio/tmux/plugins/tmux-copycat
 	url = https://github.com/tmux-plugins/tmux-copycat
+[submodule "files/home/antonio/tmux/plugins/tmux-resurrect"]
+	path = files/home/antonio/tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
