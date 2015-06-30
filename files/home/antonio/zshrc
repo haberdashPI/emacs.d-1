@@ -53,6 +53,7 @@ source ~/.zsh/modules/k/k.sh
 source ~/.zsh/completions.zsh
 source ~/.zsh/fasd.zsh
 source ~/.fzf.zsh
+source ~/.zsh/modules/hhighlighter/h.sh
 
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 

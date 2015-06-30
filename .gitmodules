@@ -28,3 +28,6 @@
 [submodule "files/home/antonio/tmux/plugins/tmux-resurrect"]
 	path = files/home/antonio/tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "files/home/antonio/zsh/modules/hhighlighter"]
+	path = files/home/antonio/zsh/modules/hhighlighter
+	url = git@github.com:paoloantinori/hhighlighter.git
