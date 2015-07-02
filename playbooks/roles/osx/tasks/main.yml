@@ -90,6 +90,17 @@
     - skype
     - slack
     - spotify
+    - telegram
+    - the-unarchiver
+    - totalspaces
+    - transmission
+    - vagrant
+    - vault
+    - virtualbox
+    - viscosity
+    - vlc
+    - wesnoth
+    - wireshark
     - yacreader
 
 - name: pip packages
