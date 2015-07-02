@@ -68,19 +68,12 @@ firefoxChangeTabGroupHotkey = hs.hotkey.new({"cmd"}, "`", function ()
     hs.eventtap.keyStroke({"alt"}, "n")
 end)
 
-watchers = {}
 hs.application.watcher.new(function (appName, eventType, app)
     if appName == "Firefox" then
-      firefoxChangeTabGroupHotkey:disable()
-      if eventType == hs.application.watcher.activated and watchers["firefox"] == nil then
-        local watcher = app:newWatcher(function (element, event)
-            firefoxChangeTabGroupHotkey:enable()
-        end)
-        watchers["firefox"] = watcher
-        watcher:start({hs.uielement.watcher.applicationShown, hs.uielement.watcher.applicationActivated})
-      elseif eventType == hs.application.watcher.terminated then
-        watchers["firefox"]:stop()
-        watchers["firefox"] = nil
+      if eventType == hs.application.watcher.activated then
+        firefoxChangeTabGroupHotkey:enable()
+      elseif eventType == hs.application.watcher.deactivated then
+        firefoxChangeTabGroupHotkey:disable()
       end
     end
 end):start()
